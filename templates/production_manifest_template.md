@@ -25,6 +25,7 @@ One block per set:
 | Time of day / light sources | sun angle, lamps, window beams |
 | DOF / focus | default focus target, how much background blurs |
 | Ambient sound bed | e.g. classroom murmur at −28 dB |
+| Rule visibility (sound-off) | how the world rule is visible in every shot |
 
 ## C. Characters (what each one does + ALL emotions needed)
 One block per character (main, kid/aged variant, every extra):
@@ -59,6 +60,7 @@ Examples: tapPose, selfie, reach, hold+pour tilt, lean, walk, fist, tremble, idl
 Examples: grade switch, ripple ring, motion streak, smoke, crack, shards, flash, shake, bloom swell.
 
 ## G. Beat-by-beat director table (every ~1.2–2 s, from 0.00 to the last frame, for each part)
+> Shot column must name the camera mode: pushIn / snapOut / impactZoom (+2.5° Dutch)
 | # | t start→end | Spoken line | Caption chunks (1–3 words) | Shot (type, FOV, move, clearShot) | What each character does | Face swaps | Props state | VFX | SFX (trigger word) | Grade |
 |---|---|---|---|---|---|---|---|---|---|---|
 

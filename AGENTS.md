@@ -49,6 +49,12 @@ Combine one from each list and rotate — never pick the same combo as the last 
 - Natural TTS (Edge-TTS `en-US-AndrewNeural`) + Faster-Whisper word timing via `pipeline/voice_subs.py`.
 - 4-frame QA (10/40/70/90%) before final render.
 
+## Production rules update (2026-11-16, viral research)
+- **Dual-engine rule:** Roblox Studio (MCP) is the primary engine. Blender 4.x/5.x (`bpy`, headless) is allowed alongside it for converting/importing Argon `.glb`/`.obj` meshes and props, headless 1080x1920 renders, and quick check-picture previews. Blender never *designs* characters; characters come from Argon or Studio.
+- **3-mode camera mix:** ~60% slow push-ins, ~25% snap pull-outs (close to wide), ~15% impact snap-zooms with a 2.5° Dutch tilt. Cuts every ~1.2–2 s.
+- **Sound-off rule:** the story's world rule must be visible on screen in every shot where it applies (e.g. a counter or number above heads, or aged hands shown), so the video works muted.
+- **Light:** the default present-day grade uses `Lighting.ClockTime = 16.8` (low sun, long shadows) and textured surfaces (brick, wood, wainscot), not flat pastel walls.
+
 ## Argon assets + Production Manifest (MANDATORY from story 008)
 - **Argon builds all assets** (characters, extras, props, sets, materials, grade presets) to one locked theme/style: `docs/ARGON_PIPELINE.md` (style lock, grade presets, the Argon prompts). The Studio MCP steps below are the **fallback** only.
 - **Every story ships `stories/<ID>_<slug>/MANIFEST.md`** from `templates/production_manifest_template.md`, with zero vagueness. It covers:
