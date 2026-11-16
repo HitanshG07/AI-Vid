@@ -20,7 +20,7 @@ Fallback: if Argon can't make something, use Studio MCP (`generate_avatar`, `gen
 1. **Blocky Roblox only.** Main cast, kids, aged variants and extras share one R15/R6 silhouette:
    - 2x2x1 torso, 1x2x1 fingerless limbs, beveled 1.2 head
    - Layered Roblox hair and clothing
-   - No realistic sculpted bodies, and **never Blender-built characters**
+   - No realistic sculpted bodies. Argon-made character meshes are allowed; Blender only converts them (obj→glb), it never designs characters
 2. **Faces:** v1 style with 3-layer eyes:
    - White sclera with a dark outline
    - Iris and pupil

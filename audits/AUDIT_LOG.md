@@ -9,3 +9,4 @@ Serial AUDIT-NNN; each zip ≤ 100 MB, split into parts if needed. Only audit-re
 | 003 | 2026-11-16 | AUDIT-003_2026-11-16_story007-reports_part1of1.zip (21 files, 13.28 MB) | story007-reports: reports + audits only, README inside |
 
 | ARGON-001 | 2026-11-16 | Argon theme-lock handover (prompt, rules, template, design bible, reuse library) | audits/ARGON-001_2026-11-16_theme-lock_part1of1.zip | 122 files |
+| ARGON-002 | 2026-11-16 | Report to Argon: kit Mia mesh test + mesh spec | audits/ARGON-002_2026-11-16_character-mesh-test_part1of1.zip | 3 files |
