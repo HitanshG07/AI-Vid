@@ -11,7 +11,12 @@ bottom/corner (pops the taskbar), nobody touches Studio during a take, clear the
 """
 import argparse, ctypes, re, subprocess
 
-TITLE = r"C:\AI-Vid\assets\maps\story007.rbxl - Roblox Studio"
+def studio_title():
+    """Current Studio window title (changes with the open place, e.g. 'Ai-vid - Roblox Studio')."""
+    out = subprocess.run(["powershell", "-NoProfile", "-Command",
+                          "(Get-Process RobloxStudioBeta | ? MainWindowTitle | select -First 1).MainWindowTitle"],
+                         capture_output=True, text=True).stdout.strip()
+    return out or "Roblox Studio"
 REGION = dict(x=4, y=160, w=1882, h=966)  # the 3D viewport with ribbon + command bar collapsed
 
 
@@ -44,6 +49,6 @@ if __name__ == "__main__":
     a.add_argument("--seconds", type=float)
     a.add_argument("--trim")
     a.add_argument("--out", required=True)
-    a.add_argument("--title", default=TITLE)
+    a.add_argument("--title", default=None)
     x = a.parse_args()
-    trim(x.trim, x.out) if x.trim else record(x.seconds, x.out, x.title)
+    trim(x.trim, x.out) if x.trim else record(x.seconds, x.out, x.title or studio_title())
