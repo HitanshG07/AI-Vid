@@ -1,9 +1,12 @@
 # Argon handover package (no videos)
 
+**Latest (start here): `ARGON-003_mia-v2-faceplate-test/ARGON_REPORT_003_mia_v2_and_faceplate_test.md`**: test results for Mia_v2.glb and the faceplate fix; please audit and return ONE clean method.
+
 Videos and `rec/` capture folders are intentionally excluded. Everything here is text, images, or mesh/source files.
 
 ## Start here
 
+0. **`ARGON-003_mia-v2-faceplate-test/`** - the latest test: Mia_v2.glb in Studio and the faceplate fix (report + 3 screenshots).
 1. **`ARGON-002_character-mesh-test/ARGON_REPORT_character_mesh_test.md`** - the latest request: rebuild Mia v2 to the spec in this report. Read it first.
 2. **`ARGON-001_theme-lock/01_ARGON_THEME_LOCK_PROMPT.txt`** - the house style. Lock this first, before any asset work.
 3. **`docs/ARGON_PIPELINE.md`** (also at `ARGON-001_theme-lock/ARGON_PIPELINE.md`) - the full rules.
