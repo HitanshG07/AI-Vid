@@ -1,0 +1,782 @@
+[
+ {
+  "word": "Fifteen",
+  "start": 0.0,
+  "end": 0.46
+ },
+ {
+  "word": "years",
+  "start": 0.46,
+  "end": 0.7
+ },
+ {
+  "word": "of",
+  "start": 0.7,
+  "end": 0.92
+ },
+ {
+  "word": "saving.",
+  "start": 0.92,
+  "end": 1.2
+ },
+ {
+  "word": "One",
+  "start": 1.62,
+  "end": 1.8
+ },
+ {
+  "word": "tap.",
+  "start": 1.8,
+  "end": 2.04
+ },
+ {
+  "word": "Ten",
+  "start": 2.54,
+  "end": 2.66
+ },
+ {
+  "word": "seconds",
+  "start": 2.66,
+  "end": 2.92
+ },
+ {
+  "word": "back,",
+  "start": 2.92,
+  "end": 3.28
+ },
+ {
+  "word": "before",
+  "start": 3.52,
+  "end": 3.78
+ },
+ {
+  "word": "the",
+  "start": 3.78,
+  "end": 3.94
+ },
+ {
+  "word": "pour.",
+  "start": 3.94,
+  "end": 4.16
+ },
+ {
+  "word": "I",
+  "start": 4.56,
+  "end": 4.74
+ },
+ {
+  "word": "yelled.",
+  "start": 4.74,
+  "end": 4.92
+ },
+ {
+  "word": "He",
+  "start": 5.38,
+  "end": 5.52
+ },
+ {
+  "word": "poured",
+  "start": 5.52,
+  "end": 5.7
+ },
+ {
+  "word": "anyway.",
+  "start": 5.7,
+  "end": 6.0
+ },
+ {
+  "word": "Tap.",
+  "start": 6.66,
+  "end": 6.68
+ },
+ {
+  "word": "I",
+  "start": 7.12,
+  "end": 7.28
+ },
+ {
+  "word": "grabbed",
+  "start": 7.28,
+  "end": 7.46
+ },
+ {
+  "word": "his",
+  "start": 7.46,
+  "end": 7.66
+ },
+ {
+  "word": "arm.",
+  "start": 7.66,
+  "end": 7.88
+ },
+ {
+  "word": "He",
+  "start": 8.28,
+  "end": 8.42
+ },
+ {
+  "word": "shoved",
+  "start": 8.42,
+  "end": 8.58
+ },
+ {
+  "word": "me,",
+  "start": 8.58,
+  "end": 8.82
+ },
+ {
+  "word": "and",
+  "start": 8.82,
+  "end": 9.18
+ },
+ {
+  "word": "poured.",
+  "start": 9.18,
+  "end": 9.42
+ },
+ {
+  "word": "Tap.",
+  "start": 9.9,
+  "end": 10.12
+ },
+ {
+  "word": "My",
+  "start": 10.58,
+  "end": 10.7
+ },
+ {
+  "word": "knuckles",
+  "start": 10.7,
+  "end": 10.94
+ },
+ {
+  "word": "started",
+  "start": 10.94,
+  "end": 11.22
+ },
+ {
+  "word": "to",
+  "start": 11.22,
+  "end": 11.4
+ },
+ {
+  "word": "wrinkle.",
+  "start": 11.4,
+  "end": 11.62
+ },
+ {
+  "word": "So",
+  "start": 12.0,
+  "end": 12.22
+ },
+ {
+  "word": "I",
+  "start": 12.22,
+  "end": 12.34
+ },
+ {
+  "word": "stopped",
+  "start": 12.34,
+  "end": 12.54
+ },
+ {
+  "word": "fighting",
+  "start": 12.54,
+  "end": 12.88
+ },
+ {
+  "word": "and",
+  "start": 12.88,
+  "end": 13.18
+ },
+ {
+  "word": "started",
+  "start": 13.18,
+  "end": 13.38
+ },
+ {
+  "word": "watching.",
+  "start": 13.38,
+  "end": 13.76
+ },
+ {
+  "word": "Water",
+  "start": 14.22,
+  "end": 14.38
+ },
+ {
+  "word": "bottle,",
+  "start": 14.38,
+  "end": 14.66
+ },
+ {
+  "word": "left",
+  "start": 15.04,
+  "end": 15.12
+ },
+ {
+  "word": "of",
+  "start": 15.12,
+  "end": 15.26
+ },
+ {
+  "word": "the",
+  "start": 15.26,
+  "end": 15.4
+ },
+ {
+  "word": "acid.",
+  "start": 15.4,
+  "end": 15.68
+ },
+ {
+  "word": "He",
+  "start": 16.14,
+  "end": 16.24
+ },
+ {
+  "word": "pours",
+  "start": 16.24,
+  "end": 16.46
+ },
+ {
+  "word": "with",
+  "start": 16.46,
+  "end": 16.64
+ },
+ {
+  "word": "his",
+  "start": 16.64,
+  "end": 16.76
+ },
+ {
+  "word": "right",
+  "start": 16.76,
+  "end": 16.94
+ },
+ {
+  "word": "hand.",
+  "start": 16.94,
+  "end": 17.28
+ },
+ {
+  "word": "At",
+  "start": 17.72,
+  "end": 17.84
+ },
+ {
+  "word": "second",
+  "start": 17.84,
+  "end": 18.1
+ },
+ {
+  "word": "seven,",
+  "start": 18.1,
+  "end": 18.44
+ },
+ {
+  "word": "he",
+  "start": 18.82,
+  "end": 18.94
+ },
+ {
+  "word": "turns",
+  "start": 18.94,
+  "end": 19.1
+ },
+ {
+  "word": "to",
+  "start": 19.1,
+  "end": 19.32
+ },
+ {
+  "word": "pose",
+  "start": 19.32,
+  "end": 19.5
+ },
+ {
+  "word": "for",
+  "start": 19.5,
+  "end": 19.72
+ },
+ {
+  "word": "his",
+  "start": 19.72,
+  "end": 19.84
+ },
+ {
+  "word": "phone.",
+  "start": 19.84,
+  "end": 20.1
+ },
+ {
+  "word": "Tap.",
+  "start": 20.72,
+  "end": 20.76
+ },
+ {
+  "word": "Last",
+  "start": 21.26,
+  "end": 21.42
+ },
+ {
+  "word": "loop.",
+  "start": 21.42,
+  "end": 21.64
+ },
+ {
+  "word": "I",
+  "start": 22.08,
+  "end": 22.2
+ },
+ {
+  "word": "waited.",
+  "start": 22.2,
+  "end": 22.4
+ },
+ {
+  "word": "He",
+  "start": 22.88,
+  "end": 23.0
+ },
+ {
+  "word": "turned.",
+  "start": 23.0,
+  "end": 23.22
+ },
+ {
+  "word": "Flash.",
+  "start": 23.76,
+  "end": 23.94
+ },
+ {
+  "word": "I",
+  "start": 24.52,
+  "end": 24.64
+ },
+ {
+  "word": "swapped",
+  "start": 24.64,
+  "end": 24.84
+ },
+ {
+  "word": "the",
+  "start": 24.84,
+  "end": 25.04
+ },
+ {
+  "word": "bottles.",
+  "start": 25.04,
+  "end": 25.32
+ },
+ {
+  "word": "He",
+  "start": 25.84,
+  "end": 25.98
+ },
+ {
+  "word": "poured",
+  "start": 25.98,
+  "end": 26.18
+ },
+ {
+  "word": "water.",
+  "start": 26.18,
+  "end": 26.44
+ },
+ {
+  "word": "Nothing",
+  "start": 26.94,
+  "end": 27.06
+ },
+ {
+  "word": "happened.",
+  "start": 27.06,
+  "end": 27.4
+ },
+ {
+  "word": "Jace",
+  "start": 27.4,
+  "end": 28.04
+ },
+ {
+  "word": "checked",
+  "start": 28.04,
+  "end": 28.36
+ },
+ {
+  "word": "his",
+  "start": 28.36,
+  "end": 28.54
+ },
+ {
+  "word": "selfie,",
+  "start": 28.54,
+  "end": 28.92
+ },
+ {
+  "word": "never",
+  "start": 29.22,
+  "end": 29.34
+ },
+ {
+  "word": "the",
+  "start": 29.34,
+  "end": 29.48
+ },
+ {
+  "word": "beaker.",
+  "start": 29.48,
+  "end": 29.78
+ },
+ {
+  "word": "I",
+  "start": 30.26,
+  "end": 30.32
+ },
+ {
+  "word": "pulled",
+  "start": 30.32,
+  "end": 30.48
+ },
+ {
+  "word": "my",
+  "start": 30.48,
+  "end": 30.66
+ },
+ {
+  "word": "sleeves",
+  "start": 30.66,
+  "end": 30.88
+ },
+ {
+  "word": "over",
+  "start": 30.88,
+  "end": 31.12
+ },
+ {
+  "word": "my",
+  "start": 31.12,
+  "end": 31.34
+ },
+ {
+  "word": "hands.",
+  "start": 31.34,
+  "end": 31.68
+ },
+ {
+  "word": "Mia",
+  "start": 32.3,
+  "end": 32.3
+ },
+ {
+  "word": "saw",
+  "start": 32.3,
+  "end": 32.5
+ },
+ {
+  "word": "them",
+  "start": 32.5,
+  "end": 32.66
+ },
+ {
+  "word": "anyway.",
+  "start": 32.66,
+  "end": 32.9
+ },
+ {
+  "word": "You",
+  "start": 33.4,
+  "end": 33.52
+ },
+ {
+  "word": "never",
+  "start": 33.52,
+  "end": 33.72
+ },
+ {
+  "word": "tap.",
+  "start": 33.72,
+  "end": 33.96
+ },
+ {
+  "word": "Why",
+  "start": 34.46,
+  "end": 34.58
+ },
+ {
+  "word": "now?",
+  "start": 34.58,
+  "end": 34.8
+ },
+ {
+  "word": "Four",
+  "start": 35.14,
+  "end": 35.26
+ },
+ {
+  "word": "taps.",
+  "start": 35.26,
+  "end": 35.58
+ },
+ {
+  "word": "Four",
+  "start": 36.08,
+  "end": 36.2
+ },
+ {
+  "word": "years.",
+  "start": 36.2,
+  "end": 36.42
+ },
+ {
+  "word": "For",
+  "start": 36.98,
+  "end": 37.12
+ },
+ {
+  "word": "ten",
+  "start": 37.12,
+  "end": 37.3
+ },
+ {
+  "word": "seconds.",
+  "start": 37.3,
+  "end": 37.62
+ },
+ {
+  "word": "Mia",
+  "start": 38.22,
+  "end": 38.42
+ },
+ {
+  "word": "smiled",
+  "start": 38.42,
+  "end": 38.76
+ },
+ {
+  "word": "at",
+  "start": 38.76,
+  "end": 39.02
+ },
+ {
+  "word": "me,",
+  "start": 39.02,
+  "end": 39.26
+ },
+ {
+  "word": "her",
+  "start": 39.52,
+  "end": 39.72
+ },
+ {
+  "word": "face",
+  "start": 39.72,
+  "end": 39.92
+ },
+ {
+  "word": "perfect,",
+  "start": 39.92,
+  "end": 40.26
+ },
+ {
+  "word": "and",
+  "start": 40.7,
+  "end": 40.82
+ },
+ {
+  "word": "lent",
+  "start": 40.82,
+  "end": 40.96
+ },
+ {
+  "word": "me",
+  "start": 40.96,
+  "end": 41.1
+ },
+ {
+  "word": "a",
+  "start": 41.1,
+  "end": 41.24
+ },
+ {
+  "word": "pencil",
+  "start": 41.24,
+  "end": 41.48
+ },
+ {
+  "word": "again.",
+  "start": 41.48,
+  "end": 41.82
+ },
+ {
+  "word": "Jace",
+  "start": 42.32,
+  "end": 42.48
+ },
+ {
+  "word": "spends",
+  "start": 42.48,
+  "end": 42.78
+ },
+ {
+  "word": "his",
+  "start": 42.78,
+  "end": 43.0
+ },
+ {
+  "word": "years",
+  "start": 43.0,
+  "end": 43.22
+ },
+ {
+  "word": "on",
+  "start": 43.22,
+  "end": 43.46
+ },
+ {
+  "word": "selfies.",
+  "start": 43.46,
+  "end": 43.82
+ },
+ {
+  "word": "Grandma",
+  "start": 44.48,
+  "end": 44.74
+ },
+ {
+  "word": "spent",
+  "start": 44.74,
+  "end": 44.96
+ },
+ {
+  "word": "hers",
+  "start": 44.96,
+  "end": 45.2
+ },
+ {
+  "word": "on",
+  "start": 45.2,
+  "end": 45.4
+ },
+ {
+  "word": "her",
+  "start": 45.4,
+  "end": 45.5
+ },
+ {
+  "word": "own",
+  "start": 45.5,
+  "end": 45.68
+ },
+ {
+  "word": "mistakes.",
+  "start": 45.68,
+  "end": 46.08
+ },
+ {
+  "word": "I",
+  "start": 46.72,
+  "end": 46.8
+ },
+ {
+  "word": "spent",
+  "start": 46.8,
+  "end": 46.96
+ },
+ {
+  "word": "mine",
+  "start": 46.96,
+  "end": 47.12
+ },
+ {
+  "word": "on",
+  "start": 47.12,
+  "end": 47.26
+ },
+ {
+  "word": "someone",
+  "start": 47.26,
+  "end": 47.52
+ },
+ {
+  "word": "else.",
+  "start": 47.52,
+  "end": 47.8
+ },
+ {
+  "word": "A",
+  "start": 48.28,
+  "end": 48.38
+ },
+ {
+  "word": "few",
+  "start": 48.38,
+  "end": 48.56
+ },
+ {
+  "word": "years",
+  "start": 48.56,
+  "end": 48.78
+ },
+ {
+  "word": "of",
+  "start": 48.78,
+  "end": 48.94
+ },
+ {
+  "word": "my",
+  "start": 48.94,
+  "end": 49.08
+ },
+ {
+  "word": "hands",
+  "start": 49.08,
+  "end": 49.3
+ },
+ {
+  "word": "for",
+  "start": 49.3,
+  "end": 49.48
+ },
+ {
+  "word": "her",
+  "start": 49.48,
+  "end": 49.62
+ },
+ {
+  "word": "whole",
+  "start": 49.62,
+  "end": 49.82
+ },
+ {
+  "word": "face.",
+  "start": 49.82,
+  "end": 50.14
+ },
+ {
+  "word": "They",
+  "start": 50.14,
+  "end": 50.78
+ },
+ {
+  "word": "were",
+  "start": 50.78,
+  "end": 50.9
+ },
+ {
+  "word": "saved",
+  "start": 50.9,
+  "end": 51.16
+ },
+ {
+  "word": "for",
+  "start": 51.16,
+  "end": 51.4
+ },
+ {
+  "word": "her.",
+  "start": 51.4,
+  "end": 51.58
+ }
+]

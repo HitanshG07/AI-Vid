@@ -1,0 +1,11 @@
+{
+  "id": "011",
+  "fps": 60,
+  "duration_s": 58,
+  "map": "assets/maps/<name>",
+  "characters": [{"name": "hero", "rig": "assets/rigs/<file>.fbx", "start_face": "Happy"}],
+  "beats": [
+    {"t": 0.0, "dur": 1.8, "shot": "dolly-in medium", "camera_target": "hero", "face": {"hero": "Shocked"},
+     "action": "hero looks up at sky", "vfx": ["volumetric_beam"], "sfx": "whoosh", "line": "In this town..."}
+  ]
+}

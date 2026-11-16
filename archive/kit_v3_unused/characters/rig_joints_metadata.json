@@ -1,0 +1,489 @@
+{
+  "rig_type": "Roblox_Blocky_R15_Beveled",
+  "joints": {
+    "LowerTorso": {
+      "parent": "HumanoidRootPart",
+      "pivot": [
+        0.0,
+        2.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        2.2,
+        0.0
+      ],
+      "size": [
+        2.0,
+        0.6,
+        1.0
+      ]
+    },
+    "UpperTorso": {
+      "parent": "LowerTorso",
+      "pivot": [
+        0.0,
+        2.5,
+        0.0
+      ],
+      "center": [
+        0.0,
+        3.2,
+        0.0
+      ],
+      "size": [
+        2.0,
+        1.4,
+        1.0
+      ]
+    },
+    "Head": {
+      "parent": "UpperTorso",
+      "pivot": [
+        0.0,
+        4.0,
+        0.0
+      ],
+      "center": [
+        0.0,
+        4.6,
+        0.0
+      ],
+      "size": [
+        1.2,
+        1.2,
+        1.2
+      ]
+    },
+    "LeftUpperArm": {
+      "parent": "UpperTorso",
+      "pivot": [
+        -1.5,
+        3.75,
+        0.0
+      ],
+      "center": [
+        -1.5,
+        3.45,
+        0.0
+      ],
+      "size": [
+        1.0,
+        0.8,
+        1.0
+      ]
+    },
+    "LeftLowerArm": {
+      "parent": "LeftUpperArm",
+      "pivot": [
+        -1.5,
+        3.05,
+        0.0
+      ],
+      "center": [
+        -1.5,
+        2.65,
+        0.0
+      ],
+      "size": [
+        1.0,
+        0.8,
+        1.0
+      ]
+    },
+    "LeftHand": {
+      "parent": "LeftLowerArm",
+      "pivot": [
+        -1.5,
+        2.25,
+        0.0
+      ],
+      "center": [
+        -1.5,
+        2.05,
+        0.0
+      ],
+      "size": [
+        1.0,
+        0.4,
+        1.0
+      ]
+    },
+    "RightUpperArm": {
+      "parent": "UpperTorso",
+      "pivot": [
+        1.5,
+        3.75,
+        0.0
+      ],
+      "center": [
+        1.5,
+        3.45,
+        0.0
+      ],
+      "size": [
+        1.0,
+        0.8,
+        1.0
+      ]
+    },
+    "RightLowerArm": {
+      "parent": "RightUpperArm",
+      "pivot": [
+        1.5,
+        3.05,
+        0.0
+      ],
+      "center": [
+        1.5,
+        2.65,
+        0.0
+      ],
+      "size": [
+        1.0,
+        0.8,
+        1.0
+      ]
+    },
+    "RightHand": {
+      "parent": "RightLowerArm",
+      "pivot": [
+        1.5,
+        2.25,
+        0.0
+      ],
+      "center": [
+        1.5,
+        2.05,
+        0.0
+      ],
+      "size": [
+        1.0,
+        0.4,
+        1.0
+      ]
+    },
+    "LeftUpperLeg": {
+      "parent": "LowerTorso",
+      "pivot": [
+        -0.5,
+        1.9,
+        0.0
+      ],
+      "center": [
+        -0.5,
+        1.5,
+        0.0
+      ],
+      "size": [
+        1.0,
+        0.8,
+        1.0
+      ]
+    },
+    "LeftLowerLeg": {
+      "parent": "LeftUpperLeg",
+      "pivot": [
+        -0.5,
+        1.1,
+        0.0
+      ],
+      "center": [
+        -0.5,
+        0.7,
+        0.0
+      ],
+      "size": [
+        1.0,
+        0.8,
+        1.0
+      ]
+    },
+    "LeftFoot": {
+      "parent": "LeftLowerLeg",
+      "pivot": [
+        -0.5,
+        0.3,
+        0.0
+      ],
+      "center": [
+        -0.5,
+        0.15,
+        0.0
+      ],
+      "size": [
+        1.0,
+        0.3,
+        1.0
+      ]
+    },
+    "RightUpperLeg": {
+      "parent": "LowerTorso",
+      "pivot": [
+        0.5,
+        1.9,
+        0.0
+      ],
+      "center": [
+        0.5,
+        1.5,
+        0.0
+      ],
+      "size": [
+        1.0,
+        0.8,
+        1.0
+      ]
+    },
+    "RightLowerLeg": {
+      "parent": "RightUpperLeg",
+      "pivot": [
+        0.5,
+        1.1,
+        0.0
+      ],
+      "center": [
+        0.5,
+        0.7,
+        0.0
+      ],
+      "size": [
+        1.0,
+        0.8,
+        1.0
+      ]
+    },
+    "RightFoot": {
+      "parent": "RightLowerLeg",
+      "pivot": [
+        0.5,
+        0.3,
+        0.0
+      ],
+      "center": [
+        0.5,
+        0.15,
+        0.0
+      ],
+      "size": [
+        1.0,
+        0.3,
+        1.0
+      ]
+    }
+  },
+  "characters": {
+    "Hero": {
+      "skin": "#E8CFA8",
+      "iris": "#3B281E",
+      "brow": "#4A2E1B",
+      "scale": 1.0,
+      "glasses": null,
+      "hair": "spiky_brown",
+      "shirt": "#1E56A0",
+      "SLEEVE": "#16437D",
+      "pants": "#1D2432",
+      "shoes": "#F0F2F5",
+      "emotions": [
+        "Determined",
+        "Happy",
+        "Shocked",
+        "Worried",
+        "Crying",
+        "Sad",
+        "Straining"
+      ]
+    },
+    "LittleHero": {
+      "skin": "#E8CFA8",
+      "iris": "#3B281E",
+      "brow": "#4A2E1B",
+      "scale": 0.62,
+      "glasses": null,
+      "hair": "spiky_brown",
+      "shirt": "#58A6FF",
+      "SLEEVE": "#58A6FF",
+      "pants": "#24344D",
+      "shoes": "#F0F2F5",
+      "emotions": [
+        "Crying",
+        "Happy",
+        "Sad",
+        "Shocked"
+      ]
+    },
+    "Mia": {
+      "skin": "#EBCBB2",
+      "iris": "#4E342E",
+      "brow": "#3E2723",
+      "scale": 1.0,
+      "glasses": null,
+      "hair": "ponytail_brown",
+      "shirt": "#F2B705",
+      "SLEEVE": "#F2B705",
+      "pants": "#2B2D38",
+      "shoes": "#3A2E2B",
+      "emotions": [
+        "Happy",
+        "Shocked",
+        "Worried",
+        "Sad",
+        "Crying"
+      ]
+    },
+    "Jace": {
+      "skin": "#F2CFA4",
+      "iris": "#5C4033",
+      "brow": "#C68E28",
+      "scale": 1.0,
+      "glasses": null,
+      "hair": "swept_blonde",
+      "shirt": "#D92B2B",
+      "SLEEVE": "#F2F4F7",
+      "pants": "#1C222E",
+      "shoes": "#252830",
+      "emotions": [
+        "Smirk",
+        "Happy",
+        "Shocked",
+        "Worried"
+      ]
+    },
+    "Teacher": {
+      "skin": "#D8B894",
+      "iris": "#36281E",
+      "brow": "#4A3525",
+      "scale": 1.05,
+      "glasses": "rect",
+      "hair": "parted_brown",
+      "shirt": "#F0F2F5",
+      "SLEEVE": "#F0F2F5",
+      "pants": "#42342B",
+      "shoes": "#2B201A",
+      "emotions": [
+        "Happy",
+        "Shocked",
+        "Determined"
+      ]
+    },
+    "Grandma": {
+      "skin": "#DFC3A5",
+      "iris": "#4A3B32",
+      "brow": "#8C8C8C",
+      "scale": 0.96,
+      "glasses": "round",
+      "hair": "bun_silver",
+      "shirt": "#8E638D",
+      "SLEEVE": "#8E638D",
+      "pants": "#3D3140",
+      "shoes": "#4A3528",
+      "emotions": [
+        "Sad",
+        "Crying",
+        "Happy"
+      ]
+    },
+    "Extra1": {
+      "skin": "#7C5C46",
+      "iris": "#2A1B12",
+      "brow": "#1E140E",
+      "scale": 1.0,
+      "glasses": null,
+      "hair": "braids_black",
+      "shirt": "#1E8A7A",
+      "SLEEVE": "#1E8A7A",
+      "pants": "#1D2636",
+      "shoes": "#ECEFF4",
+      "emotions": [
+        "Happy",
+        "Shocked",
+        "Neutral"
+      ]
+    },
+    "Extra2": {
+      "skin": "#F5CDA7",
+      "iris": "#3E2B1F",
+      "brow": "#543824",
+      "scale": 1.0,
+      "glasses": null,
+      "hair": "spiky_brown",
+      "shirt": "#2E5EAA",
+      "SLEEVE": "#2E5EAA",
+      "pants": "#232B38",
+      "shoes": "#E5E9F0",
+      "emotions": [
+        "Happy",
+        "Shocked",
+        "Neutral"
+      ]
+    },
+    "Extra3": {
+      "skin": "#AF8264",
+      "iris": "#2F2016",
+      "brow": "#3B2618",
+      "scale": 1.0,
+      "glasses": null,
+      "hair": "bob_brown",
+      "shirt": "#3B6998",
+      "SLEEVE": "#3B6998",
+      "pants": "#21232E",
+      "shoes": "#D8DEE9",
+      "emotions": [
+        "Happy",
+        "Shocked",
+        "Neutral"
+      ]
+    },
+    "Extra4": {
+      "skin": "#D8A47F",
+      "iris": "#3B281E",
+      "brow": "#3D261A",
+      "scale": 1.0,
+      "glasses": null,
+      "hair": "bun_brown",
+      "shirt": "#B8292F",
+      "SLEEVE": "#ECEFF4",
+      "pants": "#222634",
+      "shoes": "#9E2A2B",
+      "emotions": [
+        "Happy",
+        "Shocked",
+        "Neutral"
+      ]
+    },
+    "Extra5": {
+      "skin": "#7A543E",
+      "iris": "#261810",
+      "brow": "#1C120C",
+      "scale": 1.0,
+      "glasses": null,
+      "hair": "afro_curls",
+      "shirt": "#2E5A36",
+      "SLEEVE": "#2E5A36",
+      "pants": "#2B3A4A",
+      "shoes": "#D8DEE9",
+      "emotions": [
+        "Happy",
+        "Shocked",
+        "Neutral"
+      ]
+    },
+    "Extra6": {
+      "skin": "#EACA9E",
+      "iris": "#423024",
+      "brow": "#593C28",
+      "scale": 1.0,
+      "glasses": null,
+      "hair": "messy_brown",
+      "shirt": "#6E654F",
+      "SLEEVE": "#6E654F",
+      "pants": "#253447",
+      "shoes": "#2B2D34",
+      "emotions": [
+        "Happy",
+        "Shocked",
+        "Neutral"
+      ]
+    }
+  }
+}

@@ -1,0 +1,84 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: LowerThirdWhite,Arial Black,80,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,6,3,2,90,90,230,1
+Style: LowerThirdYellow,Arial Black,80,&H0015CCFA,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,6,3,2,90,90,230,1
+Style: UpperThirdWhite,Arial Black,80,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,6,3,8,90,90,220,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:00.70,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}FIFTEEN YEARS
+Dialogue: 0,0:00:00.70,0:00:01.20,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}OF SAVING.
+Dialogue: 0,0:00:01.62,0:00:02.04,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}ONE TAP.
+Dialogue: 0,0:00:02.54,0:00:03.28,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}TEN SECONDS BACK,
+Dialogue: 0,0:00:03.52,0:00:04.16,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}BEFORE THE POUR.
+Dialogue: 0,0:00:04.56,0:00:04.92,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}I YELLED.
+Dialogue: 0,0:00:05.38,0:00:06.00,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}HE POURED ANYWAY.
+Dialogue: 0,0:00:06.66,0:00:06.68,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}TAP.
+Dialogue: 0,0:00:07.12,0:00:07.46,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}I GRABBED
+Dialogue: 0,0:00:07.46,0:00:07.88,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}HIS ARM.
+Dialogue: 0,0:00:08.28,0:00:08.82,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}HE SHOVED ME,
+Dialogue: 0,0:00:08.82,0:00:09.42,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}AND POURED.
+Dialogue: 0,0:00:09.90,0:00:10.12,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}TAP.
+Dialogue: 0,0:00:10.58,0:00:11.22,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}MY KNUCKLES STARTED
+Dialogue: 0,0:00:11.22,0:00:11.62,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}TO WRINKLE.
+Dialogue: 0,0:00:12.00,0:00:12.54,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}SO I STOPPED
+Dialogue: 0,0:00:12.54,0:00:13.38,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}FIGHTING AND STARTED
+Dialogue: 0,0:00:13.38,0:00:13.76,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}WATCHING.
+Dialogue: 0,0:00:14.22,0:00:14.66,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}WATER BOTTLE,
+Dialogue: 0,0:00:15.04,0:00:15.12,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}LEFT
+Dialogue: 0,0:00:15.12,0:00:15.68,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}OF THE ACID.
+Dialogue: 0,0:00:16.14,0:00:16.46,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}HE POURS
+Dialogue: 0,0:00:16.46,0:00:16.94,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}WITH HIS RIGHT
+Dialogue: 0,0:00:16.94,0:00:17.28,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}HAND.
+Dialogue: 0,0:00:17.72,0:00:18.44,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}AT SECOND SEVEN,
+Dialogue: 0,0:00:18.82,0:00:19.10,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}HE TURNS
+Dialogue: 0,0:00:19.10,0:00:19.50,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}TO POSE
+Dialogue: 0,0:00:19.50,0:00:20.10,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}FOR HIS PHONE.
+Dialogue: 0,0:00:20.72,0:00:20.76,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}TAP.
+Dialogue: 0,0:00:21.26,0:00:21.64,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}LAST LOOP.
+Dialogue: 0,0:00:22.08,0:00:22.40,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}I WAITED.
+Dialogue: 0,0:00:22.88,0:00:23.22,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}HE TURNED.
+Dialogue: 0,0:00:23.76,0:00:23.94,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}FLASH.
+Dialogue: 0,0:00:24.52,0:00:24.84,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}I SWAPPED
+Dialogue: 0,0:00:24.84,0:00:25.32,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}THE BOTTLES.
+Dialogue: 0,0:00:25.84,0:00:26.44,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}HE POURED WATER.
+Dialogue: 0,0:00:26.94,0:00:27.40,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}NOTHING HAPPENED.
+Dialogue: 0,0:00:27.40,0:00:28.36,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}JACE CHECKED
+Dialogue: 0,0:00:28.36,0:00:28.92,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}HIS SELFIE,
+Dialogue: 0,0:00:29.22,0:00:29.78,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}NEVER THE BEAKER.
+Dialogue: 0,0:00:30.26,0:00:30.48,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}I PULLED
+Dialogue: 0,0:00:30.48,0:00:31.12,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}MY SLEEVES OVER
+Dialogue: 0,0:00:31.12,0:00:31.68,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}MY HANDS.
+Dialogue: 0,0:00:32.30,0:00:32.66,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}MIA SAW THEM
+Dialogue: 0,0:00:32.66,0:00:32.90,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}ANYWAY.
+Dialogue: 0,0:00:33.40,0:00:33.96,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}YOU NEVER TAP.
+Dialogue: 0,0:00:34.46,0:00:34.80,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}WHY NOW?
+Dialogue: 0,0:00:35.14,0:00:35.58,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}FOUR TAPS.
+Dialogue: 0,0:00:36.08,0:00:36.42,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}FOUR YEARS.
+Dialogue: 0,0:00:36.98,0:00:37.62,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}FOR TEN SECONDS.
+Dialogue: 0,0:00:38.22,0:00:38.76,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}MIA SMILED
+Dialogue: 0,0:00:38.76,0:00:39.26,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}AT ME,
+Dialogue: 0,0:00:39.52,0:00:40.26,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}HER FACE PERFECT,
+Dialogue: 0,0:00:40.70,0:00:41.10,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}AND LENT ME
+Dialogue: 0,0:00:41.10,0:00:41.82,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}A PENCIL AGAIN.
+Dialogue: 0,0:00:42.32,0:00:42.78,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}JACE SPENDS
+Dialogue: 0,0:00:42.78,0:00:43.22,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}HIS YEARS
+Dialogue: 0,0:00:43.22,0:00:43.82,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}ON SELFIES.
+Dialogue: 0,0:00:44.48,0:00:45.20,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}GRANDMA SPENT HERS
+Dialogue: 0,0:00:45.20,0:00:45.68,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}ON HER OWN
+Dialogue: 0,0:00:45.68,0:00:46.08,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}MISTAKES.
+Dialogue: 0,0:00:46.72,0:00:47.12,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}I SPENT MINE
+Dialogue: 0,0:00:47.12,0:00:47.80,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}ON SOMEONE ELSE.
+Dialogue: 0,0:00:48.28,0:00:48.78,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}A FEW YEARS
+Dialogue: 0,0:00:48.78,0:00:49.30,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}OF MY HANDS
+Dialogue: 0,0:00:49.30,0:00:49.82,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}FOR HER WHOLE
+Dialogue: 0,0:00:49.82,0:00:50.14,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}FACE.
+Dialogue: 0,0:00:50.14,0:00:51.16,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}THEY WERE SAVED
+Dialogue: 0,0:00:51.16,0:00:51.58,LowerThirdYellow,,0,0,0,,{\fscx118\fscy118\t(0,85,\fscx100\fscy100)}FOR HER.

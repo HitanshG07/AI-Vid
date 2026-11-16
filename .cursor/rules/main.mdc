@@ -1,0 +1,5 @@
+---
+description: AI-Vid rules
+alwaysApply: true
+---
+Read and follow AGENTS.md at the repo root. Workflows: .claude/skills/*/SKILL.md. Every story ships MANIFEST.md + Argon handover (docs/ARGON_PIPELINE.md).

@@ -1,0 +1,1 @@
+Start with docs/SETUP_GUIDE.md, then follow AGENTS.md (the full rulebook). Workflows are in .claude/skills/*/SKILL.md (plain markdown, follow them step by step). Every story must ship stories/<ID>/MANIFEST.md (templates/production_manifest_template.md) and an Argon handover package; Argon builds all assets (docs/ARGON_PIPELINE.md). Model tiers: low = Flash, mid/high = Pro.

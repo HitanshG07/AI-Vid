@@ -1,0 +1,19 @@
+# Roblox Story Studio Material Library
+newmtl Glass
+Kd 0.8431 0.9216 0.9608
+Ka 0.1686 0.1843 0.1922
+Ks 0.8500 0.8500 0.8500
+d 0.6000
+
+newmtl GreenLiquid
+Kd 0.5098 0.9020 0.5490
+Ka 0.1020 0.1804 0.1098
+Ks 0.2500 0.2500 0.2500
+d 0.7500
+
+newmtl NeonCrack
+Kd 0.9216 1.0000 0.9216
+Ka 0.1843 0.2000 0.1843
+Ks 1.0000 1.0000 1.0000
+d 1.0000
+
