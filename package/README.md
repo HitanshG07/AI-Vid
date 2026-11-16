@@ -1,3 +1,5 @@
+**NEW: Story 007 full rebuild brief → `argon/S007_WRIST_REWIND_ARGON_BUILD_BIBLE.md`**
+
 # Argon handover package (no videos)
 
 **Latest (start here): `ARGON-003_mia-v2-faceplate-test/ARGON_REPORT_003_mia_v2_and_faceplate_test.md`**: test results for Mia_v2.glb and the faceplate fix; please audit and return ONE clean method.
