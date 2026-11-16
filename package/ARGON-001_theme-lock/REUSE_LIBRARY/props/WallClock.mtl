@@ -1,0 +1,19 @@
+# Roblox Story Studio Material Library
+newmtl ClockRim
+Kd 0.1176 0.1176 0.1176
+Ka 0.0235 0.0235 0.0235
+Ks 0.2500 0.2500 0.2500
+d 1.0000
+
+newmtl ClockFace
+Kd 0.9804 0.9804 0.9608
+Ka 0.1961 0.1961 0.1922
+Ks 0.2500 0.2500 0.2500
+d 1.0000
+
+newmtl RedSecHand
+Kd 0.8627 0.1569 0.1569
+Ka 0.1725 0.0314 0.0314
+Ks 0.2500 0.2500 0.2500
+d 1.0000
+
