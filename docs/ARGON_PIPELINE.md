@@ -38,11 +38,12 @@ Fallback: if Argon can't make something, use Studio MCP (`generate_avatar`, `gen
 8. **Grade presets**, kept in Lighting as named presets:
    | Key | Use | Look |
    |---|---|---|
-   | `G.n` | present / golden hour | warm #FFF4E6, contrast +0.08, sun rays, DOF on extras |
+   | `G.n` | present / golden hour | warm #FFF4E6, contrast +0.08, ClockTime 16.8 long shadows, textured surfaces, DOF on extras |
    | `G.r` | rewind / power | cool cyan #A8C8FF, saturation −0.25 |
    | `G.s` | memory / flashback | sepia #FFDCAA, saturation −0.65, fill ≤0.8 |
    | `G.h` | horror / night | indigo #182038, SpotLight + Beam cones |
    New stories may add a preset (e.g. `G.w` winter). Name it in MANIFEST section B, and Argon adds it.
+   Camera, sound-off and dual-engine rules: see AGENTS.md "Production rules update (2026-11-16, viral research)".
 
 Visual reference: `reference/design_bible/01..05_*.jpg`. Treat 05 as the DO/DON'T board.
 
