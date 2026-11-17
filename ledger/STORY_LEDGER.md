@@ -16,3 +16,4 @@ Every row except `Idea` must have `ledger/verification/<ID>.md`.
 | 008 | 2026-11-15 | Every "Thank You" Floats a Gold Lantern Above Your Roof | Gratitude lanterns | 10,000 anonymous lanterns over woods | Standalone | Generosity without credit | Verified |
 | 009 | 2026-11-15 | Heartbeats Broadcast a Musical Aura | Audible heartbeat aura | Class clown's hidden speaker | Standalone | Loudest people hide heaviest silence | Verified |
 | 010 | 2026-11-15 | Every Door Needs a Happy Memory to Unlock — Ash Storm Hits | Memory-locked doors | Forging a new laugh | 2-Part | Make joy now, don't live in the past | Verified |
+| 011 | 2026-11-17 | In This Beach Town, Your First Brave Act Makes Your Outline Glow Gold | Gold outline on first true bravery | Lifeguard's glow came from calling for help; narrator lights up ringing the shore bell | Standalone | Courage is acting while still scared | Produced (final = take 10, 2026-11-18) |

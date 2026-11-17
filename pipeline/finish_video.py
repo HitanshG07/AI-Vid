@@ -1,7 +1,7 @@
 """Turn a rolled-camera Studio recording into a final 1080x1920 short with voice + burned subtitles.
 
 The cutscene rolls the Roblox camera +90 deg, so the landscape window recording holds a sideways 9:16 frame.
-This script: rotates it upright, centre-crops to 9:16, scales to 1080x1920 @60fps, delays voice + subtitles
+This script: rotates it upright, centre-crops to 9:16, scales to 1080x1920 @30fps, delays voice + subtitles
 by the cutscene lead-in, burns the off-centre .ass subs, and muxes.
 
 Usage:
@@ -11,7 +11,11 @@ import argparse, json, re, subprocess
 from pathlib import Path
 
 SFX_DIR = Path(__file__).resolve().parent.parent / "assets" / "sfx"
-SFX_GAIN = {"tick": 0.25, "ding": 0.3, "piano_note": 0.35, "whoosh": 0.35}  # default 0.45; voice stays on top
+SFX_GAIN = {"tick": 0.25, "ding": 0.3, "piano_note": 0.35, "whoosh": 0.35,  # default 0.45; voice stays on top
+            # owner 2026-11-18: synthesised noise beds read as "static" on phone speakers -> muted (0) or turned well down
+            "waves": 0, "waves_heavy": 0, "crowd_beach": 0, "crowd_cheer": 0, "crickets_waves": 0, "seagulls": 0,
+            "splash": 0.15, "swim_splash": 0.12, "thunder": 0.3, "whoosh_hit": 0.2, "whoosh_rewind": 0.25,
+            "footsteps_sand": 0.15, "footsteps_wood": 0.2, "rope_creak": 0.15}
 
 
 def sfx_cues(beats_json: Path, words_json: Path):
@@ -24,13 +28,17 @@ def sfx_cues(beats_json: Path, words_json: Path):
     for b in beats:
         first = next((norm(x) for x in (b.get("line") or "").split() if norm(x)), None)
         name = b.get("sfx")
-        if not first or not name or not (SFX_DIR / f"{name}.wav").exists():
+        if not first or not name:
+            continue
+        if not (SFX_DIR / f"{name}.wav").exists():
+            print(f"WARNING: beat {b.get('n', '?')}: sfx '{name}' has no assets/sfx/{name}.wav - skipped")
             continue
         j = next((k for k in range(i, len(ws)) if ws[k] == first), None)
         if j is None:
             continue
-        cues.append((words[j]["start"], SFX_DIR / f"{name}.wav", SFX_GAIN.get(name, 0.45)))
         i = j + 1
+        if SFX_GAIN.get(name, 0.45) > 0:  # gain 0 = muted on purpose
+            cues.append((words[j]["start"], SFX_DIR / f"{name}.wav", SFX_GAIN.get(name, 0.45)))
     return cues
 
 
@@ -72,7 +80,7 @@ def main():
     ass = str(subs).replace("\\", "/").replace(":", "\\:")
     vf = (f"transpose={a.transpose},"
           "crop=iw:min(ih\\,iw*16/9):0:(ih-min(ih\\,iw*16/9))/2,"   # centre 9:16 crop
-          "scale=1080:1920:flags=lanczos,fps=60,"
+          "scale=1080:1920:flags=lanczos,fps=30,"   # capture is 30 fps; 60 only duplicated frames
           f"ass='{ass}'")
     ms = int(a.lead * 1000)
     cues = sfx_cues(Path(a.beats), d / "words.json") if a.beats else []

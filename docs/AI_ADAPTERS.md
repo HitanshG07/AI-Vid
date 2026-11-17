@@ -4,6 +4,8 @@
 **Your job:** create the thin config files your tool needs so that `/new-story`, `/produce-video` and `/verify-originality` work for you, the same way they work in Claude Code. Then run the self-test in `docs/SETUP_GUIDE.md` Part 1.
 
 ## The one rule for adapters
+**Start every session by reading `AGENTS.md` and then `docs/HANDOFF.md`** (current story status, next steps, known pitfalls). Every adapter file you create should tell the tool to do the same.
+
 **Never copy workflow content.** The real workflows live in `.claude/skills/<name>/SKILL.md` and the rules live in `AGENTS.md`. Every adapter file you create must be a short pointer ("read and follow X") so there is one source of truth. If you find yourself pasting steps, stop.
 
 Tool config formats change. Before creating files, **check your own tool's current docs** for where rules, slash commands/workflows and MCP servers go. The paths below were correct when written. If yours differ, use your tool's real paths and update the table in this file.
@@ -20,7 +22,7 @@ Create one command/workflow per row, in your tool's format, each containing only
 | `verify-originality` | Read AGENTS.md, then follow `.claude/skills/verify-originality/SKILL.md` step by step. Never skip writing `ledger/verification/<ID>.md`. |
 | `produce-video` | Read AGENTS.md, then follow `.claude/skills/produce-video/SKILL.md` for story ID `<arg>`. Stop if the verification file is not PASS. |
 
-## Step 2: Roles â†’ your models
+## Step 2: Roles → your models
 
 The skills say "spawn researcher/verifier/showrunner/render-qa". Map each role to your tool's models. Role prompts live in `.claude/agents/<role>.md`.
 
@@ -35,7 +37,7 @@ The skills say "spawn researcher/verifier/showrunner/render-qa". Map each role t
 - **If not:** play the role yourself. Read `.claude/agents/<role>.md` before each step and keep the steps and output files identical. The cheaper tier is a cost guideline; the files and checks are mandatory.
 
 ## Step 3: Roblox Studio MCP
-Asset generation and rendering go through the Roblox Studio MCP server (Studio â†’ Assistant â†’ `...` â†’ Manage MCP Servers â†’ enable "Studio as MCP server"). Register that server in your tool's MCP settings, then confirm by calling `get_studio_state` with Studio open. Without it you can still brainstorm, verify, script and do voice/subtitles; tell the user rendering is blocked.
+Asset generation and rendering go through the Roblox Studio MCP server (Studio → Assistant → `...` → Manage MCP Servers → enable "Studio as MCP server"). Register that server in your tool's MCP settings, then confirm by calling `get_studio_state` with Studio open. Without it you can still brainstorm, verify, script and do voice/subtitles; tell the user rendering is blocked.
 
 ---
 
@@ -47,7 +49,7 @@ Asset generation and rendering go through the Roblox Studio MCP server (Studio �
 | Commands | Workflows, run with `/name`: create `.agent/workflows/new-story.md`, `verify-originality.md`, `produce-video.md`, each with a short description frontmatter + the pointer text from Step 1. |
 | Models | Use the Gemini mapping in Step 2. Use the Agent Manager to run researcher work in a separate Flash agent if available. |
 | Browser | Antigravity's built-in browser agent is good for the originality searches (researcher role). Record real URLs only. |
-| MCP | Add the Roblox Studio server via the MCP store / `mcp_config.json` (Agent panel â†’ `...` â†’ MCP Servers). |
+| MCP | Add the Roblox Studio server via the MCP store / `mcp_config.json` (Agent panel → `...` → MCP Servers). |
 
 Example `.agent/workflows/new-story.md`:
 ```markdown
@@ -86,8 +88,8 @@ Rules: `.cursor/rules/main.mdc` (already present). Commands: `.cursor/commands/n
 ## ChatGPT / any chat-only AI (no file access)
 Paste `AGENTS.md`, `docs/ENGAGEMENT_RULES.md`, the ledger, and the relevant `SKILL.md`. Ask it to output each file's contents for you to save. It must actually browse for the originality check; if it can't browse, don't accept a PASS.
 
-## Every tool: Production Manifest + Argon (mandatory)
-Argon builds all assets (`docs/ARGON_PIPELINE.md`). For every story, any AI must output `stories/<ID>_<slug>/MANIFEST.md` from `templates/production_manifest_template.md`, at minute detail with no vague lines:
+## Every tool: Production Manifest + cast builder (mandatory)
+Characters use the locked R6 catalog method (AGENTS.md Asset process); Argon is retired for characters/props/sets (2026-11-17). For every story, any AI must output `stories/<ID>_<slug>/MANIFEST.md` from `templates/production_manifest_template.md`, at minute detail with no vague lines:
 - what each character does
 - where it is set
 - every emotion
@@ -96,7 +98,7 @@ Argon builds all assets (`docs/ARGON_PIPELINE.md`). For every story, any AI must
 - every VFX
 - a beat table every ~1.2–2 s
 
-It must also produce the Argon handover zip (see `.claude/skills/new-story/SKILL.md` step 6c). Chat-only AIs: paste the template and ask for the filled manifest plus `02_ARGON_BUILD_PROMPT_<ID>.txt`.
+It must also produce `engines/roblox/cast_<ID>.luau` (see `.claude/skills/new-story/SKILL.md` step 6c). Chat-only AIs: paste the template and ask for the filled manifest plus the cast table (catalog ids, skin, default face).
 
 ---
 

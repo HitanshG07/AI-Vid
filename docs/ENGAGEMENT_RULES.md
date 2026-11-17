@@ -19,7 +19,8 @@
 Series: Part 1 = hook → rule → personal → escalation, ending at peak crisis with a question line. Middle parts open with a 3s recap and escalate. Final part opens with a 3s recap → twist → resolution → payoff. Times above stretch across the parts.
 
 ## Pacing
-- Cut / camera change every 1.5–2s; something on screen changes every 2–4s.
+- Cut / camera change every 1.2–2s (3s max, same as `docs/LESSONS_LEARNED.md`); something on screen changes every 2–4s.
+- Sound-off: the world rule is visible on screen in every shot where it applies (AGENTS.md), so the video reads muted.
 - SFX beat on every reveal (whoosh, ding, boing, crunch, thud).
 - Short sentences. Spoken words only — no words the viewer must read.
 - Face decal swaps on every emotional shift.

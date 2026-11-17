@@ -14,5 +14,6 @@ Engagement: score scripts with the rubric in docs/ENGAGEMENT_RULES.md. Return 4 
 When scoring a script, also check `MANIFEST.md` against `templates/production_manifest_template.md`. FAIL it if:
 - any section is blank or vague
 - any beat lacks a shot, an action per visible character, or a face
-- any asset lacks size, material, socket or REUSE/NEW
+- any asset lacks size, material, socket or source (Studio-built / Creator Store / REUSE)
+- section C lacks catalog item ids (shirt, pants, hair) per character, or uses a face not in `assets/faces/classic_v1/ids.json`
 List each gap.

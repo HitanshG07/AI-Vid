@@ -26,12 +26,23 @@ def foreground(title):
     ctypes.windll.user32.SetCursorPos(900, 12)  # empty menu bar, outside the viewport
 
 
+class RECT(ctypes.Structure):
+    _fields_ = [("left", ctypes.c_long), ("top", ctypes.c_long), ("right", ctypes.c_long), ("bottom", ctypes.c_long)]
+
+
 def record(seconds, out, title):
     foreground(title)
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "gdigrab", "-framerate", "30", "-draw_mouse", "0",
-                    "-offset_x", str(REGION["x"]), "-offset_y", str(REGION["y"]),
-                    "-video_size", f'{REGION["w"]}x{REGION["h"]}', "-t", str(seconds), "-i", f"title={title}",
-                    "-c:v", "libx264", "-preset", "ultrafast", "-crf", "12", "-pix_fmt", "yuv420p", out], check=True)
+    # Owner rule: lock the mouse at the top (menu bar) for the whole take so it can't wander into the viewport.
+    # ClipCursor confines it to a 1x1 px box; always released in finally (also on Ctrl+C / ffmpeg error).
+    u32 = ctypes.windll.user32
+    u32.ClipCursor(ctypes.byref(RECT(900, 12, 901, 13)))
+    try:
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "gdigrab", "-framerate", "30", "-draw_mouse", "0",
+                        "-offset_x", str(REGION["x"]), "-offset_y", str(REGION["y"]),
+                        "-video_size", f'{REGION["w"]}x{REGION["h"]}', "-t", str(seconds), "-i", f"title={title}",
+                        "-c:v", "libx264", "-preset", "ultrafast", "-crf", "12", "-pix_fmt", "yuv420p", out], check=True)
+    finally:
+        u32.ClipCursor(None)
 
 
 def trim(raw, out):

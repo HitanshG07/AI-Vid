@@ -1,5 +1,5 @@
 # <ID> — <Title> — PRODUCTION MANIFEST
-<!-- Mandatory for every story (AGENTS.md). Zero vagueness: if a reader (Argon, engine AI, auditor) has to guess, it is incomplete.
+<!-- Mandatory for every story (AGENTS.md). Zero vagueness: if a reader (engine AI, auditor) has to guess, it is incomplete.
      Fill EVERY section. Write "none" explicitly rather than leaving blank. Worked example: stories/007_wrist-rewind/MANIFEST.md -->
 
 ## A. Story meta
@@ -7,7 +7,8 @@
 - **World rule:** 
 - **Twist:** 
 - **Core meaning:** 
-- **Cliffhanger / ending plan:** (Part 1 ends ON the person in danger, hard cut, no fade. The final part fades to black.)
+- **Cliffhanger / ending plan:** (Part 1 ends ON the person in danger, hard cut, no fade. The final part may fade only in the ≤0.4 s tail after the last word; the video never ends on a black hold.)
+- **Freshness combo:** rule category · emotion core · setting (AGENTS.md freshness brief; must differ from the last 5 ledger rows)
 - **Hashtags (3–5):** 
 - **Verification:** ledger/verification/<ID>.md (PASS)
 
@@ -34,14 +35,16 @@ One block per character (main, kid/aged variant, every extra):
 | Engine name | Hero / Mia / Extra1 … |
 | Role | who they are to the story |
 | Look | age, scale (kid 0.62 / teen 1.0 / adult 1.08), skin hex, hair, outfit colours, accessories |
-| Source | REUSE <path> / NEW (Argon) |
-| Emotions needed | full list, e.g. Determined, Shocked, Worried, Crying, Happy |
+| Catalog items (R6) | Shirt id, Pants id, Hair id(s), accessory ids (via `AvatarEditorService:SearchCatalog`, Relevance), skin hex, default face |
+| Source | REUSE <path> / NEW (entry in `engines/roblox/cast_<ID>.luau`) |
+| Face set | from `assets/faces/classic_v1/ids.json`: neutral, scared, shocked, grin, determined, proud (new emotions are added to `engines/faces/classic_faces.py`) |
+| Emotions needed | full list, mapped to the face set above |
 | Body states | e.g. hand aging 0→1, sleeves pulled over hands, wet hair |
 | What they do (whole story) | ordered list of every physical action with part + time, e.g. "P1 0.0 taps left wrist with right index finger" |
 | Held props | prop → which hand, when |
 
-## D. Assets & meshes (for Argon)
-| # | Engine name | What / description | Size (studs) | Material · colour | Sub-parts that animate | CanQuery | Placement / socket | Used in (beats) | REUSE path / NEW |
+## D. Assets (Studio-built / Creator Store; Argon retired for 3D 2026-11-17)
+| # | Engine name | What / description | Size (studs) | Material · colour | Sub-parts that animate | CanQuery | Placement / socket | Used in (beats) | Source: Studio-built / Creator Store id (scripts inspected) / REUSE path |
 |---|---|---|---|---|---|---|---|---|---|
 Also list here:
 - face decals/PNGs per character and emotion
@@ -69,7 +72,11 @@ Examples: grade switch, ripple ring, motion streak, smoke, crack, shards, flash,
 - [ ] No cloned or bare extras, no default faces
 - [ ] No prop covers a face (clearShot); held props welded
 - [ ] No overlay hovers off a limb; VFX within the flash caps
-- [ ] Captions 1–3 words, lower third, never end on a function word
-- [ ] Part 1 hard-cuts on the person in danger; final part resolves and fades
-- [ ] Beat sheet (`pipeline/qa_sheet.py`) reviewed by render-qa
-- [ ] Argon handover package built: audits/ARGON-<NNN>_<date>_<ID>_part1of1.zip
+- [ ] Captions 1–3 words, lower or upper third, never end on a function word
+- [ ] Every beat has a `line` whose first word is spoken (qa_sheet and the SFX mixer drop beats without one)
+- [ ] Every `sfx` name exists in `assets/sfx/`
+- [ ] Camera modes in G add up to roughly 60% pushIn / 25% snapOut / 15% impactZoom
+- [ ] World rule visible in every shot where it applies (sound-off)
+- [ ] Part 1 hard-cuts on the person in danger; final part resolves, fades only in the tail, never holds black
+- [ ] Beat sheet (`pipeline/qa_sheet.py`, frames = beats + 1) reviewed by render-qa and saved as `rec/qa_pN.md`; repeated frames <2% on the 30 fps take
+- [ ] Cast builder `engines/roblox/cast_<ID>.luau` written; every face name in G is in `assets/faces/classic_v1/ids.json`

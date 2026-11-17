@@ -1302,6 +1302,25 @@ function M.play(part)
 	print(("[Story007] Part %d done in %.2fs"):format(part, os.clock() - t0))
 end
 
+-- Run after EVERY take (owner rule): undo the vertical-video roll and hand the viewport back to the editor.
+function M.resetCamera()
+	-- Swap in a FRESH camera: Studio's editor default (free right-mouse look). Changing CameraType on the
+	-- old camera is not enough - something (capture tools) can leave it Scriptable and lock the viewport.
+	local old = workspace.CurrentCamera
+	local p, look = old.CFrame.Position, old.CFrame.LookVector
+	local cam = Instance.new("Camera")
+	cam.Name = "Camera"
+	cam.FieldOfView = 70
+	cam.CFrame = CFrame.lookAt(p, p + look, Vector3.yAxis)
+	cam.Focus = CFrame.new(p + look * 20)
+	cam.Parent = workspace
+	workspace.CurrentCamera = cam
+	for _, c in old:GetChildren() do c.Parent = cam end
+	old:Destroy()
+	if PR and PR.Fade then PR.Fade.Transparency = 1 end
+	print("[Story007] camera reset: fresh editor camera, roll 0, FOV 70")
+end
+
 function M.setMode(m) JOINT_MODE = m print("[Story007] JOINT_MODE = " .. m) end
 
 -- Quick check that driving joints moves limbs in Edit mode.

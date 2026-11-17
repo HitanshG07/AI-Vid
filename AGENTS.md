@@ -3,6 +3,7 @@
 This file is the single source of truth. Every agent working in this repo follows it.
 **New here? Do `docs/SETUP_GUIDE.md` first** (setup, self-test, full step-by-step loop).
 **Before any production: read `docs/LESSONS_LEARNED.md`** (hard-won rules: faces, sets, shots, recording).
+**Picking up work in progress? Read `docs/HANDOFF.md`** (current story status, next steps, today's pitfalls).
 **Not Claude Code?** Configure your tool with `docs/AI_ADAPTERS.md` (Antigravity, Codex, Gemini CLI, Cursor, ChatGPT).
 
 ## Mission
@@ -24,7 +25,7 @@ Windows 11 laptop (RTX 4060 8GB, 16GB RAM).
 | 1. Brainstorm 3–5 premises | `/new-story` | Read ledger + TRENDS + `ideas/IDEA_BANK.md`, follow freshness brief below | high |
 | 2. Originality check | `/verify-originality` | Follow `.claude/skills/verify-originality/SKILL.md` exactly | low + mid |
 | 3. Script + beats + **MANIFEST** | `/new-story` (continues) | Fill `templates/script_template.md` + `templates/beats_template.json` + **`templates/production_manifest_template.md` → `stories/<ID>/MANIFEST.md`** | high |
-| 3b. Argon handover | `/new-story` (end) | Zip theme-lock prompt + per-story build prompt + MANIFEST + refs into `audits/ARGON-<NNN>_<date>_<ID>_part1of1.zip` (see docs/ARGON_PIPELINE.md) | low |
+| 3b. Cast builder | `/new-story` (end) | Write `engines/roblox/cast_<ID>.luau` (catalog ids + skin + default face per character) from MANIFEST section C. No Argon handover (retired 2026-11-17) | mid |
 | 4. Engagement score | verifier agent | Score with the rubric in `docs/ENGAGEMENT_RULES.md`; <8 → rewrite | mid |
 | 5. Produce | `/produce-video <ID>` | Follow `.claude/skills/produce-video/SKILL.md` | mid |
 | 6. Log | automatic | Update the story's row status in `ledger/STORY_LEDGER.md` | low |
@@ -43,38 +44,43 @@ Combine one from each list and rotate — never pick the same combo as the last 
 - **Format:** Standalone (≤60s) or 2-Part (Part 1 ends on a cliffhanger).
 
 ## Hard production rules (from benchmarks)
-- Authentic Roblox R6/R15 characters only (imported rigs from `assets/rigs/` first, else exact R6 proportions). No generic primitives.
+- **Characters (LOCKED 2026-11-17, owner-approved):** classic **R6** Roblox avatars (main AND extras) built in Studio with `Players:CreateHumanoidModelFromDescription(desc, Enum.HumanoidRigType.R6)`, dressed with real community catalog items (see Asset process). Faces are our own flat 2D decals (`assets/faces/classic_v1/`). No R15 default rigs, no Argon/mesh/`generate_avatar`/Blender characters, no generic primitives.
 - Render on GPU: Blender EEVEE (`engines/blender/`) and/or Roblox Studio Future lighting via Studio MCP (`engines/roblox/`). No slideshows, no OpenCV boxes.
 - Subtitles lower-third (Y≈82%) or upper-third (Y≈15%) only, 1–3 words per beat. Never dead-center.
 - Natural TTS (Edge-TTS `en-US-AndrewNeural`) + Faster-Whisper word timing via `pipeline/voice_subs.py`.
-- 4-frame QA (10/40/70/90%) before final render.
+- Beat-aligned QA before calling a video done: `pipeline/qa_sheet.py` (one frame per beat + END), checked by render-qa. Uniform 4/10-frame samples are banned (they skipped 63% of shots in story 007; see `docs/LESSONS_LEARNED.md`).
+- Capture is a locked 30 fps (`pipeline/record_take.py`). Never record until the user says "record".
 
 ## Production rules update (2026-11-16, viral research)
-- **Dual-engine rule:** Roblox Studio (MCP) is the primary engine. Blender 4.x/5.x (`bpy`, headless) is allowed alongside it for converting/importing Argon `.glb`/`.obj` meshes and props, headless 1080x1920 renders, and quick check-picture previews. Blender never *designs* characters; characters come from Argon or Studio.
+- **Dual-engine rule:** Roblox Studio (MCP) is the primary engine. Blender 4.x/5.x (`bpy`, headless) is allowed alongside it for converting/importing meshes and props, headless 1080x1920 renders, and quick check-picture previews. Blender never *designs* characters; characters are the locked R6 catalog method (Studio).
 - **3-mode camera mix:** ~60% slow push-ins, ~25% snap pull-outs (close to wide), ~15% impact snap-zooms with a 2.5° Dutch tilt. Cuts every ~1.2–2 s.
 - **Sound-off rule:** the story's world rule must be visible on screen in every shot where it applies (e.g. a counter or number above heads, or aged hands shown), so the video works muted.
 - **Light:** the default present-day grade uses `Lighting.ClockTime = 16.8` (low sun, long shadows) and textured surfaces (brick, wood, wainscot), not flat pastel walls.
 
-## Argon assets + Production Manifest (MANDATORY from story 008)
-- **Argon builds all assets** (characters, extras, props, sets, materials, grade presets) to one locked theme/style: `docs/ARGON_PIPELINE.md` (style lock, grade presets, the Argon prompts). The Studio MCP steps below are the **fallback** only.
+## Production Manifest (MANDATORY from story 008) — Argon retired 2026-11-17
+- **Argon/Gemini no longer builds characters, props or sets.** Every Argon, mesh, `generate_avatar` and Blender character method failed the owner's standard ("look like the Roblox stories out there"). Argon may still be used for optional 2D art only. The Argon handover zip is no longer required (`docs/ARGON_PIPELINE.md` is kept as history).
 - **Every story ships `stories/<ID>_<slug>/MANIFEST.md`** from `templates/production_manifest_template.md`, with zero vagueness. It covers:
   - (A) meta
   - (B) every set: what it looks like, coordinates, lighting/grade
-  - (C) every character: look, skin hex, **what they do** across the story, **every emotion needed**
-  - (D) every asset/mesh: size, material, socket, reuse or new
+  - (C) every character: look, skin hex, catalog item ids, face set, **what they do** across the story, **every emotion needed**
+  - (D) every asset: size, material, socket, source (Studio-built / Creator Store / reuse)
   - (E) every animation
   - (F) every VFX
   - (G) a beat-by-beat table every ~1.2–2 s covering shot, each character's action, face swaps, props, VFX, SFX and grade
   - (H) the QA checklist
-- No production until MANIFEST.md is complete and the verifier passes it. Then Haiku builds the **Argon handover package** for the user (`audits/ARGON-<NNN>_...zip`).
-- Story 007 predates this rule (its assets were already built). It needs no manifest or handover.
+- No production until MANIFEST.md is complete and the verifier passes it.
+- Story 007 predates this rule (its assets were already built). It needs no manifest.
 
-## Asset process (fallback when Argon can't make it; stored here, loaded into Roblox Studio)
-1. **Make** (AI): characters — **main/named characters** via Studio MCP `generate_avatar` (unique, detailed; check they look clean before saving); **bystanders/extras** via a Luau `HumanoidDescription` script (`Players:CreateHumanoidModelFromDescription`) that MUST be fully dressed with real catalog hair, shirt, pants and face (or a full outfit/bundle) — never bare colour-only bodies; vary outfits so crowds don't look cloned. **Characters made by Argon (Gemini) are allowed and preferred** (user rule 2026-11-16: Argon meshes, e.g. the kit's `*_R15_Riggable.obj`). Blender may be used **only to convert/import** Argon meshes (obj→glb), never to design characters itself (AI-designed Blender boxes were rejected 2026-11-15); props/buildings via `generate_mesh` / `generate_procedural_model`; surfaces via `generate_texture` / `generate_material`; face decals as PNGs; maps as Luau builder scripts. Toolbox assets (`search_asset`/`insert_asset`) only if free-to-use, logged with source.
-2. **Store** (this folder, source of truth): `assets/rigs/` (.rbxm exports), `assets/maps/` (Luau builders + .rbxm), `assets/faces/` (PNG), `assets/sfx/`. Every asset gets a row in `assets/INDEX.md` (path, what, how generated, prompt used). Reuse before generating new.
-   **Studio = one job at a time.** Never stack Studio generations or spawn agents to push more of them; a timeout ≠ failure (check Workspace before retrying). Do non-Studio work (voice, subtitles, retiming, SFX, docs) in parallel meanwhile.
-3. **Load** into Studio for each story (MCP `execute_luau` / `insert_asset`), animate from beats.json, record.
-Roblox Studio is the primary engine; Blender is optional/secondary.
+## Asset process (LOCKED 2026-11-17; stored here, loaded into Roblox Studio)
+1. **Characters (main AND extras): classic R6 + catalog items + our own face decals.**
+   - Build with `Players:CreateHumanoidModelFromDescription(desc, Enum.HumanoidRigType.R6)`. R15 default rigs ignore decal faces, so never R15.
+   - Dress with real community catalog items found via `AvatarEditorService:SearchCatalog` (Relevance sort): detailed classic Shirts/Pants, layered hair, themed accessories. They render in Studio without being owned (0 Robux). Pick items that read like the reference shorts (varsity jackets, hoodies, printed tees, swimwear). Never bare default bodies; vary outfits so crowds aren't clones.
+   - Faces: our flat 2D transparent PNG decals from `engines/faces/classic_faces.py` into `assets/faces/classic_v1/` (neutral, scared, shocked, grin, determined, proud), uploaded; ids in `assets/faces/classic_v1/ids.json`. An emotion swap = change the Head's `face` Decal Texture. New emotions are added to that script, never taken from free Creator Store decals.
+   - Per-story cast builder: a Luau module like `engines/roblox/cast_011.luau` (CAST table of catalog ids + skin + default face; `build(name, x, floorY, z, yaw, parent)`; `setFace(model, emotion)`).
+2. **Props, sets, surfaces:** built in Studio from Roblox-native Parts, Terrain and free Creator Store models (inspect every inserted model for scripts; log the source). Maps as Luau builder scripts. Blender only converts/imports meshes. Optional 2D art may come from Argon.
+3. **Store** (this folder, source of truth): `assets/rigs/`, `assets/maps/` (Luau builders + .rbxm), `assets/faces/`, `assets/sfx/`. Every asset gets a row in `assets/INDEX.md` (path, what, how made, source). Reuse before making new.
+   **Studio = one job at a time.** Never stack Studio jobs or spawn agents to push more of them; a timeout ≠ failure (check Workspace before retrying). Do non-Studio work (voice, subtitles, retiming, SFX, docs) in parallel meanwhile.
+4. **Load** into Studio for each story (MCP `execute_luau`), animate from beats.json, record. Roblox Studio is the primary engine; Blender is optional/secondary.
 
 ## Folder map
 ```

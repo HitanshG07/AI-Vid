@@ -7,7 +7,21 @@ Every rule here came from a real failure. Any AI working in this repo follows th
 - Every story needs a clear, earned meaning and a complete ending (series OK; the last part resolves everything). The engagement gate includes a meaning/completeness pass/fail.
 - Write the whole series before production.
 
-## Characters & faces (user taste, locked)
+## Characters & faces: LOCKED METHOD (2026-11-17, owner-approved after a side-by-side test in Studio)
+Classic R6 + real catalog clothing/hair + our own flat 2D decal faces. Full method: AGENTS.md "Asset process". This SUPERSEDES the "user taste, locked" block below.
+- **Findings:**
+  1. R15 default rigs ignore decal faces (dynamic head), so use R6.
+  2. Free Creator Store face decals are mostly unusable (opaque white or fake checkerboard backgrounds). Draw our own: `engines/faces/classic_faces.py` -> `assets/faces/classic_v1/` (`ids.json` has the uploaded ids). New emotions go into that script.
+  3. Anchor ONLY `HumanoidRootPart`. Anchoring accessory handles detaches the hair.
+  4. Floor-snap by the lowest body part, not the bounding box (accessories skew it).
+  5. A Creator Store Decal asset id is not its image id. Resolve with `game:GetObjects("rbxassetid://<id>")[1].Texture`.
+  6. Catalog Face items are not searchable via `SearchCatalog`.
+- **Clothing/hair** come from `AvatarEditorService:SearchCatalog` (Relevance sort), 0 Robux because Studio renders them unowned. Pick detailed classic Shirts/Pants and layered hair that read like the reference shorts. Never bare default bodies.
+- **Per-story cast builder:** `engines/roblox/cast_<ID>.luau` (see `cast_011.luau`): `build(name, x, floorY, z, yaw, parent)` and `setFace(model, emotion)`.
+- **Argon/Gemini no longer builds characters, props or sets**; every Argon/mesh/`generate_avatar`/Blender character attempt failed the owner's standard. Sets use Roblox-native Parts, Terrain and free Creator Store models (inspect for scripts, log source).
+- **After EVERY recording take, reset the Studio camera** (roll 0, FOV 70, by swapping in a FRESH editor camera (free right-mouse look; changing CameraType alone can leave it locked)) before doing anything else.
+
+## Characters & faces (user taste, locked): SUPERSEDED 2026-11-17 by the locked method above (kept as history; skin-tone identity still applies)
 - Main characters: Studio `generate_avatar` (`pipelineName "npc"`). Bystanders: dressed `HumanoidDescription` (never colour-only bodies). **Never Blender characters.**
 - Faces: ONE art style for the whole series, the AI "v1" style (`assets/faces/STYLE.md`): semi-realistic cartoon, bold lines, soft shading. Not stock smileys, not human-realistic (dynamic FaceControls looked creepy). Don't mix with catalog decals.
 - Make only the emotions the beats use: 2 takes each, 4 `generate_texture` jobs in parallel max, pick the cleanest.
@@ -16,6 +30,7 @@ Every rule here came from a real failure. Any AI working in this repo follows th
 - Grey/untextured characters = textures failed to load (HTTP 503). Refresh every SurfaceAppearance map (set it to "" and back) after every Studio restart, before recording.
 
 ## Sets (must look like a real Roblox game)
+- (2026-11-17: sets are now built from native Parts/Terrain/Creator Store models; the AI-generated-set notes below are history, the audit rules still apply.)
 - AI-generated sets often come in **10 studs under the baseplate**: raise them so the bottom is at y≈0.05.
 - Audit every set for **missing walls, ceilings, gaps and doors to nowhere**, and look out of the windows (no grey grid: lawn plus blocky trees).
 - Realistic AI meshes (e.g. the old grandma room) get rebuilt from classic Parts.
@@ -43,7 +58,16 @@ Every rule here came from a real failure. Any AI working in this repo follows th
 - Vertical trick: roll the camera +90°, record the landscape viewport, then `transpose=2`. Native width = viewport HEIGHT, so trim Studio's chrome (collapse the ribbon, close the command bar, collapse the side panels) to get ≥968 px. Then centre-crop to 9:16 and scale to 1080x1920.
 - Park the mouse cursor before each take in the EMPTY MENU-BAR area at the top of the Studio window (e.g. screen x≈900, y≈12, right of "Help"), outside the 3D viewport so it causes no hover outlines. NEVER the bottom/corner: it pops up the Windows taskbar.
 - Nobody touches Studio during a take (that caused freezes). Clear the Selection first (outlines show up in the video).
-- **Accept a take only if:** near-identical consecutive frames <2% (tblend+signalstats), no freeze except the intended end hold, and every beat frame passes the visual check.
+- **Accept a take only if:** near-identical consecutive frames <2% (tblend+signalstats), no freeze except the intended end hold, and every beat frame passes the visual check. Measure on the **trimmed 30 fps take** (`rec/pN.mp4`), not the final: any fps upsampling in finishing duplicates frames by design. Command:
+  `ffmpeg -i rec/pN.mp4 -vf "tblend=all_mode=difference,signalstats,metadata=print:key=lavfi.signalstats.YAVG:file=rec/pN_yavg.txt" -f null -` then count frames with YAVG < 0.5 (starting threshold; calibrate once on the accepted story 007 take). Paste the ratio into the QA note.
+- **R6 catalog rigs pivot on the HEAD** (`CreateHumanoidModelFromDescription` sets PrimaryPart = Head). Any tilt (swimming, lying, falling) rotates the body around the head: place the head where it must be (swim: just above the water, yaw flipped 180°, pitch +100°; chest-deep float: head 1.15×scale above water). Tilting "forward" with a negative pitch flips the body legs-up.
+- **Water must be deep and fairly opaque for swim shots:** a gentle sand slope leaves inches of water near shore (swimmers lie on sand), and WaterTransparency 0.6 shows submerged limbs as if on top. Use a steep shore (≥4 studs deep within 1–2 studs of the waterline; `Terrain:ReplaceMaterial` Sand→Water) and WaterTransparency ≈ 0.12.
+- **White-hair flash at a cut-in = unloaded texture.** Characters not drawn for a while lose their (legacy SpecialMesh) hair/clothing textures and render white for ~0.4 s when they cut into a close-up. Fix that works: run `engines/roblox/texture_keepers.luau` right before every take — tiny copies of the cast drawn in a 3×3-px ViewportFrame at the far-left viewport edge (removed by the 9:16 crop). Opaque 3D copies at the frame edge showed in the video; 97%-transparent copies did not keep textures loaded. (Rosa's 16.8 s flash in story 011 persisted with keepers and with a different hair item — a separate, still-unknown cause.)
+- **Bright glowing VFX discs read as a blown-out sun** (story 011's bell shockwave ring). Keep VFX thin/translucent or drop them.
+- Takes are deterministic and word-synced: fixing one shot can be done by **splicing the same seconds from another take on exact shot cuts** (`ffmpeg ... select='gt(scene,0.25)'` to find the cut frames) — check the cast looks identical in both takes.
+- **Real R6 animations work in Edit mode**: `Animator:LoadAnimation` + `track:Play()` + `animator:StepAnimations(dt)` every frame (walk 180426354, idle 180435571). Use them for walk/run/idle; procedural limb swings looked stiff (owner, take 1 of story 011).
+- `record_take.py` locks the mouse at the top menu bar (ClipCursor 1×1 px at 900,12) for the whole take and always releases it afterwards, so the cursor can never drift into the viewport (owner rule 2026-11-17).
+- Roblox's own Video Captures feature is beta and records only ~30 s (Creator Hub, 2026-11), so gdigrab stays the capture route.
 - Finish with `pipeline/finish_video.py` (rotate, crop, scale, shift subs by the lead-in, mux voice).
 
 ## QA loop (works)
@@ -52,7 +76,7 @@ Every rule here came from a real failure. Any AI working in this repo follows th
 ## Delivery (from the external QA audit, verified)
 - **Never end on black.** Cut at the last spoken word (+~0.3s) on the final image: `finish_video.py --end <s>`. Black tails make viewers swipe before the loop.
 - **Script-locked subtitles.** Whisper mishears homophones/numbers ("FOR TAPS" vs "FOUR TAPS"). `voice_subs.py` passes the script as `initial_prompt` and `script_lock()` takes each word's spelling from the script when word counts match. Check numbers in the subs before publishing.
-- Audio is normalised in `finish_video.py` (loudnorm, ≈-16 LUFS measured).
+- Audio is normalised in `finish_video.py` (`loudnorm=I=-14:TP=-1.5`; an earlier note said ≈-16, the code is the truth).
 - Verify every external QA claim against the EXACT timestamp it cites, never against a coarse sheet. We once dismissed the "Hero's arm across Mia's neck at P2 0:38.5" claim because the 10-frame sheet skipped that shot. It was real.
 - **Sound design is mandatory.** Every beat's `sfx` in beats_*.json gets mixed. Generate the library with `python pipeline/make_sfx.py` (assets/sfx/*.wav), then pass `--beats beats_pN.json` to `finish_video.py`. Each cue is snapped to the moment its line is actually spoken. A dry TTS-only track is a fail.
 

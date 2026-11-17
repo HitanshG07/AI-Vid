@@ -1,4 +1,7 @@
-# Argon Asset Pipeline (all AIs follow this)
+# Argon Asset Pipeline (HISTORY: retired for characters, props and sets on 2026-11-17)
+
+> **RETIRED 2026-11-17.** Argon/Gemini no longer builds characters, props or sets, and the per-story Argon handover zip is no longer required. Every Argon mesh, `generate_avatar`, face-plate and Blender character method failed the owner's standard ("look like the Roblox stories out there"). The locked method is classic R6 + catalog items + our own 2D face decals (`AGENTS.md` "Asset process", `docs/LESSONS_LEARNED.md`, owner decisions D1/D2 in `docs/ADOPTION_GUIDE_2026-11-17.md`). Argon may still supply optional 2D art. The grade presets, official lighting values and flash caps below remain valid; the rest is kept as history.
+
 
 From 2026-11-16, **Argon builds every asset**: characters, extras, props, sets, materials, lighting and grade presets.
 It also keeps **one locked theme/style** across all stories. AIs do not hand-build assets any more. They write a complete
@@ -43,6 +46,13 @@ Fallback: if Argon can't make something, use Studio MCP (`generate_avatar`, `gen
    | `G.s` | memory / flashback | sepia #FFDCAA, saturation −0.65, fill ≤0.8 |
    | `G.h` | horror / night | indigo #182038, SpotLight + Beam cones |
    New stories may add a preset (e.g. `G.w` winter). Name it in MANIFEST section B, and Argon adds it.
+   **Official Roblox reference values** (Creator Hub Future-lighting tutorials, read 2026-11-17). Use them as the starting point when Argon or a MANIFEST defines a new set's base lighting; our ClockTime 16.8 rule (AGENTS.md) still wins over the tutorials' 17 / 15.6:
+   - `Lighting.LightingStyle = Realistic` (default Soft); Realistic also gives local lights precise shadows. EnvironmentDiffuseScale and EnvironmentSpecularScale = 1.
+   - To brighten, raise `ExposureCompensation` (indoor tutorial: 0.5), not `Brightness`; it keeps dark areas from washing out.
+   - Indoor warm reference: Ambient 83,70,57 · Atmosphere Density 0.5 · SunRays Intensity 0.023, Spread 0.266 · ColorCorrection Contrast 0.05, Saturation 0.1 · walls at least 1 stud thick (sample 2.5).
+   - Outdoor reference: Ambient/OutdoorAmbient 156,136,176 · Atmosphere Haze 1, Density ~0.3, Color 85,78,54 (Glare and Decay show only when Haze > 0).
+   - Practical lights: candle PointLight Brightness 0.7, colour 255,202,156, shadows on; desk SpotLight Angle 140, Brightness 4, Range 12.
+   Flash/VFX caps above still apply on top of any base look.
    Camera, sound-off and dual-engine rules: see AGENTS.md "Production rules update (2026-11-16, viral research)".
 
 Visual reference: `reference/design_bible/01..05_*.jpg`. Treat 05 as the DO/DON'T board.

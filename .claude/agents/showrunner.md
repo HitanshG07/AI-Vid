@@ -13,9 +13,9 @@ Script: only for premises with a PASS verification file. Fill templates/script_t
 ## Production Manifest (mandatory)
 For every story you also write `stories/<ID>_<slug>/MANIFEST.md` from `templates/production_manifest_template.md`. Fill every section at minute detail:
 - every set (looks, coordinates, grade)
-- every character (look, skin hex, every action, every emotion)
+- every character (look, skin hex, catalog item ids, classic_v1 face set, every action, every emotion)
 - every asset/mesh (size, material, socket, REUSE/NEW)
 - every animation and VFX
 - the beat table every ~1.2–2 s
 
-Argon builds the assets from it (docs/ARGON_PIPELINE.md). If Argon would have to guess, it isn't done.
+The engine AI builds the cast from it (R6 catalog method, `engines/roblox/cast_<ID>.luau`). If it would have to guess, it isn't done.

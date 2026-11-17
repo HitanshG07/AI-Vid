@@ -29,7 +29,7 @@ Shortcut: `powershell -ExecutionPolicy Bypass -File setup.ps1` does steps 2, 4, 
 
 **Pipeline self-test (must pass before any real work):**
 ```powershell
-ffmpeg -y -f lavfi -i color=c=gray:s=1080x1920:r=60:d=6 stories/_test/raw.mp4
+ffmpeg -y -f lavfi -i color=c=gray:s=1080x1920:r=30:d=6 stories/_test/raw.mp4
 python pipeline/voice_subs.py --story-dir stories/_test --text "In this town, every shadow has real weight." --raw-video stories/_test/raw.mp4
 ffmpeg -y -ss 1.5 -i stories/_test/final.mp4 -frames:v 1 stories/_test/qa.png
 ```
@@ -98,33 +98,21 @@ Search for formats/themes currently booming in Roblox story shorts ("in this tow
 Create `stories/<ID>_<kebab-slug>/` containing:
 - `script.md` from `templates/script_template.md` (format, style ref, subtitle style, core meaning, narration, SFX cues)
 - `narration.txt`: plain narration only, ~150–175 words per ≤60s part (series: narration_p1.txt, narration_p2.txt...), 1st person, no tags
-- `beats.json` from `templates/beats_template.json`: a shot every 1.5–2s with camera, face, action, vfx, sfx, line
+- `beats.json` from `templates/beats_template.json`: a shot every 1.2–2s with camera, face, action, vfx, sfx, line
 
 Follow `docs/ENGAGEMENT_RULES.md`: hook in under 1s, show the rule, make it personal, escalate, a fair twist that uses the rule, a one-line payoff. For a 2-part story, Part 1 ends at peak crisis.
 
 ### Step 4: Engagement score (verifier)
 Score hook, pacing, twist and payoff 1–10. Average < 8 → give concrete fixes → showrunner rewrites (max 2 rounds). Write the scores into `script.md`. Ledger status → `Scripted`, and remove the premise from IDEA_BANK.
 
-### Step 5: Assets (AI-made → stored here → loaded into Studio)
-1. Check `assets/INDEX.md` for anything reusable (characters, map, faces, SFX).
-2. Generate what's missing with the Studio MCP tools:
-   - characters: `generate_avatar` (authentic R6/R15 look; never generic primitives)
-   - props/buildings: `generate_mesh`, `generate_procedural_model`
-   - surfaces: `generate_texture`, `generate_material`
-   - maps: write a Luau builder script → `assets/maps/<name>.luau`
-   - Toolbox (`search_asset` / `insert_asset`): only free-to-use items, with the source logged
-3. Export/save each asset into `assets/rigs|maps|faces|sfx/`. Add a row to `assets/INDEX.md`: path, type, description, tool + exact prompt, source/license.
+### Step 4b: MANIFEST + cast builder (showrunner, verifier)
+Follow `.claude/skills/new-story/SKILL.md` steps 5b–6c: `MANIFEST.md`, the verifier's manifest gate, then the cast builder `engines/roblox/cast_<ID>.luau` (locked R6 catalog method, AGENTS.md Asset process). Argon is retired for characters/props/sets (2026-11-17). Log every asset in `assets/INDEX.md`.
 
-### Step 6: Produce (follow `.claude/skills/produce-video/SKILL.md`)
-1. Voice + subtitles (researcher can run it):
-   `python pipeline/voice_subs.py --story-dir stories/<ID>_<slug> --style <LowerThirdWhite|LowerThirdYellow|UpperThirdWhite>`
-   → voice.mp3, words.json, subs.ass
-2. Retime beats.json to the words.json timings.
-3. Render in **Roblox Studio** (primary): load the map + characters via MCP (`execute_luau`, `insert_asset`), use `engines/roblox/RobloxStudio_MovieCutscene_Engine.luau` as the base, set `Lighting.Technology = Future`, animate from beats.json, record 1080x1920 at 60fps → `render.mp4`.
-   *Blender (optional):* the template in `engines/blender/` is a helper library only. Write `stories/<ID>_<slug>/scene.py` that imports it and builds the scene, then run `blender -b -P stories/<ID>_<slug>/scene.py`.
-4. QA (render-qa): extract frames at 10/40/70/90% (`ffmpeg -ss <t> -i render.mp4 -frames:v 1 qa_<n>.png`). Check characters are visible and lit, the camera doesn't clip, and subtitles are off-center and don't cover faces. Fix and re-render until it passes.
-5. Mux: `python pipeline/voice_subs.py --story-dir stories/<ID>_<slug> --style <style> --raw-video stories/<ID>_<slug>/render.mp4` → `final.mp4`
-6. Ledger status → `Produced`. After upload → `Posted`.
+### Step 5: Produce
+Follow `.claude/skills/produce-video/SKILL.md` exactly. It is the only production procedure (voice, SFX, Studio setup, 30 fps record on the user's command, `finish_video.py`, beat-aligned QA). An earlier version of this guide had its own steps (60 fps render, 4-frame QA, muxing with `voice_subs.py --raw-video`); those were superseded by story 007 and must not be used, because they skip the SFX mix, the lead-in shift, the end trim and beat QA.
+
+### Step 6: Log
+Ledger status → `Produced`. After upload → `Posted`.
 
 ---
 
@@ -134,7 +122,8 @@ Score hook, pacing, twist and payoff 1–10. Average < 8 → give concrete fixes
 - [ ] Authentic Roblox characters, no primitives
 - [ ] GPU render (Studio Future / Blender EEVEE). No slideshow, no OpenCV
 - [ ] Subtitles lower or upper third, 1–3 words per beat
-- [ ] 4-frame QA passed
+- [ ] MANIFEST.md passed the verifier's manifest gate
+- [ ] Beat-aligned QA passed and saved (`rec/qa_pN.md`: per-beat PASS, repeated frames <2%, captions spelled per the script)
 - [ ] New assets logged in `assets/INDEX.md`
 - [ ] Ledger status updated
 
@@ -145,5 +134,5 @@ Score hook, pacing, twist and payoff 1–10. Average < 8 → give concrete fixes
 - Custom Claude Code agents/skills appear only after restarting Claude Code in this folder.
 
 
-## Argon + Production Manifest (from story 008)
-Argon builds all assets. Every story's `/new-story` run ends with `MANIFEST.md` and `audits/ARGON-<NNN>_..._part1of1.zip`. Give the zip to Argon: paste 01, then 02, then export to the listed paths. Then run `/produce-video`. Details: docs/ARGON_PIPELINE.md.
+## Production Manifest + cast builder (from story 008)
+Characters are classic R6 avatars with catalog items and our 2D face decals; sets come from Studio parts and Creator Store models. Every story's `/new-story` run ends with `MANIFEST.md` and `engines/roblox/cast_<ID>.luau`. No Argon zip (retired 2026-11-17; history in docs/ARGON_PIPELINE.md). Then run `/produce-video`.
