@@ -1,13 +1,13 @@
-# YouTube channel — Rulebound Tales
+# YouTube channel — StudVerse Tales
 
 Set up 2026-11-18. Availability of the handle was not verifiable from here — YouTube checks it live when you set it.
 
 | Field | Value |
 |---|---|
-| Channel name | **Rulebound Tales** |
-| Handle | **@RuleboundTales** |
-| Channel URL | **https://www.youtube.com/@RuleboundTales** |
-| Backups if taken | Glowline Tales (@GlowlineTales) · Tiny Rules Stories (@TinyRulesStories) |
+| Channel name | **StudVerse Tales** (owner's account name) |
+| Handle | **@StudVerseTales** |
+| Channel URL | **https://www.youtube.com/@StudVerseTales** |
+| Backup handles if taken | @StudVerseStories · @StudVerse.Tales |
 | Banner | `branding/banner_2560x1440.png` (text inside the 1546x423 safe area) |
 | Profile picture | `branding/profile_800x800.png` |
 | Regenerate art | `python branding/make_branding.py` |
@@ -15,9 +15,9 @@ Set up 2026-11-18. Availability of the handle was not verifiable from here — Y
 Keep "Roblox" out of the channel name/handle (Roblox brand guidelines); it is fine in titles, descriptions and tags.
 
 ## Channel description
-In this world, every rule has a story.
+One world. One rule. One story.
 
-Rulebound Tales makes short Roblox stories set in worlds with one strange rule — outlines that glow when you're brave, numbers above heads, wishes with a price. Every story is original, has a real ending, and leaves you with something to think about.
+StudVerse Tales makes short Roblox stories set in worlds with one strange rule — outlines that glow when you're brave, numbers above heads, wishes with a price. Every story is original, has a real ending, and leaves you with something to think about.
 
 New shorts every week. Multi-part stories always get finished.
 

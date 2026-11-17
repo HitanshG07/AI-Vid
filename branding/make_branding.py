@@ -1,9 +1,9 @@
-"""Make the YouTube channel art for Rulebound Tales (original, Rs 0).
+"""Make the YouTube channel art for StudVerse Tales (original, Rs 0).
 
 Usage: python branding/make_branding.py
-Writes branding/banner_2560x1440.png (YouTube banner; all text inside the 1546x423 safe area that shows on every device)
-and branding/profile_800x800.png (round-cropped by YouTube): a classic blocky head wearing our own grin face
-(assets/faces/classic_v1/grin.png) with the gold "brave" outline from story 011.
+Writes branding/banner_2560x1440.png (YouTube banner; title inside the 1546x423 safe area that shows on every device)
+and branding/profile_800x800.png (YouTube crops it to a circle): a classic blocky head with our own grin face
+(assets/faces/classic_v1/grin.png) and the gold "brave" outline from story 011, on a studded brick.
 """
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
@@ -13,6 +13,8 @@ OUT = ROOT / "branding"
 FONT_TITLE = "C:/Windows/Fonts/impact.ttf"
 FONT_TAG = "C:/Windows/Fonts/seguibl.ttf"
 GOLD, GOLD_HOT = (255, 200, 60), (255, 236, 150)
+NAME = "STUDVERSE TALES"
+TAGLINE = "One world. One rule. One story."
 
 
 def gradient(w, h, top, bottom):
@@ -21,57 +23,102 @@ def gradient(w, h, top, bottom):
     for y in range(h):
         k = y / (h - 1)
         d.line([(0, y), (w, y)], fill=tuple(int(a + (b - a) * k) for a, b in zip(top, bottom)))
-    return im
+    return im.convert("RGBA")
 
 
-def glow_text(base, xy, text, font, fill, glow, radius=18, anchor="mm"):
+def studs(im, box, colour, pitch=64, r=20):
+    """Classic brick studs: a light top disc with a darker rim, on a grid."""
+    d = ImageDraw.Draw(im)
+    x0, y0, x1, y1 = box
+    dark = tuple(max(0, c - 40) for c in colour)
+    light = tuple(min(255, c + 30) for c in colour)
+    y = y0 + pitch // 2
+    while y < y1:
+        x = x0 + pitch // 2
+        while x < x1:
+            d.ellipse([x - r, y - r + 6, x + r, y + r + 6], fill=dark)
+            d.ellipse([x - r, y - r, x + r, y + r], fill=light)
+            x += pitch
+        y += pitch
+
+
+def glow_text(base, xy, text, font, fill, glow, radius=18, stroke=7):
     layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
-    ImageDraw.Draw(layer).text(xy, text, font=font, fill=glow, anchor=anchor, stroke_width=10, stroke_fill=glow)
+    ImageDraw.Draw(layer).text(xy, text, font=font, fill=glow, anchor="mm", stroke_width=14, stroke_fill=glow)
     base.alpha_composite(layer.filter(ImageFilter.GaussianBlur(radius)))
-    d = ImageDraw.Draw(base)
-    d.text(xy, text, font=font, fill=fill, anchor=anchor, stroke_width=6, stroke_fill=(40, 25, 10))
+    ImageDraw.Draw(base).text(xy, text, font=font, fill=fill, anchor="mm", stroke_width=stroke, stroke_fill=(35, 22, 8))
+
+
+def blocky(d, x, ground, s, body, outline=None):
+    """Simple R6 silhouette (head, torso, arms, legs); optional gold 'brave' outline."""
+    parts = [
+        (x + 10 * s, ground - 100 * s, x + 42 * s, ground - 70 * s),   # head
+        (x, ground - 68 * s, x + 52 * s, ground - 32 * s),             # torso
+        (x - 22 * s, ground - 68 * s, x - 2 * s, ground - 34 * s),     # left arm
+        (x + 54 * s, ground - 68 * s, x + 74 * s, ground - 34 * s),    # right arm
+        (x + 2 * s, ground - 32 * s, x + 24 * s, ground),              # left leg
+        (x + 28 * s, ground - 32 * s, x + 50 * s, ground),             # right leg
+    ]
+    if outline:
+        for p in parts:
+            d.rectangle([p[0] - 6, p[1] - 6, p[2] + 6, p[3] + 6], fill=outline)
+    for p in parts:
+        d.rectangle(p, fill=body)
 
 
 def banner():
     W, H = 2560, 1440
-    im = gradient(W, H, (70, 150, 220), (255, 185, 120)).convert("RGBA")
+    im = gradient(W, H, (64, 140, 230), (255, 178, 110))
+    # low sun with soft halo
+    halo = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    hd = ImageDraw.Draw(halo)
+    hd.ellipse([1720, 520, 2360, 1160], fill=(255, 220, 150, 120))
+    hd.ellipse([1880, 680, 2200, 1000], fill=(255, 244, 200, 255))
+    im.alpha_composite(halo.filter(ImageFilter.GaussianBlur(30)))
     d = ImageDraw.Draw(im)
-    # low sun + sea + sand band (behind the safe area so it reads on TV and phone crops alike)
-    sun = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    ImageDraw.Draw(sun).ellipse([1880, 760, 2200, 1080], fill=(255, 240, 190, 255))
-    im.alpha_composite(sun.filter(ImageFilter.GaussianBlur(6)))
-    d.rectangle([0, 900, W, 1040], fill=(40, 150, 175))
-    d.rectangle([0, 1040, W, H], fill=(232, 200, 150))
-    # row of blocky silhouettes, all gold-outlined except one (the story-011 world rule)
-    x = 260
-    for i in range(14):
-        h = 150 if i % 3 else 120
-        top = 1040 - h
-        col = (40, 40, 60) if i != 9 else (70, 70, 90)
-        body = [x, top + 40, x + 46, 1040]
-        head = [x + 6, top, x + 40, top + 36]
-        if i != 9:
-            for box in (body, head):
-                d.rectangle([box[0] - 5, box[1] - 5, box[2] + 5, box[3] + 5], fill=GOLD)
-        d.rectangle(body, fill=col)
-        d.rectangle(head, fill=col)
-        x += 150
-    # safe area 1546x423 centred
+    # sea, then a studded green baseplate as the ground
+    d.rectangle([0, 900, W, 1010], fill=(36, 140, 170))
+    d.rectangle([0, 1010, W, H], fill=(86, 170, 70))
+    studs(im, (0, 1010, W, H), (86, 170, 70), pitch=72, r=22)
+    d = ImageDraw.Draw(im)
+    # a crowd of blocky characters, all glowing gold except one (story 011's world rule)
+    cols = [(230, 90, 90), (70, 140, 230), (250, 200, 60), (120, 200, 120), (240, 160, 210), (160, 110, 230)]
+    x, i = 120, 0
+    while x < W - 100:
+        s = 1.6 if i % 2 else 1.35
+        unlit = i == 8
+        blocky(d, x, 1012, s, (60, 60, 75) if unlit else cols[i % len(cols)], None if unlit else GOLD)
+        x += int(170 * s * 0.75) + 30
+        i += 1
+    # title + tagline inside the safe area (centre 1280x720, 1546x423)
     cx, cy = W // 2, H // 2
-    glow_text(im, (cx, cy - 55), "RULEBOUND TALES", ImageFont.truetype(FONT_TITLE, 190), (255, 255, 255), GOLD + (230,))
-    glow_text(im, (cx, cy + 105), "In this world, every rule has a story.", ImageFont.truetype(FONT_TAG, 62),
-              GOLD_HOT, (0, 0, 0, 160), radius=10)
+    plate = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(plate).rounded_rectangle([cx - 780, cy - 190, cx + 780, cy + 170], 60, fill=(20, 20, 40, 120))
+    im.alpha_composite(plate.filter(ImageFilter.GaussianBlur(4)))
+    glow_text(im, (cx, cy - 50), NAME, ImageFont.truetype(FONT_TITLE, 200), (255, 255, 255), GOLD + (235,))
+    glow_text(im, (cx, cy + 105), TAGLINE, ImageFont.truetype(FONT_TAG, 64), GOLD_HOT, (0, 0, 0, 150), radius=8, stroke=4)
     im.convert("RGB").save(OUT / "banner_2560x1440.png", optimize=True)
 
 
 def profile():
     S = 800
-    im = gradient(S, S, (70, 150, 220), (255, 185, 120)).convert("RGBA")
+    im = gradient(S, S, (64, 140, 230), (255, 178, 110))
+    # studded brick behind the head
+    brick = (220, 60, 60)
     d = ImageDraw.Draw(im)
-    pad = 150
-    head = [pad, pad + 40, S - pad, S - pad + 40]
-    d.rounded_rectangle([head[0] - 22, head[1] - 22, head[2] + 22, head[3] + 22], 90, fill=GOLD)
-    d.rounded_rectangle(head, 70, fill=(245, 205, 60))
+    d.rectangle([0, 560, S, S], fill=brick)
+    studs(im, (0, 560, S, S), brick, pitch=100, r=30)
+    d = ImageDraw.Draw(im)
+    # head with gold glow + outline
+    head = [170, 140, 630, 600]
+    glow = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    ImageDraw.Draw(glow).rounded_rectangle([head[0] - 40, head[1] - 40, head[2] + 40, head[3] + 40], 120, fill=GOLD + (200,))
+    im.alpha_composite(glow.filter(ImageFilter.GaussianBlur(28)))
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle([head[0] - 16, head[1] - 16, head[2] + 16, head[3] + 16], 96, fill=GOLD)
+    d.rounded_rectangle(head, 84, fill=(248, 210, 70))
+    # head stud on top (classic Roblox head)
+    d.rounded_rectangle([330, 96, 470, 150], 18, fill=(228, 190, 55))
     face_png = ROOT / "assets" / "faces" / "classic_v1" / "grin.png"
     if face_png.exists():
         face = Image.open(face_png).convert("RGBA").resize((head[2] - head[0], head[3] - head[1]), Image.LANCZOS)

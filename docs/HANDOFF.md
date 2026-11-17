@@ -23,7 +23,7 @@ Last updated 2026-11-17. Read `AGENTS.md` first (rules), then this file (where t
 | Known flaw in final | Rosa's hair flashes white ~0.2 s at 16.8 s (cause unknown; not texture loading, not the hair item) | — |
 
 ## Channel
-YouTube channel **Rulebound Tales** (@RuleboundTales). Everything for the channel and per-video uploads (description, keywords, upload template, story 011 title/description) is in `branding/CHANNEL.md`; banner + profile art in `branding/` (regenerate with `python branding/make_branding.py`).
+YouTube channel **StudVerse Tales** (@StudVerseTales). Everything for the channel and per-video uploads (description, keywords, upload template, story 011 title/description) is in `branding/CHANNEL.md`; banner + profile art in `branding/` (regenerate with `python branding/make_branding.py`).
 
 ## Status 2026-11-18
 Story 011 is **DONE** (owner-approved final = take 10, `stories/011_brave-glow/011_brave-glow_FINAL.mp4`). The steps below are kept as the record of how it was finished; the next job is **story 012** via `/new-story` (or `.claude/skills/new-story/SKILL.md`), reusing `engines/roblox/story011_cutscene.luau` and `cast_011.luau` as templates and running `engines/roblox/texture_keepers.luau` before every take.
