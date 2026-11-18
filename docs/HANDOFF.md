@@ -42,6 +42,7 @@ Story 011 is **DONE** (owner-approved final = take 10, `stories/011_brave-glow/0
 5. Only record when the owner has said to (`record`).
 
 ## Pitfalls that cost hours today (also in LESSONS)
+- **Owner-only changes (2026-11-18):** never change the workflow, rules, skills, agents, templates, pipeline scripts, engine code, cast/face assets or ledger rows, and never delete or move files, unless the owner explicitly directs that specific change. A trial run once deleted story 007 and edited the ledger unasked. Propose changes and wait.
 - **Never put a `--` comment in the middle of a Luau expression** (e.g. `a or -- note b`): it comments out the rest of the line. Several engine reloads failed this way.
 - R6 catalog rigs **pivot on the Head** (PrimaryPart = Head): tilting a model rotates it around the head. Don't build lying/sitting/swimming poses by tilting; keep characters upright (swim = upright chest-deep).
 - Use real R6 AnimationTracks (`Animator:StepAnimations(dt)` each frame in Edit mode) for walk/run/idle; hand-built limb swings look stiff.

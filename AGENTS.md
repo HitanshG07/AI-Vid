@@ -12,12 +12,13 @@ Produce **original, high-retention Roblox story shorts** (1080x1920, 30 FPS lock
 for YouTube Shorts / Instagram Reels / TikTok, as automated as possible, at ₹0 extra cost, on a local
 Windows 11 laptop (RTX 4060 8GB, 16GB RAM).
 
-## The 4 golden rules
+## The 5 golden rules
 1. **Stories are never copied.** Every premise (world rule + twist) is web-verified and the evidence is saved in
    `ledger/verification/<ID>.md` before any script is written. Assets (rigs, maps, SFX, faces) may be reused freely.
 2. **Engagement first.** Every script follows `docs/ENGAGEMENT_RULES.md` and must score ≥ 8/10 before production.
 3. **Meaningful and complete.** Every story has a clear earned meaning and a real ending (series allowed; the final part resolves everything). No filler.
 4. **Never repeat.** Check `ledger/STORY_LEDGER.md` — no reused world rule, twist, or core meaning.
+5. **Owner-only changes.** Agents never change the workflow, rules, skills, agents, templates, pipeline scripts, engine code, cast/face assets or ledger rows, and never delete or move files, unless the owner explicitly directs that specific change. Story work inside the normal loop is allowed. If a workflow change would help, propose it and wait for approval.
 
 ## Workflow (same every time)
 | Step | Command (Claude Code) | Manual equivalent for other AIs | Tier |

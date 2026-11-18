@@ -113,6 +113,7 @@ Story ID: 3 digits, next = highest ID in `ledger/STORY_LEDGER.md` plus 1. Folder
 
 ## 5. Hard rules
 
+- **Owner-only changes.** Never change the workflow, rules, skills, agents, templates, pipeline scripts, engine code, cast/face assets or ledger rows, and never delete or move files, unless the owner explicitly directs that specific change. Story work inside the normal loop is allowed. If a workflow change would help, propose it and wait for approval.
 - **Never copy a story.** Every premise is web-verified and `ledger/verification/<ID>.md` exists before any script. Assets (rigs, maps, SFX, faces) may be reused.
 - **Engagement ≥ 8/10** (`docs/ENGAGEMENT_RULES.md`) before production.
 - **Complete and meaningful.** Every story has an earned meaning and a real ending. A series must be finished in its final part.
@@ -168,6 +169,7 @@ Follow the loop in docs/START_WITH_ANOTHER_AI.md section 4, in order:
 premise -> originality check (at least 5 searches per premise across Google, YouTube, Reddit r/WritingPrompts, TikTok/Instagram; record real URLs in ledger/verification/012.md; never invent URLs) -> script.md, narration.txt, beats.json -> stories/012_<slug>/MANIFEST.md (sections A-H, no vague lines) -> engines/roblox/cast_012.luau (R6 catalog method, faces from assets/faces/classic_v1/) -> engagement score (must be 8 or higher, record it in script.md) -> voice and subs (pipeline/voice_subs.py) -> SFX (pipeline/make_sfx.py) -> Studio set and cutscene engine (template: engines/roblox/story011_cutscene.luau) -> preview every beat -> STOP and report.
 
 HARD RULES:
+- NEVER change the workflow, rules, skills, scripts, assets or ledger, and never delete or move files, unless I explicitly tell you to. Propose changes and wait.
 - Stories are never copied. Premise must be web-verified before any script.
 - Complete story with an earned meaning and a real ending. No filler.
 - Characters: classic R6 + catalog items + our own faces only. No R15, Argon, mesh, generate_avatar or Blender characters.
