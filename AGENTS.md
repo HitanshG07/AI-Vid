@@ -4,6 +4,7 @@ This file is the single source of truth. Every agent working in this repo follow
 **New here? Do `docs/SETUP_GUIDE.md` first** (setup, self-test, full step-by-step loop).
 **Before any production: read `docs/LESSONS_LEARNED.md`** (hard-won rules: faces, sets, shots, recording).
 **Picking up work in progress? Read `docs/HANDOFF.md`** (current story status, next steps, today's pitfalls).
+**Handing this repo to another AI? Give it `docs/START_WITH_ANOTHER_AI.md`** (setup, loop, rules, copy-paste start prompt).
 **Not Claude Code?** Configure your tool with `docs/AI_ADAPTERS.md` (Antigravity, Codex, Gemini CLI, Cursor, ChatGPT).
 
 ## Mission
