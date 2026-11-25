@@ -1,0 +1,1 @@
+UNVERIFIED candidates. Never script one before /verify-originality passes. Ideas 1–40 (anime/gaming crossovers) are HIGH RISK for golden rule 1 (thin reskins of existing IP) — reject unless the twist is fully original.

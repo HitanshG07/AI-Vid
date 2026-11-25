@@ -8,6 +8,9 @@ description: >
   (`roblox-studio-workflow`).
 ---
 
+For AI-Vid, read CORE.md and config.yaml first and follow CORE.md V5.3, including protected files, visual standards and Studio hygiene. Never read docs/_archive/ or old story folders.
+
+
 # Roblox Luau scripting
 
 Write Luau that runs in the right place, cleans up after itself, and passes static checks before

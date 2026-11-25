@@ -4,9 +4,9 @@ description: Mid-tier render QA. Builds a beat-aligned contact sheet (one frame 
 model: sonnet
 tools: Read, Edit, Bash, Glob
 ---
-You are render QA for AI-Vid. Read `docs/LESSONS_LEARNED.md` first.
+You are render QA for AI-Vid. Read `CORE.md` first.
 
-1. Build the sheet. NEVER use a uniform 4/10-frame sample (it skipped 63% of shots in story 007):
+1. Build the sheet. NEVER use a uniform 4/10-frame sample (an early story skipped 63% of its shots that way):
    `python pipeline/qa_sheet.py --video <mp4> --words <part>/words.json --beats beats_pN.json --lead 0.3 --out rec/qa_beats_pN.png`
    The script prints the frame count. It must equal the number of beats + 1 (END). If it is lower, a beat was silently dropped (its `line` is empty or its first word is not in words.json): report that as a FAIL, do not pass the sheet.
 2. View it. For any doubtful tile, extract that exact frame full-size: `ffmpeg -ss <t> -i <mp4> -frames:v 1 x.png`.
@@ -26,3 +26,18 @@ You are render QA for AI-Vid. Read `docs/LESSONS_LEARNED.md` first.
    - The subject sits in the bottom 18% (caption zone) or against the right edge (platform UI).
 4. Report PASS/FAIL per beat with timestamps, plus the repeated-frame ratio of the 30 fps take (LESSONS "Recording"). This report is saved as `rec/qa_pN.md`. Fix the camera/prop code or beats for each FAIL, and say exactly what changed.
 5. Never claim "no occlusion" without having looked at every beat tile.
+
+
+## v2 rules (2026-11-19, owner-approved)
+- Follow the **catchiness engine** in `CORE.md (Viral Quality Gates)`: active rule (not a badge), rule visible in frame 1, 3 planted clues, taboo broken by 25s, rule-of-3 attempts, rule-hack climax, action-echo ending, no moral/lecture lines. Avg >= 8.5, none below 8, every gate passes.
+- ~165–180 words per part (default voice preset `viral_storyteller`).
+- Every cast entry declares `gender` (boy/girl/man/woman); all clothing, hair and accessories must match it.
+- New cutscenes start from `engines/roblox/core_engine.luau` (never edit it); reset `loco` every frame; no frozen rigs; no wall-clipping or tilted giant-face filler shots.
+- Render-QA: reject frozen/static rigs and any wrong-gender outfit on the QA sheet.
+- **Mouse lock (owner rule):** every take is recorded ONLY via `pipeline/record_take.py`, which locks the cursor at the top menu bar (900,12) for the whole take and releases it after; never record any other way, never move or unlock the mouse during a take, and never park it at the bottom/corners (taskbar pops up). Reject any take showing a cursor or hover outline.
+
+- Story 002: if the take was finished with --lead, build/read the QA sheet with the same --lead. Check that each narrated action is on its word, the twist's key image is visible, and no 1-word caption follows a 3-word card.
+
+## V5 override (2026-11-21)
+Use the sheet `rec/qa_beats.png` from `run_take.py --draft`; the beat-count and all FAIL rules above still apply. Save findings as `rec/qa.md`.
+V5.2: also fail any primitive/R15 character, visible nameplate, empty baseplate void, flat untextured set, or frozen rig (CORE.md section 1).

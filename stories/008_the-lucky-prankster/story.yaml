@@ -1,0 +1,320 @@
+id: 008
+format: story
+set: school_yard
+title: The Lucky Prankster 🍀
+description: Your daily luck equals the smiles you made yesterday, so 100% luck should
+  be great news.
+hashtags:
+- '#roblox'
+- '#rblx'
+- '#robloxstories'
+- '#shorts'
+bgm_mood: mystery
+lighting: day_bright
+caption_margin_v: 560
+engine: social_karma
+rule: Daily luck equals the number of people who genuinely smiled because of you yesterday.
+visible_proof: Dex usually wakes up with two percent luck after annoying everyone
+  in school.
+personal_stake: Dex wakes up with an impossible one hundred percent luck and thinks
+  he is beloved.
+motivated_choice: Dex bets his reputation and struts across the courtyard like a king.
+rule_payoff: Everyone was smiling because a rumor said Dex had permanently transferred
+  away.
+rule_type: luck
+opening_variant: consequence_first
+ending_type: karma_reversal
+cta: Would you rather have 100% luck or one real friend?
+thumb_at: 1.2
+cast:
+- name: Dex
+  gender: boy
+  default_face: grin
+  spot: entry_walk
+- name: Maya
+  gender: girl
+  default_face: neutral
+  spot: school_entry
+- name: Principal
+  gender: man
+  default_face: determined
+  spot: coach_table
+beats:
+- dur: 2.4
+  cam: closeup
+  fov: 46
+  motion: push_in
+  target: Dex
+  action: idle
+  face: grin
+  speaker: narrator
+  sfx: ding
+  line: 'My phone buzzed. Daily luck: one hundred *percent*.'
+  prop:
+  - name: Phone
+    show: true
+- dur: 2.4
+  cam: side_track
+  fov: 48
+  motion: push_in
+  target: Dex
+  action: walk
+  spot: school_entry
+  face: grin
+  speaker: boy
+  line: I'm officially the *luckiest* kid alive!
+  prop:
+  - name: Phone
+    hide: true
+- dur: 2.4
+  cam: ots
+  fov: 46
+  motion: push_in
+  target: Maya
+  action: talk
+  face: neutral
+  with:
+  - name: Dex
+    action: idle
+    face: grin
+  speaker: girl
+  line: The town rule is *strict*, Dex.
+- dur: 2.4
+  cam: wide
+  fov: 54
+  motion: push_in
+  target: Dex
+  action: point
+  face: proud
+  with:
+  - name: Maya
+    action: idle
+    face: neutral
+  speaker: boy
+  line: Your luck equals how many people you made *smile*.
+- dur: 2.4
+  cam: side_track
+  fov: 48
+  motion: push_in
+  target: Maya
+  action: talk
+  face: neutral
+  with:
+  - name: Dex
+    action: idle
+    face: proud
+  speaker: girl
+  line: You usually get two percent from your *mom*.
+- dur: 2.4
+  cam: closeup
+  fov: 44
+  motion: push_in
+  target: Dex
+  action: talk
+  face: grin
+  speaker: boy
+  line: Not today. Today everyone *loves* me.
+- dur: 2.4
+  cam: wide
+  fov: 54
+  motion: push_in
+  target: Dex
+  action: walk
+  spot: court_center
+  face: proud
+  speaker: narrator
+  sfx: whoosh
+  line: A basketball flew straight at my *face*.
+  fx: ball_swish
+- dur: 2.4
+  cam: low_hero
+  fov: 46
+  motion: push_in
+  target: Dex
+  action: idle
+  face: grin
+  speaker: narrator
+  sfx: thud
+  line: It banked off the rim and swished the *net*.
+  fx: ball_swish
+- dur: 2.4
+  cam: ots
+  fov: 46
+  motion: push_in
+  target: Maya
+  action: recoil
+  face: shocked
+  with:
+  - name: Dex
+    action: idle
+    face: grin
+  speaker: girl
+  line: How did that even *happen*?
+- dur: 2.4
+  cam: closeup
+  fov: 44
+  motion: push_in
+  target: Dex
+  action: talk
+  face: proud
+  speaker: boy
+  line: I am completely *untouchable*.
+- dur: 2.4
+  cam: side_track
+  fov: 48
+  motion: push_in
+  target: Dex
+  action: walk
+  spot: bench_front
+  face: proud
+  speaker: boy
+  line: I can bet anything and *win*.
+- dur: 2.4
+  cam: wide
+  fov: 54
+  motion: push_in
+  target: Dex
+  action: idle
+  face: grin
+  speaker: narrator
+  line: I marched into the yard like a *champion*.
+- dur: 2.4
+  cam: reverse_ots
+  fov: 46
+  motion: shake
+  target: Principal
+  action: slam_desk
+  face: determined
+  with:
+  - name: Dex
+    action: idle
+    face: grin
+  speaker: villain
+  sfx: stone_thud
+  line: Attention! The news is *official*!
+- dur: 2.4
+  cam: wide
+  fov: 48
+  motion: pull_out
+  target: Crowd
+  action: talk
+  face: grin
+  speaker: girl
+  line: Look! Everyone is cheering at the *doors*!
+  fx: crowd_cheer
+  with:
+  - name: Maya
+    action: talk
+  - name: Dex
+    action: idle
+- dur: 2.4
+  cam: closeup
+  fov: 44
+  motion: push_in
+  target: Dex
+  action: idle
+  face: shocked
+  speaker: narrator
+  line: Hundreds of students were dancing in *relief*.
+  fx: crowd_cheer
+- dur: 2.4
+  cam: ots
+  fov: 46
+  motion: push_in
+  target: Dex
+  action: talk
+  face: grin
+  with:
+  - name: Maya
+    action: idle
+    face: grin
+  speaker: boy
+  line: They're throwing a party for *me*?
+  fx: crowd_cheer
+- dur: 2.4
+  cam: closeup
+  fov: 48
+  motion: push_in
+  target: Banner
+  action: point
+  face: grin
+  with:
+  - name: Maya
+    action: point
+  - name: Dex
+    action: idle
+    face: shocked
+  speaker: girl
+  line: Read the banner on the *sign*, Dex.
+  prop:
+  - name: Banner
+    show: true
+- dur: 2.4
+  cam: wide
+  fov: 54
+  motion: shake
+  target: Dex
+  action: recoil
+  face: scared
+  bgm_duck: true
+  pause_before: 0.3
+  speaker: narrator
+  sfx: bell_clang_loud
+  line: Farewell Dex. Transferred to boarding school *forever*.
+- dur: 2.4
+  cam: closeup
+  fov: 44
+  motion: push_in
+  target: Dex
+  action: talk
+  face: scared
+  speaker: boy
+  line: Wait... that was just a *joke*!
+- dur: 2.4
+  cam: ots
+  fov: 46
+  motion: push_in
+  target: Principal
+  action: talk
+  face: grin
+  with:
+  - name: Dex
+    action: idle
+    face: scared
+  speaker: villain
+  line: Best news our school ever *heard*.
+- dur: 2.4
+  cam: low_hero
+  fov: 46
+  motion: shake
+  target: Dex
+  action: fall
+  face: shocked
+  sfx: thud
+  speaker: narrator
+  line: Dex tripped on a tiny *pebble*.
+- dur: 2.4
+  cam: high_angle
+  fov: 50
+  motion: pull_out
+  target: Dex
+  action: idle
+  face: shocked
+  with:
+  - name: Maya
+    action: point
+    face: grin
+  bgm_climax: true
+  sfx: drone_smash
+  speaker: narrator
+  line: His luck dropped to zero *instantly*.
+props:
+- name: Phone
+  kit: phone
+  text: LUCK 100%
+  attach: Dex/Right Arm
+  hide: true
+- name: Banner
+  kit: banner
+  text: FAREWELL DEX!
+  hide: true

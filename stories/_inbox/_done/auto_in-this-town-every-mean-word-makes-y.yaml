@@ -1,0 +1,258 @@
+format: story
+set: school_yard
+title: In This Town, Every Mean Word Makes You Shorter
+description: Rex tried to bully Sam, but every mean word shrank him down.
+bgm_mood: mystery
+lighting: day_bright
+engine: social_karma
+rule_type: curse
+opening_variant: rule_first
+ending_type: karma_reversal
+rule: Saying mean words shrinks your height.
+visible_proof: Rex shrinks every time he shouts a mean word.
+personal_stake: Sam must protect his little brother Toby.
+motivated_choice: Sam stays calm and refuses to say anything mean.
+rule_payoff: Rex insults them repeatedly until he shrinks away completely.
+cta: Would you stay calm if someone bullied you?
+cast:
+- name: Sam
+  gender: boy
+  default_face: neutral
+  spot: court_center
+  counter: 'HEIGHT: 5 FT'
+- name: Toby
+  gender: boy
+  default_face: scared
+  spot: court_hoop
+  counter: 'HEIGHT: 5 FT'
+- name: Rex
+  gender: boy
+  default_face: grin
+  spot: entry_walk
+  counter: 'HEIGHT: 5 FT'
+beats:
+- dur: 2.4
+  cam: wide
+  motion: push_in
+  target: Rex
+  action: idle
+  face: grin
+  speaker: narrator
+  sfx: ding
+  line: In this town, mean words shrink your *height*.
+- dur: 2.4
+  cam: ots
+  motion: push_in
+  target: Toby
+  action: talk
+  face: neutral
+  with:
+  - name: Sam
+    action: idle
+    face: neutral
+  speaker: boy
+  line: Stay calm, Toby. Do not say anything *mean*.
+- dur: 2.4
+  cam: reverse_ots
+  motion: push_in
+  target: Sam
+  action: talk
+  face: scared
+  with:
+  - name: Toby
+    action: idle
+    face: scared
+  speaker: boy
+  line: Sam, I am scared of that bully *Rex*.
+- dur: 2.4
+  cam: closeup
+  motion: push_in
+  target: Sam
+  action: talk
+  face: determined
+  speaker: boy
+  line: Just stay close to me right *now*.
+- dur: 2.4
+  cam: wide
+  motion: push_in
+  target: Rex
+  action: walk
+  spot: court_center
+  face: grin
+  speaker: villain
+  sfx: footsteps_wood
+  line: Get out of my way, you *losers*!
+- dur: 2.4
+  cam: closeup
+  motion: push_in
+  target: Toby
+  action: point
+  face: shocked
+  speaker: boy
+  sfx: bass_hit
+  line: Look! Rex shrank a whole foot *down*!
+- dur: 2.4
+  cam: closeup
+  motion: shake
+  target: Rex
+  action: recoil
+  face: shocked
+  counter: 'HEIGHT: 4 FT'
+  speaker: villain
+  line: What happened to me? You *cheated*!
+- dur: 2.4
+  cam: ots
+  motion: push_in
+  target: Rex
+  action: point
+  face: determined
+  with:
+  - name: Sam
+    action: idle
+    face: neutral
+  speaker: boy
+  line: You used another mean word, *Rex*!
+- dur: 2.4
+  cam: side_track
+  motion: push_in
+  target: Rex
+  action: talk
+  face: grin
+  counter: 'HEIGHT: 3 FT'
+  speaker: villain
+  sfx: bass_hit
+  line: Shut up, kid! You are both *ugly*!
+- dur: 2.4
+  cam: closeup
+  motion: push_in
+  target: Toby
+  action: talk
+  face: scared
+  speaker: boy
+  line: Rex, stop shouting mean things at *us*!
+- dur: 2.4
+  cam: closeup
+  motion: shake
+  target: Rex
+  action: talk
+  face: scared
+  counter: 'HEIGHT: 2 FT'
+  speaker: villain
+  sfx: bass_hit
+  line: I am not listening to you *dummies*!
+- dur: 2.4
+  cam: reverse_ots
+  motion: push_in
+  target: Rex
+  action: talk
+  face: proud
+  with:
+  - name: Sam
+    action: idle
+    face: proud
+  speaker: boy
+  line: Keep talking mean and watch what *happens*.
+- dur: 2.4
+  cam: low_hero
+  motion: push_in
+  target: Rex
+  action: recoil
+  face: scared
+  speaker: villain
+  line: Why am I getting so *small*?
+- dur: 2.4
+  cam: side_track
+  motion: push_in
+  target: Rex
+  action: talk
+  face: scared
+  counter: 'HEIGHT: 1 FT'
+  speaker: villain
+  sfx: bass_hit
+  line: You think you are smarter than *me*?
+- dur: 2.4
+  cam: ots
+  motion: push_in
+  target: Rex
+  action: point
+  face: grin
+  with:
+  - name: Toby
+    action: idle
+    face: grin
+  speaker: boy
+  line: Look at him now! He is so *tiny*!
+- dur: 2.4
+  cam: closeup
+  motion: shake
+  target: Rex
+  action: talk
+  face: scared
+  speaker: villain
+  line: Stop laughing at me, you stupid *pigs*!
+- dur: 2.4
+  cam: closeup
+  motion: push_in
+  target: Rex
+  action: idle
+  face: shocked
+  counter: 'HEIGHT: 0 FT'
+  speaker: narrator
+  sfx: bass_hit
+  line: Rex shrank until he popped away *completely*!
+- dur: 2.4
+  cam: closeup
+  motion: push_in
+  target: Sam
+  action: talk
+  face: proud
+  speaker: boy
+  line: Kind words keep us standing *tall*.
+- dur: 2.4
+  cam: reverse_ots
+  motion: push_in
+  target: Sam
+  action: talk
+  face: proud
+  with:
+  - name: Toby
+    action: idle
+    face: proud
+  speaker: boy
+  line: I am not scared of him *anymore*.
+- dur: 2.4
+  cam: wide
+  motion: push_in
+  target: Sam
+  action: walk
+  spot: entry_walk
+  face: proud
+  with:
+  - name: Toby
+    action: walk
+    spot: entry_walk
+    face: proud
+  speaker: boy
+  line: Let's walk home together right *now*.
+- dur: 2.4
+  cam: low_hero
+  motion: push_in
+  target: Toby
+  action: cheer
+  face: proud
+  speaker: boy
+  line: You are the best big brother *ever*.
+- dur: 2.4
+  cam: high_angle
+  motion: pull_out
+  target: Sam
+  action: wave
+  face: proud
+  with:
+  - name: Toby
+    action: wave
+    face: proud
+  sfx: resolution_chord
+  bgm_climax: true
+  speaker: narrator
+  line: Kindness will always keep you *strong*.

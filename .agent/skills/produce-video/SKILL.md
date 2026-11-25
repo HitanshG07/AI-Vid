@@ -1,5 +1,7 @@
 ---
 name: produce-video
-description: Turn a scripted story folder into a final 1080x1920 60fps short (voice, subtitles, render, QA, mux). Use with a story ID.
+description: Produce an AI-Vid video for a specified story ID.
+argument-hint: "<ID>"
 ---
-Read AGENTS.md, then follow .claude/skills/produce-video/SKILL.md for story ID <arg>. Stop if the verification file is not PASS.
+This is an alias. Follow `.claude/skills/ai-vid-pipeline/SKILL.md` phase E (and Finish) for the given ID. Precondition: preflight passed and `ledger/verification/<ID>.md` says PASS.
+Follow the master's phase E including the Retakes and export checks, and Upload prep.

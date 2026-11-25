@@ -1,0 +1,60 @@
+# ============================================================================
+# Editorial Brief:
+#   1. Opening picture (muted): Kai flicks a wrapper at the bin, it bounces off the rim, he walks away.
+#   2. Character want: Kai wants a normal school day and to look cool in the trophy photo.
+#   3. Visible obstacle: everyone keeps turning, laughing and pointing at him.
+#   4. Choice & cost: he blames everyone else all day instead of looking at himself; costs him the photo.
+#   5. Final picture: the Frame-1 wrapper is stuck to his sole; he re-throws, misses, it sticks to the other shoe.
+#   6. Cut line: removed "I slipped and fell" — knockback shows it.
+#   7. Engine: social_karma. CTA below.
+# ============================================================================
+id: "008"
+format: story
+set: school_yard
+title: "Worst Shoe Day Ever 👟"
+description: "Everyone at school laughed at Kai all day. He had no idea why."
+hashtags: ["#roblox", "#rblx", "#robloxstories", "#shorts"]
+bgm_mood: mystery
+lighting: day_bright
+caption_margin_v: 560
+engine: social_karma
+cta: "Rewatch: count how many times you hear the crinkle."
+thumb_at: 1.0
+
+cast:
+  - { name: Kai,     gender: boy,  default_face: grin,    pos: [0, 0, 4],   yaw: 180 }
+  - { name: Milo,    gender: boy,  default_face: neutral, pos: [4, 0, 2],   yaw: -90 }
+  - { name: Zoe,     gender: girl, default_face: neutral, pos: [-4, 0, 0],  yaw: 90 }
+  - { name: Coach,   gender: man,  default_face: neutral, pos: [0, 0, -6],  yaw: 0 }
+
+beats:
+  # HOOK (0-6s) — Frame 1 plants the wrapper
+  - { dur: 1.8, cam: front, fov: 50, motion: push_in, target: Kai, action: point, face: grin, sfx: whoosh, speaker: narrator, line: "" }
+  - { dur: 1.6, cam: prop_insert, fov: 40, motion: static, target: Kai, action: walk, move_to: [0, 0, 0], face: grin, sfx: tick, speaker: narrator, line: "Everything went wrong the second I walked to *class*." }
+  - { dur: 1.8, cam: side_track, fov: 48, motion: push_in, target: Kai, action: walk, move_to: [-2, 0, -2], face: neutral, sfx: scraping_drag, speaker: narrator, line: "Every step went squeak, *crinkle*." }
+  - { dur: 1.9, cam: closeup, fov: 44, motion: push_in, target: Kai, action: idle, face: proud, speaker: boy, line: "Brand new shoes. Day one. Looking *clean*." }
+  - { dur: 1.7, cam: wide, fov: 56, motion: static, target: Zoe, action: point, face: grin, with: [{ name: Kai, action: idle, face: shocked }], speaker: girl, line: "Is that you making that *noise*?" }
+
+  # ESCALATION (6-30s)
+  - { dur: 1.8, cam: closeup, fov: 44, motion: push_in, target: Kai, action: idle, face: determined, speaker: boy, line: "It's the floor. The floor is *broken*." }
+  - { dur: 1.9, cam: side_track, fov: 48, motion: push_in, target: Kai, action: walk, move_to: [3, 0, 0], face: neutral, with: [{ name: Milo, action: idle, face: neutral }], sfx: scraping_drag, speaker: narrator, line: "Lunch line. *Crinkle*. Milo moved two spots *back*." }
+  - { dur: 1.8, cam: closeup, fov: 44, motion: push_in, target: Milo, action: idle, face: shocked, speaker: boy, line: "Dude, did you step in *something*?" }
+  - { dur: 1.8, cam: closeup, fov: 44, motion: push_in, target: Kai, action: idle, face: determined, speaker: boy, line: "I smell like *cookies*. Back off." }
+  - { dur: 1.9, cam: wide, fov: 56, motion: push_in, target: Coach, action: wave, face: neutral, sfx: whistle_blow, speaker: narrator, line: "Dodgeball. I got picked *first* for once." }
+  - { dur: 1.6, cam: side_track, fov: 48, motion: push_in, target: Kai, action: run, move_to: [2, 0, -4], face: determined, speaker: narrator, line: "Big wind-up. Perfect *throw*—" }
+  - { dur: 1.6, cam: low_hero, fov: 48, motion: shake, target: Kai, action: knockback, face: shocked, sfx: thud, fx: impact, speaker: narrator, line: "*Squeak*. Face first into the dirt." }
+  - { dur: 1.8, cam: wide, fov: 54, motion: static, target: Milo, action: point, face: grin, with: [{ name: Zoe, action: point, face: grin }], sfx: crowd_cheer, speaker: narrator, line: "The whole yard *laughed*." }
+  - { dur: 1.9, cam: closeup, fov: 44, motion: push_in, target: Kai, action: idle, face: scared, speaker: boy, line: "Why is everyone *laughing* at me today?!" }
+  - { dur: 1.8, cam: ots, fov: 46, motion: push_in, target: Kai, action: walk, move_to: [0, 0, -4], face: grin, with: [{ name: Coach, action: idle }], speaker: narrator, line: "Then the team trophy *photo*." }
+  - { dur: 1.7, cam: wide, fov: 54, motion: static, target: Kai, action: dance, face: proud, with: [{ name: Milo, action: idle }, { name: Zoe, action: idle }], speaker: narrator, line: "I squeezed into the front. Best *pose* ever." }
+  - { dur: 1.7, cam: reverse_ots, fov: 46, motion: push_in, target: Coach, action: point, face: shocked, sfx: shutter, speaker: adult, line: "Uh... what's *on* you?" }
+  - { dur: 1.8, cam: wide, fov: 54, motion: static, target: Kai, action: idle, face: shocked, with: [{ name: Milo, action: idle, face: grin }, { name: Zoe, action: idle, face: grin }], speaker: narrator, line: "In the photo, everyone smiled. I was mid-*squeak*." }
+  - { dur: 1.8, cam: closeup, fov: 44, motion: shake, target: Kai, action: point, face: determined, speaker: boy, line: "Nothing! Somebody's *pranking* me!" }
+
+  # TWIST (30-42s)
+  - { dur: 1.9, cam: ots, fov: 46, motion: push_in, target: Milo, action: point, face: neutral, with: [{ name: Kai, action: idle, face: neutral }], face_partner: true, pause_before: 0.30, bgm_duck: true, speaker: boy, line: "Bro. Look down. No, *lower*." }
+  - { dur: 2.0, cam: prop_insert, fov: 38, motion: push_in, target: Kai, action: idle, face: shocked, sfx: bass_hit, allow_hold: true, speaker: narrator, line: "The wrapper. Stuck to my *shoe*. All day." }
+  - { dur: 1.8, cam: side_track, fov: 48, motion: push_in, target: Kai, action: walk, move_to: [0, 0, 3], face: determined, speaker: narrator, line: "I peeled it off and threw it at the *bin*." }
+  - { dur: 1.6, cam: front, fov: 50, motion: static, target: Kai, action: point, face: grin, sfx: tick, speaker: narrator, line: "Missed. *Again*." }
+  - { dur: 2.0, cam: prop_insert, fov: 40, motion: push_in, target: Kai, action: walk, move_to: [0, 0, 1], face: shocked, sfx: scraping_drag, allow_hold: true, speaker: narrator, line: "*Crinkle*." }
+  - { dur: 1.8, cam: wide, fov: 54, motion: pull_out, target: Kai, action: idle, face: scared, with: [{ name: Milo, action: point, face: grin }, { name: Zoe, action: point, face: grin }], sfx: crowd_cheer, bgm_climax: true, speaker: girl, line: "Other *shoe*!" }

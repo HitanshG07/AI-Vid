@@ -1,0 +1,9 @@
+ts,episode_id,role,provider,model,input_tokens,output_tokens,status
+2026-11-24T07:08:45+00:00,007,writer,antigravity,gemini-3.8-flash,0,0,inbox
+2026-11-24T07:08:45+00:00,007,judge,antigravity,claude-3-7-sonnet,0,0,inbox
+2026-11-24T07:08:45+00:00,008,writer,antigravity,gemini-3.8-flash,0,0,inbox
+2026-11-24T07:08:45+00:00,008,judge,antigravity,claude-3-7-sonnet,0,0,inbox
+2026-11-24T07:08:45+00:00,009,writer,antigravity,gemini-3.8-flash,0,0,inbox
+2026-11-24T07:08:45+00:00,009,judge,antigravity,claude-3-7-sonnet,0,0,inbox
+2026-11-25T07:44:59+00:00,010,writer,antigravity,gemini-3.6-flash,7031,1735,inbox
+2026-11-25T07:44:59+00:00,010,judge,antigravity,gemini-3.5-flash,2037,95,inbox

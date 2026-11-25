@@ -1,0 +1,86 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: SafeCenterPop,Arial Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,2,90,90,560,1
+Style: SafeCenterWhite,Arial Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,2,90,90,560,1
+Style: UpperThirdPop,Arial Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,8,90,90,240,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:00.40,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}MY PHONE
+Dialogue: 0,0:00:00.40,0:00:01.12,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}BUZZED.
+Dialogue: 0,0:00:01.12,0:00:01.70,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}DAILY LUCK:
+Dialogue: 0,0:00:01.70,0:00:02.39,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ONE HUNDRED
+Dialogue: 0,0:00:02.39,0:00:02.74,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}PERCENT.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:02.74,0:00:03.18,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I'M OFFICIALLY
+Dialogue: 0,0:00:03.18,0:00:03.78,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE {\c&H0015CCFA&}LUCKIEST{\c&H00FFFFFF&}
+Dialogue: 0,0:00:03.78,0:00:04.34,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}KID ALIVE!
+Dialogue: 0,0:00:04.64,0:00:04.84,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE TOWN
+Dialogue: 0,0:00:04.84,0:00:05.46,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}RULE IS {\c&H0015CCFA&}STRICT,{\c&H00FFFFFF&}
+Dialogue: 0,0:00:05.72,0:00:06.20,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}DEX.
+Dialogue: 0,0:00:06.20,0:00:06.50,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOUR LUCK
+Dialogue: 0,0:00:06.50,0:00:07.04,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}EQUALS HOW
+Dialogue: 0,0:00:07.04,0:00:07.48,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}MANY PEOPLE
+Dialogue: 0,0:00:07.48,0:00:08.12,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOU MADE {\c&H0015CCFA&}SMILE.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:08.54,0:00:08.90,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOU USUALLY
+Dialogue: 0,0:00:08.90,0:00:09.64,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}GET TWO {\c&H0015CCFA&}PERCENT{\c&H00FFFFFF&}
+Dialogue: 0,0:00:09.64,0:00:10.20,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}FROM YOUR {\c&H0015CCFA&}MOM.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:10.52,0:00:11.07,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}NOT TODAY.
+Dialogue: 0,0:00:11.08,0:00:11.60,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TODAY EVERYONE
+Dialogue: 0,0:00:11.60,0:00:12.20,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}LOVES{\c&H00FFFFFF&} ME.
+Dialogue: 0,0:00:12.40,0:00:12.92,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}A BASKETBALL
+Dialogue: 0,0:00:12.92,0:00:13.62,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}FLEW STRAIGHT
+Dialogue: 0,0:00:13.62,0:00:14.24,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}AT MY {\c&H0015CCFA&}FACE.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:14.50,0:00:14.94,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IT BANKED
+Dialogue: 0,0:00:14.94,0:00:15.46,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}OFF THE RIM
+Dialogue: 0,0:00:15.46,0:00:16.00,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}AND SWISHED
+Dialogue: 0,0:00:16.00,0:00:16.54,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE {\c&H0015CCFA&}NET.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:16.54,0:00:16.76,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HOW DID
+Dialogue: 0,0:00:16.76,0:00:17.12,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THAT EVEN
+Dialogue: 0,0:00:17.12,0:00:17.67,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}HAPPEN?{\c&H00FFFFFF&}
+Dialogue: 0,0:00:17.78,0:00:17.96,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I AM
+Dialogue: 0,0:00:17.96,0:00:18.92,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}COMPLETELY {\c&H0015CCFA&}UNTOUCHABLE.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:19.18,0:00:19.36,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I CAN
+Dialogue: 0,0:00:19.36,0:00:19.74,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}BET ANYTHING
+Dialogue: 0,0:00:19.74,0:00:20.29,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}AND {\c&H0015CCFA&}WIN.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:20.46,0:00:20.86,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I MARCHED
+Dialogue: 0,0:00:20.86,0:00:21.68,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}INTO THE YARD
+Dialogue: 0,0:00:21.68,0:00:22.46,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}LIKE A {\c&H0015CCFA&}CHAMPION.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:22.78,0:00:23.20,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ATTENTION!
+Dialogue: 0,0:00:23.20,0:00:23.44,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE NEWS
+Dialogue: 0,0:00:23.44,0:00:23.99,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IS {\c&H0015CCFA&}OFFICIAL!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:24.30,0:00:24.72,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}LOOK!
+Dialogue: 0,0:00:24.72,0:00:25.18,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}EVERYONE IS
+Dialogue: 0,0:00:25.18,0:00:25.38,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}CHEERING
+Dialogue: 0,0:00:25.38,0:00:25.94,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}AT THE {\c&H0015CCFA&}DOORS!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:26.36,0:00:27.14,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HUNDREDS OF STUDENTS
+Dialogue: 0,0:00:27.14,0:00:27.78,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WERE DANCING
+Dialogue: 0,0:00:27.78,0:00:28.42,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IN {\c&H0015CCFA&}RELIEF.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:28.42,0:00:28.92,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THEY'RE THROWING
+Dialogue: 0,0:00:28.92,0:00:29.28,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}A PARTY
+Dialogue: 0,0:00:29.28,0:00:29.83,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}FOR {\c&H0015CCFA&}ME?{\c&H00FFFFFF&}
+Dialogue: 0,0:00:30.04,0:00:30.44,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}READ THE BANNER
+Dialogue: 0,0:00:30.44,0:00:31.04,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ON THE {\c&H0015CCFA&}SIGN,{\c&H00FFFFFF&}
+Dialogue: 0,0:00:31.38,0:00:31.93,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}DEX.
+Dialogue: 0,0:00:32.24,0:00:32.86,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}FAREWELL DEX.
+Dialogue: 0,0:00:33.16,0:00:33.50,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TRANSFERRED
+Dialogue: 0,0:00:33.50,0:00:34.00,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TO BOARDING
+Dialogue: 0,0:00:34.00,0:00:34.78,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SCHOOL {\c&H0015CCFA&}FOREVER.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:35.16,0:00:35.44,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WAIT...
+Dialogue: 0,0:00:35.44,0:00:35.62,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THAT WAS
+Dialogue: 0,0:00:35.62,0:00:36.17,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}JUST A {\c&H0015CCFA&}JOKE!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:36.46,0:00:36.76,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}BEST NEWS
+Dialogue: 0,0:00:36.76,0:00:37.18,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}OUR SCHOOL
+Dialogue: 0,0:00:37.18,0:00:37.82,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}EVER {\c&H0015CCFA&}HEARD.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:38.10,0:00:38.60,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}DEX TRIPPED
+Dialogue: 0,0:00:38.60,0:00:39.12,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ON A TINY
+Dialogue: 0,0:00:39.12,0:00:39.67,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}PEBBLE.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:39.70,0:00:40.02,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HIS LUCK
+Dialogue: 0,0:00:40.02,0:00:40.80,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}DROPPED TO ZERO
+Dialogue: 0,0:00:40.80,0:00:41.35,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}INSTANTLY.{\c&H00FFFFFF&}

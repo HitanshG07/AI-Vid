@@ -1,0 +1,93 @@
+id: "005"
+format: story
+set: school_yard
+title: My Name Was on Her Forehead
+# Preview limitations for the current compiler: set loads once and badge is an overhead label.
+# Final staging needs a campus gate and fountain, the cozy_room bedroom, and a coffee cup and phone.
+# Place JAY over the knee and IRIS on the wrist. Reveal NOAH on Maya's forehead after the phone accept cue.
+# Room is Maya's bedroom double and needs the same outfit and hair as the campus rig.
+bgm_mood: wholesome
+lighting: day_bright
+thumb_at: 1.5
+hashtags: ["#roblox", "#rblx", "#stories", "#shorts"]
+cast:
+  - { name: Maya, gender: woman, default_face: neutral, pos: [-2, 0, 1], yaw: 180 }
+  - { name: Noah, gender: man, default_face: neutral, pos: [2, 0, 3], yaw: 160 }
+  - { name: Knee, gender: woman, default_face: neutral, pos: [-9, 0, 4], yaw: 165, pants: 13979853518 }
+  - { name: Wrist, gender: man, default_face: neutral, pos: [10, 0, 4], yaw: 185, shirt: 86330417861158 }
+  - { name: Crowd, gender: man, default_face: neutral, pos: [6, 0, 0], yaw: 200, pants: 12671481024 }
+  - { name: Room, gender: woman, default_face: neutral, pos: [75, 0, 0], yaw: 180 }
+  - { name: Jay, gender: man, default_face: neutral, pos: [-11, 0, 3], yaw: 180, pants: 12671481024, shirt: 86330417861158 }
+  - { name: Iris, gender: woman, default_face: neutral, pos: [12, 0, 3], yaw: 180, shirt: 91467779965025 }
+beats:
+  - { dur: 2, cam: "wide", motion: "push_in", target: "Maya", action: "walk", face: "shocked", line: "When Maya walked through the", move_to: [-2,0,2], badge: "NOAH" }
+  - { dur: 2, cam: "medium", motion: "orbit", target: "Maya", action: "idle", face: "shocked", line: "gate, the whole courtyard went quiet." }
+  - { dur: 2, cam: "ots", motion: "push_in", target: "Maya", action: "idle", face: "shocked", line: "Then I saw the" }
+  - { dur: 2, cam: "closeup", motion: "push_in", target: "Maya", action: "idle", face: "shocked", line: "name glowing on her forehead." }
+  - { dur: 2, cam: "wide", motion: "orbit", target: "Maya", action: "idle", face: "shocked", line: "Noah.", badge: "NOAH", sfx: "ding" }
+  - { dur: 2, cam: "medium", motion: "push_in", target: "Noah", action: "idle", face: "shocked", line: "My name." }
+  - { dur: 1.65, cam: "medium", motion: "push_in", target: "Noah", action: "idle", face: "shocked" }
+  - { dur: 2, cam: "ots", motion: "push_in", target: "Noah", action: "idle", face: "neutral", line: "You get one kiss", clear_badge: true }
+  - { dur: 2, cam: "closeup", motion: "orbit", target: "Noah", action: "idle", face: "neutral", line: "in your whole life." }
+  - { dur: 2, cam: "wide", motion: "push_in", target: "Knee", action: "idle", face: "neutral", line: "Once you give", badge: "JAY", with: {"Jay": "wave"} }
+  - { dur: 2, cam: "medium", motion: "push_in", target: "Knee", action: "idle", face: "neutral", line: "it, it's gone. For good." }
+  - { dur: 1.65, cam: "medium", motion: "push_in", target: "Knee", action: "idle", face: "grin" }
+  - { dur: 2, cam: "ots", motion: "orbit", target: "Wrist", action: "idle", face: "neutral", line: "They get", badge: "IRIS", with: {"Iris": "wave"} }
+  - { dur: 2, cam: "closeup", motion: "push_in", target: "Wrist", action: "idle", face: "neutral", line: "twenty-four hours to accept." }
+  - { dur: 2, cam: "wide", motion: "push_in", target: "Knee", action: "idle", face: "neutral", line: "Then your name appears" }
+  - { dur: 2, cam: "medium", motion: "orbit", target: "Knee", action: "idle", face: "neutral", line: "on them. Forever." }
+  - { dur: 2, cam: "ots", motion: "push_in", target: "Wrist", action: "idle", face: "neutral", line: "It shines right through clothes." }
+  - { dur: 1.65, cam: "medium", motion: "push_in", target: "Wrist", action: "idle", face: "shocked" }
+  - { dur: 2, cam: "closeup", motion: "push_in", target: "Wrist", action: "idle", face: "neutral", line: "The more they love" }
+  - { dur: 2, cam: "wide", motion: "orbit", target: "Knee", action: "idle", face: "neutral", line: "you, the higher it goes." }
+  - { dur: 2, cam: "medium", motion: "push_in", target: "Noah", action: "idle", face: "neutral", line: "I'd never seen one" }
+  - { dur: 2, cam: "ots", motion: "push_in", target: "Noah", action: "idle", face: "neutral", line: "on a forehead." }
+  - { dur: 2, cam: "closeup", motion: "orbit", target: "Maya", action: "idle", face: "neutral", line: "And then there's Maya.", clear_badge: true }
+  - { dur: 2, cam: "wide", motion: "push_in", target: "Crowd", action: "idle", face: "neutral", line: "Ten thousand people had asked" }
+  - { dur: 2, cam: "medium", motion: "push_in", target: "Maya", action: "idle", face: "neutral", line: "to give her their kiss." }
+  - { dur: 2, cam: "ots", motion: "orbit", target: "Maya", action: "idle", face: "neutral", line: "She said no to every one." }
+  - { dur: 2, cam: "closeup", motion: "push_in", target: "Noah", action: "idle", face: "neutral", line: "That morning I finally made up my mind." }
+  - { dur: 2, cam: "wide", motion: "push_in", target: "Noah", action: "walk", face: "neutral", line: "I saw her by the lockers. Then Derek got there first.", move_to: [0,0,2] }
+  - { dur: 2, cam: "medium", motion: "orbit", target: "Noah", action: "idle", face: "neutral", line: "Maya, want to get coffee after class?" }
+  - { dur: 2, cam: "ots", motion: "push_in", target: "Maya", action: "idle", face: "neutral", line: "Thanks, Derek. I'm waiting for someone." }
+  - { dur: 1.65, cam: "medium", motion: "push_in", target: "Maya", action: "idle", face: "neutral", line: "I figured she meant someone else." }
+  - { dur: 2, cam: "closeup", motion: "push_in", target: "Noah", action: "walk", face: "scared", line: "I walked away. The next morning, I made myself go back.", move_to: [0,0,1] }
+  - { dur: 2, cam: "wide", motion: "orbit", target: "Noah", action: "idle", face: "scared", line: "Maya, wait. I, uh... would you", with: {"Maya": "idle"}, face_partner: true }
+  - { dur: 2, cam: "medium", motion: "push_in", target: "Noah", action: "idle", face: "scared", line: "get coffee with me?" }
+  - { dur: 2, cam: "ots", motion: "push_in", target: "Maya", action: "idle", face: "scared", line: "You came back. Yeah. I'd love to.", with: {"Noah": "idle"}, face_partner: true }
+  - { dur: 2, cam: "closeup", motion: "orbit", target: "Noah", action: "idle", face: "scared", line: "Can I... kiss your hand?", with: {"Maya": "idle"}, face_partner: true }
+  - { dur: 2, cam: "medium", motion: "push_in", target: "Maya", action: "point", face: "scared", line: "You can. Noah? That's my coffee.", with: {"Noah": "idle"}, face_partner: true }
+  - { dur: 1.65, cam: "medium", motion: "push_in", target: "Noah", action: "point", face: "scared" }
+  - { dur: 2, cam: "medium", motion: "push_in", target: "Maya", action: "run", face: "scared", line: "I... I have to go.", move_to: [-8,0,-3] }
+  - { dur: 1.65, cam: "medium", motion: "push_in", target: "Maya", action: "idle", face: "shocked" }
+  - { dur: 2, cam: "ots", motion: "orbit", target: "Noah", action: "idle", face: "scared", line: "I watched her run. I'd waited a" }
+  - { dur: 2, cam: "closeup", motion: "push_in", target: "Noah", action: "idle", face: "scared", line: "year. I thought I'd ruined it in a second." }
+  - { dur: 1.65, cam: "medium", motion: "push_in", target: "Room", action: "idle", face: "scared" }
+  - { dur: 2, cam: "wide", motion: "push_in", target: "Room", action: "idle", face: "scared", line: "If I press this, he'll know how much I love him.", badge: "00:11" }
+  - { dur: 1.65, cam: "closeup", motion: "push_in", target: "Room", action: "point", face: "shocked", badge: "NOAH", sfx: "ding" }
+  - { dur: 2, cam: "medium", motion: "orbit", target: "Room", action: "idle", face: "grin", line: "Okay. Let him know.", badge: "NOAH", sfx: "ding" }
+  - { dur: 1.65, cam: "medium", motion: "push_in", target: "Room", action: "idle", face: "grin" }
+  - { dur: 2, cam: "ots", motion: "push_in", target: "Maya", action: "idle", face: "grin", line: "About yesterday... I told Derek", badge: "NOAH" }
+  - { dur: 2, cam: "closeup", motion: "push_in", target: "Maya", action: "idle", face: "grin", line: "I was waiting for someone." }
+  - { dur: 2, cam: "wide", motion: "orbit", target: "Maya", action: "idle", face: "grin", line: "Noah, I was waiting for you." }
+  - { dur: 2, cam: "medium", motion: "push_in", target: "Maya", action: "idle", face: "grin", line: "I'd take the long way to" }
+  - { dur: 2, cam: "ots", motion: "push_in", target: "Maya", action: "idle", face: "grin", line: "class just to see you" }
+  - { dur: 2, cam: "closeup", motion: "orbit", target: "Maya", action: "idle", face: "grin", line: "at the fountain." }
+  - { dur: 2, cam: "wide", motion: "push_in", target: "Noah", action: "idle", face: "grin", line: "Wait. I did" }
+  - { dur: 2, cam: "medium", motion: "push_in", target: "Noah", action: "idle", face: "grin", line: "that too." }
+  - { dur: 2, cam: "ots", motion: "orbit", target: "Maya", action: "idle", face: "grin", line: "Where's your class?" }
+  - { dur: 2, cam: "closeup", motion: "push_in", target: "Noah", action: "idle", face: "grin", line: "Room 204." }
+  - { dur: 2, cam: "wide", motion: "push_in", target: "Maya", action: "idle", face: "grin", line: "Me too. Second period." }
+  - { dur: 1.65, cam: "medium", motion: "push_in", target: "Maya", action: "idle", face: "grin" }
+  - { dur: 2, cam: "medium", motion: "orbit", target: "Crowd", action: "idle", face: "grin", line: "Stay away from" }
+  - { dur: 2, cam: "ots", motion: "push_in", target: "Crowd", action: "idle", face: "grin", line: "her, Noah." }
+  - { dur: 2, cam: "closeup", motion: "push_in", target: "Maya", action: "idle", face: "grin", line: "Can we start with coffee?" }
+  - { dur: 2, cam: "wide", motion: "orbit", target: "Maya", action: "idle", face: "grin", line: "Just us." }
+  - { dur: 2, cam: "medium", motion: "push_in", target: "Maya", action: "idle", face: "grin", line: "Tomorrow morning?", with: {"Noah": "idle"}, face_partner: true }
+  - { dur: 1.65, cam: "medium", motion: "push_in", target: "Maya", action: "idle", face: "grin" }
+  - { dur: 2, cam: "ots", motion: "push_in", target: "Noah", action: "walk", face: "grin", line: "Tomorrow. Cafeteria?", with: {"Maya": "walk"}, move_to: [3,0,7] }
+  - { dur: 2, cam: "closeup", motion: "orbit", target: "Maya", action: "idle", face: "grin", line: "We met before class. Then again the next day." }
+  - { dur: 2, cam: "wide", motion: "push_in", target: "Noah", action: "idle", face: "grin", line: "A week later, at the fountain, she took my hand." }
+  - { dur: 2, cam: "medium", motion: "push_in", target: "Noah", action: "idle", face: "grin", line: "Noah? I think we're past just coffee." }
+  - { dur: 2, cam: "ots", motion: "orbit", target: "Noah", action: "idle", face: "grin", line: "Yeah. I was hoping you'd say that." }
+  - { dur: 1.65, cam: "medium", motion: "push_in", target: "Maya", action: "idle", face: "grin", line: "Now we're dating. If you like someone, try your luck. They might be waiting for you, too." }

@@ -1,0 +1,712 @@
+{
+  "version": "6.0",
+  "defaults": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "min_sec": 35.0,
+    "max_sec": 58.5,
+    "target_beats": [
+      16,
+      24
+    ]
+  },
+  "sets": {
+    "school_yard": {
+      "luau": "engines/roblox/sets/set_school_yard.luau",
+      "props": [
+        "SchoolMain",
+        "EntryDoor",
+        "DoorPull",
+        "SchoolSign",
+        "PlayCourt",
+        "Basket",
+        "Planter",
+        "Bench",
+        "SchoolShowStage",
+        "PerformerMark",
+        "TryoutSign",
+        "CoachTable",
+        "BasketNet"
+      ],
+      "spots": {
+        "school_entry": [
+          -14,
+          0,
+          -18,
+          180
+        ],
+        "entry_walk": [
+          -14,
+          0,
+          -13,
+          180
+        ],
+        "court_center": [
+          -22,
+          0,
+          9,
+          180
+        ],
+        "court_hoop": [
+          -22,
+          0,
+          1.5,
+          0
+        ],
+        "bench_front": [
+          -3,
+          0,
+          17.8,
+          0
+        ],
+        "stage_center": [
+          15,
+          0.3,
+          -2.5,
+          180
+        ],
+        "coach_table": [
+          24,
+          0,
+          4.4,
+          0
+        ],
+        "yard_center": [
+          0,
+          0,
+          8,
+          0
+        ]
+      }
+    },
+    "street_day": {
+      "luau": "engines/roblox/sets/set_street_day.luau",
+      "props": [
+        "Road",
+        "Crosswalk",
+        "Door",
+        "Awning",
+        "LampPost",
+        "BusStopSign",
+        "BusStopBoard",
+        "Bench",
+        "StreetTruck"
+      ],
+      "spots": {
+        "bus_stop": [
+          16.2,
+          0.5,
+          9.5,
+          90
+        ],
+        "crosswalk": [
+          0,
+          0,
+          12,
+          270
+        ],
+        "sidewalk_left": [
+          -18,
+          0.5,
+          0,
+          270
+        ],
+        "sidewalk_right": [
+          18,
+          0.5,
+          -4,
+          90
+        ],
+        "road_center": [
+          0,
+          0,
+          0,
+          180
+        ]
+      }
+    },
+    "cozy_room": {
+      "luau": "engines/roblox/sets/set_cozy_room.luau",
+      "props": [
+        "Rug",
+        "DeskTop",
+        "Monitor",
+        "BedFrame",
+        "Mattress",
+        "Pillow",
+        "Bookshelf",
+        "Door",
+        "WinGlass",
+        "CeilingLamp",
+        "MonitorStand",
+        "Keyboard",
+        "KeyboardKeys",
+        "MousePad",
+        "Mouse"
+      ],
+      "spots": {
+        "in_front_of_desk": [
+          -9,
+          0,
+          -9.6,
+          0
+        ],
+        "desk_side": [
+          -4.2,
+          0,
+          -10.5,
+          90
+        ],
+        "at_door": [
+          12.8,
+          0,
+          7,
+          90
+        ],
+        "center_rug": [
+          0,
+          0,
+          1,
+          180
+        ],
+        "rug_left": [
+          -3,
+          0,
+          2,
+          180
+        ],
+        "rug_right": [
+          3,
+          0,
+          2,
+          180
+        ],
+        "beside_bed": [
+          6.0,
+          0,
+          -6.5,
+          270
+        ],
+        "by_bookshelf": [
+          -11.8,
+          0,
+          2,
+          90
+        ]
+      }
+    },
+    "anime_arena": {
+      "luau": "engines/roblox/sets/set_anime_arena.luau",
+      "props": [
+        "ArenaFloor",
+        "CenterPad",
+        "Trim",
+        "Pillars",
+        "Braziers",
+        "Banners"
+      ],
+      "spots": {
+        "center": [
+          0,
+          0,
+          0,
+          180
+        ],
+        "duel_left": [
+          -6,
+          0,
+          0,
+          270
+        ],
+        "duel_right": [
+          6,
+          0,
+          0,
+          90
+        ]
+      }
+    },
+    "street_002_winter": {
+      "luau": "engines/roblox/sets/street_002_winter.luau",
+      "props": [
+        "NightVan",
+        "Cat",
+        "HotBottle",
+        "Radio",
+        "DriverCap",
+        "Bread"
+      ]
+    },
+    "living_room": {
+      "luau": "engines/roblox/sets/set_cozy_room.luau",
+      "props": [
+        "Rug",
+        "DeskTop",
+        "Monitor",
+        "BedFrame",
+        "Mattress",
+        "Pillow",
+        "Bookshelf",
+        "Door",
+        "WinGlass",
+        "CeilingLamp",
+        "MonitorStand",
+        "Keyboard",
+        "KeyboardKeys",
+        "MousePad",
+        "Mouse"
+      ],
+      "spots": {
+        "in_front_of_desk": [
+          -9,
+          0,
+          -9.6,
+          0
+        ],
+        "desk_side": [
+          -4.2,
+          0,
+          -10.5,
+          90
+        ],
+        "at_door": [
+          12.8,
+          0,
+          7,
+          90
+        ],
+        "center_rug": [
+          0,
+          0,
+          1,
+          180
+        ],
+        "rug_left": [
+          -3,
+          0,
+          2,
+          180
+        ],
+        "rug_right": [
+          3,
+          0,
+          2,
+          180
+        ],
+        "beside_bed": [
+          6.0,
+          0,
+          -6.5,
+          270
+        ],
+        "by_bookshelf": [
+          -11.8,
+          0,
+          2,
+          90
+        ]
+      }
+    },
+    "street": {
+      "luau": "engines/roblox/sets/set_street_day.luau",
+      "props": [
+        "Road",
+        "Crosswalk",
+        "Door",
+        "Awning",
+        "LampPost",
+        "BusStopSign",
+        "BusStopBoard",
+        "Bench",
+        "StreetTruck"
+      ],
+      "spots": {
+        "bus_stop": [
+          16.2,
+          0.5,
+          9.5,
+          90
+        ],
+        "crosswalk": [
+          0,
+          0,
+          12,
+          270
+        ],
+        "sidewalk_left": [
+          -18,
+          0.5,
+          0,
+          270
+        ],
+        "sidewalk_right": [
+          18,
+          0.5,
+          -4,
+          90
+        ],
+        "road_center": [
+          0,
+          0,
+          0,
+          180
+        ]
+      }
+    },
+    "school_hallway": {
+      "luau": "engines/roblox/sets/set_school_hallway.luau",
+      "props": [
+        "Locker",
+        "LockerBody",
+        "HallDoor",
+        "BenchSeat",
+        "FloorTile",
+        "CeilingLight",
+        "EndWindow"
+      ],
+      "spots": {
+        "hall_entry": [
+          0,
+          0,
+          34,
+          0
+        ],
+        "hall_center": [
+          0,
+          0,
+          0,
+          180
+        ],
+        "hall_end": [
+          0,
+          0,
+          -34,
+          180
+        ],
+        "locker_left": [
+          -4.2,
+          0,
+          -8,
+          90
+        ],
+        "locker_right": [
+          4.2,
+          0,
+          8,
+          270
+        ],
+        "hall_bench": [
+          -3.8,
+          0,
+          3,
+          90
+        ],
+        "door_left": [
+          -4.2,
+          0,
+          14,
+          90
+        ]
+      }
+    },
+    "classroom": {
+      "luau": "engines/roblox/sets/set_classroom.luau",
+      "props": [
+        "Chalkboard",
+        "TeacherDesk",
+        "DeskTop",
+        "ChairSeat",
+        "ExamPaper",
+        "ClassDoor",
+        "Window"
+      ],
+      "spots": {
+        "teacher_desk": [
+          0,
+          0,
+          -14.5,
+          180
+        ],
+        "front_center": [
+          0,
+          0,
+          -6.4,
+          180
+        ],
+        "aisle_left": [
+          -6,
+          0,
+          6,
+          0
+        ],
+        "aisle_right": [
+          6,
+          0,
+          1,
+          0
+        ],
+        "desk_seat": [
+          -5.4,
+          0,
+          0,
+          0
+        ],
+        "back_row": [
+          0,
+          0,
+          15.5,
+          0
+        ],
+        "door": [
+          17,
+          0,
+          -6,
+          90
+        ]
+      }
+    },
+    "auditorium": {
+      "luau": "engines/roblox/sets/set_auditorium.luau",
+      "props": [
+        "StageDeck",
+        "Podium",
+        "Mic",
+        "StageRamp",
+        "StageLight",
+        "AudSeat",
+        "DebateBanner",
+        "Backdrop"
+      ],
+      "spots": {
+        "podium_left": [
+          -7,
+          2.6,
+          -19.5,
+          180
+        ],
+        "podium_right": [
+          7,
+          2.6,
+          -19.5,
+          180
+        ],
+        "stage_center": [
+          0,
+          2.6,
+          -23,
+          180
+        ],
+        "aisle_front": [
+          0,
+          0,
+          -4,
+          0
+        ],
+        "aisle_back": [
+          0,
+          0,
+          27,
+          0
+        ],
+        "audience_seat": [
+          -5.2,
+          0,
+          1,
+          0
+        ]
+      }
+    }
+  },
+  "genders": [
+    "boy",
+    "girl",
+    "man",
+    "woman"
+  ],
+  "faces": [
+    "neutral",
+    "scared",
+    "shocked",
+    "grin",
+    "determined",
+    "proud"
+  ],
+  "speakers": [
+    "narrator",
+    "boy",
+    "girl",
+    "villain",
+    "adult",
+    "woman"
+  ],
+  "cameras": [
+    "front",
+    "closeup",
+    "wide",
+    "ots",
+    "reverse_ots",
+    "side_track",
+    "high_angle",
+    "low_hero",
+    "prop_insert",
+    "foot_insert"
+  ],
+  "motions": [
+    "push_in",
+    "pull_out",
+    "shake",
+    "orbit360",
+    "static"
+  ],
+  "actions": [
+    "block",
+    "cheer",
+    "dance",
+    "downed",
+    "fall",
+    "idle",
+    "kick",
+    "knockback",
+    "point",
+    "punch",
+    "recoil",
+    "run",
+    "sit",
+    "slam_desk",
+    "talk",
+    "walk",
+    "wave"
+  ],
+  "fx": [
+    "",
+    "impact",
+    "hitstop",
+    "aura_on",
+    "aura_red",
+    "neon_flip",
+    "light_flash_red",
+    "truck_pass",
+    "ball_swish",
+    "crowd_cheer"
+  ],
+  "badges": [
+    ""
+  ],
+  "bgm_moods": [
+    "mystery",
+    "tension",
+    "action",
+    "wholesome",
+    "dark",
+    "none"
+  ],
+  "lightings": [
+    "day_bright",
+    "dark_mystery",
+    "anime_clash",
+    "neon_drop"
+  ],
+  "engines": [
+    "ironic_reframe",
+    "social_karma",
+    "clever_loophole",
+    "moral_dilemma"
+  ],
+  "opening_variants": [
+    "consequence_first",
+    "rule_first"
+  ],
+  "ending_types": [
+    "ironic_flip",
+    "loophole_win",
+    "emotional_payoff",
+    "karma_reversal"
+  ],
+  "active_sfx": [
+    "bass_hit",
+    "bass_hit_warm",
+    "bell",
+    "bell_clang_loud",
+    "bell_ring_fading",
+    "chime_soft",
+    "ding",
+    "drone_smash",
+    "footsteps_sand",
+    "footsteps_wood",
+    "glass_clink",
+    "gold_dissolve",
+    "heartbeat",
+    "heartbeat_fast",
+    "hiss_crack",
+    "ignite_shimmer",
+    "ignite_shimmer_big",
+    "impact_whoosh",
+    "piano_note",
+    "pour",
+    "railing_snap",
+    "resolution_chord",
+    "rewind_zip",
+    "rope_creak",
+    "scraping_drag",
+    "shutter",
+    "skin_creak",
+    "splash",
+    "stone_thud",
+    "swim_splash",
+    "thud",
+    "thunder",
+    "tick",
+    "whistle_blow",
+    "whoosh",
+    "whoosh_hit",
+    "whoosh_rewind"
+  ],
+  "banned_sfx": [
+    "music_soft",
+    "music_swell",
+    "music_end_chime",
+    "waves",
+    "waves_heavy",
+    "crowd_beach",
+    "crowd_cheer",
+    "crickets_waves",
+    "seagulls"
+  ],
+  "prop_kits": [
+    "banner",
+    "locker",
+    "paper",
+    "phone",
+    "podium"
+  ],
+  "overhead_counter": {
+    "max_len": 18,
+    "charset": "A-Z a-z 0-9 space : = + - / ! ? . , # % ' &",
+    "where": "cast entries, beats (target), with: partners",
+    "purpose": "story-rule counters only, never nameplates"
+  },
+  "scale": {
+    "min": 0.2,
+    "max": 2.5,
+    "where": "cast entries, beats (target), with: partners; persists until changed"
+  },
+  "face_mid": {
+    "where": "beats (target), with: partners",
+    "when": "halfway through the beat",
+    "values": "same as face"
+  },
+  "overlays": {
+    "values": [
+      "sweat",
+      "hearts",
+      "bubble",
+      "flash_red_blue",
+      "phone_card",
+      "binary_cta"
+    ],
+    "max_per_story": 5,
+    "bubble_text_max": 16,
+    "card_text_max": 64
+  }
+}

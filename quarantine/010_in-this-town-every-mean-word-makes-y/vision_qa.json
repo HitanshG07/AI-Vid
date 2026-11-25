@@ -1,0 +1,5 @@
+{
+  "pass": false,
+  "error": "all vision models failed -> gemini-3.8-flash: Gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spike | gemini-3.5-flash: Gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spike | gemini-3-flash-preview: Gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spike",
+  "failures": []
+}

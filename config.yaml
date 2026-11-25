@@ -1,0 +1,115 @@
+# AI-Vid V5 Single Source of Truth Configuration
+channel:
+  handle: "@studversetales"
+  name: "StudVerse Tales"
+  default_hashtags: ["#roblox", "#rblx", "#stories", "#shorts"]
+
+video:
+  width: 1080
+  height: 1920
+  fps: 30
+  transpose: "2"
+  lead_in_seconds: 0.3
+  max_shot_seconds: 2.2
+  max_standalone_seconds: 60.0
+  default_fov: 50
+  cursor_lock_xy: [900, 12]
+
+voice:
+  engine: "kokoro"                       # kokoro | edge
+  kokoro_voice: "am_michael"
+  kokoro_fallback: "am_adam"
+  kokoro_speed: 1.12                     # V6.2: livelier pacing (Gate 2 WER re-checked on render)
+  edge_voice: "en-US-ChristopherNeural"
+  edge_rate: "+20%"
+  edge_pitch: "+2Hz"
+  silence_threshold_db: -42
+  silence_trigger_sec: 0.14
+  silence_keep_sec: 0.05
+  twist_pause_sec: 0.30                  # pause before a beat marked pause/twist
+  speakers:                              # per-beat speaker: voices
+    narrator: { kokoro: "am_michael", edge: "en-US-ChristopherNeural", speed: 1.10 }
+    boy:      { kokoro: "am_puck",    edge: "en-US-SteffanNeural",     speed: 1.08 }
+    girl:     { kokoro: "af_bella",   edge: "en-US-JennyNeural",       speed: 1.08 }
+    villain:  { kokoro: "am_fenrir",  edge: "en-US-GuyNeural",         speed: 1.04 }
+    adult:    { kokoro: "am_adam",    edge: "en-US-RogerNeural",       speed: 1.05 }
+    woman:    { kokoro: "af_heart",   edge: "en-US-JennyNeural",       speed: 1.05 }
+  target_wpm_min: 165
+  target_wpm_max: 205
+
+captions:
+  style: "SafeCenterPop"                 # MarginV=560 -> 100% clear of Shorts bottom UI
+  font: "Arial Black"
+  font_size: 96
+  margin_v: 560
+  max_words_per_card: 2
+  max_chars_per_card: 12
+  min_card_sec: 0.55                     # no unreadable flash cards
+
+audio:
+  bgm_gain: 0.14
+  climax_bgm_gain: 0.22
+  duck_bgm_gain: 0.02                    # near-silence under twist/pause beats
+  bgm_moods:
+    mystery: "roblox-story-bg.mp3"
+    tension: "bgm_tension.mp3"
+    action: "bgm_action.mp3"
+    wholesome: "bgm_wholesome.mp3"
+    dark: "bgm_dark.mp3"
+    none: ""
+
+playlists:
+  story: "In This World Stories"
+  anime_fight: "Roblox Anime Fights"
+  spot_the_lie: "Spot The Lie Mysteries"
+  beat_drop: "Beat-Drop Edits"
+  roblox_game: "Roblox Game Tales"
+  mystery: "Roblox Mysteries"
+  psychology: "Roblox Mind Rules"
+  thought_sim: "What If Simulations"
+
+# V6.0 Closed-Loop Automation (inbox-driven; stories come from Antigravity sessions, no API keys)
+automation:
+  story_gen:                             # daemon --mode batch tops the ready queue up to min_ready_queue
+    min_ready_queue: 3
+    writer_models: ["gemini-4-hydrogen", "gemini-3.6-flash"]   # first that answers writes (verified via models.list 2026-11-25)
+    judge_models: ["gemini-3.8-flash", "gemini-3.5-flash"]     # independent judge; never the same model as the writer
+  max_produce_attempts: 3                # produce: a quarantined episode moves on to the next pending one (per run)
+  require_human_approval: true           # true during initial calibration / YPP review; false for full hands-free loop
+  studio_capture_mode: "gdigrab"         # uses existing pipeline/record_take.py (ClipCursor 900,12)
+  studio_mcp_cmd: "%LOCALAPPDATA%/Roblox/mcp.bat"   # stdio MCP proxy; daemon spawns it as a JSON-RPC client
+  inbox_dir: "stories/_inbox"
+
+  qa:
+    min_sec: 35.0
+    max_sec: 58.5
+    lufs_target: -14.0
+    lufs_tol: 1.8
+    max_true_peak_db: -0.2                # AAC adds ~0.5 dB inter-sample overshoot over the -1.5 dB loudnorm target
+    max_silence_sec: 1.5
+    max_asr_wer: 0.10
+    max_freeze_pct: 5.0
+    max_black_sec: 0.35
+    judge_min_dim: 7.0
+    judge_min_avg: 8.0
+    sameness_window: 30                  # compare against last 30 uploads
+    max_premise_jaccard: 0.42
+    max_script_jaccard: 0.42
+    gemini_vision_model: "gemini-3.8-flash"   # 2.5-flash is closed to new keys (Google 404, 2026-11-25)   # Gate 4 vision judge (Google AI Studio key: GEMINI_API_KEY or secrets/gemini_api_key.txt)
+    gemini_vision_fallbacks: ["gemini-3.5-flash", "gemini-3-flash-preview"]   # tried in order when the main model is overloaded (503/429/timeout)
+    vision_max_fix_beats: 3               # auto-fix retry only for 1..N fixable camera/staging beats
+
+  youtube:
+    client_secrets_path: "secrets/client_secrets.json"
+    token_path: "secrets/youtube_token.json"
+    oauth_published: true               # set true after publishing OAuth app in Google Cloud Console (prevents 7-day expiry)
+    default_privacy: "private"           # NEVER omit: Nov 2, 2026 API defaults omitted privacyStatus to public
+    self_declared_made_for_kids: false   # teen/general audience
+    contains_synthetic_media: false      # non-realistic Roblox animation
+    daily_publish_hour_ist: 19           # 19:00 IST (13:30 UTC)
+    uploads_per_day: 1
+    purge_raw_after_upload: true         # deletes rec/raw.mp4 + rec/trimmed.mp4 after YouTube processingStatus=succeeded
+    quarantine_retention_days: 14        # keeps failure.json + contact sheet permanently; prunes heavy mp4s after 14d
+    playlist_name: "StudVerse Stories"     # every upload is added here (idempotent)
+    playlist_id: ""                       # optional; auto-resolved by name on first run when blank
+    default_tags: ["roblox", "roblox stories", "roblox shorts", "in this world", "roblox storytime", "roblox drama", "roblox animation", "shorts", "studversetales", "roblox twist", "roblox roleplay"]

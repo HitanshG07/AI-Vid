@@ -1,5 +1,5 @@
-# One-time setup for AI-Vid (run from C:\AI-Vid)
-if (-not (Get-Command blender -ErrorAction SilentlyContinue)) { winget install -e --id BlenderFoundation.Blender }
+# One-time setup for AI-Vid V5 (Windows 11, no Blender needed)
 if (-not (Get-Command ffmpeg -ErrorAction SilentlyContinue)) { winget install -e --id Gyan.FFmpeg }
 python -m pip install -r requirements.txt
-Write-Host "Done. Roblox Studio: enable Assistant > ... > Manage MCP Servers > 'Enable Studio as MCP server'." -ForegroundColor Green
+python pipeline/make_sfx.py
+Write-Host "AI-Vid V5 ready. Read START_HERE.md." -ForegroundColor Green

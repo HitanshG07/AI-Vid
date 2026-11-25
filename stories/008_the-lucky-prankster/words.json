@@ -1,0 +1,727 @@
+[
+ {
+  "word": "My",
+  "start": 0.0,
+  "end": 0.12
+ },
+ {
+  "word": "phone",
+  "start": 0.12,
+  "end": 0.4
+ },
+ {
+  "word": "buzzed.",
+  "start": 0.4,
+  "end": 1.12
+ },
+ {
+  "word": "Daily",
+  "start": 1.12,
+  "end": 1.36
+ },
+ {
+  "word": "luck:",
+  "start": 1.36,
+  "end": 1.7
+ },
+ {
+  "word": "one",
+  "start": 1.7,
+  "end": 2.047
+ },
+ {
+  "word": "hundred",
+  "start": 2.047,
+  "end": 2.393
+ },
+ {
+  "word": "percent.",
+  "start": 2.393,
+  "end": 2.74
+ },
+ {
+  "word": "I'm",
+  "start": 2.74,
+  "end": 2.92
+ },
+ {
+  "word": "officially",
+  "start": 2.92,
+  "end": 3.18
+ },
+ {
+  "word": "the",
+  "start": 3.18,
+  "end": 3.4
+ },
+ {
+  "word": "luckiest",
+  "start": 3.4,
+  "end": 3.78
+ },
+ {
+  "word": "kid",
+  "start": 3.78,
+  "end": 3.98
+ },
+ {
+  "word": "alive!",
+  "start": 3.98,
+  "end": 4.34
+ },
+ {
+  "word": "The",
+  "start": 4.64,
+  "end": 4.64
+ },
+ {
+  "word": "town",
+  "start": 4.64,
+  "end": 4.84
+ },
+ {
+  "word": "rule",
+  "start": 4.84,
+  "end": 5.04
+ },
+ {
+  "word": "is",
+  "start": 5.04,
+  "end": 5.2
+ },
+ {
+  "word": "strict,",
+  "start": 5.2,
+  "end": 5.46
+ },
+ {
+  "word": "Dex.",
+  "start": 5.72,
+  "end": 5.82
+ },
+ {
+  "word": "Your",
+  "start": 6.2,
+  "end": 6.3
+ },
+ {
+  "word": "luck",
+  "start": 6.3,
+  "end": 6.5
+ },
+ {
+  "word": "equals",
+  "start": 6.5,
+  "end": 6.78
+ },
+ {
+  "word": "how",
+  "start": 6.78,
+  "end": 7.04
+ },
+ {
+  "word": "many",
+  "start": 7.04,
+  "end": 7.18
+ },
+ {
+  "word": "people",
+  "start": 7.18,
+  "end": 7.48
+ },
+ {
+  "word": "you",
+  "start": 7.48,
+  "end": 7.64
+ },
+ {
+  "word": "made",
+  "start": 7.64,
+  "end": 7.8
+ },
+ {
+  "word": "smile.",
+  "start": 7.8,
+  "end": 8.12
+ },
+ {
+  "word": "You",
+  "start": 8.54,
+  "end": 8.58
+ },
+ {
+  "word": "usually",
+  "start": 8.58,
+  "end": 8.9
+ },
+ {
+  "word": "get",
+  "start": 8.9,
+  "end": 9.1
+ },
+ {
+  "word": "two",
+  "start": 9.1,
+  "end": 9.37
+ },
+ {
+  "word": "percent",
+  "start": 9.37,
+  "end": 9.64
+ },
+ {
+  "word": "from",
+  "start": 9.64,
+  "end": 9.84
+ },
+ {
+  "word": "your",
+  "start": 9.84,
+  "end": 9.96
+ },
+ {
+  "word": "mom.",
+  "start": 9.96,
+  "end": 10.2
+ },
+ {
+  "word": "Not",
+  "start": 10.52,
+  "end": 10.64
+ },
+ {
+  "word": "today.",
+  "start": 10.64,
+  "end": 10.92
+ },
+ {
+  "word": "Today",
+  "start": 11.08,
+  "end": 11.24
+ },
+ {
+  "word": "everyone",
+  "start": 11.24,
+  "end": 11.6
+ },
+ {
+  "word": "loves",
+  "start": 11.6,
+  "end": 11.88
+ },
+ {
+  "word": "me.",
+  "start": 11.88,
+  "end": 12.2
+ },
+ {
+  "word": "A",
+  "start": 12.4,
+  "end": 12.52
+ },
+ {
+  "word": "basketball",
+  "start": 12.52,
+  "end": 12.92
+ },
+ {
+  "word": "flew",
+  "start": 12.92,
+  "end": 13.32
+ },
+ {
+  "word": "straight",
+  "start": 13.32,
+  "end": 13.62
+ },
+ {
+  "word": "at",
+  "start": 13.62,
+  "end": 13.76
+ },
+ {
+  "word": "my",
+  "start": 13.76,
+  "end": 13.9
+ },
+ {
+  "word": "face.",
+  "start": 13.9,
+  "end": 14.24
+ },
+ {
+  "word": "It",
+  "start": 14.5,
+  "end": 14.6
+ },
+ {
+  "word": "banked",
+  "start": 14.6,
+  "end": 14.94
+ },
+ {
+  "word": "off",
+  "start": 14.94,
+  "end": 15.06
+ },
+ {
+  "word": "the",
+  "start": 15.06,
+  "end": 15.26
+ },
+ {
+  "word": "rim",
+  "start": 15.26,
+  "end": 15.46
+ },
+ {
+  "word": "and",
+  "start": 15.46,
+  "end": 15.72
+ },
+ {
+  "word": "swished",
+  "start": 15.72,
+  "end": 16.0
+ },
+ {
+  "word": "the",
+  "start": 16.0,
+  "end": 16.18
+ },
+ {
+  "word": "net.",
+  "start": 16.18,
+  "end": 16.36
+ },
+ {
+  "word": "How",
+  "start": 16.54,
+  "end": 16.64
+ },
+ {
+  "word": "did",
+  "start": 16.64,
+  "end": 16.76
+ },
+ {
+  "word": "that",
+  "start": 16.76,
+  "end": 16.9
+ },
+ {
+  "word": "even",
+  "start": 16.9,
+  "end": 17.12
+ },
+ {
+  "word": "happen?",
+  "start": 17.12,
+  "end": 17.48
+ },
+ {
+  "word": "I",
+  "start": 17.78,
+  "end": 17.87
+ },
+ {
+  "word": "am",
+  "start": 17.87,
+  "end": 17.96
+ },
+ {
+  "word": "completely",
+  "start": 17.96,
+  "end": 18.28
+ },
+ {
+  "word": "untouchable.",
+  "start": 18.28,
+  "end": 18.92
+ },
+ {
+  "word": "I",
+  "start": 19.18,
+  "end": 19.26
+ },
+ {
+  "word": "can",
+  "start": 19.26,
+  "end": 19.36
+ },
+ {
+  "word": "bet",
+  "start": 19.36,
+  "end": 19.5
+ },
+ {
+  "word": "anything",
+  "start": 19.5,
+  "end": 19.74
+ },
+ {
+  "word": "and",
+  "start": 19.74,
+  "end": 20.0
+ },
+ {
+  "word": "win.",
+  "start": 20.0,
+  "end": 20.16
+ },
+ {
+  "word": "I",
+  "start": 20.46,
+  "end": 20.6
+ },
+ {
+  "word": "marched",
+  "start": 20.6,
+  "end": 20.86
+ },
+ {
+  "word": "into",
+  "start": 20.86,
+  "end": 21.2
+ },
+ {
+  "word": "the",
+  "start": 21.2,
+  "end": 21.38
+ },
+ {
+  "word": "yard",
+  "start": 21.38,
+  "end": 21.68
+ },
+ {
+  "word": "like",
+  "start": 21.68,
+  "end": 21.88
+ },
+ {
+  "word": "a",
+  "start": 21.88,
+  "end": 22.06
+ },
+ {
+  "word": "champion.",
+  "start": 22.06,
+  "end": 22.46
+ },
+ {
+  "word": "Attention!",
+  "start": 22.78,
+  "end": 22.98
+ },
+ {
+  "word": "The",
+  "start": 23.2,
+  "end": 23.28
+ },
+ {
+  "word": "news",
+  "start": 23.28,
+  "end": 23.44
+ },
+ {
+  "word": "is",
+  "start": 23.44,
+  "end": 23.6
+ },
+ {
+  "word": "official!",
+  "start": 23.6,
+  "end": 23.98
+ },
+ {
+  "word": "Look!",
+  "start": 24.3,
+  "end": 24.46
+ },
+ {
+  "word": "Everyone",
+  "start": 24.72,
+  "end": 24.94
+ },
+ {
+  "word": "is",
+  "start": 24.94,
+  "end": 25.18
+ },
+ {
+  "word": "cheering",
+  "start": 25.18,
+  "end": 25.38
+ },
+ {
+  "word": "at",
+  "start": 25.38,
+  "end": 25.6
+ },
+ {
+  "word": "the",
+  "start": 25.6,
+  "end": 25.7
+ },
+ {
+  "word": "doors!",
+  "start": 25.7,
+  "end": 25.94
+ },
+ {
+  "word": "Hundreds",
+  "start": 26.36,
+  "end": 26.52
+ },
+ {
+  "word": "of",
+  "start": 26.52,
+  "end": 26.84
+ },
+ {
+  "word": "students",
+  "start": 26.84,
+  "end": 27.14
+ },
+ {
+  "word": "were",
+  "start": 27.14,
+  "end": 27.44
+ },
+ {
+  "word": "dancing",
+  "start": 27.44,
+  "end": 27.78
+ },
+ {
+  "word": "in",
+  "start": 27.78,
+  "end": 28.08
+ },
+ {
+  "word": "relief.",
+  "start": 28.08,
+  "end": 28.42
+ },
+ {
+  "word": "They're",
+  "start": 28.42,
+  "end": 28.74
+ },
+ {
+  "word": "throwing",
+  "start": 28.74,
+  "end": 28.92
+ },
+ {
+  "word": "a",
+  "start": 28.92,
+  "end": 29.08
+ },
+ {
+  "word": "party",
+  "start": 29.08,
+  "end": 29.28
+ },
+ {
+  "word": "for",
+  "start": 29.28,
+  "end": 29.52
+ },
+ {
+  "word": "me?",
+  "start": 29.52,
+  "end": 29.78
+ },
+ {
+  "word": "Read",
+  "start": 30.04,
+  "end": 30.08
+ },
+ {
+  "word": "the",
+  "start": 30.08,
+  "end": 30.24
+ },
+ {
+  "word": "banner",
+  "start": 30.24,
+  "end": 30.44
+ },
+ {
+  "word": "on",
+  "start": 30.44,
+  "end": 30.62
+ },
+ {
+  "word": "the",
+  "start": 30.62,
+  "end": 30.74
+ },
+ {
+  "word": "sign,",
+  "start": 30.74,
+  "end": 31.04
+ },
+ {
+  "word": "Dex.",
+  "start": 31.38,
+  "end": 31.44
+ },
+ {
+  "word": "Farewell",
+  "start": 32.24,
+  "end": 32.54
+ },
+ {
+  "word": "Dex.",
+  "start": 32.54,
+  "end": 32.86
+ },
+ {
+  "word": "Transferred",
+  "start": 33.16,
+  "end": 33.5
+ },
+ {
+  "word": "to",
+  "start": 33.5,
+  "end": 33.76
+ },
+ {
+  "word": "boarding",
+  "start": 33.76,
+  "end": 34.0
+ },
+ {
+  "word": "school",
+  "start": 34.0,
+  "end": 34.4
+ },
+ {
+  "word": "forever.",
+  "start": 34.4,
+  "end": 34.78
+ },
+ {
+  "word": "Wait...",
+  "start": 35.16,
+  "end": 35.24
+ },
+ {
+  "word": "that",
+  "start": 35.44,
+  "end": 35.5
+ },
+ {
+  "word": "was",
+  "start": 35.5,
+  "end": 35.62
+ },
+ {
+  "word": "just",
+  "start": 35.62,
+  "end": 35.76
+ },
+ {
+  "word": "a",
+  "start": 35.76,
+  "end": 35.88
+ },
+ {
+  "word": "joke!",
+  "start": 35.88,
+  "end": 36.1
+ },
+ {
+  "word": "Best",
+  "start": 36.46,
+  "end": 36.58
+ },
+ {
+  "word": "news",
+  "start": 36.58,
+  "end": 36.76
+ },
+ {
+  "word": "our",
+  "start": 36.76,
+  "end": 36.92
+ },
+ {
+  "word": "school",
+  "start": 36.92,
+  "end": 37.18
+ },
+ {
+  "word": "ever",
+  "start": 37.18,
+  "end": 37.42
+ },
+ {
+  "word": "heard.",
+  "start": 37.42,
+  "end": 37.82
+ },
+ {
+  "word": "Dex",
+  "start": 38.1,
+  "end": 38.26
+ },
+ {
+  "word": "tripped",
+  "start": 38.26,
+  "end": 38.6
+ },
+ {
+  "word": "on",
+  "start": 38.6,
+  "end": 38.72
+ },
+ {
+  "word": "a",
+  "start": 38.72,
+  "end": 38.82
+ },
+ {
+  "word": "tiny",
+  "start": 38.82,
+  "end": 39.12
+ },
+ {
+  "word": "pebble.",
+  "start": 39.12,
+  "end": 39.5
+ },
+ {
+  "word": "His",
+  "start": 39.7,
+  "end": 39.8
+ },
+ {
+  "word": "luck",
+  "start": 39.8,
+  "end": 40.02
+ },
+ {
+  "word": "dropped",
+  "start": 40.02,
+  "end": 40.3
+ },
+ {
+  "word": "to",
+  "start": 40.3,
+  "end": 40.52
+ },
+ {
+  "word": "zero",
+  "start": 40.52,
+  "end": 40.8
+ },
+ {
+  "word": "instantly.",
+  "start": 40.8,
+  "end": 41.28
+ }
+]

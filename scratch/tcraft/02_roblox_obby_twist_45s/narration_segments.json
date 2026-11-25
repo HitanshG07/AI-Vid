@@ -1,0 +1,149 @@
+[
+  {
+    "beat": 1,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "My duo cleared the jump, then *walked* off.",
+    "text": "My duo cleared the jump, then walked off."
+  },
+  {
+    "beat": 2,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Bro, why are you *trolling*?! We almost won!",
+    "text": "Bro, why are you trolling?! We almost won!"
+  },
+  {
+    "beat": 3,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Haha, your teammate can't touch the *pad*!",
+    "text": "Haha, your teammate can't touch the pad!"
+  },
+  {
+    "beat": 4,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Race you to the *last* jump, bro!",
+    "text": "Race you to the last jump, bro!"
+  },
+  {
+    "beat": 5,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "Attempt two. I slipped behind *him*.",
+    "text": "Attempt two. I slipped behind him."
+  },
+  {
+    "beat": 6,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "Inches from the finish, he jumped *off* again.",
+    "text": "Inches from the finish, he jumped off again."
+  },
+  {
+    "beat": 7,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Another reset? This is the *funniest* run ever!",
+    "text": "Another reset? This is the funniest run ever!"
+  },
+  {
+    "beat": 8,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Stop *resetting*! Just finish without me!",
+    "text": "Stop resetting! Just finish without me!"
+  },
+  {
+    "beat": 9,
+    "speaker": "adult",
+    "pause_before": 0.0,
+    "raw_line": "My bad, lag spike. Let's run it *one* more time.",
+    "text": "My bad, lag spike. Let's run it one more time."
+  },
+  {
+    "beat": 10,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Okay. This time I *don't* look down.",
+    "text": "Okay. This time I don't look down."
+  },
+  {
+    "beat": 11,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "Attempt three. I nailed every *jump*.",
+    "text": "Attempt three. I nailed every jump."
+  },
+  {
+    "beat": 12,
+    "speaker": "adult",
+    "pause_before": 0.0,
+    "raw_line": "Dude, don't *look* at the pad. Just jump.",
+    "text": "Dude, don't look at the pad. Just jump."
+  },
+  {
+    "beat": 13,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "I reached the finish pad and read the *sign*.",
+    "text": "I reached the finish pad and read the sign."
+  },
+  {
+    "beat": 14,
+    "speaker": "adult",
+    "pause_before": 0.0,
+    "raw_line": "Hero, wait! Don't *step* on it yet!",
+    "text": "Hero, wait! Don't step on it yet!"
+  },
+  {
+    "beat": 15,
+    "speaker": "narrator",
+    "pause_before": 0.3,
+    "raw_line": "Solo winners get *teleported*. Others restart.",
+    "text": "Solo winners get teleported. Others restart."
+  },
+  {
+    "beat": 16,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "He never lagged. He reset to save my *streak*.",
+    "text": "He never lagged. He reset to save my streak."
+  },
+  {
+    "beat": 17,
+    "speaker": "adult",
+    "pause_before": 0.0,
+    "raw_line": "I wanted you to get *there* first. That's all.",
+    "text": "I wanted you to get there first. That's all."
+  },
+  {
+    "beat": 18,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "What are you waiting for?! Step on it and *win*!",
+    "text": "What are you waiting for?! Step on it and win!"
+  },
+  {
+    "beat": 19,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Not without my *duo*.",
+    "text": "Not without my duo."
+  },
+  {
+    "beat": 20,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "I stopped short, held out my *hand*.",
+    "text": "I stopped short, held out my hand."
+  },
+  {
+    "beat": 21,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "We crossed *together*.",
+    "text": "We crossed together."
+  }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "beat": 1,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "In this town, mean words shrink your *height*.",
+    "text": "In this town, mean words shrink your height."
+  },
+  {
+    "beat": 2,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Stay calm, Toby. Do not say anything *mean*.",
+    "text": "Stay calm, Toby. Do not say anything mean."
+  },
+  {
+    "beat": 3,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Sam, I am scared of that bully *Rex*.",
+    "text": "Sam, I am scared of that bully Rex."
+  },
+  {
+    "beat": 4,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Just stay close to me right *now*.",
+    "text": "Just stay close to me right now."
+  },
+  {
+    "beat": 5,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Get out of my way, you *losers*!",
+    "text": "Get out of my way, you losers!"
+  },
+  {
+    "beat": 6,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Look! Rex shrank a whole foot *down*!",
+    "text": "Look! Rex shrank a whole foot down!"
+  },
+  {
+    "beat": 7,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "What happened to me? You *cheated*!",
+    "text": "What happened to me? You cheated!"
+  },
+  {
+    "beat": 8,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "You used another mean word, *Rex*!",
+    "text": "You used another mean word, Rex!"
+  },
+  {
+    "beat": 9,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Shut up, kid! You are both *ugly*!",
+    "text": "Shut up, kid! You are both ugly!"
+  },
+  {
+    "beat": 10,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Rex, stop shouting mean things at *us*!",
+    "text": "Rex, stop shouting mean things at us!"
+  },
+  {
+    "beat": 11,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "I am not listening to you *dummies*!",
+    "text": "I am not listening to you dummies!"
+  },
+  {
+    "beat": 12,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Keep talking mean and watch what *happens*.",
+    "text": "Keep talking mean and watch what happens."
+  },
+  {
+    "beat": 13,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Why am I getting so *small*?",
+    "text": "Why am I getting so small?"
+  },
+  {
+    "beat": 14,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "You think you are smarter than *me*?",
+    "text": "You think you are smarter than me?"
+  },
+  {
+    "beat": 15,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Look at him now! He is so *tiny*!",
+    "text": "Look at him now! He is so tiny!"
+  },
+  {
+    "beat": 16,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Stop laughing at me, you stupid *pigs*!",
+    "text": "Stop laughing at me, you stupid pigs!"
+  },
+  {
+    "beat": 17,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "Rex shrank until he popped away *completely*!",
+    "text": "Rex shrank until he popped away completely!"
+  },
+  {
+    "beat": 18,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Kind words keep us standing *tall*.",
+    "text": "Kind words keep us standing tall."
+  },
+  {
+    "beat": 19,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "I am not scared of him *anymore*.",
+    "text": "I am not scared of him anymore."
+  },
+  {
+    "beat": 20,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Let's walk home together right *now*.",
+    "text": "Let's walk home together right now."
+  },
+  {
+    "beat": 21,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "You are the best big brother *ever*.",
+    "text": "You are the best big brother ever."
+  },
+  {
+    "beat": 22,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "Kindness will always keep you *strong*.",
+    "text": "Kindness will always keep you strong."
+  }
+]

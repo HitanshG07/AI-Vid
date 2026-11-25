@@ -1,12 +1,12 @@
 -- texture_keepers.luau : keep every cast member's hair/clothing textures loaded during a take, invisibly.
 -- Why: textures of characters not drawn for a while get unloaded; when they cut into a close-up the hair renders
--- WHITE for ~0.4 s (story 011: Kai ~33.9 s, Rosa ~16.8 s). Visible tiny 3D copies fixed it but showed in frame;
+-- WHITE for ~0.4 s (story 001: Kai ~33.9 s, Rosa ~16.8 s). Visible tiny 3D copies fixed it but showed in frame;
 -- 97%-transparent copies did not keep textures loaded.
 -- Fix (v3, 2026-11-18): draw tiny copies inside a 3x3-pixel ViewportFrame pinned to the far-left edge of the editor
 -- viewport. The vertical 9:16 crop removes that edge (~80 px), so the copies are drawn every frame but never recorded.
 -- Usage (Studio MCP execute_luau, Edit): run this file's text right before starting the recorder.
 local SECONDS = 75
-local cast = assert(workspace:FindFirstChild("Cast_011"), "Cast_011 missing")
+local cast = assert(workspace:FindFirstChild("Cast_003") or workspace:FindFirstChild("Cast_002") or workspace:FindFirstChild("Cast_001"), "Cast missing")
 local SG = game:GetService("StarterGui")
 local old = SG:FindFirstChild("TextureKeeperGui")
 if old then old:Destroy() end

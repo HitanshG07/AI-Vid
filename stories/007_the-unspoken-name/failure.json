@@ -1,0 +1,8 @@
+{
+  "episode_id": "007",
+  "stage": "render",
+  "reasons": [
+    "True peak -0.5 dB exceeds -1.0 dBTP."
+  ],
+  "source_dir": "C:\\AI-Vid\\stories\\007_the-unspoken-name"
+}

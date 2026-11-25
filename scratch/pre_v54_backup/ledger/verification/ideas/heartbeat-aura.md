@@ -1,0 +1,14 @@
+# Verification (idea evidence, no story ID) - Musical Heartbeat Aura
+- **Date:** 2026-11-15
+- **World rule:** Heartbeats broadcast a musical aura
+- **Twist:** Class clown's hidden speaker
+- **Core meaning:** Loudest people hide heaviest silence
+
+## Searches run (min 5, across Google / YouTube / Reddit / TikTok-Reels)
+5 queries run (WebSearch): Q1 "in this town" rule roblox; Q2 "in this world" rule roblox story; Q3 core mechanic story (Reddit/Wattpad); Q4 twist keyword roblox shorts/tiktok; Q5 rule short film/story. Full results: ledger/verification/_raw_search_001-010.md (section 009). Similar hits: see Ledger check.
+
+## Ledger check
+Closest existing ledger rows: none overlap in rule, twist or meaning. Closest external: The Heartbeat Collector (partial).
+
+## Verdict: PASS
+Reason (verifier, mid tier): No story shares the audible-aura rule or the hidden-speaker twist.

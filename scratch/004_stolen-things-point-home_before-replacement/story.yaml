@@ -1,0 +1,39 @@
+id: "004"
+format: story
+title: "In This World, Stolen Things Point Home"
+bgm_mood: mystery
+lighting: day_bright
+thumb_at: 1.5
+hashtags: ["#roblox", "#rblx", "#stories", "#shorts"]
+cast:
+  - { name: Nora, gender: girl, default_face: shocked, pos: [504.75, 4, 1.3] }
+  - { name: MrReed, gender: man, default_face: shocked, pos: [511, 4, -0.5] }
+  - { name: MissMay, gender: woman, default_face: grin, pos: [493, 4, -0.55] }
+beats:
+  - { dur: 2.2, cam: closeup, motion: orbit360, target: Nora, face: shocked, badge: "GOLD CUP", sfx: whoosh, line: "The gold cup spun by itself." }
+  - { dur: 2.1, cam: wide, motion: push_in, target: MrReed, face: shocked, badge: "JANITOR", sfx: ding, line: "Then it pointed at our janitor." }
+  - { dur: 2.2, cam: ots, motion: push_in, target: Nora, face: shocked, sfx: ding, line: "Here, stolen things point straight home." }
+  - { dur: 2.1, cam: closeup, motion: push_in, target: Nora, face: shocked, sfx: whoosh, line: "They turn toward whoever lost them." }
+  - { dur: 2.2, cam: wide, motion: push_in, target: Nora, face: shocked, sfx: ding, line: "Last week, my stolen bell found me." }
+  - { dur: 2.1, cam: ots, motion: push_in, target: Nora, face: shocked, sfx: ding, line: "It stopped as soon as I touched it." }
+  - { dur: 2.2, cam: closeup, motion: push_in, target: MrReed, face: shocked, sfx: whoosh, line: "Now everyone stared at Mr. Reed." }
+  - { dur: 2.1, cam: wide, motion: push_in, target: Nora, face: shocked, sfx: ding, line: "Someone yelled, 'Check his cart!'" }
+  - { dur: 2.2, cam: ots, motion: push_in, target: MrReed, face: shocked, sfx: ding, line: "He locked the wheels and stepped back." }
+  - { dur: 2.1, cam: closeup, motion: orbit360, target: Nora, face: shocked, badge: "STILL TURNING", sfx: whoosh, line: "The cup kept right on turning." }
+  - { dur: 2.2, cam: wide, motion: push_in, target: Nora, face: determined, sfx: ding, line: "I followed its point past his cart." }
+  - { dur: 2.1, cam: ots, motion: push_in, target: MissMay, face: determined, sfx: ding, line: "It swung as Miss May walked by." }
+  - { dur: 2.2, cam: closeup, motion: push_in, target: MissMay, face: determined, sfx: whoosh, line: "She stopped. The cup stopped too." }
+  - { dur: 2.1, cam: wide, motion: push_in, target: MissMay, face: determined, sfx: ding, line: "She took one step to the left." }
+  - { dur: 2.2, cam: ots, motion: orbit360, target: Nora, face: determined, sfx: ding, line: "The cup turned left with her." }
+  - { dur: 2.1, cam: closeup, motion: push_in, target: Nora, face: determined, sfx: whoosh, line: "Then I saw a crack in the gold." }
+  - { dur: 2.2, cam: wide, motion: push_in, target: Nora, face: determined, badge: "RED WING", sfx: ding, line: "A tiny red wing stuck out." }
+  - { dur: 2.1, cam: ots, motion: push_in, target: MissMay, face: determined, sfx: ding, line: "Miss May leaned in. 'That's my bird.'" }
+  - { dur: 2.2, cam: closeup, motion: push_in, target: MissMay, face: determined, sfx: whoosh, line: "'I made it when I was ten.'" }
+  - { dur: 2.1, cam: wide, motion: push_in, target: MissMay, face: determined, sfx: ding, line: "'Someone took it from my desk.'" }
+  - { dur: 2.2, cam: ots, motion: shake, target: Nora, face: determined, sfx: bass_hit, line: "I pulled the cracked gold shell apart." }
+  - { dur: 2.1, cam: closeup, motion: push_in, target: Nora, face: determined, badge: "CLAY BIRD", sfx: whoosh, line: "A little clay bird fell into my hands." }
+  - { dur: 2.1, cam: wide, motion: push_in, target: Nora, face: determined, sfx: ding, line: "Even then, its beak turned toward her." }
+  - { dur: 2.1, cam: ots, motion: push_in, target: MissMay, face: determined, sfx: ding, line: "I put the bird in her hands." }
+  - { dur: 2.1, cam: closeup, motion: push_in, target: MissMay, face: grin, badge: "HOME", sfx: whoosh, line: "The beak went still for good." }
+  - { dur: 2.1, cam: wide, motion: push_in, target: MrReed, face: grin, sfx: ding, line: "Mr. Reed finally got his cart back." }
+  - { dur: 2.1, cam: ots, motion: push_in, target: MissMay, face: grin, sfx: ding, line: "Miss May took her little bird home." }

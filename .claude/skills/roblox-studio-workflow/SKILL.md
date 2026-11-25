@@ -7,6 +7,9 @@ description: >
   installing Studio MCP (`roblox-get-started`) or the feature code (`roblox-luau`, `roblox-ui`).
 ---
 
+For AI-Vid, read CORE.md and config.yaml first and follow CORE.md V5.3, including protected files, visual standards and Studio hygiene. Never read docs/_archive/ or old story folders.
+
+
 # Roblox Studio workflow
 
 Work as a collaborator inside an existing place, not as if it were a blank text repository. This

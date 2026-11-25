@@ -1,0 +1,58 @@
+# ============================================================================
+# Editorial Brief:
+#   1. Opening picture: Chad grabs Ned's hand at coach's table to mock him sarcastically.
+#   2. Character want: Chad wants to humiliate Ned and show off to the senior class.
+#   3. Visible obstacle: The handshake locks Chad's hand until his promise is completely fulfilled.
+#   4. Choice & cost: Chad has to spend the day rallying votes and buying pizza for Ned.
+#   5. Final picture: Ned wins by a landslide; Chad is released, having made the nerd his boss.
+#   6. Cut redundant line: Cut extraneous lines about past student council campaigns.
+# ============================================================================
+id: "010"
+format: story
+set: school_yard
+title: "The Iron Handshake 🤝"
+description: "In this school, a handshake locks your hand until you fulfill whatever promise you made."
+hashtags: ["#roblox", "#rblx", "#robloxstories", "#shorts"]
+bgm_mood: action
+lighting: day_bright
+caption_margin_v: 560
+engine: social_karma
+rule: "You cannot physically release someone's hand until you fulfill whatever promise you made while shaking it."
+visible_proof: "Chad sarcastically promises to make Ned the most popular kid in school by midnight."
+personal_stake: "Chad's hand is welded to Ned's wrist, trapping him next to the school nerd."
+motivated_choice: "Chad is forced to bribe, campaign, and cheer for Ned to win class president."
+rule_payoff: "Ned wins by a landslide, freeing Chad's hand at the exact second of victory."
+rule_type: "promises"
+opening_variant: "rule_first"
+ending_type: "karma_reversal"
+cta: "Did Ned play him or did Chad deserve it?"
+thumb_at: 1.2
+
+cast:
+  - { name: Chad,  gender: boy,  default_face: grin,     spot: coach_table }
+  - { name: Ned,   gender: boy,  default_face: scared,   spot: bench_front }
+  - { name: Chloe, gender: girl, default_face: shocked,  spot: entry_walk }
+
+beats:
+  - { dur: 2.4, cam: closeup, fov: 46, motion: push_in, target: Chad, action: idle, face: grin, speaker: narrator, sfx: ding, line: "In our school, handshakes are a binding *contract*." }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: Chad, action: talk, face: grin, with: [{ name: Ned, action: idle, face: scared }], speaker: villain, line: "You can't let go until your promise is *kept*." }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: Chad, action: walk, spot: bench_front, face: grin, with: [{ name: Ned, action: idle, face: scared }], speaker: narrator, line: "Chad grabbed the quiet nerd by the *wrist*." }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: push_in, target: Chad, action: talk, face: grin, speaker: villain, line: "I promise you'll be most popular by *midnight*!" }
+  - { dur: 2.4, cam: wide, fov: 54, motion: push_in, target: Chad, action: recoil, face: shocked, with: [{ name: Ned, action: idle, face: shocked }], speaker: narrator, sfx: railing_snap, line: "A metallic click locked their fingers like *steel*." }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: Chad, action: talk, face: scared, with: [{ name: Ned, action: idle, face: shocked }], speaker: villain, line: "Let go of my *hand*, nerd!" }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: Ned, action: talk, face: neutral, with: [{ name: Chad, action: idle, face: scared }], speaker: boy, line: "The bond won't break until Ned gets *votes*." }
+  - { dur: 2.4, cam: reverse_ots, fov: 46, motion: push_in, target: Chloe, action: point, face: shocked, speaker: girl, line: "Look! Chad is glued to the class *loser*!" }
+  - { dur: 2.4, cam: wide, fov: 54, motion: push_in, target: Chad, action: walk, spot: entry_walk, face: determined, with: [{ name: Ned, action: walk, spot: entry_walk, face: neutral }], speaker: narrator, line: "He had hours to make it *happen*." }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: Chad, action: point, face: determined, with: [{ name: Chloe, action: idle, face: neutral }], speaker: villain, line: "Vote for Ned! He's my best *bro*!" }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: Chloe, action: talk, face: grin, with: [{ name: Chad, action: idle, face: determined }], speaker: girl, line: "Are you giving out free *pizza*?" }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: shake, target: Chad, action: slam_desk, face: determined, speaker: villain, sfx: thud, line: "Free pizza for everyone who votes *Ned*!" }
+  - { dur: 2.4, cam: wide, fov: 54, motion: push_in, target: Chad, action: run, spot: coach_table, face: determined, with: [{ name: Ned, action: run, spot: coach_table, face: neutral }], speaker: narrator, sfx: footsteps_sand, line: "Chad sprinted across the open *lawn*." }
+  - { dur: 2.4, cam: wide, fov: 54, motion: push_in, target: Chad, action: run, spot: stage_center, face: determined, with: [{ name: Ned, action: run, spot: stage_center, face: grin }], speaker: narrator, line: "He dragged Ned to the stage *riser*." }
+  - { dur: 2.4, cam: low_hero, fov: 46, motion: push_in, target: Chad, action: talk, face: determined, with: [{ name: Ned, action: wave, face: proud }], speaker: villain, line: "Ned is the hero of our *class*!" }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: Chloe, action: wave, face: proud, speaker: girl, line: "Ned for president! He is *awesome*!" }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: push_in, target: Chad, action: idle, face: scared, speaker: narrator, sfx: bell, line: "The clock struck eleven fifty-nine *sharp*." }
+  - { dur: 2.4, cam: wide, fov: 54, motion: push_in, target: Chloe, action: talk, face: proud, speaker: girl, line: "Ned wins by a huge *landslide*!" }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: static, target: Chad, action: recoil, face: shocked, bgm_duck: true, pause_before: 0.30, speaker: narrator, sfx: chime_soft, line: "Their locked fingers snapped apart with a *spark*." }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: Chad, action: talk, face: shocked, with: [{ name: Ned, action: idle, face: proud }], speaker: villain, line: "My hand is finally *free*!" }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: Ned, action: talk, face: grin, with: [{ name: Chad, action: idle, face: shocked }], speaker: boy, line: "Thanks for the campaign, vice *president*." }
+  - { dur: 2.4, cam: high_angle, fov: 50, motion: pull_out, target: Chad, action: fall, face: shocked, with: [{ name: Ned, action: wave, face: proud }], bgm_climax: true, sfx: resolution_chord, speaker: narrator, line: "The bully crowned his own *master*." }

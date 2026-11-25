@@ -1,7 +1,7 @@
-"""Make the YouTube channel art for StudVerse Tales from REAL Roblox Studio captures of the story 011 cast.
+"""Make the YouTube channel art for StudVerse Tales from REAL Roblox Studio captures of the story 001 cast.
 
 Usage: python branding/make_branding.py
-Inputs (captured in Studio from workspace.Set_Beach011 + Cast_011, golden-hour grade, gold "brave" outlines on):
+Inputs (captured in Studio from workspace.Set_Beach001 + Cast_001, golden-hour grade, gold "brave" outlines on):
   branding/src/banner_capture.jpg  - cast in two groups with a centre gap (title goes in the gap)
   branding/src/profile_capture.jpg - Kai close-up (optional; falls back to a crop of the banner capture)
 Outputs: branding/banner_2560x1440.png, branding/profile_800x800.png

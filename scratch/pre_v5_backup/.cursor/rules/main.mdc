@@ -1,0 +1,5 @@
+---
+description: AI-Vid rules
+alwaysApply: true
+---
+Read and follow AGENTS.md at the repo root. Before any story or Studio work read docs/QUALITY_PLAYBOOK.md (how to hit the quality bar). Workflows: .claude/skills/*/SKILL.md. Every story ships MANIFEST.md + engines/roblox/cast_<ID>.luau (R6 catalog, gender-locked). Argon is retired.

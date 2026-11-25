@@ -1,9 +1,9 @@
 """Beat-aligned QA contact sheet: one frame at the MIDPOINT of every beat + the last frame (catches black tails).
 
-A uniform 10-frame sheet skipped 63% of the shots in story 007 (missed occlusions + whiteouts). Use this instead.
-Usage: python pipeline/qa_sheet.py --video stories/007_wrist-rewind/007_wrist-rewind_part1.mp4 \
-         --words stories/007_wrist-rewind/p1/words.json --beats stories/007_wrist-rewind/beats_p1.json \
-         --lead 0.3 --out stories/007_wrist-rewind/rec/qa_beats_p1.png
+A uniform 10-frame sheet skipped 63% of the shots in an early story (missed occlusions + whiteouts). Use this instead.
+Usage: python pipeline/qa_sheet.py --video stories/001_brave-glow/001_brave-glow_FINAL.mp4 \
+         --words stories/001_brave-glow/words.json --beats stories/001_brave-glow/beats.json \
+         --lead 0.3 --out stories/001_brave-glow/rec/qa_beats.png
 Beat start times are snapped to when each beat's first word is spoken (words.json), so they match the video.
 """
 import argparse, json, re, subprocess, tempfile
@@ -48,6 +48,10 @@ def main():
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-framerate", "1", "-i", str(tmp / "%03d.png"), "-vf",
                     f"tile={cols}x{(len(times) + cols - 1) // cols}", "-frames:v", "1", x.out], check=True)
     print(f"{len(times)} frames -> {x.out}")
+    # first-3s strip (muted hook check): 6 frames at 0.0..2.5s
+    hook = str(Path(x.out).with_name(Path(x.out).stem + "_first3s.png"))
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", x.video, "-t", "3", "-vf", "fps=2,scale=216:384,tile=6x1", "-frames:v", "1", hook], check=True)
+    print(f"first 3s strip (watch MUTED: is the hook clear without sound?) -> {hook}")
 
 
 if __name__ == "__main__":

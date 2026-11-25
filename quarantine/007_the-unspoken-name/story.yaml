@@ -1,0 +1,304 @@
+id: '007'
+format: story
+set: street_day
+title: The Unspoken Name ⚡
+description: In this town you cannot speak a person's name unless you would die for
+  them.
+hashtags:
+- '#roblox'
+- '#rblx'
+- '#robloxstories'
+- '#shorts'
+bgm_mood: tension
+lighting: day_bright
+caption_margin_v: 560
+engine: ironic_reframe
+rule: You cannot physically speak a person's name unless you would die to protect
+  them.
+visible_proof: Eli has lived sixteen years without hearing anyone pronounce his name.
+personal_stake: Eli believes the entire town would let him die without a second thought.
+motivated_choice: Jax sprints into the crosswalk to tackle Eli away from an oncoming
+  truck.
+rule_payoff: Jax screams Eli's name as he takes the hit, proving his sacrifice.
+rule_type: words
+opening_variant: consequence_first
+ending_type: emotional_payoff
+cta: Could you ever forgive someone who hated you until this?
+thumb_at: 1.2
+cast:
+- name: Eli
+  gender: boy
+  default_face: neutral
+  spot: sidewalk_left
+- name: Jax
+  gender: boy
+  default_face: determined
+  spot: sidewalk_right
+- name: Officer
+  gender: woman
+  default_face: shocked
+  spot: bus_stop
+beats:
+- dur: 2.4
+  cam: closeup
+  fov: 46
+  motion: push_in
+  target: Eli
+  action: walk
+  spot: crosswalk
+  face: neutral
+  speaker: narrator
+  sfx: footsteps_wood
+  line: Sixteen years. No one ever *spoke* my name.
+- dur: 2.4
+  cam: side_track
+  fov: 48
+  motion: push_in
+  target: Officer
+  action: talk
+  face: neutral
+  speaker: woman
+  line: Move along, *kid*. Off the road.
+- dur: 2.4
+  cam: wide
+  fov: 54
+  motion: push_in
+  target: Eli
+  action: idle
+  face: neutral
+  with:
+  - name: Jax
+    action: walk
+    spot: road_center
+    face: determined
+  speaker: narrator
+  line: In this town, the *rule* is absolute.
+- dur: 2.4
+  cam: ots
+  fov: 46
+  motion: push_in
+  target: Jax
+  action: point
+  face: determined
+  with:
+  - name: Eli
+    action: idle
+    face: neutral
+  speaker: villain
+  line: You can't say a name unless you'd *die* for them.
+- dur: 2.4
+  cam: closeup
+  fov: 44
+  motion: push_in
+  target: Eli
+  action: talk
+  face: determined
+  speaker: boy
+  line: Which means nobody ever says *mine*.
+- dur: 2.4
+  cam: side_track
+  fov: 48
+  motion: push_in
+  target: Jax
+  action: talk
+  face: grin
+  with:
+  - name: Eli
+    action: idle
+    face: neutral
+  speaker: villain
+  line: Because nobody cares if you *vanish*.
+- dur: 2.4
+  cam: wide
+  fov: 54
+  motion: push_in
+  target: Eli
+  action: walk
+  spot: sidewalk_left
+  face: neutral
+  speaker: narrator
+  line: Every kid had family shouting at *recess*.
+- dur: 2.4
+  cam: reverse_ots
+  fov: 46
+  motion: push_in
+  target: Jax
+  action: point
+  face: grin
+  with:
+  - name: Eli
+    action: idle
+    face: neutral
+  speaker: villain
+  line: You are totally *alone* out here.
+- dur: 2.4
+  cam: closeup
+  fov: 44
+  motion: push_in
+  target: Eli
+  action: talk
+  face: determined
+  speaker: boy
+  line: I don't need your *pity*.
+- dur: 2.4
+  cam: wide
+  fov: 54
+  motion: push_in
+  target: Eli
+  action: walk
+  spot: crosswalk
+  face: neutral
+  speaker: narrator
+  sfx: whoosh
+  line: I stepped into the road without *looking*.
+- dur: 2.4
+  cam: reverse_ots
+  fov: 46
+  motion: shake
+  target: Officer
+  action: point
+  face: shocked
+  speaker: woman
+  sfx: whistle_blow
+  line: Truck! Get off the *street*!
+- dur: 2.4
+  cam: closeup
+  fov: 44
+  motion: shake
+  target: Eli
+  action: recoil
+  face: scared
+  speaker: narrator
+  line: Air brakes *screeched*.
+- dur: 2.4
+  cam: low_hero
+  fov: 46
+  motion: push_in
+  target: Eli
+  action: idle
+  face: scared
+  speaker: narrator
+  sfx: heartbeat_fast
+  line: My boots froze to the cold *ground*.
+- dur: 2.4
+  cam: wide
+  fov: 56
+  motion: push_in
+  target: Jax
+  action: run
+  spot: crosswalk
+  face: determined
+  with:
+  - name: Eli
+    action: idle
+    face: scared
+  speaker: narrator
+  line: Nobody ever trades their *life*.
+- dur: 2.4
+  cam: ots
+  fov: 46
+  motion: push_in
+  target: Jax
+  action: talk
+  face: determined
+  with:
+  - name: Eli
+    action: idle
+    face: scared
+  speaker: villain
+  line: Get out of the *way*!
+- dur: 2.4
+  cam: reverse_ots
+  fov: 46
+  motion: shake
+  target: Jax
+  action: point
+  face: determined
+  with:
+  - name: Eli
+    action: recoil
+    face: shocked
+  speaker: villain
+  sfx: thud
+  line: Move, *Eli*!
+- dur: 2.4
+  cam: closeup
+  fov: 42
+  motion: static
+  target: Eli
+  action: recoil
+  face: shocked
+  bgm_duck: true
+  pause_before: 0.3
+  speaker: boy
+  line: He said my *name*.
+- dur: 2.4
+  cam: wide
+  fov: 54
+  motion: shake
+  target: Jax
+  action: punch
+  face: determined
+  with:
+  - name: Eli
+    action: fall
+    spot: sidewalk_right
+    face: shocked
+  sfx: impact_whoosh
+  speaker: narrator
+  line: Two hands shoved me to the *sidewalk*.
+  fx: truck_pass
+- dur: 2.4
+  cam: low_hero
+  fov: 46
+  motion: shake
+  target: Jax
+  action: fall
+  face: shocked
+  sfx: drone_smash
+  speaker: narrator
+  line: The bumper struck Jax into the *dust*.
+  fx: truck_pass
+- dur: 2.4
+  cam: side_track
+  fov: 48
+  motion: push_in
+  target: Officer
+  action: run
+  spot: road_center
+  face: shocked
+  with:
+  - name: Jax
+    action: downed
+    face: neutral
+  speaker: woman
+  line: Medic! He took the *impact*!
+- dur: 2.4
+  cam: closeup
+  fov: 44
+  motion: push_in
+  target: Eli
+  action: walk
+  spot: road_center
+  face: shocked
+  with:
+  - name: Jax
+    action: downed
+    face: neutral
+  speaker: boy
+  line: Jax! Why did you *jump*?
+- dur: 2.4
+  cam: high_angle
+  fov: 50
+  motion: pull_out
+  target: Jax
+  action: downed
+  face: neutral
+  with:
+  - name: Eli
+    action: idle
+    face: shocked
+  bgm_climax: true
+  sfx: resolution_chord
+  speaker: villain
+  line: You never listened once, *Eli*.

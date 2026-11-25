@@ -1,0 +1,87 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: SafeCenterPop,Arial Black,82,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,7,3,2,90,90,560,1
+Style: SafeCenterWhite,Arial Black,82,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,7,3,2,90,90,560,1
+Style: UpperThirdPop,Arial Black,82,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,7,3,8,90,90,240,1
+Style: LowerThirdPop,Arial Black,82,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,7,3,2,90,90,235,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.30,0:00:01.14,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IN MY WORLD,
+Dialogue: 0,0:00:01.27,0:00:02.15,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}EVERY{\c&H00FFFFFF&} TIME YOU
+Dialogue: 0,0:00:02.15,0:00:02.96,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}BREAK A PROMISE,
+Dialogue: 0,0:00:03.27,0:00:03.89,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}A RED DOT
+Dialogue: 0,0:00:03.89,0:00:04.31,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}APPEARS.
+Dialogue: 0,0:00:04.71,0:00:05.40,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I PROMISED BEN
+Dialogue: 0,0:00:05.40,0:00:05.79,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WE'D PRACTICE
+Dialogue: 0,0:00:05.79,0:00:06.21,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HIS DANCE.
+Dialogue: 0,0:00:06.44,0:00:06.98,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THEN THE COACH
+Dialogue: 0,0:00:06.98,0:00:08.02,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}CALLED MY NAME.
+Dialogue: 0,0:00:08.22,0:00:08.98,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE SCHOOL SHOW
+Dialogue: 0,0:00:08.98,0:00:10.16,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TRYOUTS HAD STARTED.
+Dialogue: 0,0:00:10.42,0:00:11.20,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I'D WAITED ALL
+Dialogue: 0,0:00:11.20,0:00:11.88,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YEAR FOR THIS.
+Dialogue: 0,0:00:12.14,0:00:12.92,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I FIGURED BEN
+Dialogue: 0,0:00:12.92,0:00:13.86,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}COULD {\c&H0015CCFA&}WAIT{\c&H00FFFFFF&} TOO.
+Dialogue: 0,0:00:14.14,0:00:14.80,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}BY THE WALL,
+Dialogue: 0,0:00:14.96,0:00:15.82,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HE WAITED ALONE.
+Dialogue: 0,0:00:16.10,0:00:16.60,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THAT'S WHEN
+Dialogue: 0,0:00:16.60,0:00:17.32,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE RED DOT
+Dialogue: 0,0:00:17.32,0:00:17.74,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}POPPED.
+Dialogue: 0,0:00:17.96,0:00:18.80,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE COACH STOPPED
+Dialogue: 0,0:00:18.80,0:00:19.64,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}AND LOOKED UP.
+Dialogue: 0,0:00:19.86,0:00:20.60,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THAT RED DOT
+Dialogue: 0,0:00:20.60,0:00:21.42,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}OVER MY HEAD?
+Dialogue: 0,0:00:21.72,0:00:22.64,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}EVERYONE{\c&H00FFFFFF&} AT SCHOOL
+Dialogue: 0,0:00:22.64,0:00:23.44,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}COULD SEE IT.
+Dialogue: 0,0:00:23.52,0:00:23.76,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HERE,
+Dialogue: 0,0:00:23.88,0:00:24.60,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}BREAK A PROMISE
+Dialogue: 0,0:00:24.60,0:00:25.14,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}AND POP.
+Dialogue: 0,0:00:25.38,0:00:25.64,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOU GET
+Dialogue: 0,0:00:25.64,0:00:26.32,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}A DOT {\c&H0015CCFA&}LIKE{\c&H00FFFFFF&}
+Dialogue: 0,0:00:26.32,0:00:26.76,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}MINE.
+Dialogue: 0,0:00:26.96,0:00:27.92,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I YELLED SORRY
+Dialogue: 0,0:00:27.92,0:00:29.02,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ACROSS THE YARD.
+Dialogue: 0,0:00:29.02,0:00:29.76,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}BEN TURNED
+Dialogue: 0,0:00:29.76,0:00:30.98,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TO LEAVE WITHOUT ME.
+Dialogue: 0,0:00:31.30,0:00:31.98,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE DOT STAYED
+Dialogue: 0,0:00:31.98,0:00:32.82,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}RIGHT WHERE IT
+Dialogue: 0,0:00:32.82,0:00:33.18,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WAS.
+Dialogue: 0,0:00:33.60,0:00:34.22,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}LAST CALL,
+Dialogue: 0,0:00:34.42,0:00:35.08,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE COACH SAID.
+Dialogue: 0,0:00:35.22,0:00:35.90,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I COULD STILL
+Dialogue: 0,0:00:35.90,0:00:36.84,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TAKE MY TURN.
+Dialogue: 0,0:00:37.14,0:00:37.66,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I STEPPED OUT
+Dialogue: 0,0:00:37.66,0:00:38.30,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}OF THE LINE.
+Dialogue: 0,0:00:38.54,0:00:38.98,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THEN I RAN
+Dialogue: 0,0:00:38.98,0:00:39.84,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}BACK TO BEN.
+Dialogue: 0,0:00:40.12,0:00:40.62,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}CAN WE START
+Dialogue: 0,0:00:40.62,0:00:41.32,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}FROM THE TOP?
+Dialogue: 0,0:00:41.48,0:00:42.04,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HE SAID HE'D
+Dialogue: 0,0:00:42.04,0:00:43.00,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}FORGOTTEN THE STEPS.
+Dialogue: 0,0:00:43.28,0:00:43.86,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SO I COUNTED
+Dialogue: 0,0:00:43.86,0:00:44.82,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WHILE HE TRIED.
+Dialogue: 0,0:00:45.14,0:00:45.36,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ONE,
+Dialogue: 0,0:00:45.52,0:00:45.72,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TWO.
+Dialogue: 0,0:00:46.08,0:00:46.30,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HE MISSED
+Dialogue: 0,0:00:46.30,0:00:46.88,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE TURN.
+Dialogue: 0,0:00:47.08,0:00:47.48,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WE TOOK IT
+Dialogue: 0,0:00:47.48,0:00:48.16,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}FROM THE TOP.
+Dialogue: 0,0:00:48.38,0:00:49.02,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THIS TIME HE
+Dialogue: 0,0:00:49.02,0:00:50.10,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}MADE {\c&H0015CCFA&}EVERY{\c&H00FFFFFF&} STEP.
+Dialogue: 0,0:00:50.40,0:00:50.82,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}RIGHT THEN,
+Dialogue: 0,0:00:50.82,0:00:51.60,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}MY DOT WENT
+Dialogue: 0,0:00:51.60,0:00:51.92,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}OUT.
+Dialogue: 0,0:00:52.12,0:00:52.72,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}BEN GRINNED.
+Dialogue: 0,0:00:52.72,0:00:53.25,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}AGAIN?
+Dialogue: 0,0:00:53.48,0:00:54.03,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HE ASKED.
+Dialogue: 0,0:00:54.28,0:00:54.78,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THIS TIME,
+Dialogue: 0,0:00:54.78,0:00:55.32,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I STAYED
+Dialogue: 0,0:00:55.32,0:00:55.76,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WITH HIM.

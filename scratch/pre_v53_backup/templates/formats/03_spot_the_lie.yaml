@@ -1,0 +1,15 @@
+id: "006"
+format: spot_the_lie
+title: "95% MISS the Clue in Frame 1 — Who Stole the Key? 🔍😱"
+bgm_mood: dark
+lighting: dark_mystery
+thumb_at: 1.0
+hashtags: ["#roblox", "#mystery", "#riddle", "#shorts"]
+cast:
+  - { name: SuspectA, gender: boy, default_face: neutral, pos: [-4, 3, 0] }
+  - { name: SuspectB, gender: girl, default_face: neutral, pos: [0, 3, 0] }
+  - { name: SuspectC, gender: boy, default_face: grin, pos: [4, 3, 0] }
+beats:
+  - { dur: 1.8, cam: wide, motion: push_in, target: SuspectB, face: neutral, badge: "WHO LIED?", sfx: tick, line: "One of these three stole the gold key. Look closely." }
+  - { dur: 1.9, cam: closeup, motion: push_in, target: SuspectA, face: scared, badge: "ALIBI 1", sfx: whoosh, line: "Alex says he was swimming at the pool all morning." }
+  - { dur: 2.0, cam: closeup, motion: shake, target: SuspectC, face: shocked, fx: impact, badge: "CAUGHT!", sfx: ding, line: "Rewind to second one. His dry shoes gave him away." }

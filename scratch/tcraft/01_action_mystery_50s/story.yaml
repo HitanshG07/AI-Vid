@@ -1,0 +1,58 @@
+# ============================================================================
+# WORKED BLUEPRINT 1: Action-First School Mystery (~46s, 22 beats, ~42% dialogue)
+# Editorial Brief:
+#   1. Opening picture (muted): School bus doors hiss shut; driver grabs Leo's backpack and points to the back seat.
+#   2. Character want: Leo just wants to get off at his normal bus stop (Oak Street).
+#   3. Visible obstacle: The driver blocks the door and whispers "Don't get off."
+#   4. Choice & cost: Leo trusts the stranger's warning instead of bolting when his "mom" waves outside.
+#   5. Final picture: As the bus pulls away, the "mom" outside drops her smile into a blank white face—and Leo's real mom calls from home.
+#   6. Cut redundant line: Removed "In this town, mimics wait at bus stops" — the blank face + phone call shows it.
+# ============================================================================
+id: "BLUEPRINT_01"
+format: mystery
+set: street_day
+title: "The Last Bus 🚌"
+description: "The bus driver wouldn't let Leo get off at his own stop—until Leo looked back through the window."
+hashtags: ["#roblox", "#rblx", "#robloxstories", "#shorts"]
+bgm_mood: tension
+lighting: dark_mystery
+caption_margin_v: 560
+engine: ironic_reframe
+cta: "Rewind to second one - did you spot the mom?"
+thumb_at: 1.0
+
+cast:
+  - { name: Leo,    gender: boy,   default_face: shocked,    pos: [0, 0, 6],   yaw: 180 }
+  - { name: Driver, gender: man,   default_face: determined, pos: [-3, 0, 5],  yaw: 90 }
+  - { name: Mimic,  gender: woman, default_face: grin,       pos: [7, 0, 12],  yaw: 0 }
+  - { name: Kid2,   gender: girl,  default_face: scared,     pos: [-4, 0, -2], yaw: 180 }
+
+beats:
+  # HOOK (0-5s): In media res — zero rule lecture
+  - { dur: 2.1, cam: closeup, fov: 44, motion: push_in, target: Driver, action: point, face: determined, with: [{ name: Leo, action: block, face: shocked }], face_partner: true, speaker: adult, sfx: thud, line: "Sit *down*. Do not get off at your stop." }
+  - { dur: 2.1, cam: reverse_ots, fov: 46, motion: push_in, target: Leo, action: point, face: shocked, with: [{ name: Driver, action: idle }], speaker: boy, line: "That's my *house*! My mom is right there!" }
+  - { dur: 2.1, cam: wide, fov: 54, motion: push_in, target: Mimic, action: wave, face: grin, sfx: whoosh, speaker: narrator, line: "She stood waving under the streetlight." }
+
+  # ESCALATION (5-24s): Concrete contradiction + rising tension
+  - { dur: 2.1, cam: ots, fov: 46, motion: push_in, target: Driver, action: point, face: scared, with: [{ name: Leo, action: idle }], speaker: adult, sfx: tick, line: "Look at her *shoes*, kid. Don't look at her face." }
+  - { dur: 2.1, cam: prop_insert, fov: 40, motion: push_in, target: Mimic, action: idle, face: grin, speaker: narrator, line: "Pouring rain. Her sneakers were *dry*." }
+  - { dur: 2.1, cam: side_track, fov: 48, motion: push_in, target: Kid2, action: point, face: shocked, with: [{ name: Leo, action: idle, face: scared }], speaker: girl, sfx: tick, line: "Her hair isn't *wet* either. Not one drop." }
+  - { dur: 2.1, cam: closeup, fov: 44, motion: push_in, target: Leo, action: idle, face: scared, speaker: narrator, line: "Mom always wears red *boots*." }
+  - { dur: 2.1, cam: reverse_ots, fov: 46, motion: shake, target: Mimic, action: walk, move_to: [4, 0, 8], face: grin, speaker: girl, sfx: thud, line: "Leo! Honey, why aren't you *coming* out?" }
+  - { dur: 2.1, cam: ots, fov: 46, motion: push_in, target: Driver, action: idle, face: determined, with: [{ name: Leo, action: idle, face: scared }], speaker: adult, line: "Doors stay *shut*. Never open them." }
+  - { dur: 2.1, cam: side_track, fov: 48, motion: push_in, target: Kid2, action: wave, face: scared, speaker: girl, line: "Drive! Please just *drive*!" }
+  - { dur: 2.1, cam: ots, fov: 46, motion: push_in, target: Leo, action: walk, move_to: [-1, 0, 3], face: determined, with: [{ name: Driver, action: idle }], speaker: boy, line: "Keep the doors *locked*!" }
+  - { dur: 2.1, cam: closeup, fov: 44, motion: shake, target: Mimic, action: run, move_to: [2, 0, 6], face: shocked, sfx: bass_hit, speaker: narrator, line: "The second the engine roared, she stopped waving." }
+
+  # CLIMAX & TWIST (24-40s): Silent pause + bgm_duck -> reveal
+  - { dur: 2.1, cam: prop_insert, fov: 40, motion: shake, target: Mimic, action: point, face: grin, speaker: girl, sfx: thud, line: "Leo, open the *window*. Just a crack." }
+  - { dur: 2.1, cam: low_hero, fov: 46, motion: shake, target: Mimic, action: knockback, face: neutral, bgm_duck: true, pause_before: 0.30, sfx: glass_clink, speaker: narrator, line: "Her smile vanished. Face *blank*." }
+  - { dur: 2.1, cam: wide, fov: 56, motion: pull_out, target: Leo, action: run, move_to: [0, 0, -6], with: [{ name: Mimic, action: run, move_to: [1, 0, 2], face: neutral }], bgm_climax: true, sfx: whoosh, speaker: narrator, line: "She sprinted beside the *bus*." }
+  - { dur: 2.1, cam: closeup, fov: 44, motion: push_in, target: Leo, action: idle, face: shocked, with: [{ name: Kid2, action: wave, face: scared }], speaker: boy, line: "Then who is *that* running next to us?" }
+  - { dur: 2.1, cam: side_track, fov: 48, motion: shake, target: Driver, action: point, face: determined, speaker: adult, line: "Hold on! Next street is the *police* station!" }
+  - { dur: 2.1, cam: closeup, fov: 44, motion: push_in, target: Leo, action: idle, face: scared, sfx: ding, speaker: narrator, line: "Then my phone buzzed in my pocket. Caller ID: *Mom*." }
+  - { dur: 2.1, cam: closeup, fov: 44, motion: push_in, target: Leo, action: point, face: shocked, bgm_duck: true, pause_before: 0.25, speaker: girl, line: "Leo, I'm stuck in traffic. Twenty *minutes*." }
+
+  # FINAL PICTURE (40-46s): Single decisive closing beat (no extra epilogue)
+  - { dur: 2.0, cam: high_angle, fov: 50, motion: pull_out, target: Mimic, action: idle, face: neutral, with: [{ name: Leo, action: idle, face: scared }], bgm_climax: true, sfx: bass_hit, speaker: narrator, line: "I looked back. She waited at the *next* stop." }
+  - { dur: 1.6, cam: closeup, fov: 42, motion: static, allow_hold: false, target: Leo, action: idle, face: shocked, speaker: narrator, line: "" }

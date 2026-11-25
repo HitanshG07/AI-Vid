@@ -1,0 +1,114 @@
+[
+  {
+    "beat": 1,
+    "speaker": "adult",
+    "pause_before": 0.0,
+    "raw_line": "Sit *down*. Do not get off at your stop.",
+    "text": "Sit down. Do not get off at your stop."
+  },
+  {
+    "beat": 2,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "That's my *house*! My mom is right there!",
+    "text": "That's my house! My mom is right there!"
+  },
+  {
+    "beat": 3,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "She stood under the streetlight, waving with both hands.",
+    "text": "She stood under the streetlight, waving with both hands."
+  },
+  {
+    "beat": 4,
+    "speaker": "adult",
+    "pause_before": 0.0,
+    "raw_line": "Look at her *shoes*, kid. Don't look at her face.",
+    "text": "Look at her shoes, kid. Don't look at her face."
+  },
+  {
+    "beat": 5,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "It was pouring rain, and her white sneakers were completely *dry*.",
+    "text": "It was pouring rain, and her white sneakers were completely dry."
+  },
+  {
+    "beat": 6,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "My stomach dropped. Mom always wears her red boots.",
+    "text": "My stomach dropped. Mom always wears her red boots."
+  },
+  {
+    "beat": 7,
+    "speaker": "girl",
+    "pause_before": 0.0,
+    "raw_line": "Leo! Honey, why aren't you *coming* out?",
+    "text": "Leo! Honey, why aren't you coming out?"
+  },
+  {
+    "beat": 8,
+    "speaker": "girl",
+    "pause_before": 0.0,
+    "raw_line": "Drive! Please just *drive*!",
+    "text": "Drive! Please just drive!"
+  },
+  {
+    "beat": 9,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Keep the doors *locked*!",
+    "text": "Keep the doors locked!"
+  },
+  {
+    "beat": 10,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "The second the engine roared, she stopped waving.",
+    "text": "The second the engine roared, she stopped waving."
+  },
+  {
+    "beat": 11,
+    "speaker": "narrator",
+    "pause_before": 0.3,
+    "raw_line": "Her smile vanished. Her face went completely *blank*.",
+    "text": "Her smile vanished. Her face went completely blank."
+  },
+  {
+    "beat": 12,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "She sprinted beside the bus\u2014faster than any human could move.",
+    "text": "She sprinted beside the bus\u2014faster than any human could move."
+  },
+  {
+    "beat": 13,
+    "speaker": "adult",
+    "pause_before": 0.0,
+    "raw_line": "Hold on! Next street is the *police* station!",
+    "text": "Hold on! Next street is the police station!"
+  },
+  {
+    "beat": 14,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "Then my phone buzzed in my pocket. Caller ID: *Mom*.",
+    "text": "Then my phone buzzed in my pocket. Caller ID: Mom."
+  },
+  {
+    "beat": 15,
+    "speaker": "girl",
+    "pause_before": 0.25,
+    "raw_line": "Leo, I'm stuck in traffic\u2014I won't be home for twenty *minutes*.",
+    "text": "Leo, I'm stuck in traffic\u2014I won't be home for twenty minutes."
+  },
+  {
+    "beat": 16,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "I looked back through the rear glass. She was already waiting at the *next* stop.",
+    "text": "I looked back through the rear glass. She was already waiting at the next stop."
+  }
+]

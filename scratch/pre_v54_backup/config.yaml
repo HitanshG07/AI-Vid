@@ -1,0 +1,54 @@
+# AI-Vid V5 Single Source of Truth Configuration
+channel:
+  handle: "@studversetales"
+  name: "StudVerse Tales"
+  default_hashtags: ["#roblox", "#rblx", "#stories", "#shorts"]
+
+video:
+  width: 1080
+  height: 1920
+  fps: 30
+  transpose: "2"
+  lead_in_seconds: 0.3
+  max_shot_seconds: 2.2
+  cursor_lock_xy: [900, 12]
+
+voice:
+  engine: "kokoro"                       # kokoro | edge
+  kokoro_voice: "am_michael:0.65,am_fenrir:0.35"
+  kokoro_fallback: "am_adam"
+  kokoro_speed: 1.22                     # targets 185-195 WPM
+  edge_voice: "en-US-ChristopherNeural"
+  edge_rate: "+20%"
+  edge_pitch: "+2Hz"
+  silence_threshold_db: -42
+  silence_trigger_sec: 0.14
+  silence_keep_sec: 0.05
+  target_wpm_min: 175
+  target_wpm_max: 205
+
+captions:
+  style: "SafeCenterPop"                 # MarginV=560 -> 100% clear of Shorts bottom UI
+  font: "Arial Black"
+  font_size: 82
+  margin_v: 560
+  max_words_per_card: 3
+  max_chars_per_card: 16
+
+audio:
+  bgm_gain: 0.14
+  climax_bgm_gain: 0.20
+  bgm_moods:
+    mystery: "roblox-story-bg.mp3"
+    action: "bgm_action.mp3"
+    wholesome: "bgm_wholesome.mp3"
+    dark: "bgm_dark.mp3"
+    none: ""
+
+playlists:
+  story: "In This World Stories"
+  anime_fight: "Roblox Anime Fights"
+  spot_the_lie: "Spot The Lie Mysteries"
+  beat_drop: "Beat-Drop Edits"
+  psychology: "Roblox Mind Rules"
+  thought_sim: "What If Simulations"

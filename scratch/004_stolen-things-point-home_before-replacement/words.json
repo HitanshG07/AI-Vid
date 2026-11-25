@@ -1,0 +1,897 @@
+[
+ {
+  "word": "The",
+  "start": 0.0,
+  "end": 0.19
+ },
+ {
+  "word": "gold",
+  "start": 0.19,
+  "end": 0.38
+ },
+ {
+  "word": "cup",
+  "start": 0.38,
+  "end": 0.57
+ },
+ {
+  "word": "spun",
+  "start": 0.57,
+  "end": 0.76
+ },
+ {
+  "word": "by",
+  "start": 0.76,
+  "end": 0.95
+ },
+ {
+  "word": "itself.",
+  "start": 0.95,
+  "end": 1.14
+ },
+ {
+  "word": "Then",
+  "start": 1.14,
+  "end": 1.33
+ },
+ {
+  "word": "it",
+  "start": 1.33,
+  "end": 1.52
+ },
+ {
+  "word": "pointed",
+  "start": 1.52,
+  "end": 1.71
+ },
+ {
+  "word": "at",
+  "start": 1.71,
+  "end": 1.9
+ },
+ {
+  "word": "our",
+  "start": 1.9,
+  "end": 2.09
+ },
+ {
+  "word": "janitor.",
+  "start": 2.09,
+  "end": 2.28
+ },
+ {
+  "word": "Here,",
+  "start": 2.28,
+  "end": 2.47
+ },
+ {
+  "word": "stolen",
+  "start": 2.47,
+  "end": 2.66
+ },
+ {
+  "word": "things",
+  "start": 2.66,
+  "end": 2.85
+ },
+ {
+  "word": "point",
+  "start": 2.85,
+  "end": 3.04
+ },
+ {
+  "word": "straight",
+  "start": 3.04,
+  "end": 3.23
+ },
+ {
+  "word": "home.",
+  "start": 3.23,
+  "end": 3.42
+ },
+ {
+  "word": "They",
+  "start": 3.4199999999999995,
+  "end": 3.98
+ },
+ {
+  "word": "turn",
+  "start": 3.98,
+  "end": 4.44
+ },
+ {
+  "word": "toward",
+  "start": 4.44,
+  "end": 7.24
+ },
+ {
+  "word": "whoever",
+  "start": 7.24,
+  "end": 7.58
+ },
+ {
+  "word": "lost",
+  "start": 7.58,
+  "end": 8.04
+ },
+ {
+  "word": "them.",
+  "start": 8.04,
+  "end": 8.4
+ },
+ {
+  "word": "Last",
+  "start": 8.56,
+  "end": 8.76
+ },
+ {
+  "word": "week,",
+  "start": 8.76,
+  "end": 9.08
+ },
+ {
+  "word": "my",
+  "start": 9.08,
+  "end": 9.32
+ },
+ {
+  "word": "stolen",
+  "start": 9.32,
+  "end": 9.76
+ },
+ {
+  "word": "bell",
+  "start": 9.76,
+  "end": 10.14
+ },
+ {
+  "word": "found",
+  "start": 10.14,
+  "end": 10.5
+ },
+ {
+  "word": "me.",
+  "start": 10.5,
+  "end": 10.78
+ },
+ {
+  "word": "It",
+  "start": 10.94,
+  "end": 11.0
+ },
+ {
+  "word": "stopped",
+  "start": 11.0,
+  "end": 11.36
+ },
+ {
+  "word": "as",
+  "start": 11.36,
+  "end": 11.64
+ },
+ {
+  "word": "soon",
+  "start": 11.64,
+  "end": 11.8
+ },
+ {
+  "word": "as",
+  "start": 11.8,
+  "end": 11.96
+ },
+ {
+  "word": "I",
+  "start": 11.96,
+  "end": 12.14
+ },
+ {
+  "word": "touched",
+  "start": 12.14,
+  "end": 12.42
+ },
+ {
+  "word": "it.",
+  "start": 12.42,
+  "end": 12.74
+ },
+ {
+  "word": "Now",
+  "start": 12.92,
+  "end": 13.04
+ },
+ {
+  "word": "everyone",
+  "start": 13.04,
+  "end": 13.56
+ },
+ {
+  "word": "stared",
+  "start": 13.56,
+  "end": 13.98
+ },
+ {
+  "word": "at",
+  "start": 13.98,
+  "end": 14.2
+ },
+ {
+  "word": "Mr.",
+  "start": 14.2,
+  "end": 14.48
+ },
+ {
+  "word": "Reed.",
+  "start": 14.84,
+  "end": 14.84
+ },
+ {
+  "word": "Someone",
+  "start": 15.16,
+  "end": 15.4
+ },
+ {
+  "word": "yelled,",
+  "start": 15.4,
+  "end": 15.78
+ },
+ {
+  "word": "'Check",
+  "start": 16.04,
+  "end": 16.2
+ },
+ {
+  "word": "his",
+  "start": 16.2,
+  "end": 16.48
+ },
+ {
+  "word": "cart!'",
+  "start": 16.48,
+  "end": 16.82
+ },
+ {
+  "word": "He",
+  "start": 17.02,
+  "end": 17.08
+ },
+ {
+  "word": "locked",
+  "start": 17.08,
+  "end": 17.36
+ },
+ {
+  "word": "the",
+  "start": 17.36,
+  "end": 17.6
+ },
+ {
+  "word": "wheels",
+  "start": 17.6,
+  "end": 17.88
+ },
+ {
+  "word": "and",
+  "start": 17.88,
+  "end": 18.14
+ },
+ {
+  "word": "stepped",
+  "start": 18.14,
+  "end": 18.42
+ },
+ {
+  "word": "back.",
+  "start": 18.42,
+  "end": 18.86
+ },
+ {
+  "word": "The",
+  "start": 19.02,
+  "end": 19.1
+ },
+ {
+  "word": "cup",
+  "start": 19.1,
+  "end": 19.28
+ },
+ {
+  "word": "kept",
+  "start": 19.28,
+  "end": 19.58
+ },
+ {
+  "word": "right",
+  "start": 19.58,
+  "end": 19.92
+ },
+ {
+  "word": "on",
+  "start": 19.92,
+  "end": 20.18
+ },
+ {
+  "word": "turning.",
+  "start": 20.18,
+  "end": 20.58
+ },
+ {
+  "word": "I",
+  "start": 20.86,
+  "end": 20.96
+ },
+ {
+  "word": "followed",
+  "start": 20.96,
+  "end": 21.3
+ },
+ {
+  "word": "its",
+  "start": 21.3,
+  "end": 21.56
+ },
+ {
+  "word": "point",
+  "start": 21.56,
+  "end": 21.9
+ },
+ {
+  "word": "past",
+  "start": 21.9,
+  "end": 22.28
+ },
+ {
+  "word": "his",
+  "start": 22.28,
+  "end": 22.58
+ },
+ {
+  "word": "cart.",
+  "start": 22.58,
+  "end": 22.92
+ },
+ {
+  "word": "It",
+  "start": 23.16,
+  "end": 23.24
+ },
+ {
+  "word": "swung",
+  "start": 23.24,
+  "end": 23.66
+ },
+ {
+  "word": "as",
+  "start": 23.66,
+  "end": 23.94
+ },
+ {
+  "word": "Miss",
+  "start": 23.94,
+  "end": 24.16
+ },
+ {
+  "word": "May",
+  "start": 24.16,
+  "end": 24.42
+ },
+ {
+  "word": "walked",
+  "start": 24.42,
+  "end": 24.78
+ },
+ {
+  "word": "by.",
+  "start": 24.78,
+  "end": 25.22
+ },
+ {
+  "word": "She",
+  "start": 25.52,
+  "end": 25.64
+ },
+ {
+  "word": "stopped.",
+  "start": 25.64,
+  "end": 26.06
+ },
+ {
+  "word": "The",
+  "start": 26.24,
+  "end": 26.38
+ },
+ {
+  "word": "cup",
+  "start": 26.38,
+  "end": 26.56
+ },
+ {
+  "word": "stopped",
+  "start": 26.56,
+  "end": 27.0
+ },
+ {
+  "word": "too.",
+  "start": 27.0,
+  "end": 27.46
+ },
+ {
+  "word": "She",
+  "start": 27.7,
+  "end": 27.82
+ },
+ {
+  "word": "took",
+  "start": 27.82,
+  "end": 28.04
+ },
+ {
+  "word": "one",
+  "start": 28.04,
+  "end": 28.4
+ },
+ {
+  "word": "step",
+  "start": 28.4,
+  "end": 28.78
+ },
+ {
+  "word": "to",
+  "start": 28.78,
+  "end": 29.02
+ },
+ {
+  "word": "the",
+  "start": 29.02,
+  "end": 29.16
+ },
+ {
+  "word": "left.",
+  "start": 29.16,
+  "end": 29.48
+ },
+ {
+  "word": "The",
+  "start": 29.6,
+  "end": 29.72
+ },
+ {
+  "word": "cup",
+  "start": 29.72,
+  "end": 29.94
+ },
+ {
+  "word": "turned",
+  "start": 29.98,
+  "end": 30.34
+ },
+ {
+  "word": "left",
+  "start": 30.34,
+  "end": 30.7
+ },
+ {
+  "word": "with",
+  "start": 30.7,
+  "end": 31.02
+ },
+ {
+  "word": "her.",
+  "start": 31.02,
+  "end": 31.18
+ },
+ {
+  "word": "Then",
+  "start": 31.32,
+  "end": 31.42
+ },
+ {
+  "word": "I",
+  "start": 31.42,
+  "end": 31.58
+ },
+ {
+  "word": "saw",
+  "start": 31.58,
+  "end": 31.82
+ },
+ {
+  "word": "a",
+  "start": 31.82,
+  "end": 32.1
+ },
+ {
+  "word": "crack",
+  "start": 32.1,
+  "end": 32.24
+ },
+ {
+  "word": "in",
+  "start": 32.24,
+  "end": 32.44
+ },
+ {
+  "word": "the",
+  "start": 32.44,
+  "end": 32.56
+ },
+ {
+  "word": "gold.",
+  "start": 32.56,
+  "end": 32.9
+ },
+ {
+  "word": "A",
+  "start": 33.12,
+  "end": 33.24
+ },
+ {
+  "word": "tiny",
+  "start": 33.24,
+  "end": 33.64
+ },
+ {
+  "word": "red",
+  "start": 33.64,
+  "end": 34.04
+ },
+ {
+  "word": "wing",
+  "start": 34.04,
+  "end": 34.4
+ },
+ {
+  "word": "stuck",
+  "start": 34.4,
+  "end": 34.74
+ },
+ {
+  "word": "out.",
+  "start": 34.74,
+  "end": 35.1
+ },
+ {
+  "word": "Miss",
+  "start": 35.34,
+  "end": 35.44
+ },
+ {
+  "word": "May",
+  "start": 35.44,
+  "end": 35.64
+ },
+ {
+  "word": "leaned",
+  "start": 35.64,
+  "end": 36.0
+ },
+ {
+  "word": "in.",
+  "start": 36.0,
+  "end": 36.34
+ },
+ {
+  "word": "'That's",
+  "start": 36.5,
+  "end": 36.84
+ },
+ {
+  "word": "my",
+  "start": 36.84,
+  "end": 37.06
+ },
+ {
+  "word": "bird.'",
+  "start": 37.06,
+  "end": 37.44
+ },
+ {
+  "word": "'I",
+  "start": 37.66,
+  "end": 37.76
+ },
+ {
+  "word": "made",
+  "start": 37.76,
+  "end": 38.02
+ },
+ {
+  "word": "it",
+  "start": 38.02,
+  "end": 38.14
+ },
+ {
+  "word": "when",
+  "start": 38.14,
+  "end": 38.26
+ },
+ {
+  "word": "I",
+  "start": 38.26,
+  "end": 38.4
+ },
+ {
+  "word": "was",
+  "start": 38.4,
+  "end": 38.6
+ },
+ {
+  "word": "ten.'",
+  "start": 38.6,
+  "end": 38.92
+ },
+ {
+  "word": "'Someone",
+  "start": 39.2,
+  "end": 39.48
+ },
+ {
+  "word": "took",
+  "start": 39.48,
+  "end": 39.7
+ },
+ {
+  "word": "it",
+  "start": 39.7,
+  "end": 39.86
+ },
+ {
+  "word": "from",
+  "start": 39.86,
+  "end": 40.02
+ },
+ {
+  "word": "my",
+  "start": 40.02,
+  "end": 40.26
+ },
+ {
+  "word": "desk.'",
+  "start": 40.26,
+  "end": 40.62
+ },
+ {
+  "word": "I",
+  "start": 40.92,
+  "end": 41.04
+ },
+ {
+  "word": "pulled",
+  "start": 41.04,
+  "end": 41.3
+ },
+ {
+  "word": "the",
+  "start": 41.3,
+  "end": 41.52
+ },
+ {
+  "word": "cracked",
+  "start": 41.52,
+  "end": 41.92
+ },
+ {
+  "word": "gold",
+  "start": 41.92,
+  "end": 42.32
+ },
+ {
+  "word": "shell",
+  "start": 42.32,
+  "end": 42.7
+ },
+ {
+  "word": "apart.",
+  "start": 42.7,
+  "end": 43.12
+ },
+ {
+  "word": "A",
+  "start": 43.34,
+  "end": 43.46
+ },
+ {
+  "word": "little",
+  "start": 43.46,
+  "end": 43.64
+ },
+ {
+  "word": "clay",
+  "start": 43.64,
+  "end": 44.02
+ },
+ {
+  "word": "bird",
+  "start": 44.02,
+  "end": 44.46
+ },
+ {
+  "word": "fell",
+  "start": 44.46,
+  "end": 44.8
+ },
+ {
+  "word": "into",
+  "start": 44.8,
+  "end": 45.06
+ },
+ {
+  "word": "my",
+  "start": 45.06,
+  "end": 45.3
+ },
+ {
+  "word": "hands.",
+  "start": 45.3,
+  "end": 45.76
+ },
+ {
+  "word": "Even",
+  "start": 46.02,
+  "end": 46.26
+ },
+ {
+  "word": "then,",
+  "start": 46.26,
+  "end": 46.58
+ },
+ {
+  "word": "its",
+  "start": 46.58,
+  "end": 46.8
+ },
+ {
+  "word": "beak",
+  "start": 46.8,
+  "end": 47.18
+ },
+ {
+  "word": "turned",
+  "start": 47.18,
+  "end": 47.52
+ },
+ {
+  "word": "toward",
+  "start": 47.52,
+  "end": 47.92
+ },
+ {
+  "word": "her.",
+  "start": 47.92,
+  "end": 48.18
+ },
+ {
+  "word": "I",
+  "start": 48.32,
+  "end": 48.46
+ },
+ {
+  "word": "put",
+  "start": 48.46,
+  "end": 48.62
+ },
+ {
+  "word": "the",
+  "start": 48.62,
+  "end": 48.82
+ },
+ {
+  "word": "bird",
+  "start": 48.82,
+  "end": 49.06
+ },
+ {
+  "word": "in",
+  "start": 49.06,
+  "end": 49.24
+ },
+ {
+  "word": "her",
+  "start": 49.24,
+  "end": 49.4
+ },
+ {
+  "word": "hands.",
+  "start": 49.4,
+  "end": 49.82
+ },
+ {
+  "word": "The",
+  "start": 50.14,
+  "end": 50.26
+ },
+ {
+  "word": "beak",
+  "start": 50.26,
+  "end": 50.56
+ },
+ {
+  "word": "went",
+  "start": 50.56,
+  "end": 50.78
+ },
+ {
+  "word": "still",
+  "start": 50.78,
+  "end": 51.12
+ },
+ {
+  "word": "for",
+  "start": 51.12,
+  "end": 51.42
+ },
+ {
+  "word": "good.",
+  "start": 51.42,
+  "end": 51.74
+ },
+ {
+  "word": "Mr.",
+  "start": 52.02,
+  "end": 52.34
+ },
+ {
+  "word": "Reed",
+  "start": 52.64,
+  "end": 52.66
+ },
+ {
+  "word": "finally",
+  "start": 52.66,
+  "end": 53.16
+ },
+ {
+  "word": "got",
+  "start": 53.16,
+  "end": 53.62
+ },
+ {
+  "word": "his",
+  "start": 53.62,
+  "end": 53.82
+ },
+ {
+  "word": "cart",
+  "start": 53.82,
+  "end": 54.14
+ },
+ {
+  "word": "back.",
+  "start": 54.14,
+  "end": 54.58
+ },
+ {
+  "word": "Miss",
+  "start": 54.82,
+  "end": 54.94
+ },
+ {
+  "word": "May",
+  "start": 54.94,
+  "end": 55.16
+ },
+ {
+  "word": "took",
+  "start": 55.16,
+  "end": 55.4
+ },
+ {
+  "word": "her",
+  "start": 55.4,
+  "end": 55.62
+ },
+ {
+  "word": "little",
+  "start": 55.62,
+  "end": 55.82
+ },
+ {
+  "word": "bird",
+  "start": 55.82,
+  "end": 56.18
+ },
+ {
+  "word": "home.",
+  "start": 56.18,
+  "end": 56.64
+ }
+]

@@ -1,0 +1,697 @@
+[
+ {
+  "word": "Everything",
+  "start": 0.0,
+  "end": 0.278
+ },
+ {
+  "word": "went",
+  "start": 0.278,
+  "end": 0.555
+ },
+ {
+  "word": "wrong",
+  "start": 0.555,
+  "end": 0.833
+ },
+ {
+  "word": "the",
+  "start": 0.833,
+  "end": 1.111
+ },
+ {
+  "word": "second",
+  "start": 1.111,
+  "end": 1.388
+ },
+ {
+  "word": "I",
+  "start": 1.388,
+  "end": 1.666
+ },
+ {
+  "word": "walked",
+  "start": 1.666,
+  "end": 1.944
+ },
+ {
+  "word": "to",
+  "start": 1.944,
+  "end": 2.221
+ },
+ {
+  "word": "class.",
+  "start": 2.221,
+  "end": 2.499
+ },
+ {
+  "word": "Every",
+  "start": 2.499,
+  "end": 2.776
+ },
+ {
+  "word": "step",
+  "start": 2.776,
+  "end": 3.054
+ },
+ {
+  "word": "went",
+  "start": 3.054,
+  "end": 3.332
+ },
+ {
+  "word": "squeak,",
+  "start": 3.332,
+  "end": 3.609
+ },
+ {
+  "word": "crinkle.",
+  "start": 3.609,
+  "end": 3.887
+ },
+ {
+  "word": "Brand",
+  "start": 3.887,
+  "end": 4.165
+ },
+ {
+  "word": "new",
+  "start": 4.165,
+  "end": 4.442
+ },
+ {
+  "word": "shoes.",
+  "start": 4.442,
+  "end": 4.72
+ },
+ {
+  "word": "Day",
+  "start": 4.7199999999999935,
+  "end": 5.159999999999997
+ },
+ {
+  "word": "one.",
+  "start": 5.159999999999997,
+  "end": 5.6
+ },
+ {
+  "word": "Looking",
+  "start": 5.6,
+  "end": 5.84
+ },
+ {
+  "word": "clean.",
+  "start": 5.84,
+  "end": 6.34
+ },
+ {
+  "word": "Is",
+  "start": 6.58,
+  "end": 6.6
+ },
+ {
+  "word": "that",
+  "start": 6.6,
+  "end": 6.76
+ },
+ {
+  "word": "you",
+  "start": 6.76,
+  "end": 6.88
+ },
+ {
+  "word": "making",
+  "start": 6.88,
+  "end": 7.08
+ },
+ {
+  "word": "that",
+  "start": 7.08,
+  "end": 7.34
+ },
+ {
+  "word": "noise?",
+  "start": 7.34,
+  "end": 7.7
+ },
+ {
+  "word": "It's",
+  "start": 8.0,
+  "end": 8.1
+ },
+ {
+  "word": "the",
+  "start": 8.1,
+  "end": 8.18
+ },
+ {
+  "word": "floor.",
+  "start": 8.18,
+  "end": 8.4
+ },
+ {
+  "word": "The",
+  "start": 8.5,
+  "end": 8.56
+ },
+ {
+  "word": "floor",
+  "start": 8.56,
+  "end": 8.76
+ },
+ {
+  "word": "is",
+  "start": 8.76,
+  "end": 8.94
+ },
+ {
+  "word": "broken.",
+  "start": 8.94,
+  "end": 9.3
+ },
+ {
+  "word": "Lunch",
+  "start": 9.76,
+  "end": 9.82
+ },
+ {
+  "word": "line.",
+  "start": 9.82,
+  "end": 10.2
+ },
+ {
+  "word": "Crinkle.",
+  "start": 10.42,
+  "end": 10.74
+ },
+ {
+  "word": "Milo",
+  "start": 11.06,
+  "end": 11.18
+ },
+ {
+  "word": "moved",
+  "start": 11.18,
+  "end": 11.48
+ },
+ {
+  "word": "two",
+  "start": 11.48,
+  "end": 11.76
+ },
+ {
+  "word": "spots",
+  "start": 11.76,
+  "end": 12.06
+ },
+ {
+  "word": "back.",
+  "start": 12.06,
+  "end": 12.42
+ },
+ {
+  "word": "Dude,",
+  "start": 12.6,
+  "end": 12.66
+ },
+ {
+  "word": "did",
+  "start": 12.74,
+  "end": 12.82
+ },
+ {
+  "word": "you",
+  "start": 12.82,
+  "end": 12.94
+ },
+ {
+  "word": "step",
+  "start": 12.94,
+  "end": 13.12
+ },
+ {
+  "word": "in",
+  "start": 13.12,
+  "end": 13.26
+ },
+ {
+  "word": "something?",
+  "start": 13.26,
+  "end": 13.64
+ },
+ {
+  "word": "I",
+  "start": 13.96,
+  "end": 14.06
+ },
+ {
+  "word": "smell",
+  "start": 14.06,
+  "end": 14.26
+ },
+ {
+  "word": "like",
+  "start": 14.26,
+  "end": 14.44
+ },
+ {
+  "word": "cookies.",
+  "start": 14.44,
+  "end": 14.74
+ },
+ {
+  "word": "Back",
+  "start": 14.74,
+  "end": 15.08
+ },
+ {
+  "word": "off.",
+  "start": 15.08,
+  "end": 15.42
+ },
+ {
+  "word": "Dodgeball.",
+  "start": 15.62,
+  "end": 15.96
+ },
+ {
+  "word": "I",
+  "start": 16.22,
+  "end": 16.22
+ },
+ {
+  "word": "got",
+  "start": 16.22,
+  "end": 16.36
+ },
+ {
+  "word": "picked",
+  "start": 16.36,
+  "end": 16.6
+ },
+ {
+  "word": "first",
+  "start": 16.6,
+  "end": 16.9
+ },
+ {
+  "word": "for",
+  "start": 16.9,
+  "end": 17.12
+ },
+ {
+  "word": "once.",
+  "start": 17.12,
+  "end": 17.44
+ },
+ {
+  "word": "Big",
+  "start": 17.74,
+  "end": 17.84
+ },
+ {
+  "word": "wind-up.",
+  "start": 17.84,
+  "end": 18.32
+ },
+ {
+  "word": "Perfect",
+  "start": 18.48,
+  "end": 18.62
+ },
+ {
+  "word": "throw\u2014",
+  "start": 18.62,
+  "end": 19.04
+ },
+ {
+  "word": "Squeak.",
+  "start": 19.4,
+  "end": 19.7
+ },
+ {
+  "word": "Face",
+  "start": 19.7,
+  "end": 19.96
+ },
+ {
+  "word": "first",
+  "start": 19.96,
+  "end": 20.32
+ },
+ {
+  "word": "into",
+  "start": 20.32,
+  "end": 20.56
+ },
+ {
+  "word": "the",
+  "start": 20.56,
+  "end": 20.76
+ },
+ {
+  "word": "dirt.",
+  "start": 20.76,
+  "end": 20.98
+ },
+ {
+  "word": "The",
+  "start": 21.14,
+  "end": 21.24
+ },
+ {
+  "word": "whole",
+  "start": 21.24,
+  "end": 21.46
+ },
+ {
+  "word": "yard",
+  "start": 21.46,
+  "end": 21.72
+ },
+ {
+  "word": "laughed.",
+  "start": 21.72,
+  "end": 22.06
+ },
+ {
+  "word": "Why",
+  "start": 22.38,
+  "end": 22.46
+ },
+ {
+  "word": "is",
+  "start": 22.46,
+  "end": 22.6
+ },
+ {
+  "word": "everyone",
+  "start": 22.6,
+  "end": 22.92
+ },
+ {
+  "word": "laughing",
+  "start": 22.92,
+  "end": 23.24
+ },
+ {
+  "word": "at",
+  "start": 23.24,
+  "end": 23.4
+ },
+ {
+  "word": "me",
+  "start": 23.4,
+  "end": 23.54
+ },
+ {
+  "word": "today?!",
+  "start": 23.54,
+  "end": 23.76
+ },
+ {
+  "word": "Then",
+  "start": 24.1,
+  "end": 24.2
+ },
+ {
+  "word": "the",
+  "start": 24.2,
+  "end": 24.34
+ },
+ {
+  "word": "team",
+  "start": 24.34,
+  "end": 24.56
+ },
+ {
+  "word": "trophy",
+  "start": 24.56,
+  "end": 24.92
+ },
+ {
+  "word": "photo.",
+  "start": 24.92,
+  "end": 25.32
+ },
+ {
+  "word": "I",
+  "start": 25.7,
+  "end": 25.78
+ },
+ {
+  "word": "squeezed",
+  "start": 25.78,
+  "end": 26.14
+ },
+ {
+  "word": "into",
+  "start": 26.14,
+  "end": 26.38
+ },
+ {
+  "word": "the",
+  "start": 26.38,
+  "end": 26.56
+ },
+ {
+  "word": "front.",
+  "start": 26.56,
+  "end": 26.82
+ },
+ {
+  "word": "Best",
+  "start": 27.1,
+  "end": 27.22
+ },
+ {
+  "word": "pose",
+  "start": 27.22,
+  "end": 27.54
+ },
+ {
+  "word": "ever.",
+  "start": 27.54,
+  "end": 28.02
+ },
+ {
+  "word": "Uh...",
+  "start": 28.22,
+  "end": 28.34
+ },
+ {
+  "word": "what's",
+  "start": 28.46,
+  "end": 28.62
+ },
+ {
+  "word": "on",
+  "start": 28.62,
+  "end": 28.76
+ },
+ {
+  "word": "you?",
+  "start": 28.76,
+  "end": 28.98
+ },
+ {
+  "word": "In",
+  "start": 29.18,
+  "end": 29.36
+ },
+ {
+  "word": "the",
+  "start": 29.36,
+  "end": 29.46
+ },
+ {
+  "word": "photo,",
+  "start": 29.46,
+  "end": 29.84
+ },
+ {
+  "word": "everyone",
+  "start": 29.98,
+  "end": 30.3
+ },
+ {
+  "word": "smiled.",
+  "start": 30.3,
+  "end": 30.7
+ },
+ {
+  "word": "I",
+  "start": 31.04,
+  "end": 31.06
+ },
+ {
+  "word": "was",
+  "start": 31.06,
+  "end": 31.2
+ },
+ {
+  "word": "mid-squeak.",
+  "start": 31.2,
+  "end": 31.86
+ },
+ {
+  "word": "Nothing!",
+  "start": 32.02,
+  "end": 32.2
+ },
+ {
+  "word": "Somebody's",
+  "start": 32.34,
+  "end": 32.64
+ },
+ {
+  "word": "pranking",
+  "start": 32.64,
+  "end": 32.92
+ },
+ {
+  "word": "me!",
+  "start": 32.92,
+  "end": 33.3
+ },
+ {
+  "word": "Bro.",
+  "start": 33.74,
+  "end": 33.86
+ },
+ {
+  "word": "Look",
+  "start": 33.88,
+  "end": 34.02
+ },
+ {
+  "word": "down.",
+  "start": 34.02,
+  "end": 34.24
+ },
+ {
+  "word": "No,",
+  "start": 34.24,
+  "end": 34.44
+ },
+ {
+  "word": "lower.",
+  "start": 34.44,
+  "end": 34.74
+ },
+ {
+  "word": "The",
+  "start": 35.02,
+  "end": 35.1
+ },
+ {
+  "word": "wrapper.",
+  "start": 35.1,
+  "end": 35.34
+ },
+ {
+  "word": "Stuck",
+  "start": 35.34,
+  "end": 35.66
+ },
+ {
+  "word": "to",
+  "start": 35.66,
+  "end": 35.84
+ },
+ {
+  "word": "my",
+  "start": 35.84,
+  "end": 36.0
+ },
+ {
+  "word": "shoe.",
+  "start": 36.0,
+  "end": 36.28
+ },
+ {
+  "word": "All",
+  "start": 36.28,
+  "end": 36.68
+ },
+ {
+  "word": "day.",
+  "start": 36.68,
+  "end": 37.02
+ },
+ {
+  "word": "I",
+  "start": 37.28,
+  "end": 37.3
+ },
+ {
+  "word": "peeled",
+  "start": 37.3,
+  "end": 37.54
+ },
+ {
+  "word": "it",
+  "start": 37.54,
+  "end": 37.68
+ },
+ {
+  "word": "off",
+  "start": 37.68,
+  "end": 37.88
+ },
+ {
+  "word": "and",
+  "start": 37.88,
+  "end": 38.1
+ },
+ {
+  "word": "threw",
+  "start": 38.1,
+  "end": 38.34
+ },
+ {
+  "word": "it",
+  "start": 38.34,
+  "end": 38.5
+ },
+ {
+  "word": "at",
+  "start": 38.5,
+  "end": 38.6
+ },
+ {
+  "word": "the",
+  "start": 38.6,
+  "end": 38.7
+ },
+ {
+  "word": "bin.",
+  "start": 38.7,
+  "end": 38.98
+ },
+ {
+  "word": "Missed.",
+  "start": 39.18,
+  "end": 39.54
+ },
+ {
+  "word": "Again.",
+  "start": 39.54,
+  "end": 39.88
+ },
+ {
+  "word": "Crinkle.",
+  "start": 40.32,
+  "end": 40.58
+ },
+ {
+  "word": "Other",
+  "start": 40.58,
+  "end": 41.12
+ },
+ {
+  "word": "shoe!",
+  "start": 41.12,
+  "end": 41.4
+ }
+]

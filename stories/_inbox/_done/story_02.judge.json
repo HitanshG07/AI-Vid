@@ -1,0 +1,13 @@
+{
+  "writer_model": "gemini-3.8-flash",
+  "judge_model": "claude-3-7-sonnet",
+  "scores": {
+    "hook_2s": 9.0,
+    "stakes": 8.6,
+    "rule_consistency": 8.2,
+    "technical_validity": 10.0
+  },
+  "mean_score": 8.95,
+  "pass": true,
+  "reason": "KILL SWITCH EVALUATION: PASS. 1. Hook (9.0/10): Starts consequence-first with an immediate ding SFX and 'My phone buzzed. Daily luck: one hundred percent.' High-concept curiosity hook within 2 seconds that compels the viewer to keep watching. 2. Stakes (8.6/10): Classic social karma. Dex's hubris causes him to strut around school betting his reputation, believing he has finally become beloved, setting up a sharp comedic downfall. 3. Rule Consistency (8.2/10): The rule that daily luck equals smiles caused yesterday holds firm: the twist reveals that 100 students smiled because they believed Dex had transferred away forever. The final beat where his luck drops to zero after the truth is exposed is a slightly abrupt comedic punctuation, but the core twist mechanic strictly follows the established law. 4. Technical Validity (10.0/10): Spotless adherence to assets/manifest.json. All spots exist in school_yard; all camera shots, actions, and active SFX (ding, whoosh, thud, stone_thud, bell_clang_loud, drone_smash) are valid. Preflight lint passed at 22 beats and 52.8s."
+}

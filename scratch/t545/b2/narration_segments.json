@@ -1,0 +1,107 @@
+[
+  {
+    "beat": 1,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "My duo cleared the hardest jump\u2014then *walked* straight off the edge.",
+    "text": "My duo cleared the hardest jump\u2014then walked straight off the edge."
+  },
+  {
+    "beat": 2,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Bro, why are you *trolling*?! We were one second from winning!",
+    "text": "Bro, why are you trolling?! We were one second from winning!"
+  },
+  {
+    "beat": 3,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Haha, your teammate can't even touch the *pad*!",
+    "text": "Haha, your teammate can't even touch the pad!"
+  },
+  {
+    "beat": 4,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "Attempt two. I slipped on the thin beam behind him.",
+    "text": "Attempt two. I slipped on the thin beam behind him."
+  },
+  {
+    "beat": 5,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "He was inches from the finish\u2014and jumped *off* again.",
+    "text": "He was inches from the finish\u2014and jumped off again."
+  },
+  {
+    "beat": 6,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Stop *resetting*! Just finish without me!",
+    "text": "Stop resetting! Just finish without me!"
+  },
+  {
+    "beat": 7,
+    "speaker": "adult",
+    "pause_before": 0.0,
+    "raw_line": "My bad, lag spike. Let's run it *one* more time.",
+    "text": "My bad, lag spike. Let's run it one more time."
+  },
+  {
+    "beat": 8,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "Attempt three. I finally nailed every jump ahead of him.",
+    "text": "Attempt three. I finally nailed every jump ahead of him."
+  },
+  {
+    "beat": 9,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "I stepped up to the glowing finish pad\u2014and read the *sign*.",
+    "text": "I stepped up to the glowing finish pad\u2014and read the sign."
+  },
+  {
+    "beat": 10,
+    "speaker": "narrator",
+    "pause_before": 0.3,
+    "raw_line": "Solo winners get *teleported* to the lobby. Left-behind players restart at stage one.",
+    "text": "Solo winners get teleported to the lobby. Left-behind players restart at stage one."
+  },
+  {
+    "beat": 11,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "He never lagged. Every time I fell, he reset so I wouldn't lose my *streak*.",
+    "text": "He never lagged. Every time I fell, he reset so I wouldn't lose my streak."
+  },
+  {
+    "beat": 12,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "What are you waiting for?! Step on it and *win*!",
+    "text": "What are you waiting for?! Step on it and win!"
+  },
+  {
+    "beat": 13,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Not without my *duo*.",
+    "text": "Not without my duo."
+  },
+  {
+    "beat": 14,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "I stopped one stud from the pad, held out my hand, and waited.",
+    "text": "I stopped one stud from the pad, held out my hand, and waited."
+  },
+  {
+    "beat": 15,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "We crossed *together*.",
+    "text": "We crossed together."
+  }
+]

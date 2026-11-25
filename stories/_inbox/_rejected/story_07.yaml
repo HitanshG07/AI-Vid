@@ -1,0 +1,59 @@
+# ============================================================================
+# Editorial Brief:
+#   1. Opening picture: Sam finds a locked dusty leather journal hidden beneath his bedroom rug.
+#   2. Character want: Sam wants to know why his mother denies he has an older brother.
+#   3. Visible obstacle: The town curse erases whatever memory is written down on paper.
+#   4. Choice & cost: Sam reads the desperate journal entries begging him not to forget Cole.
+#   5. Final picture: Sam tears the final page in half to keep the grief and save Cole's memory.
+#   6. Cut redundant line: Removed lines about Sam looking through family photo albums.
+# ============================================================================
+id: "013"
+format: story
+set: cozy_room
+title: "The Locked Notebook 📖"
+description: "Whatever memory you write down is erased forever, so why did you keep a private journal?"
+hashtags: ["#roblox", "#rblx", "#robloxstories", "#shorts"]
+bgm_mood: mystery
+lighting: dark_mystery
+caption_margin_v: 560
+engine: ironic_reframe
+rule: "Whatever memory you write down on paper is permanently erased from your own mind."
+visible_proof: "People write down painful breakups and failures to live in total peace."
+personal_stake: "Sam finds a locked journal under his floorboards filled with his own handwriting."
+motivated_choice: "Sam reads the daily entries begging himself not to forget his older brother."
+rule_payoff: "Sam discovers he erased his brother ten years ago to survive a tragedy, leaving the phantom in the room."
+rule_type: "memory"
+opening_variant: "consequence_first"
+ending_type: "emotional_payoff"
+engine: "ironic_reframe"
+cta: "Would you erase your worst memory if you lost who you loved?"
+thumb_at: 1.2
+
+cast:
+  - { name: Sam,      gender: boy,   default_face: neutral, spot: beside_bed }
+  - { name: Mother,   gender: woman, default_face: neutral, spot: at_door }
+  - { name: GhostBro, gender: boy,   default_face: scared,  spot: center_rug }
+
+beats:
+  - { dur: 2.4, cam: closeup, fov: 46, motion: push_in, target: Sam, action: idle, face: neutral, speaker: narrator, sfx: footsteps_wood, line: "Floorboards creaked beneath my bedroom *rug*." }
+  - { dur: 2.4, cam: prop_insert, fov: 40, motion: push_in, target: Sam, action: idle, face: shocked, speaker: narrator, line: "A leather journal covered in dusty *cobwebs*." }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: Mother, action: talk, face: neutral, with: [{ name: Sam, action: idle, face: shocked }], speaker: woman, line: "Dinner is ready, Sam! Wash your *hands*!" }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: Sam, action: talk, face: neutral, with: [{ name: Mother, action: idle, face: neutral }], speaker: boy, line: "Coming, Mom. Just putting shoes *away*." }
+  - { dur: 2.4, cam: wide, fov: 54, motion: push_in, target: Sam, action: walk, spot: in_front_of_desk, face: neutral, speaker: narrator, line: "In our town, ink carries a heavy *curse*." }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: push_in, target: Sam, action: talk, face: neutral, speaker: boy, line: "Whatever you write down vanishes *forever*." }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: Sam, action: talk, face: neutral, speaker: boy, line: "People write sorrow to stop the *pain*." }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: Sam, action: talk, face: shocked, speaker: boy, line: "I cracked the rusted lock *open*." }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: push_in, target: Sam, action: idle, face: shocked, speaker: narrator, sfx: chime_soft, line: "Every page was filled with my own *handwriting*." }
+  - { dur: 2.4, cam: reverse_ots, fov: 46, motion: push_in, target: Sam, action: point, face: scared, speaker: boy, line: "Entry one: Do not forget Cole. Your *brother*." }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: Mother, action: talk, face: neutral, with: [{ name: Sam, action: idle, face: scared }], speaker: woman, line: "Why are there two pillows on your *bed*?" }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: push_in, target: Sam, action: talk, face: scared, speaker: boy, line: "Mom, who was the older *boy*?" }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: Mother, action: talk, face: neutral, with: [{ name: Sam, action: idle, face: scared }], speaker: woman, line: "What boy? You're an only *child*." }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: push_in, target: Sam, action: recoil, face: scared, speaker: narrator, sfx: heartbeat, line: "My hands shook as I turned the *page*." }
+  - { dur: 2.4, cam: reverse_ots, fov: 46, motion: push_in, target: Sam, action: talk, face: scared, speaker: boy, line: "Mom forgot. I am forgetting *too*." }
+  - { dur: 2.4, cam: wide, fov: 54, motion: push_in, target: GhostBro, action: idle, spot: rug_left, face: scared, with: [{ name: Sam, action: idle, face: scared }], bgm_duck: true, pause_before: 0.30, speaker: narrator, sfx: whoosh, line: "A shadow flickered by the *bookshelf*." }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: static, target: Sam, action: talk, face: shocked, with: [{ name: GhostBro, action: idle, face: scared }], speaker: boy, line: "Cole? You were actually *real*?" }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: GhostBro, action: talk, face: scared, with: [{ name: Sam, action: idle, face: shocked }], speaker: boy, line: "You wrote to stop the *tears*." }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: GhostBro, action: point, face: neutral, with: [{ name: Sam, action: idle, face: shocked }], speaker: boy, line: "The last word erases me *completely*." }
+  - { dur: 2.4, cam: low_hero, fov: 46, motion: shake, target: Sam, action: slam_desk, face: determined, sfx: thud, speaker: boy, line: "I tore the page in *half*." }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: push_in, target: Sam, action: talk, face: proud, speaker: boy, line: "He kept the sorrow to keep his *family*." }
+  - { dur: 2.4, cam: high_angle, fov: 50, motion: pull_out, target: Sam, action: idle, face: proud, with: [{ name: GhostBro, action: wave, face: proud }], bgm_climax: true, sfx: resolution_chord, speaker: narrator, line: "Two silhouettes stood beside the wooden *door*." }

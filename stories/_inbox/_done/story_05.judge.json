@@ -1,0 +1,13 @@
+{
+  "writer_model": "gemini-3.8-flash",
+  "judge_model": "claude-3-7-sonnet",
+  "scores": {
+    "hook_2s": 7.5,
+    "stakes": 8.8,
+    "rule_consistency": 9.6,
+    "technical_validity": 10.0
+  },
+  "mean_score": 8.98,
+  "pass": true,
+  "reason": "KILL SWITCH EVALUATION: PASS. 1. Hook (7.5/10): Opens with 'In our school, spoken words carry a price', which brushes close to rule exposition, but immediately pivots within 2-4 seconds into an explosive high-concept premise: speaking costs your exam percentage, contrasting slackers speaking for pennies while the 99% valedictorian goes broke saying hello. Instant scroll-stopping concept. 2. Stakes (8.8/10): High emotional and institutional stakes. Tara risks her perfect academic career to expose the Dean's embezzlement of school funds at the championship debate. 3. Rule Consistency (9.6/10): Masterful execution of the clever_loophole engine. Tara deliberately marks every answer wrong to score a zero; at 0%, her cost per sentence is mathematically $0.00, granting her unlimited free speech to dismantle the corrupt dean. Pure adherence to premise mechanics without deus ex machina. 4. Technical Validity (10.0/10): Full manifest compliance. Verified spots on school_yard, active SFX (ding, stone_thud, whoosh, bell_clang_loud, thud, resolution_chord), cameras, and R6 actions. Preflight lint passed (22 beats, 52.8s)."
+}

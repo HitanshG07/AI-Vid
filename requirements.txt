@@ -1,2 +1,12 @@
+pyyaml
 edge-tts
 faster-whisper
+kokoro
+misaki[en]
+soundfile
+numpy
+# Kokoro pinned deps live in C:/AI-Vid/.kokoro_deps (gitignored; used only by --engine kokoro)
+# V6 YouTube Data API (upload_queue.py, analytics_sync.py)
+google-api-python-client
+google-auth-oauthlib
+google-auth-httplib2

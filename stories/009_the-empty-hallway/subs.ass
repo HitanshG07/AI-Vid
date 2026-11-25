@@ -1,0 +1,86 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: SafeCenterPop,Arial Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,2,90,90,560,1
+Style: SafeCenterWhite,Arial Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,2,90,90,560,1
+Style: UpperThirdPop,Arial Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,8,90,90,240,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:00.64,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TEN AM.
+Dialogue: 0,0:00:00.74,0:00:01.18,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE {\c&H0015CCFA&}HALLWAY{\c&H00FFFFFF&}
+Dialogue: 0,0:00:01.18,0:00:01.72,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WAS A {\c&H0015CCFA&}GHOST{\c&H00FFFFFF&}
+Dialogue: 0,0:00:01.72,0:00:02.27,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TOWN.
+Dialogue: 0,0:00:02.34,0:00:02.46,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WHERE DID
+Dialogue: 0,0:00:02.46,0:00:03.06,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ALL THE COWARDS
+Dialogue: 0,0:00:03.06,0:00:03.61,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}HIDE?{\c&H00FFFFFF&}
+Dialogue: 0,0:00:03.64,0:00:03.94,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HE'S RIGHT
+Dialogue: 0,0:00:03.94,0:00:04.49,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THERE!
+Dialogue: 0,0:00:04.50,0:00:04.74,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}DON'T LOOK
+Dialogue: 0,0:00:04.74,0:00:05.30,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IN HIS {\c&H0015CCFA&}EYES!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:05.76,0:00:06.10,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}ZANE{\c&H00FFFFFF&} STARED
+Dialogue: 0,0:00:06.10,0:00:06.70,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}STRAIGHT THROUGH
+Dialogue: 0,0:00:06.70,0:00:07.44,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HER LIKE {\c&H0015CCFA&}GLASS.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:07.74,0:00:08.28,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IN THIS SCHOOL,
+Dialogue: 0,0:00:08.28,0:00:08.50,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE RULE
+Dialogue: 0,0:00:08.50,0:00:09.05,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IS {\c&H0015CCFA&}HARSH.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:09.32,0:00:09.50,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOU ARE
+Dialogue: 0,0:00:09.50,0:00:10.12,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TOTALLY BLIND
+Dialogue: 0,0:00:10.12,0:00:10.60,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TO ANYONE
+Dialogue: 0,0:00:10.60,0:00:11.34,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WHO {\c&H0015CCFA&}FEARS{\c&H00FFFFFF&} YOU.
+Dialogue: 0,0:00:11.52,0:00:11.82,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE HARDER
+Dialogue: 0,0:00:11.82,0:00:12.42,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HE THREATENED,
+Dialogue: 0,0:00:12.68,0:00:12.96,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE MORE
+Dialogue: 0,0:00:12.96,0:00:13.72,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}KIDS {\c&H0015CCFA&}VANISHED.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:14.04,0:00:14.30,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I BROKE
+Dialogue: 0,0:00:14.30,0:00:14.80,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE VARSITY
+Dialogue: 0,0:00:14.80,0:00:15.80,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}CAPTAIN ON {\c&H0015CCFA&}MONDAY.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:16.08,0:00:16.40,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HE {\c&H0015CCFA&}VANISHED{\c&H00FFFFFF&}
+Dialogue: 0,0:00:16.40,0:00:16.82,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE SECOND
+Dialogue: 0,0:00:16.82,0:00:17.37,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HE {\c&H0015CCFA&}SHOOK.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:17.50,0:00:18.02,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HE SLAMMED
+Dialogue: 0,0:00:18.02,0:00:18.88,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}LOCKER DOORS
+Dialogue: 0,0:00:18.88,0:00:19.66,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}DOWN THE {\c&H0015CCFA&}HALLWAY.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:19.86,0:00:20.18,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IS ANYBODY
+Dialogue: 0,0:00:20.18,0:00:20.86,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}STILL {\c&H0015CCFA&}ALIVE?{\c&H00FFFFFF&}
+Dialogue: 0,0:00:21.14,0:00:21.58,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}QUIET!
+Dialogue: 0,0:00:21.58,0:00:21.78,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IF HE
+Dialogue: 0,0:00:21.78,0:00:22.30,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}CAN'T SEE US,
+Dialogue: 0,0:00:22.30,0:00:22.85,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WE'RE {\c&H0015CCFA&}SAFE.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:23.02,0:00:23.66,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TOTAL SILENCE.
+Dialogue: 0,0:00:23.98,0:00:24.42,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}A CAMPUS
+Dialogue: 0,0:00:24.42,0:00:25.12,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}OF INVISIBLE
+Dialogue: 0,0:00:25.12,0:00:25.67,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}SHADOWS.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:25.86,0:00:26.12,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HE REACHED
+Dialogue: 0,0:00:26.12,0:00:26.80,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE LOCKERS,
+Dialogue: 0,0:00:26.94,0:00:27.54,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}READY TO {\c&H0015CCFA&}QUIT.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:27.80,0:00:28.24,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}ZANE{\c&H00FFFFFF&} KICKED
+Dialogue: 0,0:00:28.24,0:00:28.62,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}A LOCKER
+Dialogue: 0,0:00:28.62,0:00:29.14,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IN {\c&H0015CCFA&}FURY.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:29.14,0:00:29.60,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THEN
+Dialogue: 0,0:00:29.60,0:00:30.15,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ON THE BENCH,
+Dialogue: 0,0:00:30.34,0:00:30.82,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ONE KID
+Dialogue: 0,0:00:30.82,0:00:31.70,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}CAME INTO {\c&H0015CCFA&}FOCUS.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:32.40,0:00:32.62,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I CAN
+Dialogue: 0,0:00:32.62,0:00:33.16,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SEE YOU.
+Dialogue: 0,0:00:33.16,0:00:33.71,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOU'RE {\c&H0015CCFA&}REAL.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:33.82,0:00:34.37,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}PASS THE JUICE,
+Dialogue: 0,0:00:34.46,0:00:34.88,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}ZANE.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:34.88,0:00:35.10,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}AREN'T YOU
+Dialogue: 0,0:00:35.10,0:00:35.65,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}GOING TO {\c&H0015CCFA&}RUN?{\c&H00FFFFFF&}
+Dialogue: 0,0:00:35.88,0:00:36.06,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WHY WOULD
+Dialogue: 0,0:00:36.06,0:00:36.30,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I FEAR
+Dialogue: 0,0:00:36.30,0:00:36.85,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}A {\c&H0015CCFA&}CLOWN?{\c&H00FFFFFF&}
+Dialogue: 0,0:00:37.04,0:00:37.50,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TOBY WALKED
+Dialogue: 0,0:00:37.50,0:00:38.36,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}PAST THE LONELY
+Dialogue: 0,0:00:38.36,0:00:38.91,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}BULLY.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:38.92,0:00:39.60,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HE SANK DOWN,
+Dialogue: 0,0:00:39.76,0:00:40.02,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ALONE
+Dialogue: 0,0:00:40.02,0:00:40.48,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IN A WORLD
+Dialogue: 0,0:00:40.48,0:00:41.03,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}OF {\c&H0015CCFA&}GHOSTS.{\c&H00FFFFFF&}

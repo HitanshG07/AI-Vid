@@ -1,0 +1,59 @@
+# ============================================================================
+# Editorial Brief:
+#   1. Opening picture: Tara sits quietly holding her straight-A report card at the yard benches.
+#   2. Character want: Tara wants to speak at the debate and expose the corrupt school administration.
+#   3. Visible obstacle: Every spoken sentence costs dollars equal to your test score percentage.
+#   4. Choice & cost: Tara deliberately flunks her morning test with an intentional zero.
+#   5. Final picture: Tara speaks continuously for free from the stage, dismantling the Dean.
+#   6. Cut redundant line: Removed lines explaining the school's tuition fees.
+# ============================================================================
+id: "011"
+format: story
+set: school_yard
+title: "The Silence Tax 🎓"
+description: "Your test score is what you pay per sentence spoken, so failing might be your only superpower."
+hashtags: ["#roblox", "#rblx", "#robloxstories", "#shorts"]
+bgm_mood: tension
+lighting: day_bright
+caption_margin_v: 560
+engine: clever_loophole
+rule: "Your latest test score is the dollar amount deducted from your bank account for every sentence spoken."
+visible_proof: "Straight-A students stay mute to avoid ninety-eight dollar fees while failing slackers talk for pennies."
+personal_stake: "Tara is a broke valedictorian who needs to speak at the debate to expose corrupt school fees."
+motivated_choice: "Tara intentionally bubbles in every single answer wrong on the morning exam."
+rule_payoff: "Tara scores a zero, giving herself unlimited, free speech to debate for three hours straight."
+rule_type: "speech_cost"
+opening_variant: "rule_first"
+ending_type: "loophole_win"
+engine: "clever_loophole"
+cta: "Would you take a zero to speak the truth?"
+thumb_at: 1.2
+
+cast:
+  - { name: Tara, gender: girl, default_face: determined, spot: bench_front }
+  - { name: Dean, gender: boy,  default_face: grin,       spot: coach_table }
+  - { name: Kyle, gender: boy,  default_face: neutral,    spot: school_entry }
+
+beats:
+  - { dur: 2.4, cam: closeup, fov: 46, motion: push_in, target: Tara, action: idle, face: determined, speaker: narrator, sfx: ding, line: "In our school, spoken words carry a *price*." }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: Dean, action: slam_desk, face: grin, with: [{ name: Tara, action: idle, face: determined }], speaker: villain, sfx: stone_thud, line: "Your exam score is your fee per *sentence*!" }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: Kyle, action: talk, face: neutral, speaker: boy, line: "I scored four, so I speak for four *cents*." }
+  - { dur: 2.4, cam: wide, fov: 54, motion: push_in, target: Tara, action: walk, spot: entry_walk, face: scared, speaker: narrator, line: "Tara held a ninety-nine on her *card*." }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: push_in, target: Tara, action: talk, face: scared, speaker: girl, line: "Saying hello costs me ninety-nine *bucks*." }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: Dean, action: talk, face: grin, with: [{ name: Tara, action: idle, face: scared }], speaker: villain, line: "The rich kids pay to silence the smart *students*." }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: Kyle, action: talk, face: neutral, with: [{ name: Tara, action: idle, face: determined }], speaker: boy, line: "The championship debate begins this *afternoon*." }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: push_in, target: Tara, action: talk, face: determined, speaker: girl, line: "If I speak three minutes, I go *broke*." }
+  - { dur: 2.4, cam: wide, fov: 54, motion: push_in, target: Tara, action: walk, spot: coach_table, face: determined, speaker: narrator, line: "She sat down for the surprise *exam*." }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: Dean, action: point, face: grin, with: [{ name: Tara, action: idle, face: determined }], speaker: villain, line: "Pass this test, Tara, or lose the *podium*!" }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: push_in, target: Tara, action: talk, face: grin, speaker: girl, sfx: whoosh, line: "I marked every answer *wrong*." }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: Kyle, action: recoil, face: shocked, speaker: boy, line: "Tara! You just failed the whole *test*!" }
+  - { dur: 2.4, cam: wide, fov: 54, motion: push_in, target: Dean, action: talk, face: proud, with: [{ name: Tara, action: walk, spot: stage_center, face: proud }], speaker: villain, line: "Score: zero! She is *disqualified*!" }
+  - { dur: 2.4, cam: low_hero, fov: 46, motion: push_in, target: Tara, action: talk, face: proud, speaker: girl, line: "Zero score is still officially *enrolled*." }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: push_in, target: Tara, action: talk, face: proud, speaker: girl, line: "At zero percent, my speech is totally *free*." }
+  - { dur: 2.4, cam: wide, fov: 54, motion: shake, target: Dean, action: recoil, face: shocked, with: [{ name: Tara, action: point, face: determined }], speaker: narrator, sfx: bell_clang_loud, line: "Dean checked the screen in *panic*." }
+  - { dur: 2.4, cam: wide, fov: 54, motion: push_in, target: Tara, action: idle, face: determined, speaker: narrator, line: "Tara stepped up to the wooden *podium*." }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: Tara, action: talk, face: determined, with: [{ name: Dean, action: idle, face: shocked }], speaker: girl, line: "You stole from school *lunch*!" }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: Dean, action: talk, face: scared, with: [{ name: Tara, action: idle, face: determined }], bgm_duck: true, pause_before: 0.30, speaker: villain, line: "Stop talking! You are ruining *me*!" }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: push_in, target: Tara, action: talk, face: proud, speaker: girl, line: "I talk all day for zero *cents*." }
+  - { dur: 2.4, cam: high_angle, fov: 50, motion: pull_out, target: Dean, action: fall, face: shocked, with: [{ name: Kyle, action: point, face: grin }], sfx: thud, speaker: narrator, line: "The corrupt dean collapsed to the *floor*." }
+  - { dur: 2.4, cam: low_hero, fov: 46, motion: push_in, target: Tara, action: wave, face: proud, with: [{ name: Kyle, action: wave, face: proud }], bgm_climax: true, sfx: resolution_chord, speaker: narrator, line: "The smartest girl used zero to win *everything*." }

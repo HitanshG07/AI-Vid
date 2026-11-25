@@ -1,0 +1,14 @@
+{
+  "id": "001",
+  "part": "1 of 1",
+  "engine": "roblox",
+  "fps": 30,
+  "duration_s": 58,
+  "narration": "narration.txt",
+  "map": "assets/maps/<name>",
+  "characters": [{"name": "hero", "rig": "assets/rigs/<file>.rbxm", "start_face": "Happy"}],
+  "beats": [
+    {"t": 0.0, "dur": 1.8, "shot": "pushIn close", "camera_target": "hero", "face": {"hero": "Shocked"},
+     "action": "hero looks up at sky", "vfx": ["volumetric_beam"], "sfx": "whoosh", "line": "In this town..."}
+  ]
+}

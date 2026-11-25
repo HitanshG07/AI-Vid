@@ -1,0 +1,58 @@
+# ============================================================================
+# Editorial Brief:
+#   1. Opening picture: Leo walks down the road while hundreds of gold coins rattle in his jacket.
+#   2. Character want: Leo wants to prove he did not rob the town bank and clear his name.
+#   3. Visible obstacle: Town rule creates coins from selfless lies and dissolves them for selfish lies.
+#   4. Choice & cost: Leo dumps out his pockets in front of the police to inspect the coin seals.
+#   5. Final picture: The corrupt mayor falls to the curb as his televised PR lies are proven.
+#   6. Cut redundant line: Removed background explanation of the bank robbery rumor.
+# ============================================================================
+id: "012"
+format: story
+set: street_day
+title: "The Golden Jacket 🪙"
+description: "Lying for others drops gold coins in their coat, while lying for yourself dissolves them."
+hashtags: ["#roblox", "#rblx", "#robloxstories", "#shorts"]
+bgm_mood: mystery
+lighting: day_bright
+caption_margin_v: 560
+engine: ironic_reframe
+rule: "Lying to protect someone else drops a gold coin in their pocket; lying to protect yourself dissolves one from yours."
+visible_proof: "Leo's jacket is bursting with hundreds of heavy gold coins."
+personal_stake: "Police arrest Leo assuming he robbed the city bank vaults."
+motivated_choice: "Leo dumps his pockets out in front of the precinct to inspect the coin mint marks."
+rule_payoff: "Every coin bears the Mayor's seal, minted during the Mayor's televised lies that no children were starving."
+rule_type: "honesty"
+opening_variant: "consequence_first"
+ending_type: "ironic_flip"
+cta: "Should the mayor go to prison or pay the fine?"
+thumb_at: 1.2
+
+cast:
+  - { name: Leo,      gender: boy,   default_face: neutral,    spot: sidewalk_left }
+  - { name: Officer,  gender: woman, default_face: determined, spot: bus_stop }
+  - { name: Official, gender: man,   default_face: grin,       spot: crosswalk }
+
+beats:
+  - { dur: 2.4, cam: closeup, fov: 46, motion: push_in, target: Leo, action: walk, spot: sidewalk_left, face: neutral, speaker: narrator, sfx: gold_dissolve, line: "Gold coins clinked against my ragged *jacket*." }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: Officer, action: point, face: determined, with: [{ name: Leo, action: idle, face: neutral }], speaker: woman, sfx: whistle_blow, line: "Freeze! Drop the stolen *gold*!" }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: Leo, action: talk, face: neutral, with: [{ name: Officer, action: idle, face: determined }], speaker: boy, line: "I didn't rob anything, *officer*." }
+  - { dur: 2.4, cam: reverse_ots, fov: 46, motion: push_in, target: Officer, action: talk, face: determined, with: [{ name: Leo, action: idle, face: neutral }], speaker: woman, line: "You're an orphan with five hundred *coins*!" }
+  - { dur: 2.4, cam: wide, fov: 54, motion: push_in, target: Leo, action: idle, face: neutral, speaker: narrator, line: "In our town, the coin rule is *absolute*." }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: push_in, target: Leo, action: talk, face: neutral, speaker: boy, line: "Lying for yourself dissolves a gold *piece*." }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: Leo, action: talk, face: neutral, with: [{ name: Officer, action: idle, face: determined }], speaker: boy, line: "Lying for others drops a coin in their *pocket*." }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: Officer, action: talk, face: determined, with: [{ name: Leo, action: idle, face: neutral }], speaker: woman, line: "Who would ever tell five hundred lies for *you*?" }
+  - { dur: 2.4, cam: wide, fov: 54, motion: push_in, target: Official, action: walk, spot: sidewalk_right, face: grin, with: [{ name: Leo, action: idle, face: neutral }], speaker: narrator, line: "The town mayor strolled down the *crosswalk*." }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: Official, action: talk, face: grin, with: [{ name: Officer, action: idle, face: neutral }], speaker: villain, line: "Lock this thief in a *cell*." }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: push_in, target: Leo, action: talk, face: determined, speaker: boy, line: "I never asked for this *money*." }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: Official, action: talk, face: proud, with: [{ name: Leo, action: idle, face: determined }], speaker: villain, line: "Our city has zero starving *children*." }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: shake, target: Leo, action: recoil, face: shocked, speaker: narrator, sfx: glass_clink, line: "Clink. Another gold coin appeared in my *pocket*." }
+  - { dur: 2.4, cam: wide, fov: 54, motion: push_in, target: Officer, action: recoil, face: shocked, with: [{ name: Leo, action: idle, face: shocked }], speaker: woman, line: "Where did that coin come *from*?" }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: Leo, action: point, face: determined, with: [{ name: Officer, action: idle, face: shocked }], speaker: boy, line: "Look at the seal on the *metal*." }
+  - { dur: 2.4, cam: prop_insert, fov: 40, motion: static, target: Leo, action: idle, face: neutral, bgm_duck: true, pause_before: 0.30, speaker: narrator, line: "The mayor's personal eagle *crest*." }
+  - { dur: 2.4, cam: closeup, fov: 44, motion: push_in, target: Leo, action: talk, face: determined, speaker: boy, line: "He lies on TV every *morning*." }
+  - { dur: 2.4, cam: side_track, fov: 48, motion: push_in, target: Leo, action: talk, face: determined, with: [{ name: Official, action: idle, face: scared }], speaker: boy, line: "He swears orphans are well *fed*." }
+  - { dur: 2.4, cam: ots, fov: 46, motion: push_in, target: Officer, action: walk, spot: sidewalk_right, face: determined, with: [{ name: Official, action: recoil, face: scared }], speaker: woman, line: "Every fake boast he made paid *Leo*." }
+  - { dur: 2.4, cam: low_hero, fov: 46, motion: shake, target: Official, action: fall, face: scared, sfx: stone_thud, speaker: narrator, line: "The corrupt politician collapsed to the *curb*." }
+  - { dur: 2.4, cam: wide, fov: 54, motion: push_in, target: Leo, action: idle, face: proud, with: [{ name: Officer, action: point, face: determined }], speaker: narrator, line: "His own lies made the orphan *wealthy*." }
+  - { dur: 2.4, cam: high_angle, fov: 50, motion: pull_out, target: Leo, action: walk, spot: road_center, face: proud, bgm_climax: true, sfx: resolution_chord, speaker: narrator, line: "Truth minted justice on the cold *street*." }

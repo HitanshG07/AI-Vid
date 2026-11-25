@@ -1,0 +1,13 @@
+{
+  "writer_model": "gemini-3.8-flash",
+  "judge_model": "claude-3-7-sonnet",
+  "scores": {
+    "hook_2s": 7.5,
+    "stakes": 5.5,
+    "rule_consistency": 3.0,
+    "technical_validity": 10.0
+  },
+  "mean_score": 6.5,
+  "pass": false,
+  "reason": "KILL SWITCH EVALUATION: FAIL (Kill Switches 2 & 3). 1. Hook (7.5/10): Creepy and atmospheric with creaking floorboards and a cobwebbed journal, though slower to reveal character conflict. 2. Stakes (5.5/10 - KILL SWITCH 2 FAILURE): Severe logical incoherence undermines the emotional stakes. If writing in the journal erases memory from one's mind, Sam writing 'Do not forget Cole' is a self-defeating paradox. 3. Rule Consistency (3.0/10 - KILL SWITCH 3 FAILURE): Complete narrative breakdown and deus ex machina. The premise defines an internal memory curse: 'Whatever memory you write down on paper is permanently erased from your own mind.' In the climax, this is arbitrarily mutated into an existential deletion and ghost story: a literal ghost (GhostBro) appears in the room stating 'The last word erases me completely', and tearing the page in half miraculously resurrects Cole into a physical silhouette beside the door! Moreover, Mother's memory loss is unexplained under a rule where writing only erases from 'your own mind'. Total violation of premise mechanics. 4. Technical Validity (10.0/10): Valid cozy_room spots and actions, preflight lint passed, but story logic fails completely."
+}

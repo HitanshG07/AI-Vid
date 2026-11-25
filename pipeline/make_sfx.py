@@ -21,7 +21,7 @@ SFX = {  # name: (lavfi source, filters)
     "pour":        ("anoisesrc=d=1.2:c=pink:a=0.4", "lowpass=f=1500,tremolo=f=9:d=0.4,afade=t=in:d=0.15," + D.format(s=0.9, d=0.3)),
     "hiss_crack":  ("anoisesrc=d=0.9:c=white:a=0.5", "highpass=f=3000,afade=t=in:d=0.4," + D.format(s=0.75, d=0.15)),
     "thud":        ("aevalsrc='0.9*sin(2*PI*60*t)*exp(-14*t)':d=0.4", ""),
-    # story 011 (beach) - ambience, impacts, bell, music stings. Voices (scream, giggle) are not synthesised.
+    # story 001 (beach) - ambience, impacts, bell, music stings. Voices (scream, giggle) are not synthesised.
     "waves":           ("anoisesrc=d=3:c=brown:a=0.5", "lowpass=f=900,tremolo=f=0.35:d=0.7,afade=t=in:d=0.5," + D.format(s=2.4, d=0.6)),
     "waves_heavy":     ("anoisesrc=d=3:c=brown:a=0.8", "lowpass=f=1400,tremolo=f=0.6:d=0.8,afade=t=in:d=0.3," + D.format(s=2.4, d=0.6)),
     "seagulls":        ("aevalsrc='0.25*sin(2*PI*(1700+500*sin(2*PI*3*t))*t)*gt(sin(2*PI*1.3*t),0.3)':d=2", D.format(s=1.6, d=0.4)),
@@ -49,6 +49,14 @@ SFX = {  # name: (lavfi source, filters)
     "music_soft":      ("aevalsrc='0.12*(sin(2*PI*261.6*t)+sin(2*PI*329.6*t)+sin(2*PI*392*t))':d=3", "afade=t=in:d=0.8," + D.format(s=2.2, d=0.8)),
     "music_swell":     ("aevalsrc='0.14*(sin(2*PI*220*t)+sin(2*PI*277.2*t)+sin(2*PI*329.6*t)+sin(2*PI*440*t))':d=3", "afade=t=in:d=2.0," + D.format(s=2.4, d=0.6)),
     "music_end_chime": ("aevalsrc='0.22*(sin(2*PI*523.3*t)+sin(2*PI*659.3*t)+sin(2*PI*784*t))*exp(-1.1*t)':d=3", ""),
+    # impacts: stone thuds, metal snaps, gold dissolve, whooshes (reused by several stories)
+    "impact_whoosh":   ("anoisesrc=d=0.7:c=pink:a=0.7", "bandpass=f=900:w=1400,afade=t=in:d=0.35," + D.format(s=0.45, d=0.25)),
+    "stone_thud":      ("aevalsrc='0.95*sin(2*PI*55*t)*exp(-12*t)+0.4*sin(2*PI*180*t)*exp(-30*t)':d=0.5", ""),
+    "scraping_drag":   ("anoisesrc=d=1.2:c=brown:a=0.6", "bandpass=f=450:w=300,tremolo=f=12:d=0.7," + D.format(s=0.8, d=0.4)),
+    "drone_smash":     ("anoisesrc=d=0.4:c=white:a=0.8", "highpass=f=1200," + D.format(s=0.1, d=0.3)),
+    "railing_snap":    ("aevalsrc='0.8*sin(2*PI*850*t)*exp(-40*t)+0.6*sin(2*PI*2200*t)*exp(-80*t)':d=0.35", ""),
+    "gold_dissolve":   ("aevalsrc='0.3*(sin(2*PI*(700+1500*t)*t)+0.5*sin(2*PI*(1400+3000*t)*t))*(0.5+0.5*sin(2*PI*24*t))':d=1.6", D.format(s=1.0, d=0.6)),
+    "resolution_chord":("aevalsrc='0.16*(sin(2*PI*261.6*t)+sin(2*PI*329.6*t)+sin(2*PI*392*t)+sin(2*PI*523.3*t))':d=2.8", "afade=t=in:d=0.5," + D.format(s=1.8, d=1.0)),
 }
 
 def main():

@@ -1,0 +1,13 @@
+{
+  "writer_model": "gemini-3.8-flash",
+  "judge_model": "claude-3-7-sonnet",
+  "scores": {
+    "hook_2s": 9.5,
+    "stakes": 9.0,
+    "rule_consistency": 4.5,
+    "technical_validity": 10.0
+  },
+  "mean_score": 8.25,
+  "pass": false,
+  "reason": "KILL SWITCH EVALUATION: FAIL (Kill Switch 3). 1. Hook (9.5/10): Outstanding opening in media res: gold coins clinking in a ragged coat while an officer draws a weapon shouting 'Freeze! Drop the stolen gold!' Consequence-first, audible, visual, gripping. 2. Stakes (9.0/10): High stakes involving an orphan accused of bank robbery facing incarceration by a corrupt municipal government. 3. Rule Consistency (4.5/10 - KILL SWITCH 3 FAILURE): Catastrophic violation of the premise rule mechanics. The established rule explicitly dictates: 'Lying to protect someone else drops a gold coin in their pocket; lying to protect yourself dissolves one from yours.' In the climax, the Mayor lies on TV claiming no children are starving in order to protect HIS OWN political career and PR. Under the rule, this is a lie to protect himself, which must dissolve his own coins! Instead, the script claims his selfish lie dropped coins into Leo's coat. Furthermore, the coins appearing with the Mayor's personal eagle crest is an ungrounded deus ex machina invented to convict him on the spot. 4. Technical Validity (10.0/10): Technically compliant with street_day manifest spots and actions, but fails on premise logic parity."
+}

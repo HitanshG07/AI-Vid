@@ -1,0 +1,13 @@
+{
+  "writer_model": "gemini-3.8-flash",
+  "judge_model": "claude-3-7-sonnet",
+  "scores": {
+    "hook_2s": 9.2,
+    "stakes": 9.4,
+    "rule_consistency": 9.5,
+    "technical_validity": 10.0
+  },
+  "mean_score": 9.53,
+  "pass": true,
+  "reason": "KILL SWITCH EVALUATION: PASS. 1. Hook (9.2/10): The short opens in media res with an immediate, poignant consequence: 'Sixteen years. No one ever spoke my name.' Accompanied by closeup push-in and wooden footsteps SFX, it arrests viewer attention in under 2 seconds without any world-rule lecture. 2. Stakes (9.4/10): High emotional resonance and mortal danger. Eli's isolation is challenged by bully Jax, culminating in a life-or-death truck collision where genuine sacrifice is on the line. 3. Rule Consistency (9.5/10): The premise rule ('You cannot physically speak a person's name unless you would die to protect them') is strictly and beautifully honoured. Jax is unable to say Eli's name until the exact second he dives into oncoming traffic to push Eli to safety, proving his willingness to sacrifice his life. Zero deus ex machina. 4. Technical Validity (10.0/10): Fully compliant with assets/manifest.json. All spots (sidewalk_left, sidewalk_right, crosswalk, bus_stop, road_center) exist in street_day; all actions, cameras, and active SFX are verified. 22 beats, 52.8s runtime, 54.5% non-narrator dialogue, preflight lint passed."
+}

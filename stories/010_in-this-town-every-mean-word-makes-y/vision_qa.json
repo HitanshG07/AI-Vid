@@ -1,0 +1,7 @@
+{
+  "pass": true,
+  "judge": "claude-opus-5-5 (manual, owner-approved stand-in; Gemini 503 on all 3 models, retried 2026-11-25)",
+  "reason": "Take 2 chosen over take 1 frame-for-frame: Rex clearly shrinking on beat 6, no oversized/cut signs on 15/17/20, school behind all climax shots, no black/void/hedge frames.",
+  "notes": ["beat 4/10/18 close-ups show no sign (hidden as oversized) - acceptable"],
+  "failures": []
+}

@@ -1,6 +1,6 @@
 ---
 name: new-story
-description: Create a new AI-Vid story from an optional theme or requested count.
+description: Create a new AI-Vid Roblox short from a theme or format.
+argument-hint: "[theme | format]"
 ---
-
-Read AGENTS.md, then follow .claude/skills/new-story/SKILL.md step by step. Arguments: optional theme or count.
+This is an alias. Follow `.claude/skills/ai-vid-pipeline/SKILL.md`: run phases A-D (idea, originality, author story.yaml, compile/sync/lint) and stop after preflight passes.

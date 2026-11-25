@@ -1,0 +1,13 @@
+{
+  "writer_model": "gemini-3.8-flash",
+  "judge_model": "claude-3-7-sonnet",
+  "scores": {
+    "hook_2s": 9.3,
+    "stakes": 9.2,
+    "rule_consistency": 9.7,
+    "technical_validity": 10.0
+  },
+  "mean_score": 9.55,
+  "pass": true,
+  "reason": "KILL SWITCH EVALUATION: PASS. 1. Hook (9.3/10): Atmospheric and instant: 'Ten AM. The courtyard was a ghost town.' Zane prowls an empty courtyard while Mia cowers, visible to the audience but invisible to Zane. Readable on mute, immediate tension. 2. Stakes (9.2/10): Psychological karma with genuine emotional weight. The school bully achieves complete intimidation, only to realize total dominion results in agonizing, total sensory isolation. 3. Rule Consistency (9.7/10): Flawless inverse logic. The rule states one is completely blind to anyone who fears them; Toby remains fully visible calmly eating lunch because he has zero fear of the bully ('Why would I fear a clown?'). Zero plot holes, zero deus ex machina. 4. Technical Validity (10.0/10): 100% compliant with assets/manifest.json for school_yard. Verified spots, active SFX (footsteps_wood, whoosh, heartbeat, chime_soft, stone_thud), valid cameras, and R6 actions. Preflight lint passed (22 beats, 52.8s, 40.9% non-narrator dialogue)."
+}

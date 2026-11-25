@@ -33,8 +33,8 @@ roblox story, roblox shorts, roblox animation, in this world, in this town, robl
 - **Audience:** not made for kids (unless deliberately targeting kids) · **Altered/synthetic content:** yes (AI voice) · captions on
 - **Thumbnail:** pick the brightest close-up frame with the world rule visible (e.g. the gold-outline moment)
 
-## Story 011 upload
-- **File:** `stories/011_brave-glow/011_brave-glow_FINAL.mp4` (take 10, 52.3 s) — NOT `007_wrist-rewind_*`
+## Story 001 upload
+- **File:** `stories/001_brave-glow/001_brave-glow_FINAL.mp4` (take 10, 52.3 s)
 - **Title:** In This Town, Being Brave Makes You Glow… I'm the Only One Who Doesn't #roblox #story #shorts
 - **Description:**
   In this beach town, the first time you're truly brave, your outline glows gold forever. Everyone glows — except me.

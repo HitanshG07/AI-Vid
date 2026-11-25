@@ -1,0 +1,87 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: SafeCenterPop,Arial Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,2,90,90,560,1
+Style: SafeCenterWhite,Arial Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,2,90,90,560,1
+Style: UpperThirdPop,Arial Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,8,90,90,240,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.30,0:00:00.90,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IN THIS TOWN,
+Dialogue: 0,0:00:01.24,0:00:01.56,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}MEAN{\c&H00FFFFFF&} WORDS
+Dialogue: 0,0:00:01.56,0:00:02.32,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SHRINK YOUR {\c&H0015CCFA&}HEIGHT.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:02.56,0:00:03.11,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}STAY CALM, TOBY.
+Dialogue: 0,0:00:03.28,0:00:03.48,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}DO NOT
+Dialogue: 0,0:00:03.48,0:00:03.94,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SAY ANYTHING
+Dialogue: 0,0:00:03.94,0:00:04.49,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}MEAN.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:04.50,0:00:04.80,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SAM,
+Dialogue: 0,0:00:04.80,0:00:04.92,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I AM
+Dialogue: 0,0:00:04.92,0:00:05.44,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SCARED OF THAT
+Dialogue: 0,0:00:05.44,0:00:05.99,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}BULLY {\c&H0015CCFA&}REX.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:06.28,0:00:06.58,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}JUST STAY
+Dialogue: 0,0:00:06.58,0:00:07.10,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}CLOSE TO {\c&H0015CCFA&}ME{\c&H00FFFFFF&}
+Dialogue: 0,0:00:07.10,0:00:07.65,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}RIGHT {\c&H0015CCFA&}NOW.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:07.76,0:00:07.96,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}GET OUT
+Dialogue: 0,0:00:07.96,0:00:08.42,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}OF MY WAY,
+Dialogue: 0,0:00:08.42,0:00:08.97,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOU {\c&H0015CCFA&}LOSERS!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:09.32,0:00:09.60,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}LOOK!
+Dialogue: 0,0:00:09.60,0:00:09.88,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}REX{\c&H00FFFFFF&} SHRANK
+Dialogue: 0,0:00:09.88,0:00:10.08,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}A WHOLE
+Dialogue: 0,0:00:10.08,0:00:10.63,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}FOOT {\c&H0015CCFA&}DOWN!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:10.92,0:00:11.28,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WHAT HAPPENED
+Dialogue: 0,0:00:11.28,0:00:11.70,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TO {\c&H0015CCFA&}ME?{\c&H00FFFFFF&}
+Dialogue: 0,0:00:11.70,0:00:12.25,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOU {\c&H0015CCFA&}CHEATED!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:12.50,0:00:12.78,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOU USED
+Dialogue: 0,0:00:12.78,0:00:13.18,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ANOTHER {\c&H0015CCFA&}MEAN{\c&H00FFFFFF&}
+Dialogue: 0,0:00:13.18,0:00:13.73,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WORD, {\c&H0015CCFA&}REX!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:14.06,0:00:14.60,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SHUT UP, KID!
+Dialogue: 0,0:00:14.60,0:00:14.80,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOU ARE
+Dialogue: 0,0:00:14.80,0:00:15.35,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}BOTH {\c&H0015CCFA&}UGLY!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:15.64,0:00:15.86,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}REX,{\c&H00FFFFFF&}
+Dialogue: 0,0:00:15.86,0:00:16.34,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}STOP SHOUTING
+Dialogue: 0,0:00:16.34,0:00:16.72,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}MEAN{\c&H00FFFFFF&} THINGS
+Dialogue: 0,0:00:16.72,0:00:17.27,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}AT {\c&H0015CCFA&}US!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:17.36,0:00:17.56,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I AM
+Dialogue: 0,0:00:17.56,0:00:18.00,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}NOT LISTENING
+Dialogue: 0,0:00:18.00,0:00:18.64,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TO YOU {\c&H0015CCFA&}DUMMIES!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:19.02,0:00:19.46,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}KEEP TALKING
+Dialogue: 0,0:00:19.46,0:00:20.02,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}MEAN{\c&H00FFFFFF&} AND WATCH
+Dialogue: 0,0:00:20.02,0:00:20.57,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WHAT {\c&H0015CCFA&}HAPPENS.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:20.94,0:00:21.16,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WHY AM
+Dialogue: 0,0:00:21.16,0:00:21.38,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I GETTING
+Dialogue: 0,0:00:21.38,0:00:22.00,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SO {\c&H0015CCFA&}SMALL?{\c&H00FFFFFF&}
+Dialogue: 0,0:00:22.22,0:00:22.46,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOU THINK
+Dialogue: 0,0:00:22.46,0:00:22.72,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOU ARE
+Dialogue: 0,0:00:22.72,0:00:23.50,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SMARTER THAN {\c&H0015CCFA&}ME?{\c&H00FFFFFF&}
+Dialogue: 0,0:00:23.72,0:00:24.27,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}LOOK AT HIM {\c&H0015CCFA&}NOW!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:24.28,0:00:24.46,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HE IS
+Dialogue: 0,0:00:24.46,0:00:25.01,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SO {\c&H0015CCFA&}TINY!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:25.26,0:00:25.78,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}STOP LAUGHING
+Dialogue: 0,0:00:25.78,0:00:26.12,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}AT {\c&H0015CCFA&}ME,{\c&H00FFFFFF&}
+Dialogue: 0,0:00:26.12,0:00:26.82,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOU STUPID {\c&H0015CCFA&}PIGS!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:27.16,0:00:27.72,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}REX{\c&H00FFFFFF&} SHRANK
+Dialogue: 0,0:00:27.72,0:00:28.14,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}UNTIL HE
+Dialogue: 0,0:00:28.14,0:00:28.64,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}POPPED AWAY
+Dialogue: 0,0:00:28.64,0:00:29.08,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}COMPLETELY!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:29.08,0:00:29.76,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}KIND WORDS
+Dialogue: 0,0:00:29.76,0:00:30.18,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}KEEP {\c&H0015CCFA&}US{\c&H00FFFFFF&}
+Dialogue: 0,0:00:30.18,0:00:30.78,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}STANDING {\c&H0015CCFA&}TALL.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:31.16,0:00:31.22,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I AM
+Dialogue: 0,0:00:31.22,0:00:31.64,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}NOT SCARED
+Dialogue: 0,0:00:31.64,0:00:32.22,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}OF HIM {\c&H0015CCFA&}ANYMORE.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:32.54,0:00:32.82,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}LET'S WALK
+Dialogue: 0,0:00:32.82,0:00:33.24,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HOME TOGETHER
+Dialogue: 0,0:00:33.24,0:00:33.78,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}RIGHT {\c&H0015CCFA&}NOW.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:33.78,0:00:34.14,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOU ARE
+Dialogue: 0,0:00:34.14,0:00:34.44,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE BEST
+Dialogue: 0,0:00:34.44,0:00:34.88,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}BIG BROTHER
+Dialogue: 0,0:00:34.88,0:00:35.26,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}EVER.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:35.26,0:00:36.10,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}KINDNESS WILL
+Dialogue: 0,0:00:36.10,0:00:36.70,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ALWAYS KEEP
+Dialogue: 0,0:00:36.70,0:00:37.25,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOU {\c&H0015CCFA&}STRONG.{\c&H00FFFFFF&}

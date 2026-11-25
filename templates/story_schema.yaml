@@ -1,0 +1,75 @@
+# ============================================================================
+# AI-Vid V5.4 Story Schema (Blank Technical Template)
+# Fill the 6-Question Editorial Brief BEFORE writing any # MODEL PARITY GATE (CORE.md): 16-24 beats, 40-55s, beat 1 speaks by 0.6s, >=30% non-narrator lines, >=3 `with:` beats,
+#   >=4 active-SFX beats, <=2 pause_before beats, no move_to onto the actor's own position. Lint errors if violated.
+# Set props (verified): cozy_room: Rug, DeskTop, Monitor, BedFrame/Mattress/Pillow, Bookshelf, Door, WinGlass, CeilingLamp
+#   school_yard: SchoolMain, EntryDoor(+DoorPull), SchoolSign, PlayCourt+Basket, Planter, Bench, SchoolShowStage(riser/curtains/PerformerMark), TryoutSign, CoachTable
+#   street_day: Road, Crosswalk, storefront Door/Awning/windows, LampPost, BusStopSign/Board, Bench
+#   anime_arena: ArenaFloor, CenterPad, neon Trim, 8 Pillars+Braziers, walls, 3 Banners
+# Active SFX: bass_hit bass_hit_warm bell bell_clang_loud bell_ring_fading chime_soft ding drone_smash footsteps_sand footsteps_wood
+#   glass_clink gold_dissolve heartbeat heartbeat_fast hiss_crack ignite_shimmer ignite_shimmer_big impact_whoosh piano_note pour
+#   railing_snap resolution_chord rewind_zip rope_creak scraping_drag shutter skin_creak splash stone_thud swim_splash thud thunder
+#   tick whistle_blow whoosh whoosh_hit whoosh_rewind.  BANNED (muted): music_*, waves*, crowd_*, crickets_waves, seagulls.
+beats:
+#   1. Opening picture (muted, 0-2s):
+#   2. Character want (next 10s):
+#   3. Visible obstacle (on screen):
+#   4. Choice & cost (what is risked/given up):
+#   5. Final picture (flips frame 1, no double-ending):
+#   6. Cut 1 redundant line (what animation already shows):
+#   7. Engine + closing CTA (see CORE.md V5.4.5): set engine: and cta: below
+# ============================================================================
+id: "<NEXT_ID>"                         # highest ID in ledger/STORY_LEDGER.md + 1
+format: story                           # story | roblox_game | mystery
+set: school_yard                        # street_day | school_yard | cozy_room | anime_arena | street_002_winter
+title: "Short Concrete Title 🚌"        # 2-6 words + 1 emoji, ZERO hashtags in title
+description: "Spoiler-free 1-sentence hook about the character's dilemma."
+hashtags: ["#roblox", "#rblx", "#robloxstories", "#shorts"]
+bgm_mood: mystery                       # mystery | tension | action | wholesome | dark | none
+lighting: day_bright                    # day_bright | dark_mystery | anime_clash | neon_drop
+caption_margin_v: 560                   # default 560; raise/adjust only if it covers story evidence
+engine: ironic_reframe                  # ironic_reframe | social_karma | clever_loophole | moral_dilemma (warned if missing)
+cta: "1-line in-world debate question, not a 2nd ending"  # warned if missing
+thumb_at: 1.2                           # clean caption-free frame timestamp (seconds)
+
+cast:
+  - name: Hero
+    gender: boy                         # boy | girl | man | woman (REQUIRED)
+    default_face: neutral               # neutral | scared | shocked | grin | determined | proud
+    pos: [0, 0, 4]                      # [X, Y, Z]
+    yaw: 180                            # degrees (0 = -Z, 180 = +Z)
+    # optional: scale: 0.85, shirt: 0, pants: 0, hair: "0"
+
+# Optional story props (<=2 small custom props; built by Engine.spawnProps):
+# props:
+#   - { name: TrashCan, shape: cylinder, size: [3,2,2], color: [46,110,70], material: Metal, pos: [2.2,1.7,7], rot: [0,0,90] }
+#   - { name: Wrapper, size: [0.8,0.06,0.55], color: [230,60,160], material: Foil, attach: "Kai/Right Leg", offset: [0.05,-0.92,-0.62], rot: [-18,12,0] }
+
+beats:
+  # Supported beat keys:
+  #   dur:          float (1.4 - 2.4s default; >2.4s requires allow_hold: true)
+  #   allow_hold:   bool  (optional; true only for purposeful reveal/reaction holds)
+  #   cam:          front | closeup | wide | ots | reverse_ots | side_track | high_angle | low_hero | prop_insert | foot_insert (shoe/floor detail)
+  #   fov:          int   (optional; default 50; closeup 42-46, wide 54-58, prop_insert 38-42)
+  #   motion:       push_in | pull_out | shake | orbit360 | static
+  #   target:       <cast name>
+  #   action:       idle | walk | run | wave | point | punch | block | knockback | dance | fall (face-plant + dust; stands back up next beat)
+  #   move_to:      [X, Y, Z]             (optional; LookVector-aligned travel)
+  #   snap_to:      [X, Y, Z]             (optional; instant teleport for room/scene cuts)
+  #   yaw:          degrees               (optional; set facing on this beat, with or without snap_to)
+  #   with: entries also take snap_to: and yaw: to place partners at a scene cut
+  #   face:         neutral | scared | shocked | grin | determined | proud
+  #   with:         [{ name: CoStar, action: wave, move_to: [2,0,4], face: shocked }]  # multi-actor!
+  #   face_partner: true                  (optional; target & first partner face each other)
+  #   badge:        ""                    (optional; ONLY when story uses a real mark/icon: red_x | green_check | skull | alert | text)
+  #   clear_badge:  true                  (optional)
+  #   prop:         { name: Wrapper, attach: "Kai/Left Leg", offset: [0,-0.92,-0.62], rot: [0,0,0] } | { name: X, hide: true } | { name: X, show: true } | [list]
+  #   fx:           ""                    (optional; impact | hitstop | aura_on | aura_red | neon_flip)
+  #   speaker:      narrator | boy | girl | villain | adult  (for 30-50% character dialogue!)
+  #   pause_before: 0.0                   (optional; e.g. 0.30 before a twist line)
+  #   bgm_duck:     true                  (optional; drops BGM to near-silence under twist/decision)
+  #   bgm_climax:   true                  (optional; lifts BGM to climax_bgm_gain)
+  #   sfx:          ""                    (optional; wav stem in assets/sfx/)
+  #   line:         ""                    (spoken text; wrap *one* key word in *asterisks* to highlight; empty "" for silent beat)
+  - { dur: 1.8, cam: closeup, fov: 46, motion: push_in, target: Hero, action: idle, face: shocked, speaker: narrator, sfx: whoosh, line: "First action-first *line* here." }
+

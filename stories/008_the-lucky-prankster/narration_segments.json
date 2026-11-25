@@ -1,0 +1,156 @@
+[
+  {
+    "beat": 1,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "My phone buzzed. Daily luck: one hundred *percent*.",
+    "text": "My phone buzzed. Daily luck: one hundred percent."
+  },
+  {
+    "beat": 2,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "I'm officially the *luckiest* kid alive!",
+    "text": "I'm officially the luckiest kid alive!"
+  },
+  {
+    "beat": 3,
+    "speaker": "girl",
+    "pause_before": 0.0,
+    "raw_line": "The town rule is *strict*, Dex.",
+    "text": "The town rule is strict, Dex."
+  },
+  {
+    "beat": 4,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Your luck equals how many people you made *smile*.",
+    "text": "Your luck equals how many people you made smile."
+  },
+  {
+    "beat": 5,
+    "speaker": "girl",
+    "pause_before": 0.0,
+    "raw_line": "You usually get two percent from your *mom*.",
+    "text": "You usually get two percent from your mom."
+  },
+  {
+    "beat": 6,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Not today. Today everyone *loves* me.",
+    "text": "Not today. Today everyone loves me."
+  },
+  {
+    "beat": 7,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "A basketball flew straight at my *face*.",
+    "text": "A basketball flew straight at my face."
+  },
+  {
+    "beat": 8,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "It banked off the rim and swished the *net*.",
+    "text": "It banked off the rim and swished the net."
+  },
+  {
+    "beat": 9,
+    "speaker": "girl",
+    "pause_before": 0.0,
+    "raw_line": "How did that even *happen*?",
+    "text": "How did that even happen?"
+  },
+  {
+    "beat": 10,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "I am completely *untouchable*.",
+    "text": "I am completely untouchable."
+  },
+  {
+    "beat": 11,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "I can bet anything and *win*.",
+    "text": "I can bet anything and win."
+  },
+  {
+    "beat": 12,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "I marched into the yard like a *champion*.",
+    "text": "I marched into the yard like a champion."
+  },
+  {
+    "beat": 13,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Attention! The news is *official*!",
+    "text": "Attention! The news is official!"
+  },
+  {
+    "beat": 14,
+    "speaker": "girl",
+    "pause_before": 0.0,
+    "raw_line": "Look! Everyone is cheering at the *doors*!",
+    "text": "Look! Everyone is cheering at the doors!"
+  },
+  {
+    "beat": 15,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "Hundreds of students were dancing in *relief*.",
+    "text": "Hundreds of students were dancing in relief."
+  },
+  {
+    "beat": 16,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "They're throwing a party for *me*?",
+    "text": "They're throwing a party for me?"
+  },
+  {
+    "beat": 17,
+    "speaker": "girl",
+    "pause_before": 0.0,
+    "raw_line": "Read the banner on the *sign*, Dex.",
+    "text": "Read the banner on the sign, Dex."
+  },
+  {
+    "beat": 18,
+    "speaker": "narrator",
+    "pause_before": 0.3,
+    "raw_line": "Farewell Dex. Transferred to boarding school *forever*.",
+    "text": "Farewell Dex. Transferred to boarding school forever."
+  },
+  {
+    "beat": 19,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Wait... that was just a *joke*!",
+    "text": "Wait... that was just a joke!"
+  },
+  {
+    "beat": 20,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Best news our school ever *heard*.",
+    "text": "Best news our school ever heard."
+  },
+  {
+    "beat": 21,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "Dex tripped on a tiny *pebble*.",
+    "text": "Dex tripped on a tiny pebble."
+  },
+  {
+    "beat": 22,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "His luck dropped to zero *instantly*.",
+    "text": "His luck dropped to zero instantly."
+  }
+]

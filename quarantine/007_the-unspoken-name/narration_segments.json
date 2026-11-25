@@ -1,0 +1,156 @@
+[
+  {
+    "beat": 1,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "Sixteen years. No one ever *spoke* my name.",
+    "text": "Sixteen years. No one ever spoke my name."
+  },
+  {
+    "beat": 2,
+    "speaker": "woman",
+    "pause_before": 0.0,
+    "raw_line": "Move along, *kid*. Off the road.",
+    "text": "Move along, kid. Off the road."
+  },
+  {
+    "beat": 3,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "In this town, the *rule* is absolute.",
+    "text": "In this town, the rule is absolute."
+  },
+  {
+    "beat": 4,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "You can't say a name unless you'd *die* for them.",
+    "text": "You can't say a name unless you'd die for them."
+  },
+  {
+    "beat": 5,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Which means nobody ever says *mine*.",
+    "text": "Which means nobody ever says mine."
+  },
+  {
+    "beat": 6,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Because nobody cares if you *vanish*.",
+    "text": "Because nobody cares if you vanish."
+  },
+  {
+    "beat": 7,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "Every kid had family shouting at *recess*.",
+    "text": "Every kid had family shouting at recess."
+  },
+  {
+    "beat": 8,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "You are totally *alone* out here.",
+    "text": "You are totally alone out here."
+  },
+  {
+    "beat": 9,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "I don't need your *pity*.",
+    "text": "I don't need your pity."
+  },
+  {
+    "beat": 10,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "I stepped into the road without *looking*.",
+    "text": "I stepped into the road without looking."
+  },
+  {
+    "beat": 11,
+    "speaker": "woman",
+    "pause_before": 0.0,
+    "raw_line": "Truck! Get off the *street*!",
+    "text": "Truck! Get off the street!"
+  },
+  {
+    "beat": 12,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "Air brakes *screeched*.",
+    "text": "Air brakes screeched."
+  },
+  {
+    "beat": 13,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "My boots froze to the cold *ground*.",
+    "text": "My boots froze to the cold ground."
+  },
+  {
+    "beat": 14,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "Nobody ever trades their *life*.",
+    "text": "Nobody ever trades their life."
+  },
+  {
+    "beat": 15,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Get out of the *way*!",
+    "text": "Get out of the way!"
+  },
+  {
+    "beat": 16,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Move, *Eli*!",
+    "text": "Move, Eli!"
+  },
+  {
+    "beat": 17,
+    "speaker": "boy",
+    "pause_before": 0.3,
+    "raw_line": "He said my *name*.",
+    "text": "He said my name."
+  },
+  {
+    "beat": 18,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "Two hands shoved me to the *sidewalk*.",
+    "text": "Two hands shoved me to the sidewalk."
+  },
+  {
+    "beat": 19,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "The bumper struck Jax into the *dust*.",
+    "text": "The bumper struck Jax into the dust."
+  },
+  {
+    "beat": 20,
+    "speaker": "woman",
+    "pause_before": 0.0,
+    "raw_line": "Medic! He took the *impact*!",
+    "text": "Medic! He took the impact!"
+  },
+  {
+    "beat": 21,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Jax! Why did you *jump*?",
+    "text": "Jax! Why did you jump?"
+  },
+  {
+    "beat": 22,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "You never listened once, *Eli*.",
+    "text": "You never listened once, Eli."
+  }
+]

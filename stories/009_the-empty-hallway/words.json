@@ -1,0 +1,752 @@
+[
+ {
+  "word": "Ten",
+  "start": 0.0,
+  "end": 0.32
+ },
+ {
+  "word": "AM.",
+  "start": 0.32,
+  "end": 0.64
+ },
+ {
+  "word": "The",
+  "start": 0.74,
+  "end": 0.88
+ },
+ {
+  "word": "hallway",
+  "start": 0.88,
+  "end": 1.18
+ },
+ {
+  "word": "was",
+  "start": 1.18,
+  "end": 1.38
+ },
+ {
+  "word": "a",
+  "start": 1.38,
+  "end": 1.54
+ },
+ {
+  "word": "ghost",
+  "start": 1.54,
+  "end": 1.72
+ },
+ {
+  "word": "town.",
+  "start": 1.72,
+  "end": 2.18
+ },
+ {
+  "word": "Where",
+  "start": 2.34,
+  "end": 2.34
+ },
+ {
+  "word": "did",
+  "start": 2.34,
+  "end": 2.46
+ },
+ {
+  "word": "all",
+  "start": 2.46,
+  "end": 2.6
+ },
+ {
+  "word": "the",
+  "start": 2.6,
+  "end": 2.72
+ },
+ {
+  "word": "cowards",
+  "start": 2.72,
+  "end": 3.06
+ },
+ {
+  "word": "hide?",
+  "start": 3.06,
+  "end": 3.34
+ },
+ {
+  "word": "He's",
+  "start": 3.64,
+  "end": 3.76
+ },
+ {
+  "word": "right",
+  "start": 3.76,
+  "end": 3.94
+ },
+ {
+  "word": "there!",
+  "start": 3.94,
+  "end": 4.26
+ },
+ {
+  "word": "Don't",
+  "start": 4.5,
+  "end": 4.62
+ },
+ {
+  "word": "look",
+  "start": 4.62,
+  "end": 4.74
+ },
+ {
+  "word": "in",
+  "start": 4.74,
+  "end": 4.84
+ },
+ {
+  "word": "his",
+  "start": 4.84,
+  "end": 4.98
+ },
+ {
+  "word": "eyes!",
+  "start": 4.98,
+  "end": 5.3
+ },
+ {
+  "word": "Zane",
+  "start": 5.76,
+  "end": 5.84
+ },
+ {
+  "word": "stared",
+  "start": 5.84,
+  "end": 6.1
+ },
+ {
+  "word": "straight",
+  "start": 6.1,
+  "end": 6.46
+ },
+ {
+  "word": "through",
+  "start": 6.46,
+  "end": 6.7
+ },
+ {
+  "word": "her",
+  "start": 6.7,
+  "end": 6.84
+ },
+ {
+  "word": "like",
+  "start": 6.84,
+  "end": 7.02
+ },
+ {
+  "word": "glass.",
+  "start": 7.02,
+  "end": 7.44
+ },
+ {
+  "word": "In",
+  "start": 7.74,
+  "end": 7.8
+ },
+ {
+  "word": "this",
+  "start": 7.8,
+  "end": 7.94
+ },
+ {
+  "word": "school,",
+  "start": 7.94,
+  "end": 8.16
+ },
+ {
+  "word": "the",
+  "start": 8.28,
+  "end": 8.32
+ },
+ {
+  "word": "rule",
+  "start": 8.32,
+  "end": 8.5
+ },
+ {
+  "word": "is",
+  "start": 8.5,
+  "end": 8.68
+ },
+ {
+  "word": "harsh.",
+  "start": 8.68,
+  "end": 8.92
+ },
+ {
+  "word": "You",
+  "start": 9.32,
+  "end": 9.4
+ },
+ {
+  "word": "are",
+  "start": 9.4,
+  "end": 9.5
+ },
+ {
+  "word": "totally",
+  "start": 9.5,
+  "end": 9.82
+ },
+ {
+  "word": "blind",
+  "start": 9.82,
+  "end": 10.12
+ },
+ {
+  "word": "to",
+  "start": 10.12,
+  "end": 10.32
+ },
+ {
+  "word": "anyone",
+  "start": 10.32,
+  "end": 10.6
+ },
+ {
+  "word": "who",
+  "start": 10.6,
+  "end": 10.8
+ },
+ {
+  "word": "fears",
+  "start": 10.8,
+  "end": 11.04
+ },
+ {
+  "word": "you.",
+  "start": 11.04,
+  "end": 11.34
+ },
+ {
+  "word": "The",
+  "start": 11.52,
+  "end": 11.6
+ },
+ {
+  "word": "harder",
+  "start": 11.6,
+  "end": 11.82
+ },
+ {
+  "word": "he",
+  "start": 11.82,
+  "end": 12.04
+ },
+ {
+  "word": "threatened,",
+  "start": 12.04,
+  "end": 12.42
+ },
+ {
+  "word": "the",
+  "start": 12.68,
+  "end": 12.76
+ },
+ {
+  "word": "more",
+  "start": 12.76,
+  "end": 12.96
+ },
+ {
+  "word": "kids",
+  "start": 12.96,
+  "end": 13.26
+ },
+ {
+  "word": "vanished.",
+  "start": 13.26,
+  "end": 13.72
+ },
+ {
+  "word": "I",
+  "start": 14.04,
+  "end": 14.1
+ },
+ {
+  "word": "broke",
+  "start": 14.1,
+  "end": 14.3
+ },
+ {
+  "word": "the",
+  "start": 14.3,
+  "end": 14.48
+ },
+ {
+  "word": "varsity",
+  "start": 14.48,
+  "end": 14.8
+ },
+ {
+  "word": "captain",
+  "start": 14.8,
+  "end": 15.18
+ },
+ {
+  "word": "on",
+  "start": 15.18,
+  "end": 15.44
+ },
+ {
+  "word": "Monday.",
+  "start": 15.44,
+  "end": 15.8
+ },
+ {
+  "word": "He",
+  "start": 16.08,
+  "end": 16.16
+ },
+ {
+  "word": "vanished",
+  "start": 16.16,
+  "end": 16.4
+ },
+ {
+  "word": "the",
+  "start": 16.4,
+  "end": 16.6
+ },
+ {
+  "word": "second",
+  "start": 16.6,
+  "end": 16.82
+ },
+ {
+  "word": "he",
+  "start": 16.82,
+  "end": 17.02
+ },
+ {
+  "word": "shook.",
+  "start": 17.02,
+  "end": 17.26
+ },
+ {
+  "word": "He",
+  "start": 17.5,
+  "end": 17.6
+ },
+ {
+  "word": "slammed",
+  "start": 17.6,
+  "end": 18.02
+ },
+ {
+  "word": "locker",
+  "start": 18.02,
+  "end": 18.42
+ },
+ {
+  "word": "doors",
+  "start": 18.42,
+  "end": 18.88
+ },
+ {
+  "word": "down",
+  "start": 18.88,
+  "end": 19.1
+ },
+ {
+  "word": "the",
+  "start": 19.1,
+  "end": 19.28
+ },
+ {
+  "word": "hallway.",
+  "start": 19.28,
+  "end": 19.66
+ },
+ {
+  "word": "Is",
+  "start": 19.86,
+  "end": 19.94
+ },
+ {
+  "word": "anybody",
+  "start": 19.94,
+  "end": 20.18
+ },
+ {
+  "word": "still",
+  "start": 20.18,
+  "end": 20.54
+ },
+ {
+  "word": "alive?",
+  "start": 20.54,
+  "end": 20.86
+ },
+ {
+  "word": "Quiet!",
+  "start": 21.14,
+  "end": 21.34
+ },
+ {
+  "word": "If",
+  "start": 21.58,
+  "end": 21.68
+ },
+ {
+  "word": "he",
+  "start": 21.68,
+  "end": 21.78
+ },
+ {
+  "word": "can't",
+  "start": 21.78,
+  "end": 22.02
+ },
+ {
+  "word": "see",
+  "start": 22.02,
+  "end": 22.14
+ },
+ {
+  "word": "us,",
+  "start": 22.14,
+  "end": 22.3
+ },
+ {
+  "word": "we're",
+  "start": 22.3,
+  "end": 22.48
+ },
+ {
+  "word": "safe.",
+  "start": 22.48,
+  "end": 22.7
+ },
+ {
+  "word": "Total",
+  "start": 23.02,
+  "end": 23.18
+ },
+ {
+  "word": "silence.",
+  "start": 23.18,
+  "end": 23.66
+ },
+ {
+  "word": "A",
+  "start": 23.98,
+  "end": 24.12
+ },
+ {
+  "word": "campus",
+  "start": 24.12,
+  "end": 24.42
+ },
+ {
+  "word": "of",
+  "start": 24.42,
+  "end": 24.68
+ },
+ {
+  "word": "invisible",
+  "start": 24.68,
+  "end": 25.12
+ },
+ {
+  "word": "shadows.",
+  "start": 25.12,
+  "end": 25.64
+ },
+ {
+  "word": "He",
+  "start": 25.86,
+  "end": 25.92
+ },
+ {
+  "word": "reached",
+  "start": 25.92,
+  "end": 26.12
+ },
+ {
+  "word": "the",
+  "start": 26.12,
+  "end": 26.32
+ },
+ {
+  "word": "lockers,",
+  "start": 26.32,
+  "end": 26.8
+ },
+ {
+  "word": "ready",
+  "start": 26.94,
+  "end": 27.08
+ },
+ {
+  "word": "to",
+  "start": 27.08,
+  "end": 27.34
+ },
+ {
+  "word": "quit.",
+  "start": 27.34,
+  "end": 27.54
+ },
+ {
+  "word": "Zane",
+  "start": 27.8,
+  "end": 28.02
+ },
+ {
+  "word": "kicked",
+  "start": 28.02,
+  "end": 28.24
+ },
+ {
+  "word": "a",
+  "start": 28.24,
+  "end": 28.4
+ },
+ {
+  "word": "locker",
+  "start": 28.4,
+  "end": 28.62
+ },
+ {
+  "word": "in",
+  "start": 28.62,
+  "end": 28.86
+ },
+ {
+  "word": "fury.",
+  "start": 28.86,
+  "end": 29.14
+ },
+ {
+  "word": "Then",
+  "start": 29.14,
+  "end": 29.5
+ },
+ {
+  "word": "on",
+  "start": 29.6,
+  "end": 29.64
+ },
+ {
+  "word": "the",
+  "start": 29.64,
+  "end": 29.76
+ },
+ {
+  "word": "bench,",
+  "start": 29.76,
+  "end": 30.04
+ },
+ {
+  "word": "one",
+  "start": 30.34,
+  "end": 30.52
+ },
+ {
+  "word": "kid",
+  "start": 30.52,
+  "end": 30.82
+ },
+ {
+  "word": "came",
+  "start": 30.82,
+  "end": 31.1
+ },
+ {
+  "word": "into",
+  "start": 31.1,
+  "end": 31.34
+ },
+ {
+  "word": "focus.",
+  "start": 31.34,
+  "end": 31.7
+ },
+ {
+  "word": "I",
+  "start": 32.4,
+  "end": 32.46
+ },
+ {
+  "word": "can",
+  "start": 32.46,
+  "end": 32.62
+ },
+ {
+  "word": "see",
+  "start": 32.62,
+  "end": 32.84
+ },
+ {
+  "word": "you.",
+  "start": 32.84,
+  "end": 33.02
+ },
+ {
+  "word": "You're",
+  "start": 33.16,
+  "end": 33.26
+ },
+ {
+  "word": "real.",
+  "start": 33.26,
+  "end": 33.48
+ },
+ {
+  "word": "Pass",
+  "start": 33.82,
+  "end": 33.9
+ },
+ {
+  "word": "the",
+  "start": 33.9,
+  "end": 34.06
+ },
+ {
+  "word": "juice,",
+  "start": 34.06,
+  "end": 34.22
+ },
+ {
+  "word": "Zane.",
+  "start": 34.46,
+  "end": 34.58
+ },
+ {
+  "word": "Aren't",
+  "start": 34.88,
+  "end": 35.02
+ },
+ {
+  "word": "you",
+  "start": 35.02,
+  "end": 35.1
+ },
+ {
+  "word": "going",
+  "start": 35.1,
+  "end": 35.2
+ },
+ {
+  "word": "to",
+  "start": 35.2,
+  "end": 35.34
+ },
+ {
+  "word": "run?",
+  "start": 35.34,
+  "end": 35.54
+ },
+ {
+  "word": "Why",
+  "start": 35.88,
+  "end": 35.96
+ },
+ {
+  "word": "would",
+  "start": 35.96,
+  "end": 36.06
+ },
+ {
+  "word": "I",
+  "start": 36.06,
+  "end": 36.14
+ },
+ {
+  "word": "fear",
+  "start": 36.14,
+  "end": 36.3
+ },
+ {
+  "word": "a",
+  "start": 36.3,
+  "end": 36.48
+ },
+ {
+  "word": "clown?",
+  "start": 36.48,
+  "end": 36.62
+ },
+ {
+  "word": "Toby",
+  "start": 37.04,
+  "end": 37.18
+ },
+ {
+  "word": "walked",
+  "start": 37.18,
+  "end": 37.5
+ },
+ {
+  "word": "past",
+  "start": 37.5,
+  "end": 37.84
+ },
+ {
+  "word": "the",
+  "start": 37.84,
+  "end": 38.06
+ },
+ {
+  "word": "lonely",
+  "start": 38.06,
+  "end": 38.36
+ },
+ {
+  "word": "bully.",
+  "start": 38.36,
+  "end": 38.66
+ },
+ {
+  "word": "He",
+  "start": 38.92,
+  "end": 38.98
+ },
+ {
+  "word": "sank",
+  "start": 38.98,
+  "end": 39.2
+ },
+ {
+  "word": "down,",
+  "start": 39.2,
+  "end": 39.6
+ },
+ {
+  "word": "alone",
+  "start": 39.76,
+  "end": 40.02
+ },
+ {
+  "word": "in",
+  "start": 40.02,
+  "end": 40.22
+ },
+ {
+  "word": "a",
+  "start": 40.22,
+  "end": 40.3
+ },
+ {
+  "word": "world",
+  "start": 40.3,
+  "end": 40.48
+ },
+ {
+  "word": "of",
+  "start": 40.48,
+  "end": 40.7
+ },
+ {
+  "word": "ghosts.",
+  "start": 40.7,
+  "end": 40.96
+ }
+]

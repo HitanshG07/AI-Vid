@@ -1,0 +1,493 @@
+-- AI-Vid V5.4 Locked Reusable Roblox Studio Engine
+-- PROTECTED ASSET CREATION (UNTOUCHED):
+--   * Engine.buildRig(): Real R6 catalog avatars via CreateHumanoidModelFromDescription (zero block statues, zero nameplates)
+--   * Engine.setFace(): Flat 2D decals from assets/faces/classic_v1/ids.json
+-- V5.4 UPGRADES:
+--   * Character-relative camera presets (front, closeup, wide, ots, reverse_ots, side_track, high_angle, low_hero, prop_insert)
+--   * Per-beat FieldOfView (default 50) + real Workspace:Raycast() clearShot occlusion guard
+--   * Multi-actor movement & face swaps inside `partners` (`with:`)
+--   * Non-blocking hitstop (no task.wait stall inside RenderStepped) + clean opt-in icon badges
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Lighting = game:GetService("Lighting")
+local Workspace = game:GetService("Workspace")
+
+local Engine = {}
+Engine.FACE_IDS = {
+  neutral    = "rbxassetid://70950815478959",
+  scared     = "rbxassetid://94514852927815",
+  shocked    = "rbxassetid://103057607693548",
+  grin       = "rbxassetid://96253429845051",
+  determined = "rbxassetid://109687999939498",
+  proud      = "rbxassetid://96477668083717",
+}
+
+Engine.STARTER_WARDROBE = {
+  boy   = { shirt = 86330417861158, pants = 12671481024,  hair = "98588731108499",  skin = Color3.fromRGB(234, 190, 150) },
+  girl  = { shirt = 91467779965025, pants = 13979853518,  hair = "100973074711029", skin = Color3.fromRGB(235, 203, 178) },
+  man   = { shirt = 8836645430,     pants = 14262996290,  hair = "140624854156017", skin = Color3.fromRGB(230, 185, 140) },
+  woman = { shirt = 85435724220934, pants = 18332980667,  hair = "17890789000",     skin = Color3.fromRGB(240, 200, 160) },
+}
+
+local ROLL_90 = CFrame.Angles(0, 0, math.rad(90))
+local DEFAULT_GRAVITY = 196.2
+local DEFAULT_FOV = 50
+
+-- === PROTECTED ASSET METHODS (UNTOUCHED) ===
+function Engine.setFace(model, emotion)
+  local head = model and model:FindFirstChild("Head")
+  local id = Engine.FACE_IDS[emotion] or Engine.FACE_IDS.neutral
+  if not head then return end
+  local d = head:FindFirstChild("face") or head:FindFirstChildOfClass("Decal") or Instance.new("Decal", head)
+  d.Name = "face"; d.Face = Enum.NormalId.Front; d.Texture = id
+end
+
+function Engine.buildRig(spec, parent)
+  local gender = assert(spec.gender, "Rig '" .. tostring(spec.name) .. "' must declare gender (boy|girl|man|woman)")
+  local base = assert(Engine.STARTER_WARDROBE[gender], "Invalid gender: " .. tostring(gender))
+  local d = Instance.new("HumanoidDescription")
+  d.Shirt, d.Pants, d.HairAccessory = spec.shirt or base.shirt, spec.pants or base.pants, tostring(spec.hair or base.hair)
+  if spec.hat then d.HatAccessory = tostring(spec.hat) end
+  if spec.waist then d.WaistAccessory = tostring(spec.waist) end
+  if spec.neck then d.NeckAccessory = tostring(spec.neck) end
+  local skin = spec.skin or base.skin
+  for _, k in ipairs({ "HeadColor", "TorsoColor", "LeftArmColor", "RightArmColor", "LeftLegColor", "RightLegColor" }) do d[k] = skin end
+
+  local m = Players:CreateHumanoidModelFromDescription(d, Enum.HumanoidRigType.R6)
+  m.Name = spec.name or "Actor"
+  local hrp = m:FindFirstChild("HumanoidRootPart")
+  if hrp then m.PrimaryPart = hrp end
+  local hum = m:FindFirstChildOfClass("Humanoid")
+  if hum then
+    hum.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
+    hum.HealthDisplayType = Enum.HumanoidHealthDisplayType.AlwaysOff
+    hum.DisplayName = ""
+  end
+  if spec.scale then m:ScaleTo(spec.scale) end
+
+  local pos = spec.pos or Vector3.new(0, 0, 0)
+  m:PivotTo(CFrame.new(pos.X, pos.Y + 5, pos.Z) * CFrame.Angles(0, math.rad(spec.yaw or 0), 0))
+  local low = math.huge
+  for _, p in ipairs(m:GetChildren()) do
+    if p:IsA("BasePart") then low = math.min(low, p.Position.Y - p.Size.Y / 2) end
+  end
+  local FLOOR_Y = 0.2
+  m:PivotTo(m:GetPivot() + Vector3.new(0, pos.Y + FLOOR_Y - low, 0))
+  for _, p in ipairs(m:GetDescendants()) do
+    if p:IsA("BasePart") then p.Anchored = (p.Name == "HumanoidRootPart") end
+  end
+  m.Parent = parent or Workspace
+  Engine.setFace(m, spec.face or "neutral")
+  return m
+end
+
+-- === LOCOMOTION & POSING ===
+function Engine.registerRig(model)
+  local torso = model:FindFirstChild("Torso")
+  local joints, baseC0 = {}, {}
+  if torso then
+    for _, jName in ipairs({ "Right Shoulder", "Left Shoulder", "Right Hip", "Left Hip", "Neck" }) do
+      local j = torso:FindFirstChild(jName)
+      if j and j:IsA("Motor6D") then joints[jName] = j; baseC0[jName] = j.C0 end
+    end
+  end
+  return { m = model, joints = joints, baseC0 = baseC0, phase = math.random() * 6.28, loco = nil, startCF = model:GetPivot() }
+end
+
+function Engine.applyPose(r, action, t, alpha)
+  local j, b = r.joints, r.baseC0
+  if not j["Right Shoulder"] then return end
+  local p = t + r.phase
+  for name, m6d in pairs(j) do m6d.C0 = b[name] end
+
+  if action == "walk" or action == "run" then
+    local freq = (action == "run") and 12 or 7
+    local amp = (action == "run") and 0.85 or 0.7
+    local sw = math.sin(p * freq) * amp
+    j["Right Shoulder"].C0 = b["Right Shoulder"] * CFrame.Angles(0, 0, sw)
+    j["Left Shoulder"].C0  = b["Left Shoulder"]  * CFrame.Angles(0, 0, sw)
+    j["Right Hip"].C0      = b["Right Hip"]      * CFrame.Angles(0, 0, -sw)
+    j["Left Hip"].C0       = b["Left Hip"]       * CFrame.Angles(0, 0, -sw)
+  elseif action == "wave" then
+    j["Right Shoulder"].C0 = b["Right Shoulder"] * CFrame.Angles(0, 0, math.rad(145) + math.sin(p * 10) * 0.25)
+  elseif action == "point" then
+    j["Right Shoulder"].C0 = b["Right Shoulder"] * CFrame.Angles(0, 0, math.rad(90))
+  elseif action == "punch" then
+    local strike = math.sin(math.clamp(alpha * 2.2, 0, 1) * math.pi)
+    j["Right Shoulder"].C0 = b["Right Shoulder"] * CFrame.Angles(0, 0, math.rad(105) * strike)
+    j["Left Shoulder"].C0  = b["Left Shoulder"]  * CFrame.Angles(0, 0, math.rad(-35) * strike)
+  elseif action == "block" then
+    j["Right Shoulder"].C0 = b["Right Shoulder"] * CFrame.Angles(math.rad(-25), 0, math.rad(85))
+    j["Left Shoulder"].C0  = b["Left Shoulder"]  * CFrame.Angles(math.rad(25), 0, math.rad(-85))
+  elseif action == "knockback" then
+    local k = math.sin(math.clamp(alpha, 0, 1) * math.pi)
+    j["Right Shoulder"].C0 = b["Right Shoulder"] * CFrame.Angles(0, 0, math.rad(120) * k)
+    j["Left Shoulder"].C0  = b["Left Shoulder"]  * CFrame.Angles(0, 0, math.rad(-120) * k)
+  elseif action == "floss" then
+    local swing = math.sin(p * 8)
+    local cross = math.cos(p * 8)
+    j["Right Shoulder"].C0 = b["Right Shoulder"] * CFrame.Angles(0.95 * swing, 0, 0.25 + 0.7 * cross)
+    j["Left Shoulder"].C0  = b["Left Shoulder"]  * CFrame.Angles(-0.95 * swing, 0, -0.25 + 0.7 * cross)
+    j["Right Hip"].C0      = b["Right Hip"]      * CFrame.Angles(-0.25 * swing, 0, 0.13)
+    j["Left Hip"].C0       = b["Left Hip"]       * CFrame.Angles(0.25 * swing, 0, -0.13)
+  elseif action == "wrestler_dance" then
+    local step = math.sin(p * 6.5)
+    local pump = math.max(0, math.sin(p * 13))
+    j["Right Shoulder"].C0 = b["Right Shoulder"] * CFrame.Angles(0.38, 0, 1.75 + 0.62 * step + 0.25 * pump)
+    j["Left Shoulder"].C0  = b["Left Shoulder"]  * CFrame.Angles(-0.38, 0, -1.75 + 0.62 * step - 0.25 * pump)
+    j["Right Hip"].C0      = b["Right Hip"]      * CFrame.Angles(0.28 * step, 0, -0.55 * math.max(0, step))
+    j["Left Hip"].C0       = b["Left Hip"]       * CFrame.Angles(0.28 * step, 0, 0.55 * math.max(0, -step))
+  elseif action == "dance" then
+    local beat = math.sin(p * 9.5)
+    j["Right Shoulder"].C0 = b["Right Shoulder"] * CFrame.Angles(math.rad(20), 0, math.rad(110) + beat * 0.45)
+    j["Left Shoulder"].C0  = b["Left Shoulder"]  * CFrame.Angles(math.rad(-20), 0, math.rad(-110) + beat * 0.45)
+    j["Right Hip"].C0      = b["Right Hip"]      * CFrame.Angles(0, 0, beat * 0.25)
+    j["Left Hip"].C0       = b["Left Hip"]       * CFrame.Angles(0, 0, -beat * 0.25)
+  else
+    local br = math.sin(p * 2.2) * 0.05
+    j["Right Shoulder"].C0 = b["Right Shoulder"] * CFrame.Angles(0, 0, br)
+    j["Left Shoulder"].C0  = b["Left Shoulder"]  * CFrame.Angles(0, 0, -br)
+  end
+end
+
+-- === CLEAN OPT-IN ICON / TEXT BADGES (No story-specific emoji hacks) ===
+local ICON_PRESETS = {
+  red_x       = { text = "✖", color = Color3.fromRGB(239, 68, 68),  bg = false },
+  green_check = { text = "✓", color = Color3.fromRGB(34, 197, 94),  bg = false },
+  ["✅"] = { text = "✓", color = Color3.fromRGB(34, 197, 94), bg = false },
+  skull       = { text = "☠", color = Color3.fromRGB(248, 250, 252), bg = false },
+  alert       = { text = "!", color = Color3.fromRGB(250, 204, 21), bg = false },
+}
+
+function Engine.showBadge(model, text, color)
+  local head = model and model:FindFirstChild("Head")
+  if not head then return end
+  local old = head:FindFirstChild("AIVidBadge")
+  if old then old:Destroy() end
+  if not text or text == "" then return end
+
+  if text == "dot_red" or text == "🔴" then
+    local dot = Instance.new("Part")
+    dot.Name = "AIVidBadge"; dot.Shape = Enum.PartType.Ball; dot.Size = Vector3.new(0.72, 0.72, 0.72)
+    dot.Material = Enum.Material.Neon; dot.Color = Color3.fromRGB(255, 26, 38)
+    dot.CanCollide = false; dot.CanTouch = false; dot.CanQuery = false; dot.CastShadow = false; dot.Massless = true
+    dot.CFrame = head.CFrame * CFrame.new(0, 1.6, 0)
+    local weld = Instance.new("WeldConstraint", dot); weld.Part0, weld.Part1 = head, dot
+    dot.Parent = head
+    return
+  end
+
+  local bb = Instance.new("BillboardGui", head)
+  bb.Name = "AIVidBadge"; bb.Size = UDim2.new(0, 220, 0, 64); bb.StudsOffset = Vector3.new(0, 2.5, 0); bb.AlwaysOnTop = true
+  local lbl = Instance.new("TextLabel", bb)
+  lbl.Size = UDim2.new(1, 0, 1, 0); lbl.Font = Enum.Font.GothamBlack; lbl.TextScaled = true
+  lbl.TextStrokeTransparency = 0.15; lbl.TextStrokeColor3 = Color3.new(0, 0, 0)
+
+  local preset = ICON_PRESETS[text]
+  if preset then
+    lbl.BackgroundTransparency = 1
+    lbl.TextColor3 = preset.color
+    lbl.Text = preset.text
+  else
+    lbl.BackgroundColor3 = color or Color3.fromRGB(29, 78, 216)
+    lbl.BackgroundTransparency = 0.1
+    lbl.TextColor3 = Color3.new(1, 1, 1)
+    lbl.Text = text
+  end
+end
+
+function Engine.spawnPropStack(pos, count, color)
+  local folder = Workspace:FindFirstChild("AIVidProps") or Instance.new("Folder", Workspace)
+  folder.Name = "AIVidProps"
+  for i = 1, (count or 4) do
+    local p = Instance.new("Part", folder)
+    p.Size = Vector3.new(1.8, 0.7, 1.8); p.Anchored = true; p.Material = Enum.Material.Neon
+    p.Color = color or Color3.fromRGB(239, 68, 68)
+    p.Position = pos + Vector3.new(0, 4.5 + i * 0.9, 0)
+  end
+end
+
+function Engine.impactFrame(duration)
+  local cc = Lighting:FindFirstChild("AIVidImpact") or Instance.new("ColorCorrectionEffect", Lighting)
+  cc.Name = "AIVidImpact"; cc.Saturation = -1; cc.Contrast = 2.5; cc.Brightness = 0.25
+  task.delay(duration or 0.08, function()
+    if cc then cc.Saturation = 0; cc.Contrast = 0; cc.Brightness = 0 end
+  end)
+end
+
+function Engine.shockwave(pos, color)
+  local ring = Instance.new("Part", Workspace)
+  ring.Name = "AIVidShockwave"; ring.Shape = Enum.PartType.Ball; ring.Anchored = true; ring.CanCollide = false
+  ring.Material = Enum.Material.Neon; ring.Color = color or Color3.fromRGB(56, 189, 248)
+  ring.Position = pos; ring.Size = Vector3.new(2, 2, 2); ring.Transparency = 0.25
+  task.spawn(function()
+    for i = 1, 10 do
+      ring.Size = ring.Size + Vector3.new(2.2, 2.2, 2.2); ring.Transparency = 0.25 + i * 0.075; task.wait(0.03)
+    end
+    ring:Destroy()
+  end)
+end
+
+function Engine.setAura(model, color, enabled)
+  local hrp = model and model:FindFirstChild("HumanoidRootPart")
+  if not hrp then return end
+  local old = hrp:FindFirstChild("AIVidAura")
+  if old then old:Destroy() end
+  if not enabled then return end
+  local pe = Instance.new("ParticleEmitter", hrp)
+  pe.Name = "AIVidAura"; pe.Color = ColorSequence.new(color or Color3.fromRGB(250, 204, 21))
+  pe.LightEmission = 1; pe.Rate = 45; pe.Lifetime = NumberRange.new(0.4, 0.7); pe.Speed = NumberRange.new(3, 7)
+  pe.Size = NumberSequence.new({ NumberSequenceKeypoint.new(0, 1.4), NumberSequenceKeypoint.new(1, 0) })
+end
+
+function Engine.applyLighting(preset)
+  for _, eff in ipairs(Lighting:GetChildren()) do
+    if eff:IsA("BloomEffect") or eff:IsA("SunRaysEffect") then eff.Enabled = false end
+  end
+  if preset == "day_bright" then Lighting.ClockTime = 16.8; Lighting.Brightness = 2.2; Lighting.ExposureCompensation = -0.15
+  elseif preset == "neon_drop" then Lighting.ClockTime = 21.5; Lighting.Brightness = 1.6; Lighting.Ambient = Color3.fromRGB(70, 50, 120)
+  elseif preset == "anime_clash" then Lighting.ClockTime = 17.5; Lighting.Brightness = 2.6; Lighting.ExposureCompensation = -0.1
+  elseif preset == "dark_mystery" then Lighting.ClockTime = 20.0; Lighting.Brightness = 1.5; Lighting.Ambient = Color3.fromRGB(95, 105, 130)
+  end
+end
+
+function Engine.resetCamera()
+  local cam = Workspace.CurrentCamera
+  if cam then cam.CameraType = Enum.CameraType.Custom; cam.FieldOfView = 70 end
+  Workspace.Gravity = DEFAULT_GRAVITY
+end
+
+-- === V5.4 RAYCAST OCCLUSION GUARD (clearShot) ===
+function Engine.clearShot(lookAtPos, camPos, ignoreList)
+  local dir = camPos - lookAtPos
+  local dist = dir.Magnitude
+  if dist < 0.5 then return camPos end
+  local params = RaycastParams.new()
+  params.FilterType = Enum.RaycastFilterType.Exclude
+  params.FilterDescendantsInstances = ignoreList or {}
+  local hit = Workspace:Raycast(lookAtPos, dir, params)
+  if hit then
+    -- 1) yaw swings around lookAtPos at the full distance (same height)
+    for _, deg in ipairs({35, -35, 65, -65}) do
+      local alt = lookAtPos + CFrame.Angles(0, math.rad(deg), 0):VectorToWorldSpace(dir)
+      if not Workspace:Raycast(lookAtPos, alt - lookAtPos, params) then return alt end
+    end
+    -- 2) all blocked: pull in front of the obstruction
+    return lookAtPos + dir.Unit * math.max(hit.Distance - 0.6, 4.2)
+  end
+  return camPos
+end
+
+-- === V5.4 CHARACTER-RELATIVE CAMERA PRESETS ===
+function Engine.computeCamera(targetCF, centerPos, camPreset, motion, alpha, groupWidth, ignoreList, partnerPos)
+  -- Use target's facing basis (LookVector / RightVector) so shots rotate WITH the actor!
+  local fwd = Vector3.new(targetCF.LookVector.X, 0, targetCF.LookVector.Z)
+  if fwd.Magnitude < 0.01 then fwd = Vector3.new(0, 0, -1) else fwd = fwd.Unit end
+  local right = Vector3.new(-fwd.Z, 0, fwd.X)
+  local up = Vector3.new(0, 1, 0)
+
+  local localOff, lookY, dutch = fwd * 7.2 + up * 1.7, 1.4, 0
+  if camPreset == "wide" then
+    localOff = fwd * 13.5 + up * 3.8
+  elseif camPreset == "closeup" or camPreset == "front" then
+    localOff = fwd * 5.2 + up * 1.65
+  elseif camPreset == "ots" then
+    localOff = fwd * 6.2 + right * 2.8 + up * 2.0
+  elseif camPreset == "reverse_ots" then
+    localOff = fwd * 6.2 - right * 2.8 + up * 2.0
+  elseif camPreset == "side_track" then
+    localOff = right * 8.0 + fwd * 1.5 + up * 1.8
+  elseif camPreset == "high_angle" then
+    localOff = fwd * 8.5 + up * 6.5; lookY = 1.0
+  elseif camPreset == "low_hero" then
+    localOff = fwd * 6.8 + up * 0.45; dutch = math.rad(2.5)
+  elseif camPreset == "prop_insert" then
+    localOff = fwd * 4.2 + up * 1.2; lookY = 0.6
+  end
+
+  local otsPartner = partnerPos and (camPreset == "ots" or camPreset == "reverse_ots")
+  if otsPartner then
+    -- camera behind the partner's outer shoulder, looking at the subject's face
+    local d = Vector3.new(targetCF.Position.X - partnerPos.X, 0, targetCF.Position.Z - partnerPos.Z)
+    d = d.Magnitude > 0.05 and d.Unit or fwd
+    local side = Vector3.new(-d.Z, 0, d.X) * (camPreset == "ots" and 3.2 or -3.2)
+    local cp = partnerPos - d * 2.4 + side + up * 2.1
+    local lp = targetCF.Position + Vector3.new(0, lookY, 0)
+    local pos = Engine.clearShot(lp, cp, ignoreList)
+    return CFrame.lookAt(pos, lp) * CFrame.Angles(0, 0, dutch) * ROLL_90
+  end
+
+  if groupWidth then
+    localOff = localOff + localOff.Unit * math.max(0, groupWidth - 4.5) * 0.85
+  end
+
+  if motion == "push_in" then localOff = localOff * (1.07 - 0.14 * alpha)
+  elseif motion == "pull_out" then localOff = localOff * (0.93 + 0.16 * alpha)
+  elseif motion == "orbit360" then
+    local ang = alpha * math.pi * 1.15
+    local rad = Vector3.new(localOff.X, 0, localOff.Z).Magnitude
+    localOff = Vector3.new(math.sin(ang) * rad, localOff.Y, math.cos(ang) * rad)
+  elseif motion == "shake" then
+    local j = (1 - alpha) * 0.30
+    localOff = localOff + right * (math.sin(alpha * 48) * j) + up * (math.cos(alpha * 54) * j)
+    dutch = math.rad(2.5)
+  end
+
+  local lookPos = centerPos + Vector3.new(0, lookY, 0)
+  local camPos = Engine.clearShot(lookPos, centerPos + localOff, ignoreList)
+  return CFrame.lookAt(camPos, lookPos) * CFrame.Angles(0, 0, dutch) * ROLL_90
+end
+
+local function moveRigToward(rig, startPos, dest, alpha)
+  if not rig or not dest then return end
+  local p0 = startPos or rig.m:GetPivot().Position
+  local p1 = Vector3.new(dest.X, p0.Y, dest.Z)
+  local cur = p0:Lerp(p1, alpha)
+  local dir = (p1 - p0)
+  if dir.Magnitude > 0.05 then
+    rig.m:PivotTo(CFrame.lookAt(cur, cur + dir.Unit))
+  end
+end
+
+function Engine.compile(spec)
+  local runner = {}
+  local rigs = {}
+  local castFolder
+
+  function runner.setup()
+    local bp = Workspace:FindFirstChild("Baseplate"); if bp then bp.Transparency = 1; bp.CanCollide = true end
+    if spec.set and _G.AIVidSets and _G.AIVidSets[spec.set] then
+      _G.AIVidSets[spec.set]()
+    end
+    local old = Workspace:FindFirstChild("Cast_" .. spec.id)
+    if old then old:Destroy() end
+    castFolder = Instance.new("Folder", Workspace)
+    castFolder.Name = "Cast_" .. spec.id
+    rigs = {}
+    for _, c in ipairs(spec.cast or {}) do
+      local m = Engine.buildRig(c, castFolder)
+      rigs[c.name] = Engine.registerRig(m)
+    end
+    Engine.applyLighting(spec.lighting or "day_bright")
+    return castFolder
+  end
+
+  function runner.play()
+    local cam = Workspace.CurrentCamera
+    cam.CameraType = Enum.CameraType.Scriptable
+    cam.FieldOfView = DEFAULT_FOV
+    if not next(rigs) then runner.setup() end
+    local tStart = os.clock()
+    local lastBeat = 0
+    local beatStartPos = {}
+    local hitstopUntil = 0
+
+    while true do
+      local t = os.clock() - tStart
+      if t >= spec.totalDuration then break end
+      local active = spec.beats[#spec.beats]
+      for _, b in ipairs(spec.beats) do
+        if t >= b.t0 and t < (b.t0 + b.dur) then active = b; break end
+      end
+
+      for _, r in pairs(rigs) do r.loco = nil end
+
+      local targetRig = rigs[active.target]
+      local model = targetRig and targetRig.m
+      local alpha = math.clamp((t - active.t0) / math.max(active.dur, 0.05), 0, 1)
+
+      if active.n ~= lastBeat then
+        lastBeat = active.n
+        cam.FieldOfView = active.fov or ((active.cam == "ots" or active.cam == "reverse_ots") and active.partners and active.partners[1] and 48) or DEFAULT_FOV
+        if active.snap_to and model then
+          local curCF = model:GetPivot()
+          local rot = curCF - curCF.Position
+          model:PivotTo(CFrame.new(active.snap_to.X, curCF.Position.Y, active.snap_to.Z) * rot)
+        end
+        for name, r in pairs(rigs) do beatStartPos[name] = r.m:GetPivot().Position end
+        if active.face and active.face ~= "" and model then Engine.setFace(model, active.face) end
+        if model then
+          if active.clear_badge then Engine.showBadge(model, "")
+          elseif active.badge and active.badge ~= "" then Engine.showBadge(model, active.badge)
+          end
+        end
+        if active.partners then
+          for _, cue in ipairs(active.partners) do
+            local pr = rigs[cue.name]
+            if pr and cue.face and cue.face ~= "" then Engine.setFace(pr.m, cue.face) end
+          end
+        end
+        if model and active.face_partner and active.partners and active.partners[1] then
+          local partner = rigs[active.partners[1].name]
+          if partner then
+            local a, b = model:GetPivot().Position, partner.m:GetPivot().Position
+            if Vector2.new(a.X - b.X, a.Z - b.Z).Magnitude > 0.05 then
+              model:PivotTo(CFrame.lookAt(a, Vector3.new(b.X, a.Y, b.Z)))
+              partner.m:PivotTo(CFrame.lookAt(b, Vector3.new(a.X, b.Y, a.Z)))
+            end
+          end
+        end
+        if active.gravity ~= nil then Workspace.Gravity = active.gravity end
+        if active.prop_stack and model then Engine.spawnPropStack(model:GetPivot().Position, active.prop_stack) end
+        if active.fx == "impact" and model then Engine.impactFrame(0.08); Engine.shockwave(model:GetPivot().Position)
+        elseif active.fx == "hitstop" and model then Engine.impactFrame(0.10); Engine.shockwave(model:GetPivot().Position); hitstopUntil = t + 0.08
+        elseif active.fx == "aura_on" and model then Engine.setAura(model, Color3.fromRGB(250, 204, 21), true)
+        elseif active.fx == "aura_red" and model then Engine.setAura(model, Color3.fromRGB(239, 68, 68), true)
+        elseif active.fx == "neon_flip" then Engine.applyLighting("neon_drop")
+        end
+      end
+
+      -- Non-blocking hitstop: freezes rig poses briefly without stalling RenderStepped
+      local frozenForHitstop = (t < hitstopUntil)
+      if not frozenForHitstop then
+        if targetRig then
+          targetRig.loco = active.action or "idle"
+          moveRigToward(targetRig, beatStartPos[active.target], active.move_to, alpha)
+        end
+        if active.partners then
+          for _, cue in ipairs(active.partners) do
+            local pr = rigs[cue.name]
+            if pr then
+              pr.loco = cue.action or active.action or "idle"
+              moveRigToward(pr, beatStartPos[cue.name], cue.move_to, alpha)
+            end
+          end
+        end
+        for _, r in pairs(rigs) do
+          Engine.applyPose(r, r.loco or "idle", t, alpha)
+        end
+      end
+
+      local targetCF = model and model:GetPivot() or CFrame.new(0, 3, 0)
+      local pos = targetCF.Position
+      local groupWidth
+      if model and active.partners then
+        local left, rightX, nearZ, farZ = pos.X, pos.X, pos.Z, pos.Z
+        for _, cue in ipairs(active.partners) do
+          local pr = rigs[cue.name]
+          if pr then
+            local pp = pr.m:GetPivot().Position
+            left, rightX = math.min(left, pp.X), math.max(rightX, pp.X)
+            nearZ, farZ = math.min(nearZ, pp.Z), math.max(farZ, pp.Z)
+          end
+        end
+        pos = Vector3.new((left + rightX) / 2, pos.Y, (nearZ + farZ) / 2)
+        groupWidth = rightX - left
+      end
+
+      local ignoreList = castFolder and { castFolder } or {}
+      local partnerPos
+      if active.partners and active.partners[1] and rigs[active.partners[1].name] then
+        partnerPos = rigs[active.partners[1].name].m:GetPivot().Position
+      end
+      cam.CFrame = Engine.computeCamera(targetCF, pos, active.cam, active.motion, alpha, groupWidth, ignoreList, partnerPos)
+      RunService.RenderStepped:Wait()
+    end
+    Engine.resetCamera()
+  end
+  return runner
+end
+
+_G.AIVidCore = Engine
+print("[AI-Vid V5.4] core_engine.luau loaded (R6 catalog + relative cameras + clearShot + multi-actor locomotion).")
+return Engine

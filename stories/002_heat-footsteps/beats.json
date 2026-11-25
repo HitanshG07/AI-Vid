@@ -1,0 +1,1741 @@
+{
+ "id": "002",
+ "title": "In My Town, Every Footstep Glows With Your Body Heat",
+ "part": "1 of 1",
+ "revision": 4,
+ "revision_note": "r3 (2026-11-19, owner-approved ending): narration from 'I jumped the night van.' replaced; 'Then' cut from beats 18 and 36 to hold 182 words. Old beats 41-51 (van drive-off, home print-warming, comic radio sting) replaced by 41-56: van skids onto the frozen lake east of town, heat melts the ice, Striders sink; driver runs, blazing prints, grey hand bursts through ice (hard cut, non-graphic), radio left crackling on the ice; Theo's bandaged feet; June carries him home piggyback at dusk, her small orange prints glowing. Beats 1-40 t values unchanged (voice_subs.py snaps). PREVIOUS r2 NOTE: r2 length trim: real viral_storyteller voice = 184 WPM, 203 words ran 66.7 s. Narration cut to 176 words (target ~57.7 s at 3.05 w/s), all 51 beats and sfx kept. Verifier r1 notes: June's orange prints shown fading in beat 43 ('June's faded.') before the Striders ignore them in 45; driver's scream staged comic in beat 51. r1: night van planted (2, 14), VAN 7 radio planted (15).",
+ "engine": "roblox",
+ "fps": 30,
+ "resolution": "1080x1920",
+ "duration_s": 60.0,
+ "timing_note": "planned at ~3.05 words/s (measured viral_storyteller 184 WPM); final t/dur snap to Faster-Whisper word times from pipeline/voice_subs.py",
+ "narration": "narration.txt",
+ "voice": "viral_storyteller",
+ "map": "engines/roblox/sets/street_002_winter.luau (NEW) + engines/roblox/sets/laundromat_002.luau (NEW); see MANIFEST section B",
+ "camera_modes": {
+  "pushIn": "slow push-in",
+  "pullOut": "snap pull-out close to wide",
+  "snapZoom": "impact snap-zoom, 2.5 deg Dutch tilt"
+ },
+ "camera_mix": {
+  "pushIn": 32,
+  "pullOut": 14,
+  "snapZoom": 10
+ },
+ "rule_states": {
+  "A": "faint orange Neon footprint decals (#FF9A3C, 0.6 transparency) behind every walker, fading over 60 s",
+  "B": "blazing orange-red prints (#FF4A1A, Neon, PointLight) from running feet",
+  "C": "white-hot prints (#FFF4E0, Neon, bright PointLight + steam particles) from Theo's hot-sock stomps"
+ },
+ "sets": {
+  "main_street_night": "Set_Street002: snowy small-town Main Street at night: brick shops, bakery (west), laundromat with glass door (east), Theo's porch (south side) with CB radio, streetlamps; ClockTime 19.2, cold blue grade so prints pop",
+  "laundromat_interior": "Set_Laundromat002: rows of dryers, one open and steaming, glass door to street, warm fluorescent light",
+  "frozen_lake": "Set_Lake002: snow-covered frozen lake at the east end of the van road (world X 1000-1060), ice cracks, melt holes, pine shoreline; G.night",
+  "theo_home": "Theo's living room (Set_Home002): couch, footstool, window with snow; G.home",
+  "dusk_road": "Set_Street002 shot at dusk (G.dusk, ClockTime 17.6), snowy road, June's small orange prints"
+ },
+ "characters": [
+  {
+   "name": "Theo",
+   "gender": "boy",
+   "look": "R6, red puffer jacket, grey beanie, jeans, ice boots",
+   "start_face": "neutral"
+  },
+  {
+   "name": "June",
+   "gender": "girl",
+   "look": "R6 small, pink pajamas, pigtails, hot-water bottle, barefoot in crisis",
+   "start_face": "grin"
+  },
+  {
+   "name": "Jogger",
+   "gender": "man",
+   "look": "R6, blue tracksuit, headband",
+   "start_face": "grin"
+  },
+  {
+   "name": "VanDriver",
+   "gender": "man",
+   "look": "R6, delivery cap, brown jacket, in van cab with CB mic",
+   "start_face": "neutral"
+  },
+  {
+   "name": "Strider1/2/3",
+   "gender": "man",
+   "look": "3 R6 man-scaled creatures, pale grey skin, eyeless face, long black coats, scaled 1.4x",
+   "start_face": "eyeless"
+  },
+  {
+   "name": "Extra_Woman/Extra_Man",
+   "gender": "woman/man",
+   "look": "2 townsfolk, winter coats and scarves, ice boots",
+   "start_face": "neutral"
+  }
+ ],
+ "faces": [
+  "neutral",
+  "scared",
+  "shocked",
+  "grin",
+  "determined",
+  "proud",
+  "eyeless (NEW, Striders only)"
+ ],
+ "beats": [
+  {
+   "n": 1,
+   "t": 0.0,
+   "dur": 1.0,
+   "cam": "snapZoom",
+   "shot": "close glowing bare footprint fading in snow",
+   "set": "main_street_night",
+   "chars": {
+    "Extra_Man": [
+     "boot lifts out of frame",
+     "neutral"
+    ]
+   },
+   "rule": "A",
+   "props": [
+    "snow"
+   ],
+   "vfx": [
+    "print_glow"
+   ],
+   "sfx": "whoosh_hit",
+   "caption": "MY TOWN",
+   "line": "In my town,"
+  },
+  {
+   "n": 2,
+   "t": 1.0,
+   "dur": 1.0,
+   "cam": "pullOut",
+   "shot": "close prints to wide street, walkers leaving glowing trails, night van glides past far lane with steaming roof and no prints behind its tyres",
+   "set": "main_street_night",
+   "chars": {
+    "Extra_Woman": [
+     "walk slow",
+     "neutral"
+    ],
+    "Extra_Man": [
+     "walk slow",
+     "neutral"
+    ],
+    "VanDriver": [
+     "drive, background",
+     "neutral"
+    ]
+   },
+   "rule": "A",
+   "props": [
+    "streetlamps",
+    "night_van"
+   ],
+   "vfx": [
+    "print_glow",
+    "steam_plume"
+   ],
+   "sfx": "chime_soft",
+   "caption": "EVERY FOOTSTEP",
+   "line": "every footstep glows"
+  },
+  {
+   "n": 3,
+   "t": 2.0,
+   "dur": 1.3,
+   "cam": "pushIn",
+   "shot": "medium Theo's boot stepping, print lighting up",
+   "set": "main_street_night",
+   "chars": {
+    "Theo": [
+     "step",
+     "neutral"
+    ]
+   },
+   "rule": "A",
+   "props": [
+    "ice_boots"
+   ],
+   "vfx": [
+    "print_glow"
+   ],
+   "sfx": "",
+   "caption": "BODY HEAT",
+   "line": "with your body heat"
+  },
+  {
+   "n": 4,
+   "t": 3.3,
+   "dur": 1.0,
+   "cam": "pushIn",
+   "shot": "close print dimming",
+   "set": "main_street_night",
+   "chars": {
+    "Theo": [
+     "walk out of frame",
+     "neutral"
+    ]
+   },
+   "rule": "A",
+   "props": [],
+   "vfx": [
+    "print_fade"
+   ],
+   "sfx": "tick",
+   "caption": "60 SECONDS",
+   "line": "for sixty seconds."
+  },
+  {
+   "n": 5,
+   "t": 4.3,
+   "dur": 1.0,
+   "cam": "pushIn",
+   "shot": "medium woman walking slow, faint prints",
+   "set": "main_street_night",
+   "chars": {
+    "Extra_Woman": [
+     "walk slow",
+     "neutral"
+    ]
+   },
+   "rule": "A",
+   "props": [],
+   "vfx": [
+    "print_glow"
+   ],
+   "sfx": "",
+   "caption": "WALK: FAINT",
+   "line": "Walk, it's faint."
+  },
+  {
+   "n": 6,
+   "t": 5.3,
+   "dur": 1.0,
+   "cam": "snapZoom",
+   "shot": "medium man dashing, blazing prints",
+   "set": "main_street_night",
+   "chars": {
+    "Extra_Man": [
+     "run",
+     "shocked"
+    ]
+   },
+   "rule": "B",
+   "props": [],
+   "vfx": [
+    "print_blaze"
+   ],
+   "sfx": "whoosh",
+   "caption": "RUN: BLAZES",
+   "line": "Run, it blazes."
+  },
+  {
+   "n": 7,
+   "t": 6.3,
+   "dur": 1.3,
+   "cam": "pullOut",
+   "shot": "close eyeless Strider head tilting to wide rooftop, blazing prints below",
+   "set": "main_street_night",
+   "chars": {
+    "Strider1": [
+     "head tilt, sniff",
+     "eyeless"
+    ]
+   },
+   "rule": "B",
+   "props": [],
+   "vfx": [
+    "print_blaze",
+    "breath_steam"
+   ],
+   "sfx": "bass_hit",
+   "caption": "STRIDERS",
+   "line": "Blind Striders hunt it."
+  },
+  {
+   "n": 8,
+   "t": 7.6,
+   "dur": 1.3,
+   "cam": "pushIn",
+   "shot": "tracking Jogger sprinting, blazing trail",
+   "set": "main_street_night",
+   "chars": {
+    "Jogger": [
+     "sprint",
+     "grin"
+    ]
+   },
+   "rule": "B",
+   "props": [],
+   "vfx": [
+    "print_blaze"
+   ],
+   "sfx": "whoosh",
+   "caption": "A JOGGER",
+   "line": "A jogger"
+  },
+  {
+   "n": 9,
+   "t": 8.9,
+   "dur": 1.3,
+   "cam": "pushIn",
+   "shot": "medium Jogger ducking into bakery, trail to door",
+   "set": "main_street_night",
+   "chars": {
+    "Jogger": [
+     "enter bakery",
+     "grin"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "bakery"
+   ],
+   "vfx": [
+    "print_blaze"
+   ],
+   "sfx": "",
+   "caption": "BAKERY",
+   "line": "sprinted to the bakery."
+  },
+  {
+   "n": 10,
+   "t": 10.2,
+   "dur": 0.4,
+   "cam": "snapZoom",
+   "shot": "Strider crashing through bakery roof",
+   "set": "main_street_night",
+   "chars": {
+    "Strider1": [
+     "drop through roof",
+     "eyeless"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "bakery",
+    "roof_debris"
+   ],
+   "vfx": [
+    "debris_burst",
+    "snow_puff"
+   ],
+   "sfx": "drone_smash",
+   "caption": "BOOM",
+   "line": "Boom."
+  },
+  {
+   "n": 11,
+   "t": 10.6,
+   "dur": 1.3,
+   "cam": "pullOut",
+   "shot": "close hole to wide wrecked bakery, three Striders, Jogger flees, glowing prints",
+   "set": "main_street_night",
+   "chars": {
+    "Strider1": [
+     "stand in rubble",
+     "eyeless"
+    ],
+    "Strider2": [
+     "stand in rubble",
+     "eyeless"
+    ],
+    "Strider3": [
+     "stand in rubble",
+     "eyeless"
+    ],
+    "Jogger": [
+     "run out screaming",
+     "shocked"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "bakery",
+    "roof_debris",
+    "bread_loaves"
+   ],
+   "vfx": [
+    "print_blaze",
+    "dust"
+   ],
+   "sfx": "stone_thud",
+   "caption": "STRIDERS",
+   "line": "Striders through the roof."
+  },
+  {
+   "n": 12,
+   "t": 11.9,
+   "dur": 1.3,
+   "cam": "pushIn",
+   "shot": "medium townsfolk tiptoeing slowly, faint prints",
+   "set": "main_street_night",
+   "chars": {
+    "Extra_Woman": [
+     "walk slow, arms out",
+     "scared"
+    ],
+    "Extra_Man": [
+     "walk slow, arms out",
+     "scared"
+    ]
+   },
+   "rule": "A",
+   "props": [],
+   "vfx": [
+    "print_glow"
+   ],
+   "sfx": "",
+   "caption": "WALK SLOW",
+   "line": "So we walk slow,"
+  },
+  {
+   "n": 13,
+   "t": 13.2,
+   "dur": 1.0,
+   "cam": "pushIn",
+   "shot": "close frosty ice-boot rack by a door, faint prints on step",
+   "set": "main_street_night",
+   "chars": {
+    "Theo": [
+     "pull on ice boots",
+     "neutral"
+    ]
+   },
+   "rule": "A",
+   "props": [
+    "ice_boot_rack"
+   ],
+   "vfx": [
+    "frost_shimmer",
+    "print_glow"
+   ],
+   "sfx": "ding",
+   "caption": "ICE BOOTS",
+   "line": "in ice boots."
+  },
+  {
+   "n": 14,
+   "t": 14.2,
+   "dur": 1.9,
+   "cam": "pullOut",
+   "shot": "close steaming roof of the night van (VAN 7 logo) to wide: van glides fast down Main Street, no prints behind the tyres, a Strider on a rooftop ignores it",
+   "set": "main_street_night",
+   "chars": {
+    "VanDriver": [
+     "drive, elbow out of window",
+     "neutral"
+    ],
+    "Strider2": [
+     "crouch on roof, face the street, still",
+     "eyeless"
+    ]
+   },
+   "rule": "A",
+   "props": [
+    "night_van"
+   ],
+   "vfx": [
+    "steam_plume",
+    "print_glow"
+   ],
+   "sfx": "whoosh",
+   "caption": "NIGHT VAN",
+   "line": "Only the night van drives fast."
+  },
+  {
+   "n": 15,
+   "t": 16.1,
+   "dur": 1.0,
+   "cam": "pushIn",
+   "shot": "medium June on porch, faint small prints, CB radio with VAN 7 sticker on the porch rail",
+   "set": "main_street_night",
+   "chars": {
+    "June": [
+     "hug bottle, wave",
+     "grin"
+    ],
+    "Theo": [
+     "beside her",
+     "neutral"
+    ]
+   },
+   "rule": "A",
+   "props": [
+    "hot_water_bottle",
+    "radio"
+   ],
+   "vfx": [
+    "print_glow"
+   ],
+   "sfx": "chime_soft",
+   "caption": "SISTER JUNE",
+   "line": "My sister June"
+  },
+  {
+   "n": 16,
+   "t": 17.1,
+   "dur": 1.3,
+   "cam": "pushIn",
+   "shot": "close steaming hot-water bottle in June's arms",
+   "set": "main_street_night",
+   "chars": {
+    "June": [
+     "squeeze bottle",
+     "grin"
+    ]
+   },
+   "rule": "A",
+   "props": [
+    "hot_water_bottle"
+   ],
+   "vfx": [
+    "steam_wisp",
+    "print_glow"
+   ],
+   "sfx": "ding",
+   "caption": "HOT BOTTLE",
+   "line": "hugs a hot-water bottle."
+  },
+  {
+   "n": 17,
+   "t": 18.4,
+   "dur": 1.6,
+   "cam": "pushIn",
+   "shot": "close steaming dryer vent on laundromat front, prints on sidewalk, open dryer glowing through the glass door",
+   "set": "main_street_night",
+   "chars": {
+    "Extra_Woman": [
+     "walk past slow",
+     "neutral"
+    ]
+   },
+   "rule": "A",
+   "props": [
+    "laundromat",
+    "dryer_vent"
+   ],
+   "vfx": [
+    "steam_plume",
+    "print_glow"
+   ],
+   "sfx": "ding",
+   "caption": "STEAMS ALL NIGHT",
+   "line": "The laundromat steams all night."
+  },
+  {
+   "n": 18,
+   "t": 20.0,
+   "dur": 1.6,
+   "cam": "pushIn",
+   "shot": "June spots orange cat across street",
+   "set": "main_street_night",
+   "chars": {
+    "June": [
+     "point",
+     "shocked"
+    ]
+   },
+   "rule": "A",
+   "props": [
+    "cat",
+    "hot_water_bottle"
+   ],
+   "vfx": [
+    "print_glow"
+   ],
+   "sfx": "",
+   "caption": "HER CAT",
+   "line": "June saw her cat."
+  },
+  {
+   "n": 19,
+   "t": 21.6,
+   "dur": 0.7,
+   "cam": "snapZoom",
+   "shot": "June bolts off porch, prints blaze",
+   "set": "main_street_night",
+   "chars": {
+    "June": [
+     "run",
+     "determined"
+    ],
+    "Theo": [
+     "reach out",
+     "shocked"
+    ]
+   },
+   "rule": "B",
+   "props": [],
+   "vfx": [
+    "print_blaze"
+   ],
+   "sfx": "whoosh_hit",
+   "caption": "SHE RAN",
+   "line": "She ran."
+  },
+  {
+   "n": 20,
+   "t": 22.3,
+   "dur": 0.4,
+   "cam": "pushIn",
+   "shot": "close bare feet slapping snow",
+   "set": "main_street_night",
+   "chars": {
+    "June": [
+     "run",
+     "determined"
+    ]
+   },
+   "rule": "B",
+   "props": [],
+   "vfx": [
+    "print_blaze"
+   ],
+   "sfx": "",
+   "caption": "BAREFOOT",
+   "line": "Barefoot."
+  },
+  {
+   "n": 21,
+   "t": 22.7,
+   "dur": 1.6,
+   "cam": "pullOut",
+   "shot": "close blazing print to wide street, bright trail across road",
+   "set": "main_street_night",
+   "chars": {
+    "June": [
+     "scoop up cat",
+     "grin"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "cat"
+   ],
+   "vfx": [
+    "print_blaze"
+   ],
+   "sfx": "ignite_shimmer",
+   "caption": "LIKE FIRE",
+   "line": "Her prints blazed."
+  },
+  {
+   "n": 22,
+   "t": 24.3,
+   "dur": 0.7,
+   "cam": "pushIn",
+   "shot": "close Theo staring at the blazing trail",
+   "set": "main_street_night",
+   "chars": {
+    "Theo": [
+     "freeze",
+     "scared"
+    ]
+   },
+   "rule": "B",
+   "props": [],
+   "vfx": [
+    "print_blaze"
+   ],
+   "sfx": "tick",
+   "caption": "60 SECONDS",
+   "line": "Sixty seconds."
+  },
+  {
+   "n": 23,
+   "t": 25.0,
+   "dur": 1.0,
+   "cam": "pushIn",
+   "shot": "three Striders on rooftops turning heads toward trail",
+   "set": "main_street_night",
+   "chars": {
+    "Strider1": [
+     "turn head",
+     "eyeless"
+    ],
+    "Strider2": [
+     "turn head",
+     "eyeless"
+    ],
+    "Strider3": [
+     "turn head",
+     "eyeless"
+    ]
+   },
+   "rule": "B",
+   "props": [],
+   "vfx": [
+    "print_blaze",
+    "breath_steam"
+   ],
+   "sfx": "heartbeat_fast",
+   "caption": "TURNED",
+   "line": "The Striders turned."
+  },
+  {
+   "n": 24,
+   "t": 26.0,
+   "dur": 1.3,
+   "cam": "pushIn",
+   "shot": "Theo hurling ice boots onto June's prints",
+   "set": "main_street_night",
+   "chars": {
+    "Theo": [
+     "throw boots",
+     "determined"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "ice_boots"
+   ],
+   "vfx": [
+    "print_blaze"
+   ],
+   "sfx": "whoosh",
+   "caption": "ICE BOOTS",
+   "line": "I threw ice boots."
+  },
+  {
+   "n": 25,
+   "t": 27.3,
+   "dur": 0.4,
+   "cam": "snapZoom",
+   "shot": "boot hits print, steam burst",
+   "set": "main_street_night",
+   "chars": {},
+   "rule": "B",
+   "props": [
+    "ice_boots"
+   ],
+   "vfx": [
+    "steam_burst",
+    "print_blaze"
+   ],
+   "sfx": "hiss_crack",
+   "caption": "HISS!",
+   "line": "Hiss!"
+  },
+  {
+   "n": 26,
+   "t": 27.7,
+   "dur": 0.7,
+   "cam": "pushIn",
+   "shot": "print still blazing through the steam, Theo behind",
+   "set": "main_street_night",
+   "chars": {
+    "Theo": [
+     "stare",
+     "shocked"
+    ]
+   },
+   "rule": "B",
+   "props": [],
+   "vfx": [
+    "print_blaze"
+   ],
+   "sfx": "",
+   "caption": "STILL BRIGHT",
+   "line": "Still bright."
+  },
+  {
+   "n": 27,
+   "t": 28.4,
+   "dur": 1.3,
+   "cam": "pushIn",
+   "shot": "Theo flinging hot-water bottle down the road, June clutching cat",
+   "set": "main_street_night",
+   "chars": {
+    "Theo": [
+     "throw bottle",
+     "determined"
+    ],
+    "June": [
+     "hug cat",
+     "scared"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "hot_water_bottle",
+    "cat"
+   ],
+   "vfx": [
+    "print_blaze",
+    "steam_wisp"
+   ],
+   "sfx": "whoosh",
+   "caption": "THE BOTTLE",
+   "line": "I flung her bottle."
+  },
+  {
+   "n": 28,
+   "t": 29.7,
+   "dur": 0.4,
+   "cam": "snapZoom",
+   "shot": "bottle bursts in snowbank",
+   "set": "main_street_night",
+   "chars": {},
+   "rule": "B",
+   "props": [
+    "hot_water_bottle"
+   ],
+   "vfx": [
+    "water_splat",
+    "print_blaze"
+   ],
+   "sfx": "thud",
+   "caption": "SPLAT!",
+   "line": "Splat!"
+  },
+  {
+   "n": 29,
+   "t": 30.1,
+   "dur": 0.7,
+   "cam": "pullOut",
+   "shot": "close frosting bottle to wide, Strider steps over it toward blazing prints",
+   "set": "main_street_night",
+   "chars": {
+    "Strider1": [
+     "stride past bottle",
+     "eyeless"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "hot_water_bottle"
+   ],
+   "vfx": [
+    "frost_shimmer",
+    "print_blaze"
+   ],
+   "sfx": "stone_thud",
+   "caption": "IT FROZE",
+   "line": "It froze."
+  },
+  {
+   "n": 30,
+   "t": 30.8,
+   "dur": 1.9,
+   "cam": "pushIn",
+   "shot": "Theo dragging June and cat into laundromat",
+   "set": "main_street_night",
+   "chars": {
+    "Theo": [
+     "drag June",
+     "determined"
+    ],
+    "June": [
+     "stumble",
+     "scared"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "laundromat",
+    "cat"
+   ],
+   "vfx": [
+    "print_blaze"
+   ],
+   "sfx": "scraping_drag",
+   "caption": "LAUNDROMAT",
+   "line": "I dragged her into the laundromat."
+  },
+  {
+   "n": 31,
+   "t": 32.7,
+   "dur": 0.4,
+   "cam": "snapZoom",
+   "shot": "Strider claw cracks glass door",
+   "set": "laundromat_interior",
+   "chars": {
+    "Strider1": [
+     "hit door",
+     "eyeless"
+    ],
+    "June": [
+     "scream",
+     "shocked"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "glass_door"
+   ],
+   "vfx": [
+    "glass_crack",
+    "print_blaze"
+   ],
+   "sfx": "railing_snap",
+   "caption": "CRACK!",
+   "line": "Crack!"
+  },
+  {
+   "n": 32,
+   "t": 33.1,
+   "dur": 1.0,
+   "cam": "pushIn",
+   "shot": "cracked glass, Strider silhouette, prints outside",
+   "set": "laundromat_interior",
+   "chars": {
+    "Strider1": [
+     "press on glass",
+     "eyeless"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "glass_door"
+   ],
+   "vfx": [
+    "glass_crack",
+    "print_blaze"
+   ],
+   "sfx": "glass_clink",
+   "caption": "DOOR SPLIT",
+   "line": "The door split."
+  },
+  {
+   "n": 33,
+   "t": 34.1,
+   "dur": 1.3,
+   "cam": "pullOut",
+   "shot": "close Theo's own prints on floor to wide trail leading in the door",
+   "set": "laundromat_interior",
+   "chars": {
+    "Theo": [
+     "look down at own prints",
+     "shocked"
+    ]
+   },
+   "rule": "B",
+   "props": [],
+   "vfx": [
+    "print_blaze"
+   ],
+   "sfx": "heartbeat",
+   "caption": "MY PRINTS",
+   "line": "My prints led in."
+  },
+  {
+   "n": 34,
+   "t": 35.4,
+   "dur": 1.6,
+   "cam": "pushIn",
+   "shot": "Theo yanks open the steaming dryer",
+   "set": "laundromat_interior",
+   "chars": {
+    "Theo": [
+     "open dryer",
+     "determined"
+    ],
+    "June": [
+     "behind dryers, hugging cat",
+     "scared"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "dryer",
+    "hot_socks"
+   ],
+   "vfx": [
+    "steam_plume",
+    "print_glow"
+   ],
+   "sfx": "whoosh",
+   "caption": "THE DRYER",
+   "line": "I yanked the dryer open."
+  },
+  {
+   "n": 35,
+   "t": 37.0,
+   "dur": 1.0,
+   "cam": "pushIn",
+   "shot": "close socks pulled onto feet, steam rising",
+   "set": "laundromat_interior",
+   "chars": {
+    "Theo": [
+     "pull socks on",
+     "determined"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "hot_socks"
+   ],
+   "vfx": [
+    "steam_wisp",
+    "print_glow"
+   ],
+   "sfx": "",
+   "caption": "HOT SOCKS",
+   "line": "Hot socks on."
+  },
+  {
+   "n": 36,
+   "t": 38.0,
+   "dur": 1.0,
+   "cam": "pushIn",
+   "shot": "low angle Theo stomps out back door, white print erupts",
+   "set": "main_street_night",
+   "chars": {
+    "Theo": [
+     "stomp",
+     "determined"
+    ]
+   },
+   "rule": "C",
+   "props": [
+    "hot_socks"
+   ],
+   "vfx": [
+    "print_white_hot",
+    "snow_puff"
+   ],
+   "sfx": "stone_thud",
+   "caption": "STOMPED",
+   "line": "I stomped."
+  },
+  {
+   "n": 37,
+   "t": 39.0,
+   "dur": 1.0,
+   "cam": "pullOut",
+   "shot": "close white-hot print to wide street, blinding trail, June's orange trail dim beside it",
+   "set": "main_street_night",
+   "chars": {
+    "Theo": [
+     "stomp run",
+     "determined"
+    ]
+   },
+   "rule": "C",
+   "props": [],
+   "vfx": [
+    "print_white_hot",
+    "print_glow",
+    "lens_flare"
+   ],
+   "sfx": "ignite_shimmer_big",
+   "caption": "HARDER",
+   "line": "Harder than ever."
+  },
+  {
+   "n": 38,
+   "t": 40.0,
+   "dur": 1.3,
+   "cam": "pushIn",
+   "shot": "tracking Theo's feet, each stomp white",
+   "set": "main_street_night",
+   "chars": {
+    "Theo": [
+     "stomp run",
+     "determined"
+    ]
+   },
+   "rule": "C",
+   "props": [
+    "hot_socks"
+   ],
+   "vfx": [
+    "print_white_hot",
+    "steam_wisp"
+   ],
+   "sfx": "thud",
+   "caption": "BLAZED WHITE",
+   "line": "My trail"
+  },
+  {
+   "n": 39,
+   "t": 41.3,
+   "dur": 1.0,
+   "cam": "pushIn",
+   "shot": "tracking Theo down Main Street past shops",
+   "set": "main_street_night",
+   "chars": {
+    "Theo": [
+     "sprint",
+     "scared"
+    ]
+   },
+   "rule": "C",
+   "props": [
+    "streetlamps"
+   ],
+   "vfx": [
+    "print_white_hot"
+   ],
+   "sfx": "heartbeat_fast",
+   "caption": "MAIN STREET",
+   "line": "blazed white."
+  },
+  {
+   "n": 40,
+   "t": 42.3,
+   "dur": 1.0,
+   "cam": "pullOut",
+   "shot": "close Theo to wide, three Striders loping behind on white trail",
+   "set": "main_street_night",
+   "chars": {
+    "Theo": [
+     "sprint",
+     "scared"
+    ],
+    "Strider1": [
+     "chase",
+     "eyeless"
+    ],
+    "Strider2": [
+     "chase",
+     "eyeless"
+    ],
+    "Strider3": [
+     "chase",
+     "eyeless"
+    ]
+   },
+   "rule": "C",
+   "props": [],
+   "vfx": [
+    "print_white_hot",
+    "breath_steam"
+   ],
+   "sfx": "impact_whoosh",
+   "caption": "EVERY STRIDER",
+   "line": "Every Strider followed."
+  },
+  {
+   "n": 41,
+   "t": 43.3,
+   "dur": 1.2,
+   "cam": "pushIn",
+   "shot": "Theo leaps onto back step of the rolling VAN 7 night van, white prints ending at the kerb",
+   "set": "main_street_night",
+   "chars": {
+    "Theo": [
+     "jump onto van, grip rail",
+     "determined"
+    ],
+    "VanDriver": [
+     "drive, unaware",
+     "neutral"
+    ]
+   },
+   "rule": "C",
+   "props": [
+    "night_van"
+   ],
+   "vfx": [
+    "print_white_hot",
+    "steam_plume"
+   ],
+   "sfx": "thud",
+   "caption": "NIGHT VAN",
+   "line": "I jumped the night van."
+  },
+  {
+   "n": 42,
+   "t": 44.5,
+   "dur": 1.1,
+   "cam": "pushIn",
+   "shot": "Theo kicks steaming socks onto van roof, rolls off into snowbank; van speeds east",
+   "set": "main_street_night",
+   "chars": {
+    "Theo": [
+     "kick socks up, roll off",
+     "determined"
+    ],
+    "VanDriver": [
+     "drive",
+     "neutral"
+    ]
+   },
+   "rule": "C",
+   "props": [
+    "night_van",
+    "hot_socks"
+   ],
+   "vfx": [
+    "steam_plume",
+    "print_white_hot"
+   ],
+   "sfx": "whoosh",
+   "caption": "ONTO THE ROOF",
+   "line": "Socks onto the roof."
+  },
+  {
+   "n": 43,
+   "t": 45.6,
+   "dur": 0.9,
+   "cam": "pullOut",
+   "shot": "close Strider feet loping (orange-red prints) to wide: three Striders chase the steaming van east past the end of Main Street",
+   "set": "main_street_night",
+   "chars": {
+    "Strider1": [
+     "chase van",
+     "eyeless"
+    ],
+    "Strider2": [
+     "chase van",
+     "eyeless"
+    ],
+    "Strider3": [
+     "chase van",
+     "eyeless"
+    ],
+    "VanDriver": [
+     "drive, background",
+     "neutral"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "night_van",
+    "hot_socks"
+   ],
+   "vfx": [
+    "print_blaze",
+    "steam_plume",
+    "breath_steam"
+   ],
+   "sfx": "impact_whoosh",
+   "caption": "THEY CHASED",
+   "line": "They chased it"
+  },
+  {
+   "n": 44,
+   "t": 46.5,
+   "dur": 1.2,
+   "cam": "pullOut",
+   "shot": "close tyre skidding off the road end onto snowy ice to wide frozen lake: van slides sideways to a stop mid-lake, Striders pounding after it onto the ice",
+   "set": "frozen_lake",
+   "chars": {
+    "VanDriver": [
+     "brace at wheel, skid",
+     "shocked"
+    ],
+    "Strider1": [
+     "lope onto ice",
+     "eyeless"
+    ],
+    "Strider2": [
+     "lope onto ice",
+     "eyeless"
+    ],
+    "Strider3": [
+     "lope onto ice",
+     "eyeless"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "night_van",
+    "ice_sheet",
+    "hot_socks"
+   ],
+   "vfx": [
+    "snow_spray",
+    "steam_plume",
+    "print_blaze"
+   ],
+   "sfx": "scraping_drag",
+   "caption": "FROZEN LAKE",
+   "line": "onto the frozen lake."
+  },
+  {
+   "n": 45,
+   "t": 47.7,
+   "dur": 0.4,
+   "cam": "snapZoom",
+   "shot": "close ice under Strider1's feet, a crack line shoots out from his glowing print",
+   "set": "frozen_lake",
+   "chars": {
+    "Strider1": [
+     "freeze mid-stride",
+     "eyeless"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "ice_sheet",
+    "ice_crack_decals"
+   ],
+   "vfx": [
+    "crack_spread",
+    "print_blaze"
+   ],
+   "sfx": "railing_snap",
+   "caption": "CRACK!",
+   "line": "Crack!"
+  },
+  {
+   "n": 46,
+   "t": 48.1,
+   "dur": 0.9,
+   "cam": "pushIn",
+   "shot": "medium: steam hisses up from every blazing Strider print and from under the hot van; ice around them goes dark and wet, cracks spider out",
+   "set": "frozen_lake",
+   "chars": {
+    "Strider1": [
+     "look down, sway",
+     "eyeless"
+    ],
+    "Strider2": [
+     "look down, sway",
+     "eyeless"
+    ],
+    "Strider3": [
+     "look down, sway",
+     "eyeless"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "ice_sheet",
+    "ice_crack_decals",
+    "night_van"
+   ],
+   "vfx": [
+    "melt_steam",
+    "crack_spread",
+    "print_blaze"
+   ],
+   "sfx": "hiss_crack",
+   "caption": "ICE MELTED",
+   "line": "The ice melted."
+  },
+  {
+   "n": 47,
+   "t": 49.0,
+   "dur": 1.2,
+   "cam": "pullOut",
+   "shot": "close Strider2 dropping through a melt hole to wide: all three Striders drop through their own holes in a row, water slops up, steam; van sits on a white island of ice",
+   "set": "frozen_lake",
+   "chars": {
+    "Strider1": [
+     "drop through ice",
+     "eyeless"
+    ],
+    "Strider2": [
+     "drop through ice",
+     "eyeless"
+    ],
+    "Strider3": [
+     "drop through ice",
+     "eyeless"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "ice_sheet",
+    "ice_holes",
+    "night_van"
+   ],
+   "vfx": [
+    "water_splash",
+    "melt_steam"
+   ],
+   "sfx": "splash",
+   "caption": "STRIDERS SANK",
+   "line": "Every Strider sank."
+  },
+  {
+   "n": 48,
+   "t": 50.2,
+   "dur": 1.1,
+   "cam": "pushIn",
+   "shot": "medium van door: VanDriver hops out onto the ice, both fists up, whooping",
+   "set": "frozen_lake",
+   "chars": {
+    "VanDriver": [
+     "hop out of cab, fists up, whoop",
+     "grin"
+    ]
+   },
+   "rule": "A",
+   "props": [
+    "night_van",
+    "ice_sheet",
+    "ice_holes",
+    "cb_radio_ice"
+   ],
+   "vfx": [
+    "melt_steam",
+    "print_glow"
+   ],
+   "sfx": "thud",
+   "caption": "DRIVER OUT",
+   "line": "The driver jumped out."
+  },
+  {
+   "n": 49,
+   "t": 51.3,
+   "dur": 0.9,
+   "cam": "snapZoom",
+   "shot": "low tracking: VanDriver sprints for shore, each step a blazing orange-red print on the snow-ice, CB radio drops from his belt behind him",
+   "set": "frozen_lake",
+   "chars": {
+    "VanDriver": [
+     "run, celebrating",
+     "grin"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "ice_sheet",
+    "cb_radio_ice"
+   ],
+   "vfx": [
+    "print_blaze",
+    "melt_steam"
+   ],
+   "sfx": "whoosh",
+   "caption": "HE RAN",
+   "line": "Then he ran."
+  },
+  {
+   "n": 50,
+   "t": 52.2,
+   "dur": 0.8,
+   "cam": "pushIn",
+   "shot": "close the ice right behind the running driver: his blazing prints steam, the ice under them darkens, a crack, a bump from below",
+   "set": "frozen_lake",
+   "chars": {
+    "VanDriver": [
+     "run, legs in top of frame",
+     "grin"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "ice_sheet",
+    "ice_crack_decals"
+   ],
+   "vfx": [
+    "print_blaze",
+    "melt_steam",
+    "crack_spread"
+   ],
+   "sfx": "heartbeat_fast",
+   "caption": "GREY HAND",
+   "line": "One grey hand"
+  },
+  {
+   "n": 51,
+   "t": 53.0,
+   "dur": 1.0,
+   "cam": "snapZoom",
+   "shot": "wide-medium: a grey Strider hand bursts up through the ice by the driver's last print, ice shards fly, driver turns, face shocked; HARD CUT on the burst (no grab shown, non-graphic)",
+   "set": "frozen_lake",
+   "chars": {
+    "VanDriver": [
+     "turn back mid-run",
+     "shocked"
+    ],
+    "Strider1": [
+     "hand + forearm only, burst up",
+     "eyeless"
+    ]
+   },
+   "rule": "B",
+   "props": [
+    "ice_sheet",
+    "ice_holes",
+    "strider_hand"
+   ],
+   "vfx": [
+    "ice_shards",
+    "print_blaze"
+   ],
+   "sfx": "whoosh_hit",
+   "caption": "BURST",
+   "line": "burst through the ice."
+  },
+  {
+   "n": 52,
+   "t": 54.0,
+   "dur": 0.5,
+   "cam": "pushIn",
+   "shot": "empty ice: his orange-red prints run up to a fresh round hole and stop; black water, a little steam, nobody",
+   "set": "frozen_lake",
+   "chars": {},
+   "rule": "B",
+   "props": [
+    "ice_sheet",
+    "ice_holes"
+   ],
+   "vfx": [
+    "print_blaze",
+    "melt_steam"
+   ],
+   "sfx": "bass_hit",
+   "caption": "GONE",
+   "line": "Gone."
+  },
+  {
+   "n": 53,
+   "t": 54.5,
+   "dur": 1.3,
+   "cam": "pushIn",
+   "shot": "close CB radio lying on the snowy ice (VAN 7 sticker), red LED blinking, prints fading beside it, steaming van far behind",
+   "set": "frozen_lake",
+   "chars": {},
+   "rule": "A",
+   "props": [
+    "cb_radio_ice",
+    "ice_sheet",
+    "night_van"
+   ],
+   "vfx": [
+    "radio_led_flash",
+    "print_fade"
+   ],
+   "sfx": "tick",
+   "caption": "RADIO",
+   "line": "Only his radio crackled."
+  },
+  {
+   "n": 54,
+   "t": 55.8,
+   "dur": 1.5,
+   "cam": "pushIn",
+   "shot": "Theo's living room, weeks later: Theo on the couch, feet up on a footstool, soles red and wrapped in white bandages; June beside the stool holding the cat, looking at his feet",
+   "set": "theo_home",
+   "chars": {
+    "Theo": [
+     "sit, wiggle bandaged toes, wince",
+     "scared"
+    ],
+    "June": [
+     "stand by footstool, hug cat",
+     "neutral"
+    ]
+   },
+   "rule": "A",
+   "props": [
+    "bandaged_feet",
+    "footstool",
+    "cat"
+   ],
+   "vfx": [
+    "print_glow"
+   ],
+   "sfx": "music_soft",
+   "caption": "WEEKS",
+   "line": "My feet burned for weeks."
+  },
+  {
+   "n": 55,
+   "t": 57.3,
+   "dur": 1.5,
+   "cam": "pullOut",
+   "shot": "close June's determined face, Theo's bandaged feet dangling by her hips (piggyback) to wide: snowy road at dusk, June walking slowly with Theo on her back",
+   "set": "dusk_road",
+   "chars": {
+    "June": [
+     "walk slow, carry Theo piggyback",
+     "determined"
+    ],
+    "Theo": [
+     "ride piggyback, arms round her shoulders",
+     "proud"
+    ]
+   },
+   "rule": "A",
+   "props": [
+    "bandaged_feet"
+   ],
+   "vfx": [
+    "print_glow",
+    "breath_steam"
+   ],
+   "sfx": "music_swell",
+   "caption": "CARRIED ME",
+   "line": "So June carried me home."
+  },
+  {
+   "n": 56,
+   "t": 58.8,
+   "dur": 1.2,
+   "cam": "pushIn",
+   "shot": "final wide, slow push from behind: June carrying Theo up the dusk road toward the porch light, a line of small orange prints glowing behind her in the snow, fading one by one",
+   "set": "dusk_road",
+   "chars": {
+    "June": [
+     "walk slow, carry Theo",
+     "grin"
+    ],
+    "Theo": [
+     "rest chin on her shoulder",
+     "proud"
+    ]
+   },
+   "rule": "A",
+   "props": [
+    "bandaged_feet"
+   ],
+   "vfx": [
+    "print_glow",
+    "print_fade"
+   ],
+   "sfx": "resolution_chord",
+   "caption": "SLOWLY",
+   "line": "Slowly."
+  },
+  {
+   "n": 57,
+   "t": 60.2,
+   "dur": 0.9,
+   "cam": "pullOut",
+   "shot": "Wide establishing: Main Street at night dressed for Christmas — string lights, a big decorated tree, wreaths, gentle snowfall. Warm festive grade.",
+   "set": "christmas_street (Main Street re-dressed: lights, tree, wreaths) / Theo's porch",
+   "chars": [],
+   "rule": "faint prints under the slow crowd; June's blazing run prints",
+   "props": [
+    "string lights",
+    "christmas tree",
+    "wreaths"
+   ],
+   "vfx": [
+    "snowfall",
+    "faint orange prints"
+   ],
+   "sfx": "chime_soft",
+   "line": "Then Christmas came.",
+   "caption": "CHRISTMAS"
+  },
+  {
+   "n": 58,
+   "t": 61.1,
+   "dur": 0.9,
+   "cam": "pushIn",
+   "shot": "High wide: the street packed with townspeople (many varied, gender-correct extras) all walking slowly and carefully, faint orange prints under every step.",
+   "set": "christmas_street (Main Street re-dressed: lights, tree, wreaths) / Theo's porch",
+   "chars": [
+    "Extra_Woman",
+    "Extra_Man",
+    "Jogger"
+   ],
+   "rule": "faint prints under the slow crowd; June's blazing run prints",
+   "props": [
+    "string lights",
+    "christmas tree",
+    "wreaths"
+   ],
+   "vfx": [
+    "snowfall",
+    "faint orange prints"
+   ],
+   "sfx": "crowd_cheer",
+   "line": "Streets full.",
+   "caption": "STREETS FULL"
+  },
+  {
+   "n": 59,
+   "t": 62.0,
+   "dur": 0.9,
+   "cam": "pushIn",
+   "shot": "Low tracking shot along the crowd's slow-moving feet; every print faint orange.",
+   "set": "christmas_street (Main Street re-dressed: lights, tree, wreaths) / Theo's porch",
+   "chars": [
+    "Extra_Woman",
+    "Extra_Man"
+   ],
+   "rule": "faint prints under the slow crowd; June's blazing run prints",
+   "props": [
+    "string lights",
+    "christmas tree",
+    "wreaths"
+   ],
+   "vfx": [
+    "snowfall",
+    "faint orange prints"
+   ],
+   "sfx": "footsteps_wood",
+   "line": "Nobody ran.",
+   "caption": "NOBODY RAN"
+  },
+  {
+   "n": 60,
+   "t": 62.9,
+   "dur": 0.9,
+   "cam": "snapZoom",
+   "shot": "Snap-zoom: June bursts through the crowd running, her prints blazing bright orange-red; people step aside smiling (no Striders anymore).",
+   "set": "christmas_street (Main Street re-dressed: lights, tree, wreaths) / Theo's porch",
+   "chars": [
+    "June",
+    "Extra_Woman",
+    "Extra_Man"
+   ],
+   "rule": "faint prints under the slow crowd; June's blazing run prints",
+   "props": [
+    "string lights",
+    "christmas tree",
+    "wreaths"
+   ],
+   "vfx": [
+    "snowfall",
+    "faint orange prints",
+    "blazing prints"
+   ],
+   "sfx": "whoosh",
+   "line": "Except June.",
+   "caption": "EXCEPT JUNE"
+  },
+  {
+   "n": 61,
+   "t": 63.8,
+   "dur": 0.9,
+   "cam": "pushIn",
+   "shot": "June runs up the snowy porch steps, holding a pair of steaming socks up high.",
+   "set": "christmas_street (Main Street re-dressed: lights, tree, wreaths) / Theo's porch",
+   "chars": [
+    "June"
+   ],
+   "rule": "faint prints under the slow crowd; June's blazing run prints",
+   "props": [
+    "string lights",
+    "christmas tree",
+    "wreaths",
+    "hot socks (steaming)"
+   ],
+   "vfx": [
+    "snowfall",
+    "faint orange prints"
+   ],
+   "sfx": "ding",
+   "line": "Every morning,",
+   "caption": "EVERY MORNING"
+  },
+  {
+   "n": 62,
+   "t": 64.7,
+   "dur": 0.9,
+   "cam": "pushIn",
+   "shot": "Final: Theo in a blanket on the porch chair, bandaged feet; June pulls the hot socks onto his feet, both grin; slow push-in, fairy lights, snow. Hold on the last image.",
+   "set": "christmas_street (Main Street re-dressed: lights, tree, wreaths) / Theo's porch",
+   "chars": [
+    "Theo",
+    "June"
+   ],
+   "rule": "faint prints under the slow crowd; June's blazing run prints",
+   "props": [
+    "string lights",
+    "christmas tree",
+    "wreaths",
+    "hot socks (steaming)"
+   ],
+   "vfx": [
+    "snowfall",
+    "faint orange prints"
+   ],
+   "sfx": "resolution_chord",
+   "line": "bringing me hot socks.",
+   "caption": "HOT SOCKS"
+  }
+ ]
+}

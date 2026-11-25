@@ -9,7 +9,7 @@
 4. Other AIs (Antigravity, Codex, Gemini, Cursor): "Read docs/AI_ADAPTERS.md, set yourself up, then run new-story."
 5. Weekly: ask the researcher agent to refresh `ideas/TRENDS.md`.
 
-**From story 008:** Argon builds every asset, and every story ships a `MANIFEST.md` plus an Argon handover zip. See [docs/ARGON_PIPELINE.md](docs/ARGON_PIPELINE.md).
+Stories are authored as a single `story.yaml` (see CORE.md and `templates/story_schema.yaml`).
 
 ## Where things live
 - `stories/<ID>_<slug>/`: everything for one video

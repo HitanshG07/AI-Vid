@@ -1,0 +1,18 @@
+{
+  "writer_model": "gemini-3.6-flash",
+  "judge_model": "gemini-3.5-flash",
+  "scores": {
+    "rule_simplicity": 10.0,
+    "spoken_english": 10.0,
+    "emotional_stakes": 10.0,
+    "hook_title": 10.0,
+    "visual_clarity": 10.0
+  },
+  "mean_score": 10.0,
+  "pass": true,
+  "reason": "The story features an instantly visual rule, strong brotherly emotional stakes, perfect 4th-grade line lengths, and a clear step-by-step visual karma payoff.",
+  "input_tokens": 7031,
+  "output_tokens": 1735,
+  "judge_input_tokens": 2037,
+  "judge_output_tokens": 95
+}

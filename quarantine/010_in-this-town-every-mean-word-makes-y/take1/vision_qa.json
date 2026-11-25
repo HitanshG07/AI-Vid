@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "judge": "claude-opus-5-5 (manual, owner-approved stand-in; Gemini 503 x2)",
+  "reason": "Rule and shrink read on every beat; school building behind all climax shots; no black, void or hedge frames.",
+  "notes": [
+    "beat 6: shrinking Rex partly hidden behind Toby's shoulder",
+    "beat 15: Toby's foreground sign is large and cropped across the frame",
+    "beat 17: Toby's sign cropped at left edge; Sam's shocked reaction visible",
+    "beat 20: remaining sign cropped at right edge"
+  ],
+  "failures": []
+}

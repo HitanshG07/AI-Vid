@@ -1,0 +1,90 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: SafeCenterPop,Arial Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,2,90,90,560,1
+Style: SafeCenterWhite,Arial Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,2,90,90,560,1
+Style: UpperThirdPop,Arial Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,8,90,90,240,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:00.66,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}MONDAY MORNING.
+Dialogue: 0,0:00:00.92,0:00:01.22,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I TOSSED
+Dialogue: 0,0:00:01.22,0:00:01.82,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}MY CANDY
+Dialogue: 0,0:00:01.82,0:00:02.54,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WRAPPER AND {\c&H0015CCFA&}WALKED{\c&H00FFFFFF&}
+Dialogue: 0,0:00:02.54,0:00:03.09,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}OFF.
+Dialogue: 0,0:00:03.30,0:00:03.76,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}BRAND NEW SHOES.
+Dialogue: 0,0:00:03.76,0:00:04.30,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}FIRST{\c&H00FFFFFF&} DAY.
+Dialogue: 0,0:00:04.30,0:00:04.90,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}LOOKING {\c&H0015CCFA&}CLEAN.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:05.22,0:00:05.70,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}EVERY STEP
+Dialogue: 0,0:00:05.70,0:00:06.30,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WENT {\c&H0015CCFA&}SQUEAK,{\c&H00FFFFFF&}
+Dialogue: 0,0:00:06.30,0:00:06.85,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}CRINKLE.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:07.00,0:00:07.36,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HEY,
+Dialogue: 0,0:00:07.36,0:00:07.56,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IS THAT
+Dialogue: 0,0:00:07.56,0:00:07.90,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}YOU{\c&H00FFFFFF&} MAKING
+Dialogue: 0,0:00:07.90,0:00:08.48,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THAT NOISE?
+Dialogue: 0,0:00:08.82,0:00:09.30,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IT'S THE FLOOR.
+Dialogue: 0,0:00:09.30,0:00:09.56,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE FLOOR
+Dialogue: 0,0:00:09.56,0:00:10.11,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IS {\c&H0015CCFA&}BROKEN.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:10.52,0:00:11.07,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}LUNCH LINE.
+Dialogue: 0,0:00:11.22,0:00:11.77,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}CRINKLE.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:11.84,0:00:12.28,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}MILO MOVED
+Dialogue: 0,0:00:12.28,0:00:13.24,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TWO SPOTS BACK.
+Dialogue: 0,0:00:13.40,0:00:13.54,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}DUDE,
+Dialogue: 0,0:00:13.54,0:00:13.76,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}DID {\c&H0015CCFA&}YOU{\c&H00FFFFFF&}
+Dialogue: 0,0:00:13.76,0:00:14.44,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}STEP IN {\c&H0015CCFA&}SOMETHING?{\c&H00FFFFFF&}
+Dialogue: 0,0:00:14.76,0:00:15.08,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I SMELL
+Dialogue: 0,0:00:15.08,0:00:15.56,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}LIKE {\c&H0015CCFA&}COOKIES.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:15.56,0:00:16.18,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}BACK OFF.
+Dialogue: 0,0:00:16.38,0:00:16.93,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}DODGEBALL.
+Dialogue: 0,0:00:17.02,0:00:17.16,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I GOT
+Dialogue: 0,0:00:17.16,0:00:17.68,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}PICKED {\c&H0015CCFA&}FIRST{\c&H00FFFFFF&}
+Dialogue: 0,0:00:17.68,0:00:18.24,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}FOR ONCE.
+Dialogue: 0,0:00:18.54,0:00:19.10,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}BIG WIND-UP.
+Dialogue: 0,0:00:19.28,0:00:19.84,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}PERFECT {\c&H0015CCFA&}THROW {\c&H00FFFFFF&}
+Dialogue: 0,0:00:20.16,0:00:20.48,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}SQUEAK.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:20.48,0:00:21.12,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}FACE {\c&H0015CCFA&}FIRST{\c&H00FFFFFF&}
+Dialogue: 0,0:00:21.12,0:00:21.80,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ONTO THE COURT.
+Dialogue: 0,0:00:21.96,0:00:22.26,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HE SLIPPED
+Dialogue: 0,0:00:22.26,0:00:22.81,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}ON{\c&H00FFFFFF&} NOTHING!
+Dialogue: 0,0:00:23.10,0:00:23.32,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WHY IS
+Dialogue: 0,0:00:23.32,0:00:23.96,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}EVERYONE {\c&H0015CCFA&}LAUGHING{\c&H00FFFFFF&}
+Dialogue: 0,0:00:23.96,0:00:24.51,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}AT ME TODAY?!
+Dialogue: 0,0:00:24.84,0:00:25.28,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THEN THE TEAM
+Dialogue: 0,0:00:25.28,0:00:26.08,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TROPHY {\c&H0015CCFA&}PHOTO.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:26.62,0:00:26.94,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}OKAY TEAM,
+Dialogue: 0,0:00:26.94,0:00:27.49,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SQUEEZE IN!
+Dialogue: 0,0:00:27.74,0:00:28.24,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}EVERYBODY SAY
+Dialogue: 0,0:00:28.24,0:00:28.79,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}CHEESE!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:28.92,0:00:29.10,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}UH...
+Dialogue: 0,0:00:29.10,0:00:29.70,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WHAT'S {\c&H0015CCFA&}ON{\c&H00FFFFFF&} YOU?
+Dialogue: 0,0:00:29.70,0:00:30.25,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}NOTHING!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:30.38,0:00:30.94,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SOMEBODY'S {\c&H0015CCFA&}PRANKING{\c&H00FFFFFF&}
+Dialogue: 0,0:00:30.94,0:00:31.32,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ME!
+Dialogue: 0,0:00:31.32,0:00:31.90,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}BRO.
+Dialogue: 0,0:00:31.90,0:00:32.44,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}LOOK DOWN.
+Dialogue: 0,0:00:32.44,0:00:32.99,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}NO, {\c&H0015CCFA&}LOWER.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:33.12,0:00:33.46,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}MY WRAPPER.
+Dialogue: 0,0:00:33.46,0:00:33.76,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}STUCK
+Dialogue: 0,0:00:33.76,0:00:34.40,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TO MY {\c&H0015CCFA&}SHOE.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:34.40,0:00:35.06,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ALL DAY.
+Dialogue: 0,0:00:35.06,0:00:35.60,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I PEELED
+Dialogue: 0,0:00:35.60,0:00:35.94,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IT OFF
+Dialogue: 0,0:00:35.94,0:00:36.56,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}AND THREW IT
+Dialogue: 0,0:00:36.56,0:00:37.08,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}AT THE {\c&H0015CCFA&}BIN.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:37.08,0:00:37.56,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}MISSED.
+Dialogue: 0,0:00:37.56,0:00:38.10,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}AGAIN.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:38.10,0:00:38.40,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}OF COURSE
+Dialogue: 0,0:00:38.40,0:00:38.95,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I DID.
+Dialogue: 0,0:00:39.14,0:00:39.69,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ONE STEP.
+Dialogue: 0,0:00:39.86,0:00:40.12,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}CRINKLE.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:40.12,0:00:40.76,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}OTHER {\c&H0015CCFA&}SHOE!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:40.76,0:00:41.31,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}AGAIN?!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:41.74,0:00:42.40,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SO I JUST...
+Dialogue: 0,0:00:42.40,0:00:43.16,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}WALKED{\c&H00FFFFFF&} OFF.
+Dialogue: 0,0:00:43.34,0:00:43.89,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}CRINKLE.{\c&H00FFFFFF&}

@@ -1,0 +1,14 @@
+id: "009"
+format: thought_sim
+set: street_day
+title: "What If GRAVITY Turned Off for 5 Seconds? 🌍😱"
+bgm_mood: mystery
+lighting: day_bright
+thumb_at: 1.5
+hashtags: ["#roblox", "#whatif", "#science", "#shorts"]
+cast:
+  - { name: Hero, gender: boy, default_face: shocked, pos: [0, 0, 0], yaw: 180 }
+beats:
+  - { dur: 1.8, cam: wide, motion: push_in, target: Hero, action: walk, move_to: [0, 0, 6], face: shocked, badge: "0G IN 3..2..1", sfx: whoosh, line: "If gravity stopped for five seconds, you wouldn't float gently." }
+  - { dur: 1.9, cam: low_hero, motion: shake, target: Hero, action: knockback, gravity: 0, face: scared, fx: impact, badge: "1,000 MPH", sfx: bass_hit, line: "Earth spins at a thousand miles an hour, launching you sideways." }
+  - { dur: 2.0, cam: closeup, motion: push_in, target: Hero, action: point, gravity: 196.2, face: determined, badge: "SURVIVE?", sfx: ding, line: "Comment where you are right now to see if you survive." }
