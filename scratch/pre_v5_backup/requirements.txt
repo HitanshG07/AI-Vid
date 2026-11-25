@@ -1,6 +1,0 @@
-edge-tts
-faster-whisper
-kokoro
-misaki[en]
-# Kokoro needs transformers==4.57.6 huggingface_hub==0.36.2 tokenizers==0.22.2 installed via:
-#   pip install --target .kokoro_deps transformers==4.57.6 huggingface_hub==0.36.2 tokenizers==0.22.2   (gitignored; used only by --engine kokoro)

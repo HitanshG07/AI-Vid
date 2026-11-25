@@ -1,9 +1,0 @@
-{
-  "_note": "Roblox image asset IDs for assets/faces/classic_v1/*.png (v1.1, features zoomed 1.3x; uploaded 2026-11-17 via Studio MCP upload_image). Regenerate PNGs with engines/faces/classic_faces.py; re-upload if a PNG changes.",
-  "neutral": "rbxassetid://70950815478959",
-  "scared": "rbxassetid://94514852927815",
-  "shocked": "rbxassetid://103057607693548",
-  "grin": "rbxassetid://96253429845051",
-  "determined": "rbxassetid://109687999939498",
-  "proud": "rbxassetid://96477668083717"
-}

@@ -1,7 +1,0 @@
-file 'clip_0.wav'
-file 'clip_1.wav'
-file 'clip_2.wav'
-file 'clip_3.wav'
-file 'middle.wav'
-file 'clip_29.wav'
-file 'clip_30.wav'
