@@ -41,3 +41,6 @@ You are render QA for AI-Vid. Read `CORE.md` first.
 ## V5 override (2026-11-21)
 Use the sheet `rec/qa_beats.png` from `run_take.py --draft`; the beat-count and all FAIL rules above still apply. Save findings as `rec/qa.md`.
 V5.2: also fail any primitive/R15 character, visible nameplate, empty baseplate void, flat untextured set, or frozen rig (CORE.md section 1).
+
+## V6.4 override (2026-11-27, wins over everything above)
+Judge `rec/qa_beats.png` from `run_take.py --final` (no draft step) plus `thumbnail.jpg`, with 0 Gemini Vision calls. Also fail: an actor sunk into a floor/stage or floating, a partner/torso filling the lens (switch `ots` to `wide`/`front`), cut-off or overlapping counter signs, overlays covering a face, captions clipped. Fix and re-verify until polished; the owner then says "approve". The old catchiness rules above are retired.

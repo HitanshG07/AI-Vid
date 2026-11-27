@@ -12,7 +12,7 @@ Source of truth: `CORE.md` and `config.yaml`. The story's spec is `stories/<ID>_
 - Faces are only our flat 2D decals (`assets/faces/classic_v1/`: neutral, scared, shocked, grin, determined, proud). Swap by changing the Head `face` Decal Texture; story.yaml face names come from that set (new ones are added to `engines/faces/classic_faces.py`).
 - No slideshows or OpenCV boxes. Render in Roblox Studio (Future lighting).
 - No dead-center subtitles. Captions are 1–2 words per card, safe zone `MarginV` 560 default (`caption_margin_v` in story.yaml overrides when it covers evidence), >=0.55s hold, 1 `*keyword*` highlighted, and never end on a function word.
-- No robotic TTS. Voice and pacing come from `config.yaml` (Kokoro, 185-195 WPM) via `pipeline/voice_subs.py`.
+- No robotic TTS. Voice and pacing come from `config.yaml` `voice:` (Kokoro 0.98 speed, 0.25 s beat breaths, 0.8 s final hold, ~195-205 WPM) via `pipeline/voice_subs.py`.
 
 ## Shot grammar
 - Hook: a big face or the key action inside the first ~1.2 s.
@@ -24,19 +24,19 @@ Source of truth: `CORE.md` and `config.yaml`. The story's spec is `stories/<ID>_
 - Every camera goes through `clearShot` so no prop or rig covers a face.
 - Props sit low in frame, faces high. Use top-down inserts for bench props.
 
-## V5.4 camera presets and fov
-- `cam:` presets (character-relative): `front`, `closeup`, `wide`, `ots`, `reverse_ots`, `side_track`, `high_angle`, `low_hero`, `prop_insert`. Per-beat `fov:` (default 50; closeup 42-46, wide 54-58, prop_insert 38-42).
-- Beats 1.4-2.4s; longer needs `allow_hold: true`. Multi-actor blocking via `with:`; `speaker:` and `pause_before:` drive dialogue and twist pauses; `bgm_duck`/`bgm_climax` for twist and climax. Badges only when the story uses a real mark.
-- Schema: `templates/story_schema.yaml`; examples in `templates/blueprints/`.
+## V6 camera presets and fov
+- `cam:` presets (character-relative): `front`, `closeup`, `wide`, `ots`, `reverse_ots`, `side_track`, `high_angle`, `low_hero`, `prop_insert`, `foot_insert` (source of truth: `assets/manifest.json`). Per-beat `fov:` (default 50; closeup 42-46, wide 54-58, prop_insert 38-42).
+- V6 beats are ~2.4 s and are re-synced to the voice (`compile_story.py --sync-words`). Multi-actor blocking via `with:`; `speaker:` and `pause_before:` drive dialogue and twist pauses; `bgm_duck`/`bgm_climax` for twist and climax. Rule numbers above heads use `counter:`.
+- Shape: copy the newest `stories/*/story.yaml`; allowed values are in `assets/manifest.json`. (`templates/story_schema.yaml` and `templates/blueprints/` are V5 references.)
 
 ## VFX
 - Use only the lighting presets in `core_engine.luau`, set via `lighting:` in story.yaml.
-- Sets: 4 reusable sets `street_day`, `school_yard`, `anime_arena`, `cozy_room` (+ `street_002_winter`); floors sit at y=0.2, the engine hides the baseplate and buildRig adds FLOOR_Y=0.2 automatically.
+- Sets (see `assets/manifest.json`): `school_yard`, `school_hallway`, `classroom`, `auditorium`, `living_room`, `street`, `street_day`, `street_002_winter`, `cozy_room`, `anime_arena`. Use only a set's listed spots. Floors sit at y=0.2 (auditorium stage deck top 2.8); the engine plants feet on the real floor.
 - Flash caps: brightness +0.04, bloom +0.12, light 2.5 with range 8.
 - Power effects are thin rings or particles. Overlays sit flush with the limb.
 
 ## QA
-- QA sheet = `rec/qa_beats.png` from `run_take.py --draft`; have `render-qa` judge every tile against CORE.md section 1, the muted first-3-seconds check and a normal-speed playback check.
+- QA sheet = `rec/qa_beats.png` from `run_take.py --final`. V6.4: the AI inspects every tile itself (0 Gemini Vision calls while iterating), fixes and re-verifies until polished, then presents the FINAL for the owner's "approve".
 - Review the WHOLE action in the 9:16 portrait crop as a sequence, not one screenshot: check each beat reads in order (e.g. A walks toward B, C enters, A stops and looks at them, A leaves) to catch timing and eyeline problems.
 - Never record until the user says "record".
 
@@ -44,12 +44,19 @@ Source of truth: `CORE.md` and `config.yaml`. The story's spec is `stories/<ID>_
 - `.claude/skills/roblox-studio-workflow` (third party): Studio MCP hygiene and evidence labels. Its Rojo and play-test steps don't apply to our Edit-mode cutscenes.
 - `.claude/skills/roblox-luau` (third party): Luau style for engine code (`task.*`, own every connection).
 
-## v2 rules (2026-11-19, owner-approved)
-- Follow the **catchiness gates** in `CORE.md`: active rule (not a badge), rule visible in frame 1, 3 planted clues, taboo broken by 25s, rule-of-3 attempts, rule-hack climax, action-echo ending, no moral/lecture lines. Avg >= 8.5, none below 8, every gate passes.
-- Voice and pacing come from `config.yaml` (Kokoro, 185-195 WPM).
+## Standing rules (owner-approved, current for V6)
+- Story quality follows `.claude/skills/story-craft` (V6.4): world-rule montage in beats 1-3, 3 public escalations, a visible callback/karma-flip ending closed by the spoken question; Gate 1 enforces the shape.
+- Voice and pacing come from `config.yaml` `voice:` (see the V6 section below).
 - Every cast entry declares `gender` (boy/girl/man/woman); all clothing, hair and accessories must match it.
-- Cutscenes run on `engines/roblox/core_engine.luau` (never edit it); it resets `loco` every frame; no frozen rigs; no wall-clipping or tilted giant-face filler shots.
+- Cutscenes run on `engines/roblox/core_engine.luau` (owner-only edits); it resets `loco` every frame; no frozen rigs; no wall-clipping or tilted giant-face filler shots.
 - **Mouse lock (owner rule):** every take is recorded ONLY via `pipeline/record_take.py`, which locks the cursor at the top menu bar (900,12) for the whole take and releases it after; never record any other way, never move or unlock the mouse during a take, and never park it at the bottom/corners (taskbar pops up).
+
+## V6 engine tools and edit (2026-11-27)
+- Per-beat `scale:` (0.2-2.5, persists; `setScale` pins WorldPivot and re-plants feet), `invisible:`, `counter:` (bold sign above the head; hidden when cut off by the frame edge or too big; the farther of two overlapping signs hides), `face_mid:` (face swap halfway through a beat).
+- `unclipCamera` pulls a camera out of walls/props toward the aim before the floor clamp; school_yard cameras stay on the building side; actors sharing a spot keep >= 3.8 studs apart.
+- fx `crowd_cheer`: 5 extras stand in the cheer beat's set on the real floor (auditorium: audience floor in front of the stage, facing it).
+- `finish_video.py` adds punch-zooms on impact beats (bgm_duck / bgm_climax / shocked or scared face), 2D overlays, a thin gold top progress bar, then captions on top.
+- QA lesson: an `ots` camera can let the partner's torso fill a corner; switch to `wide`/`front` when a partner blocks the lens.
 
 ## Learned on story 002 (2026-11-19)
 - Creatures and villains must read at night: give each a highlight outline plus a small torso PointLight, and frame them big against the sky or snow.
@@ -73,5 +80,5 @@ Source of truth: `CORE.md` and `config.yaml`. The story's spec is `stories/<ID>_
 - **Catwalk / Set Protrusion into Cameras (The Blue Bar):** Interior platforms or floors (e.g. `CatwalkFloor`) inside enclosed buildings or vaults must have their bounding boxes clamped strictly inside the chamber (never extending past door thresholds into the street or plaza).
 - **Multi-Character Staging (No Collinear Radial Alignment):** Placing characters in single file along the camera sightline creates giant foreground head occlusions. Stage characters side-by-side across the camera's FOV (e.g. Vendor at X = -30.5, Maya at X = -28.2, Leo at X = -25.6), pulled back to waist-level medium scale (camera at Z = 17.5, FOV 50).
 - **Roblox Studio Persistence & Cloud Saves:** Laptop reboots or Studio restarts wipe uncommitted in-memory states. Always execute `save_place` to save cloud version history after building or updating a set/cast, write an auto-initializer to `Workspace.Script`, and mirror live code to disk.
-- **Continuous Background Audio Bed (owner rule 2026-11-20):** Every reel must use `assets/sfx/roblox-story-bg.mp3` as the background music bed (`--bgm roblox-story-bg.mp3 --bgm-gain 0.14`, looped seamlessly in `pipeline/finish_video.py`). Never use synthesized static sounds or noise beds (`music_soft.wav`, ambient noise, waves, hiss).
-- **No Part 1/2 splits (V5.4):** every short is a standalone 40-60s story with one ending.
+- **Background music bed:** set by `bgm_mood:` in story.yaml -> `config.yaml` `audio.bgm_moods` (`mystery` = `roblox-story-bg.mp3`, the only track on disk), gain 0.14, ducked on `bgm_duck` beats, lifted on `bgm_climax`, looped by `pipeline/finish_video.py`. Never use synthesized static or noise beds.
+- **No Part 1/2 splits:** every short is a standalone story with one ending, 35-58.5 s (Gate 2), aim ~44-50 s.

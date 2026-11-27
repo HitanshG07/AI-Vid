@@ -1,0 +1,399 @@
+id: '012'
+format: story
+set: street_day
+title: In This Town, You Only Have Ten Steps A Day
+description: Max tried to make Sam run out of steps, until Max turned to stone.
+bgm_mood: tension
+lighting: neon_drop
+engine: clever_loophole
+rule_type: curse
+opening_variant: rule_first
+ending_type: karma_reversal
+rule: Everyone gets ten steps a day, or turns to stone until tomorrow.
+visible_proof: Anyone who hits zero steps turns into a frozen stone statue on screen.
+personal_stake: Max steals Sam's bus pass and tries to trap Sam with one step left.
+motivated_choice: Sam stands still and saves his last step while Max charges the crosswalk.
+rule_payoff: Max hits zero steps mocking Sam and turns to stone in the crosswalk.
+cta: Would you rush or save your step?
+props:
+- name: SamPass
+  kit: paper
+  text: BUS
+  attach: Sam/Right Arm
+- name: MaxPass
+  kit: paper
+  text: BUS
+  attach: Max/Right Arm
+  hide: true
+cast:
+- name: Sam
+  gender: boy
+  default_face: neutral
+  spot: sidewalk_left
+  counter: 'STEPS: 4'
+- name: Max
+  gender: boy
+  default_face: grin
+  spot: crosswalk
+  counter: 'STEPS: 6'
+- name: Nia
+  gender: girl
+  default_face: scared
+  spot: bus_stop
+  counter: 'STEPS: 5'
+- name: Leo
+  gender: boy
+  default_face: neutral
+  spot: sidewalk_right
+  counter: 'STEPS: 1'
+- name: Tess
+  gender: girl
+  default_face: grin
+  spot: sidewalk_left
+  counter: 'STEPS: 1'
+- name: Kai
+  gender: boy
+  default_face: neutral
+  spot: road_center
+  counter: 'STEPS: 1'
+beats:
+- dur: 2.4
+  set: street_day
+  cam: wide
+  motion: shake
+  target: Tess
+  snap_spot: sidewalk_left
+  action: run
+  face: grin
+  face_mid: shocked
+  stone: true
+  counter: 'STEPS: 0'
+  sfx: stone_thud
+  speaker: narrator
+  line: In this town, ten *steps* a day.
+- dur: 2.4
+  set: school_hallway
+  cam: closeup
+  motion: shake
+  target: Kai
+  snap_spot: locker_left
+  action: walk
+  face: neutral
+  face_mid: shocked
+  stone: true
+  counter: 'STEPS: 0'
+  with:
+  - name: Nia
+    snap_spot: door_left
+    action: recoil
+    face: shocked
+  sfx: stone_thud
+  speaker: girl
+  line: Zero steps turns you to *stone*!
+- dur: 2.4
+  set: school_yard
+  cam: closeup
+  motion: push_in
+  target: Leo
+  snap_spot: court_center
+  action: idle
+  face: scared
+  counter: 1 LEFT!
+  sfx: heartbeat_fast
+  speaker: boy
+  line: One step left until *tomorrow*!
+- dur: 2.4
+  set: school_hallway
+  cam: ots
+  motion: push_in
+  target: Nia
+  snap_spot: door_left
+  action: talk
+  face: scared
+  with:
+  - name: Sam
+    snap_spot: hall_entry
+    action: idle
+    face: neutral
+  speaker: girl
+  line: '*Four* steps left, Sam. Hurry!'
+- dur: 2.4
+  set: school_hallway
+  cam: closeup
+  motion: push_in
+  target: Sam
+  snap_spot: hall_entry
+  action: walk
+  face: determined
+  counter: 'STEPS: 3'
+  sfx: footsteps_wood
+  speaker: boy
+  line: Three steps gets me *home*.
+- dur: 2.4
+  set: school_hallway
+  cam: front
+  motion: shake
+  target: Max
+  snap_spot: hall_center
+  action: kick
+  face: grin
+  with:
+  - name: Sam
+    snap_spot: hall_entry
+    action: recoil
+    face: scared
+  - name: Nia
+    snap_spot: door_left
+    action: idle
+    face: scared
+  sfx: thud
+  speaker: villain
+  line: Fetch your *bag*, slowpoke!
+- dur: 2.4
+  set: school_hallway
+  cam: closeup
+  motion: push_in
+  target: Sam
+  snap_spot: hall_center
+  action: idle
+  face: determined
+  counter: 'STEPS: 2'
+  speaker: boy
+  line: Two steps left. *Watch* it.
+- dur: 2.4
+  set: school_yard
+  cam: wide
+  motion: push_in
+  target: Max
+  snap_spot: school_entry
+  action: point
+  face: grin
+  counter: 'STEPS: 5'
+  with:
+  - name: Sam
+    snap_spot: entry_walk
+    action: idle
+    face: determined
+  - name: Leo
+    snap_spot: bench_front
+    action: idle
+    face: grin
+  prop:
+  - name: SamPass
+    hide: true
+  - name: MaxPass
+    show: true
+  speaker: villain
+  line: Two steps left! Come *get* it!
+- dur: 2.4
+  set: school_yard
+  cam: closeup
+  motion: push_in
+  target: Sam
+  snap_spot: bench_front
+  action: idle
+  face: determined
+  counter: 'STEPS: 1'
+  prop:
+  - name: MaxPass
+    hide: true
+  - name: SamPass
+    show: true
+  speaker: boy
+  line: '*One* step left. I am still.'
+- dur: 2.4
+  set: school_yard
+  cam: front
+  motion: push_in
+  target: Max
+  snap_spot: school_entry
+  action: point
+  face: grin
+  counter: 'STEPS: 4'
+  with:
+  - name: Leo
+    snap_spot: bench_front
+    action: idle
+    face: grin
+  - name: Nia
+    snap_spot: yard_center
+    action: idle
+    face: scared
+  speaker: villain
+  line: Look! Stuck like a *statue*!
+- dur: 2.4
+  set: street_day
+  cam: wide
+  motion: push_in
+  target: Nia
+  snap_spot: bus_stop
+  action: wave
+  face: scared
+  overlay: crimson_vignette
+  with:
+  - name: Sam
+    snap_spot: sidewalk_left
+    action: idle
+    face: determined
+  - name: Leo
+    snap_spot: sidewalk_right
+    action: idle
+    face: scared
+  sfx: tick
+  speaker: girl
+  line: Sam, the *bus* is leaving!
+- dur: 2.4
+  set: street_day
+  cam: ots
+  motion: shake
+  target: Max
+  snap_spot: crosswalk
+  action: run
+  face: grin
+  counter: 'STEPS: 2'
+  with:
+  - name: Sam
+    snap_spot: sidewalk_left
+    action: idle
+    face: determined
+  sfx: whoosh_hit
+  speaker: villain
+  line: Too bad! *My* bus now!
+- dur: 2.4
+  set: street_day
+  cam: closeup
+  motion: push_in
+  target: Sam
+  snap_spot: sidewalk_left
+  action: talk
+  face: proud
+  speaker: boy
+  line: Check your *own* counter, Max.
+- dur: 2.4
+  set: street_day
+  cam: front
+  motion: push_in
+  target: Max
+  snap_spot: crosswalk
+  action: point
+  face: grin
+  face_mid: shocked
+  counter: 'STEPS: 1'
+  speaker: villain
+  line: Nice try! Watch *me*—
+- dur: 2.4
+  set: street_day
+  cam: closeup
+  motion: shake
+  target: Max
+  snap_spot: crosswalk
+  action: recoil
+  face: shocked
+  stone: true
+  counter: 'STEPS: 0'
+  overlay: speedlines
+  sfx: stone_thud
+  speaker: villain
+  line: Wait—no, I *had*—
+- dur: 2.4
+  set: street_day
+  cam: wide
+  motion: pull_out
+  target: Max
+  snap_spot: crosswalk
+  action: idle
+  face: shocked
+  stone: true
+  counter: STATUE!
+  with:
+  - name: Leo
+    snap_spot: sidewalk_right
+    action: recoil
+    face: shocked
+  - name: Nia
+    snap_spot: bus_stop
+    action: recoil
+    face: shocked
+  sfx: bass_hit
+  speaker: boy
+  line: Whoa! Max turned to *stone*!
+- dur: 2.4
+  set: street_day
+  cam: closeup
+  motion: push_in
+  target: Nia
+  snap_spot: bus_stop
+  action: talk
+  face: shocked
+  with:
+  - name: Sam
+    snap_spot: sidewalk_left
+    action: idle
+    face: proud
+  speaker: girl
+  line: He burned his *last* step!
+- dur: 2.4
+  set: street_day
+  cam: ots
+  motion: push_in
+  target: Sam
+  snap_spot: sidewalk_left
+  action: idle
+  face: proud
+  overlay: sweat
+  speaker: boy
+  line: Saved my *last* step for this.
+- dur: 2.4
+  set: street_day
+  cam: side_track
+  motion: push_in
+  target: Sam
+  snap_spot: bus_stop
+  action: walk
+  face: proud
+  counter: 'STEPS: 0'
+  sfx: chime_soft
+  speaker: narrator
+  line: '*One* step. Right on time.'
+- dur: 2.4
+  set: street_day
+  cam: closeup
+  motion: push_in
+  target: Sam
+  snap_spot: bus_stop
+  action: sit
+  face: proud
+  with:
+  - name: Nia
+    snap_spot: sidewalk_right
+    action: cheer
+    face: proud
+  - name: Leo
+    snap_spot: sidewalk_left
+    action: cheer
+    face: proud
+  sfx: resolution_chord
+  speaker: girl
+  line: You *actually* made it!
+- dur: 2.4
+  set: street_day
+  cam: wide
+  motion: pull_out
+  target: Max
+  snap_spot: crosswalk
+  action: idle
+  face: shocked
+  stone: true
+  counter: UNTIL TOMORROW
+  speaker: narrator
+  line: Frozen in *stone* until tomorrow.
+- dur: 2.4
+  set: street_day
+  cam: closeup
+  motion: push_in
+  target: Sam
+  snap_spot: bus_stop
+  action: talk
+  face: proud
+  speaker: boy
+  line: Would you *rush* or save your step?

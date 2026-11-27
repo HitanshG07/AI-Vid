@@ -10,6 +10,7 @@ video:
   fps: 30
   transpose: "2"
   lead_in_seconds: 0.3
+  progress_bar: true
   max_shot_seconds: 2.2
   max_standalone_seconds: 60.0
   default_fov: 50
@@ -19,7 +20,9 @@ voice:
   engine: "kokoro"                       # kokoro | edge
   kokoro_voice: "am_michael"
   kokoro_fallback: "am_adam"
-  kokoro_speed: 1.12                     # V6.2: livelier pacing (Gate 2 WER re-checked on render)
+  kokoro_speed: 0.98                     # V6.3.2: ~180 WPM / 48-55 s sweet spot
+  beat_pause_sec: 0.25                   # V6.3.2: breath between beats (Gate 2 max silence 1.5 s)
+  final_beat_hold_sec: 0.8               # V6.3.2: trailing hold so the final binary_cta reads
   edge_voice: "en-US-ChristopherNeural"
   edge_rate: "+20%"
   edge_pitch: "+2Hz"
@@ -28,12 +31,12 @@ voice:
   silence_keep_sec: 0.05
   twist_pause_sec: 0.30                  # pause before a beat marked pause/twist
   speakers:                              # per-beat speaker: voices
-    narrator: { kokoro: "am_michael", edge: "en-US-ChristopherNeural", speed: 1.10 }
-    boy:      { kokoro: "am_puck",    edge: "en-US-SteffanNeural",     speed: 1.08 }
-    girl:     { kokoro: "af_bella",   edge: "en-US-JennyNeural",       speed: 1.08 }
-    villain:  { kokoro: "am_fenrir",  edge: "en-US-GuyNeural",         speed: 1.04 }
-    adult:    { kokoro: "am_adam",    edge: "en-US-RogerNeural",       speed: 1.05 }
-    woman:    { kokoro: "af_heart",   edge: "en-US-JennyNeural",       speed: 1.05 }
+    narrator: { kokoro: "am_michael", edge: "en-US-ChristopherNeural", speed: 1.00 }
+    boy:      { kokoro: "am_puck",    edge: "en-US-SteffanNeural",     speed: 0.98 }
+    girl:     { kokoro: "af_bella",   edge: "en-US-JennyNeural",       speed: 0.98 }
+    villain:  { kokoro: "am_fenrir",  edge: "en-US-GuyNeural",         speed: 0.96 }
+    adult:    { kokoro: "am_adam",    edge: "en-US-RogerNeural",       speed: 0.97 }
+    woman:    { kokoro: "af_heart",   edge: "en-US-JennyNeural",       speed: 0.97 }
   target_wpm_min: 165
   target_wpm_max: 205
 
@@ -72,8 +75,8 @@ playlists:
 automation:
   story_gen:                             # daemon --mode batch tops the ready queue up to min_ready_queue
     min_ready_queue: 3
-    writer_models: ["gemini-4-hydrogen", "gemini-3.6-flash"]   # first that answers writes (verified via models.list 2026-11-25)
-    judge_models: ["gemini-3.8-flash", "gemini-3.5-flash"]     # independent judge; never the same model as the writer
+    writer_models: ["gemini-4-hydrogen", "gemini-3.6-flash", "gemini-3.8-flash", "gemini-3.5-flash-lite"]   # first that answers writes (verified via models.list 2026-11-25)
+    judge_models: ["gemini-3.8-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite"]   # independent judge; never the same model as the writer
   max_produce_attempts: 3                # produce: a quarantined episode moves on to the next pending one (per run)
   require_human_approval: true           # true during initial calibration / YPP review; false for full hands-free loop
   studio_capture_mode: "gdigrab"         # uses existing pipeline/record_take.py (ClipCursor 900,12)
@@ -83,6 +86,8 @@ automation:
   qa:
     min_sec: 35.0
     max_sec: 58.5
+    comic_min_sec: 120.0                 # V6.5 theme: comic_issue (never the 61-120 s dead zone)
+    comic_max_sec: 165.0
     lufs_target: -14.0
     lufs_tol: 1.8
     max_true_peak_db: -0.2                # AAC adds ~0.5 dB inter-sample overshoot over the -1.5 dB loudnorm target

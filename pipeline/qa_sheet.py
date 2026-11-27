@@ -44,7 +44,7 @@ def main():
         subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", f"{t:.2f}", "-i", x.video, "-frames:v", "1", "-vf",
                         f"scale=216:384,drawtext=fontfile='C\:/Windows/Fonts/arial.ttf':text='{label}':x=6:y=6:fontsize=20:fontcolor=yellow:box=1:boxcolor=black@0.6",
                         str(tmp / f"{n:03d}.png")], check=True)
-    cols = 8
+    cols = 10 if len(times) > 40 else 8   # V6.5: ~50-beat comic takes stay a readable 10x6 grid (tiles keep 9:16)
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-framerate", "1", "-i", str(tmp / "%03d.png"), "-vf",
                     f"tile={cols}x{(len(times) + cols - 1) // cols}", "-frames:v", "1", x.out], check=True)
     print(f"{len(times)} frames -> {x.out}")

@@ -1,0 +1,67 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: SafeCenterPop,Arial Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,2,90,90,560,1
+Style: SafeCenterWhite,Arial Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,2,90,90,560,1
+Style: UpperThirdPop,Arial Black,96,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,8,3,8,90,90,240,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.30,0:00:00.94,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IN THIS TOWN,
+Dialogue: 0,0:00:01.14,0:00:01.58,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TEN {\c&H0015CCFA&}STEPS{\c&H00FFFFFF&}
+Dialogue: 0,0:00:01.58,0:00:02.13,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}A DAY.
+Dialogue: 0,0:00:02.60,0:00:03.06,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}ZERO {\c&H0015CCFA&}STEPS{\c&H00FFFFFF&}
+Dialogue: 0,0:00:03.06,0:00:03.48,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TURNS YOU
+Dialogue: 0,0:00:03.48,0:00:04.03,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TO {\c&H0015CCFA&}STONE!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:04.34,0:00:04.86,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}ONE{\c&H00FFFFFF&} STEP
+Dialogue: 0,0:00:04.86,0:00:05.36,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}LEFT UNTIL
+Dialogue: 0,0:00:05.36,0:00:05.91,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}TOMORROW!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:06.40,0:00:07.14,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}FIVE{\c&H00FFFFFF&} STEPS LEFT,
+Dialogue: 0,0:00:07.28,0:00:07.72,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SAM.
+Dialogue: 0,0:00:07.72,0:00:08.27,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HURRY!
+Dialogue: 0,0:00:08.54,0:00:08.98,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}FOUR {\c&H0015CCFA&}STEPS{\c&H00FFFFFF&}
+Dialogue: 0,0:00:08.98,0:00:09.62,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}GETS {\c&H0015CCFA&}ME{\c&H00FFFFFF&} HOME.
+Dialogue: 0,0:00:10.20,0:00:10.88,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TRY TO {\c&H0015CCFA&}PASS{\c&H00FFFFFF&} ME,
+Dialogue: 0,0:00:10.88,0:00:11.43,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SLOWPOKE!
+Dialogue: 0,0:00:11.84,0:00:12.32,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THREE {\c&H0015CCFA&}STEPS{\c&H00FFFFFF&}
+Dialogue: 0,0:00:12.32,0:00:12.82,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}LEFT.
+Dialogue: 0,0:00:12.82,0:00:13.37,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}WATCH{\c&H00FFFFFF&} IT.
+Dialogue: 0,0:00:13.68,0:00:14.44,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}TWO{\c&H00FFFFFF&} STEPS LEFT!
+Dialogue: 0,0:00:14.58,0:00:15.32,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}COME {\c&H0015CCFA&}CHASE{\c&H00FFFFFF&} ME!
+Dialogue: 0,0:00:15.74,0:00:16.52,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}TWO{\c&H00FFFFFF&} STEPS LEFT.
+Dialogue: 0,0:00:16.68,0:00:17.23,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I AM STILL.
+Dialogue: 0,0:00:17.66,0:00:17.84,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}LOOK!
+Dialogue: 0,0:00:17.84,0:00:18.28,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}STUCK LIKE
+Dialogue: 0,0:00:18.28,0:00:18.83,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}A {\c&H0015CCFA&}STATUE!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:19.46,0:00:19.98,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SAM,
+Dialogue: 0,0:00:19.98,0:00:20.22,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}THE {\c&H0015CCFA&}BUS{\c&H00FFFFFF&}
+Dialogue: 0,0:00:20.22,0:00:20.77,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}IS LEAVING!
+Dialogue: 0,0:00:21.24,0:00:21.74,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TOO BAD!
+Dialogue: 0,0:00:21.74,0:00:22.44,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}MY{\c&H00FFFFFF&} STOP NOW!
+Dialogue: 0,0:00:22.96,0:00:23.38,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}CHECK YOUR {\c&H0015CCFA&}OWN{\c&H00FFFFFF&}
+Dialogue: 0,0:00:23.38,0:00:23.96,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}COUNTER, MAX.
+Dialogue: 0,0:00:24.58,0:00:25.13,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}NICE TRY!
+Dialogue: 0,0:00:25.14,0:00:25.69,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}WATCH{\c&H00FFFFFF&} ME 
+Dialogue: 0,0:00:26.12,0:00:26.62,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WAIT NO,
+Dialogue: 0,0:00:26.62,0:00:27.66,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}I {\c&H0015CCFA&}HAD {\c&H00FFFFFF&} WHOA!
+Dialogue: 0,0:00:27.74,0:00:28.10,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}MAX TURNED
+Dialogue: 0,0:00:28.10,0:00:28.54,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}TO {\c&H0015CCFA&}STONE!{\c&H00FFFFFF&}
+Dialogue: 0,0:00:28.54,0:00:29.46,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HE BURNED
+Dialogue: 0,0:00:29.46,0:00:30.34,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}HIS {\c&H0015CCFA&}LAST{\c&H00FFFFFF&} STEP!
+Dialogue: 0,0:00:30.84,0:00:31.28,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}SAVED {\c&H0015CCFA&}MY{\c&H00FFFFFF&} LAST
+Dialogue: 0,0:00:31.28,0:00:32.00,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}STEPS{\c&H00FFFFFF&} FOR THIS.
+Dialogue: 0,0:00:32.60,0:00:33.34,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}ONE{\c&H00FFFFFF&} STEP LEFT.
+Dialogue: 0,0:00:33.60,0:00:34.32,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}RIGHT ON TIME.
+Dialogue: 0,0:00:34.76,0:00:35.28,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOU {\c&H0015CCFA&}ACTUALLY{\c&H00FFFFFF&}
+Dialogue: 0,0:00:35.28,0:00:35.84,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}MADE IT!
+Dialogue: 0,0:00:36.30,0:00:37.20,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}FROZEN IN {\c&H0015CCFA&}STONE{\c&H00FFFFFF&}
+Dialogue: 0,0:00:37.20,0:00:38.04,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}UNTIL {\c&H0015CCFA&}TOMORROW.{\c&H00FFFFFF&}
+Dialogue: 0,0:00:38.54,0:00:38.76,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}WOULD YOU
+Dialogue: 0,0:00:38.76,0:00:39.28,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}{\c&H0015CCFA&}RUSH{\c&H00FFFFFF&} OR SAVE
+Dialogue: 0,0:00:39.28,0:00:39.83,SafeCenterPop,,0,0,0,,{\fscx116\fscy116\t(0,80,\fscx100\fscy100)}YOUR STEP?

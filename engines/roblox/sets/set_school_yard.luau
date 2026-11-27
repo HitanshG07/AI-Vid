@@ -148,6 +148,12 @@ _G.AIVidSets.school_yard = function()
     part(f, "Trunk_"..x, Vector3.new(2, 10, 2), Vector3.new(x, 5, 36), Color3.fromRGB(102, 72, 48), Enum.Material.Wood)
     part(f, "Canopy_"..x, Vector3.new(10, 9, 10), Vector3.new(x, 12, 36), Color3.fromRGB(64, 118, 62), Enum.Material.Grass)
   end
+  -- Courtyard lamps for crisp night/neon_drop visibility
+  for _, lx in ipairs({ -30, 0, 30 }) do
+    part(f, "YardLampPost_"..lx, Vector3.new(0.5, 11, 0.5), Vector3.new(lx, 5.5, 24), navy, Enum.Material.Metal)
+    local bulb = part(f, "YardLampBulb_"..lx, Vector3.new(1.3, 1.3, 1.3), Vector3.new(lx, 11.4, 24), Color3.fromRGB(255, 232, 180), Enum.Material.Neon)
+    local pl = Instance.new("PointLight", bulb); pl.Brightness = 1.1; pl.Range = 28; pl.Color = Color3.fromRGB(255, 224, 170)
+  end
   print("[AI-Vid V5.3] Loaded horizon-enclosed set: school_yard")
 end
 return _G.AIVidSets.school_yard

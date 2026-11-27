@@ -30,10 +30,10 @@ def make_audit_zip(sdir: Path, ep_id: str) -> Path:
 
 
 def purge_intermediates(sdir: Path) -> int:
-    """Deletes rec/raw.mp4 + rec/trimmed.mp4 once an episode has passed / uploaded; returns bytes. The <ID>_audit.zip
+    """Deletes rec/raw.mp4 + rec/trimmed.mp4 + temp ov_*.png overlay renders once an episode has passed / uploaded; returns bytes. The <ID>_audit.zip
     is KEPT for auditing (owner 2026-11-25) and only expires via upload_queue's 14-day prune_audit_zips."""
     freed = 0
-    for f in [sdir / "rec" / "raw.mp4", sdir / "rec" / "trimmed.mp4"]:
+    for f in [sdir / "rec" / "raw.mp4", sdir / "rec" / "trimmed.mp4", *sdir.glob("ov_*.png")]:
         if f.exists():
             freed += f.stat().st_size
             f.unlink()
@@ -46,6 +46,8 @@ def main():
     p.add_argument("--raw", help="Override raw take path (default: <story-dir>/rec/raw.mp4)")
     p.add_argument("--draft", action="store_true")
     p.add_argument("--final", action="store_true")
+    p.add_argument("--zip", action="store_true", help="Also write <ID>_audit.zip (opt-in since V6.4)")
+    p.add_argument("--keep-raw", action="store_true", help="Keep rec/raw.mp4 + trimmed.mp4 after --final (to re-render)")
     a = p.parse_args()
     if not a.draft and not a.final:
         a.draft = True
@@ -88,7 +90,11 @@ def main():
     # V6: graded + headline thumbnail from the best beat, then the audit bundle (includes the contact sheet)
     if a.final:
         subprocess.run([sys.executable, str(ROOT / "pipeline" / "make_thumbnail.py"), "--story-dir", str(sdir)], check=True)
-        print("AUDIT ZIP:", make_audit_zip(sdir, str(spec["id"])))
+        if a.zip:
+            print("AUDIT ZIP:", make_audit_zip(sdir, str(spec["id"])))
+        # V6.4 lean mode: the take is baked into FINAL + qa_beats.png + thumbnail; drop the heavy intermediates
+        if not a.keep_raw:
+            print(f"[STORAGE] Purged intermediates: {purge_intermediates(sdir) / 2**20:.1f} MB freed")
 
 
 if __name__ == "__main__":

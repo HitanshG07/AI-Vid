@@ -1,5 +1,5 @@
 ---
-description: Produce the final AI-Vid short for a story ID
+description: Produce an AI-Vid V6.4 short for a story ID (craft, record on command, render, self-verify, present for approval)
 ---
 
-Read `CORE.md` and `config.yaml` first. Follow CORE.md section 1 visual standards and screen_capture lineup check. Run compile_story.py -> voice_subs.py (skip for beat_drop) -> preflight_lint.py -> Studio preview. Record ONLY after the owner says "record", via run_take.py (--draft, then --final if QA passes), cursor locked at 900,12.
+Read `CORE.md` and `config.yaml` first, then follow `.agent/skills/produce-video/SKILL.md`. Record ONLY after the owner says "record" (cursor locked at 900,12 via record_take.py). Inspect `rec/qa_beats.png` + `thumbnail.jpg` yourself and fix until polished (0 Gemini Vision calls). Queue nothing until the owner says "approve" (`python pipeline/upload_queue.py --approve <ID>`).

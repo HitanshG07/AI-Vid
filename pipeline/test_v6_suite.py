@@ -215,7 +215,7 @@ def run_tests():
     assert any("repeats the previous episode" in e for e in e12) and any(e.startswith("Beat 3: action 'fall'") for e in e12), e12
     assert not any(e.startswith("Beat 4") for e in e12), e12
     assert not qa_gate.check_action_sanity({"set": "street_day", "beats": []}, "cozy_room")
-    sb12 = {"set": "school_yard", "title": "The Empty Hallway", "beats": []}
+    sb12 = {"set": "school_yard", "title": "The Silent Hallway", "beats": []}
     assert any("'hallway'" in e for e in qa_gate.check_action_sanity(sb12, None))
     sb12["title"] = "Last Hoop"; sb12["beats"] = [{"line": "She sat down for the surprise *exam*."}]
     assert any("'exam'" in e for e in qa_gate.check_action_sanity(sb12, None))
@@ -531,7 +531,7 @@ def run_tests():
                         capture_output=True, text=True, check=True).stdout.strip()
     assert pr == "1080,1920,30/1,90", pr
     from PIL import Image
-    for png, box in ((ct / "ov_00_phone_card.png", (90, 180, 990, 390)), (ct / "ov_01_binary_cta.png", (90, 940, 990, 1130))):
+    for png, box in ((ct / "ov_00_phone_card.png", (90, 180, 990, 390)), (ct / "ov_01_binary_cta.png", (90, 120, 990, 230))):
         a = Image.open(png).getchannel("A")
         assert a.getbbox() == (box[0], box[1], box[2] + 1, box[3] + 1), (png.name, a.getbbox())
         assert max(a.crop((0, 1920 - 560, 1080, 1920)).getdata()) == 0, "card reaches subtitle zone"
@@ -561,6 +561,138 @@ def run_tests():
     assert [e for e, _ in qa_gate.load_other_scripts(sd, sd / "stories" / "076_y")] == ["074"]
     assert qa_gate.load_other_scripts(sd, sd / "stories" / "074_x") == [], "own folder must be excluded"
     print("[PASS] Test 26: full-script blended Jaccard passes distinct script, fails recycled lines under a new title")
+
+    # 27. V6.3.1 speedlines + crimson_vignette overlays and the thin top progress bar
+    from PIL import Image
+    sv = tmp / "speed"; sv.mkdir(exist_ok=True)
+    for kind in ("speedlines", "crimson_vignette"):
+        a = Image.open(finish_video.make_overlay_png(kind, "", sv / f"{kind}.png", 1080, 1920)).getchannel("A")
+        assert max(a.crop((440, 860, 640, 1060)).getdata()) == 0, f"{kind}: centre must stay clear"
+        assert max(a.crop((0, 0, 1080, 120)).getdata()) > 0 and max(a.crop((0, 1800, 1080, 1920)).getdata()) > 0, kind
+    sp = make_valid_story("077", "Speed Story")
+    sp["beats"][1]["overlay"] = "speedlines"; sp["beats"][2]["overlay"] = "crimson_vignette"
+    g27 = lambda: [e for e in qa_gate.check_manifest_and_sameness(sp, manifest, [], cfg["automation"]["qa"]) if "overlay" in e]
+    assert not g27(), g27()
+    sp["beats"][1]["overlay_text"] = "ZOOM"; sp["beats"][2]["overlay_text"] = "DANGER"
+    assert sum("only goes with overlay" in e for e in g27()) == 2, g27()
+    bs = [{"start": 0.3, "dur": 1.0, "overlay": "speedlines"}, {"start": 1.4, "dur": 1.0, "overlay": "crimson_vignette"}]
+    for nm, src in (("voice.wav", "sine=f=300:d=3"), ("sfx.wav", "sine=f=900:d=0.3"), ("bgm.wav", "sine=f=150:d=1")):
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", src, str(sv / nm)], check=True)
+    ins_s = ["-i", str(sv / "sfx.wav"), "-stream_loop", "-1", "-i", str(sv / "bgm.wav")]
+    pngs, g_s = finish_video.video_graph("scale=1080:1920,fps=30", "", bs, 0.0, 1080, 1920,
+                                         finish_video.overlay_base_idx(ins_s, False), sv, bar_dur=3.0)
+    assert len(pngs) == 8 and "[z0][4:v]overlay" in g_s and g_s.index("[pb]") > g_s.index("[5:v]"), g_s
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "color=c=0x406080:s=1080x1920:r=30:d=3",
+                    "-i", str(sv / "voice.wav"), *ins_s, *pngs, "-filter_complex",
+                    g_s + ";[1:a][2:a][3:a]amix=inputs=3:duration=first[a]", "-map", "[v]", "-map", "[a]",
+                    "-c:v", "libx264", "-preset", "ultrafast", "-c:a", "aac", str(sv / "speed.mp4")], check=True)
+    pr = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v", "-show_entries", "stream=width,height,r_frame_rate",
+                         "-of", "csv=p=0", str(sv / "speed.mp4")], capture_output=True, text=True, check=True).stdout.strip()
+    assert pr == "1080,1920,30/1", pr
+    def gold(ts):
+        f = sv / f"bar_{ts}.png"
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str(ts), "-i", str(sv / "speed.mp4"),
+                        "-frames:v", "1", str(f)], check=True)
+        im = Image.open(f).convert("RGB")
+        return sum(1 for x in range(1080) if (lambda c: c[0] > 180 and c[1] > 150 and c[2] < 120)(im.getpixel((x, 16))))
+    g05, g25 = gold(0.5), gold(2.5)
+    assert 50 < g05 < g25 and g25 > 700, (g05, g25)
+    print(f"[PASS] Test 27: speedlines/crimson_vignette PNGs + Gate 1 no-text rule; 1080x1920 30fps render, bar {g05}px -> {g25}px")
+
+    # 28. V6.3.2 pacing: 0.25 s beat breaths + 0.8 s final hold stay clear of Gate 2 silence/duration limits
+    import voice_subs
+    from config_loader import load_config as _lc
+    vcfg = _lc()["voice"]
+    assert float(vcfg["beat_pause_sec"]) == 0.25 and float(vcfg["final_beat_hold_sec"]) == 0.8
+    segs = [{"text": "x", "pause_before": (1.0 if i == 11 else 0.0)} for i in range(22)]
+    gaps, hold = voice_subs.segment_gaps(segs, 0.25, 0.8)
+    assert gaps[0] == 0.0 and gaps[1] == 0.25 and gaps[11] == 1.0 and hold == 0.8, (gaps, hold)
+    pd = tmp / "pace"; pd.mkdir(exist_ok=True)
+    clips = []
+    for i, gp in enumerate(gaps):
+        if gp > 0.02:
+            clips.append(voice_subs._silence(pd / f"s{i:02d}.wav", gp))
+        tone = pd / f"t{i:02d}.wav"
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "sine=f=220:d=2.0:sample_rate=24000",
+                        "-ac", "1", str(tone)], check=True)
+        clips.append(tone)
+    clips.append(voice_subs._silence(pd / "hold.wav", hold))
+    (pd / "l.txt").write_text(chr(10).join(f"file '{str(c).replace(chr(92), '/')}'" for c in clips), encoding="utf-8")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(pd / "l.txt"),
+                    "-c:a", "libmp3lame", "-q:a", "2", str(pd / "voice.mp3")], check=True)
+    ok28, e28, m28 = qa_gate.run_audio_gate(pd, cfg)
+    assert ok28 and not m28["long_silences"] and 48.0 <= m28["duration"] <= 55.0, (e28, m28)
+    print(f"[PASS] Test 28: beat_pause 0.25 s + final hold 0.8 s -> {m28['duration']} s voice, no Gate 2 silence trip")
+
+    # 29. V6.5 comic_issue theme: 50 beats, 120-165 s through Gates 1/2/3 (horror + comedy); 90 s dead zone rejected
+    def comic_story(ep, genre):
+        cs = make_valid_story(ep, "In This Town, Shadows Keep Your Secrets")
+        cs.update(theme="comic_issue", genre=genre,
+                  cast=[{"name": "Sam", "gender": "boy", "default_face": "neutral"},
+                        {"name": "Toby", "gender": "boy", "default_face": "grin"}])
+        cs["beats"] = [{"dur": 2.6, "cam": "closeup" if i % 2 else "front", "motion": "push_in",
+                        "target": "Sam" if i % 2 else "Toby", "action": "talk", "face": "neutral",
+                        "speaker": "narrator" if i % 3 == 0 else "boy", "line": f"Toby hides the {i} shiny *secret* fast"}
+                       for i in range(50)]
+        for i, kind in ((5, "bubble"), (12, "sweat"), (20, "hearts"), (28, "speedlines"), (33, "crimson_vignette"), (40, "sweat")):
+            cs["beats"][i]["overlay"] = kind
+            if kind == "bubble":
+                cs["beats"][i]["overlay_text"] = "WAIT WHAT?!"
+        return cs
+    for gname in ("horror", "comedy"):
+        cs = comic_story("078", gname)
+        e29 = story_gen.kid_simple_errors(cs) + [e for e in qa_gate.check_manifest_and_sameness(cs, manifest, [], cfg["automation"]["qa"])
+                                                  if "Premise" not in e and "sameness" not in e]
+        assert not e29, (gname, e29)
+    bad = comic_story("079", "horror"); bad["beats"] = bad["beats"][:22]
+    assert any("46-54" in e for e in story_gen.kid_simple_errors(bad))
+    bad = comic_story("079", "horror"); bad["beats"][44].update(overlay="binary_cta", overlay_text="STAY? | LIKE = YES / COMMENT = NO")
+    assert any("no binary_cta" in e for e in qa_gate.check_manifest_and_sameness(bad, manifest, [], cfg["automation"]["qa"]))
+    bad["beats"][44].update(overlay="sweat"); bad["beats"][44].pop("overlay_text")
+    bad["beats"][45]["overlay"] = "hearts"; bad["beats"][46]["overlay"] = "hearts"
+    assert any("at most 7" in e for e in qa_gate.check_manifest_and_sameness(bad, manifest, [], cfg["automation"]["qa"]))
+    qcfg = dict(cfg); qcfg["automation"] = dict(cfg["automation"]); qcfg["automation"]["qa"] = dict(cfg["automation"]["qa"], comic_min_sec=120.0, comic_max_sec=165.0)
+    cd = tmp / "comic"; cd.mkdir(exist_ok=True)
+    (cd / "story.yaml").write_text(yaml.safe_dump(comic_story("078", "comedy")), encoding="utf-8")
+    def tone_voice(secs):
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", f"sine=f=220:d={secs}:sample_rate=24000",
+                        "-c:a", "libmp3lame", "-q:a", "6", str(cd / "voice.mp3")], check=True)
+    tone_voice(130)
+    ok29, e29a, m29 = qa_gate.run_audio_gate(cd, qcfg)
+    assert ok29 and 120 <= m29["duration"] <= 165, (e29a, m29)
+    tone_voice(90)
+    ok29b, e29b, _ = qa_gate.run_audio_gate(cd, qcfg)
+    assert not ok29b and any("[120.0, 165.0]" in e for e in e29b), e29b
+    assert qa_gate.duration_bounds({"theme": "default"}, qcfg["automation"]["qa"]) == (35.0, 58.5)
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "testsrc2=s=1080x1920:r=30:d=130",
+                    "-f", "lavfi", "-i", "sine=f=300:d=130", "-c:v", "libx264", "-preset", "ultrafast", "-crf", "35",
+                    "-c:a", "aac", "-shortest", str(cd / "078_FINAL.mp4")], check=True)
+    ok29c, e29c, m29c = qa_gate.run_render_gate(cd / "078_FINAL.mp4", qcfg)
+    assert not [e for e in e29c if "duration" in e], (e29c, m29c)
+    print(f"[PASS] Test 29: comic_issue 50 beats passes Gates 1/2/3 (horror + comedy, {m29['duration']} s audio, {m29c['duration']} s render); 90 s dead zone, binary_cta, >7 overlays rejected")
+
+    # 30. V6.5 --genre auto rotation + anti-shrink lock from the last stories on disk
+    gr = tmp / "genre_root"
+    def put(ep, genre, scale):
+        st = make_valid_story(ep, f"In This Town, Story {ep}"); st["genre"] = genre
+        if scale:
+            st["beats"][3]["scale"] = 0.6
+        d = gr / "stories" / f"{ep}_s"; d.mkdir(parents=True, exist_ok=True)
+        (d / "story.yaml").write_text(yaml.safe_dump(st), encoding="utf-8")
+    put("101", "karma_rules", False); put("102", "comedy", True); put("103", "karma_rules", True)
+    rs = story_gen.recent_stories(gr, 3)
+    assert [s["id"] for s in rs] == ["103", "102", "101"]
+    g30 = story_gen.pick_genre(rs, "auto")
+    assert g30 not in ("karma_rules", "comedy") and story_gen.pick_genre(rs, "romance") == "romance", g30
+    assert story_gen.banned_mechanics(rs) == {"scale"}
+    sh = make_valid_story("104", "In This Town, Lies Make You Shrink"); sh["beats"][2]["scale"] = 0.5
+    assert any("last 2 episodes" in e for e in story_gen.kid_simple_errors(sh, story_gen.banned_mechanics(rs)))
+    assert not any("last 2 episodes" in e for e in story_gen.kid_simple_errors(sh, set()))
+    wp = story_gen.writer_prompt(Path(__file__).resolve().parent.parent, [], None, "", g30, "default", {"scale"})
+    assert "FORBIDDEN this time: shrinking" in wp and f"GENRE: {g30}" in wp
+    put("105", "horror", False); put("106", "romance", False)
+    assert story_gen.banned_mechanics(story_gen.recent_stories(gr, 3)) == set(), "scale only locked while in the last 2"
+    print(f"[PASS] Test 30: --genre auto picks '{g30}' (not the last genres); scale/shrink locked after 2 recent scale episodes, unlocked later")
 
     print("ALL V6 SUITE TESTS PASSED.")
 

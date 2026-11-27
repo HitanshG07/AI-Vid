@@ -1,0 +1,9 @@
+{
+  "episode_id": "012",
+  "stage": "pre",
+  "reasons": [
+    "bgm_mood 'tension' -> assets/sfx/bgm_tension.mp3 is missing on disk (add the track or pick another mood).",
+    "Missing judge_result.json (story must pass independent model judge)."
+  ],
+  "source_dir": "C:\\AI-Vid\\stories\\012_ten-steps-a-day"
+}

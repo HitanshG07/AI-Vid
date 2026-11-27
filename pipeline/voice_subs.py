@@ -93,6 +93,18 @@ def tts_kokoro(text, out, voice, fallback, speed, af):
     wav.unlink(missing_ok=True)
 
 
+def segment_gaps(segments, beat_pause=0.0, final_hold=0.0):
+    """Silence (s) before each segment + trailing hold. Between beats: max(beat_pause, pause_before);
+    the first beat only gets its own pause_before. words.json comes from Whisper on the final mp3, so it stays aligned."""
+    gaps = [max(float(s.get("pause_before", 0.0)), beat_pause if i else 0.0) for i, s in enumerate(segments)]
+    return gaps, (final_hold if segments else 0.0)
+
+
+def _silence(path, secs):
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "anullsrc=r=24000:cl=mono", "-t", f"{secs:.3f}", str(path)], check=True)
+    return path
+
+
 def synth_segments(segments, out_mp3, engine, vc, af, default_voice, speed):
     """Per-beat speaker voices + pause_before silence, concatenated to one mp3. Narrator keeps the default voice/speed."""
     tmp = Path(tempfile.mkdtemp()); clips = []
@@ -102,12 +114,10 @@ def synth_segments(segments, out_mp3, engine, vc, af, default_voice, speed):
         from kokoro import KPipeline
         pipe = KPipeline(lang_code="a")
     spk = vc.get("speakers", {})
+    gaps, hold = segment_gaps(segments, float(vc.get("beat_pause_sec", 0.0)), float(vc.get("final_beat_hold_sec", 0.0)))
     for i, seg in enumerate(segments):
-        pz = float(seg.get("pause_before", 0.0))
-        if pz > 0.02:
-            sil = tmp / f"sil_{i:03d}.wav"
-            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "anullsrc=r=24000:cl=mono", "-t", f"{pz:.3f}", str(sil)], check=True)
-            clips.append(sil)
+        if gaps[i] > 0.02:
+            clips.append(_silence(tmp / f"sil_{i:03d}.wav", gaps[i]))
         who = seg.get("speaker", "narrator")
         cs = spk.get(who, {}) if who != "narrator" else {}
         wav = tmp / f"seg_{i:03d}.wav"
@@ -129,6 +139,8 @@ def synth_segments(segments, out_mp3, engine, vc, af, default_voice, speed):
                         raise
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(raw), "-af", af, "-ar", "24000", "-ac", "1", str(wav)], check=True)
         clips.append(wav)
+    if hold > 0.02:
+        clips.append(_silence(tmp / "sil_hold.wav", hold))
     lst = tmp / "concat.txt"
     lst.write_text("\n".join(f"file '{str(c).replace(chr(92), '/')}'" for c in clips), encoding="utf-8")
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c:a", "libmp3lame", "-q:a", "2", str(out_mp3)], check=True)

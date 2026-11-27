@@ -703,7 +703,9 @@
       "bubble",
       "flash_red_blue",
       "phone_card",
-      "binary_cta"
+      "binary_cta",
+      "speedlines",
+      "crimson_vignette"
     ],
     "max_per_story": 5,
     "bubble_text_max": 16,

@@ -21,3 +21,7 @@ Input: one or more premises (rule, twist, meaning) with slugs (a premise has no 
 Never skip step 4. No verification file = the story cannot be produced.
 
 On PASS of the chosen premise, also write the receipt `ledger/verification/<ID>.md`.
+
+## V6.4 notes
+- Gate 1 (`qa_gate.py --stage pre`) adds two automatic checks on top of this web check: title/premise Jaccard vs recent episodes (`qa.max_premise_jaccard` 0.42) and a full-script blended unigram+bigram Jaccard vs every `stories/*/story.yaml` (`qa.max_script_jaccard` 0.42). Both must pass; they do not replace the web check.
+- Owner-approved exception: stories from `story_gen.py --auto` (Gemini writer + independent Gemini judge) skip the web check; flag them so the owner Googles the premise before producing.

@@ -185,6 +185,8 @@ def compile_luau(data: dict, beats: list, default_fov: int = 50) -> str:
         wardrobe = "".join(f", {key} = {int(c[key])}" for key in ("shirt", "pants", "hair") if key in c)
         if c.get("invisible"):
             wardrobe += ", invisible = true"
+        if c.get("stone"):
+            wardrobe += ", stone = true"
         if c.get("counter") is not None:
             wardrobe += f", counter = {luau_str(c['counter'])}"
         if c.get("scale") is not None:
@@ -235,6 +237,8 @@ def compile_luau(data: dict, beats: list, default_fov: int = 50) -> str:
                         parts.append(f"face_mid = {luau_str(item['face_mid'])}")
                     if item.get("invisible") is not None:
                         parts.append(f"invisible = {'true' if item['invisible'] else 'false'}")
+                    if item.get("stone") is not None:
+                        parts.append(f"stone = {'true' if item['stone'] else 'false'}")
                     partner_entries.append("{ " + ", ".join(parts) + " }")
                 else:
                     partner_entries.append(f"{{ name = {luau_str(item)} }}")
@@ -253,6 +257,8 @@ def compile_luau(data: dict, beats: list, default_fov: int = 50) -> str:
             yaw_str += f", face_mid = {luau_str(b['face_mid'])}"
         if b.get("invisible") is not None:
             yaw_str += f", invisible = {'true' if b['invisible'] else 'false'}"
+        if b.get("stone") is not None:
+            yaw_str += f", stone = {'true' if b['stone'] else 'false'}"
         cues = b.get("prop") or []
         cues = [cues] if isinstance(cues, dict) else cues
         prop_str = ", props = {" + ", ".join(prop_luau(c) for c in cues) + "}" if cues else ""

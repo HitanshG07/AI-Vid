@@ -1,0 +1,15 @@
+{
+  "writer_model": "gemini-4-hydrogen",
+  "judge_model": "gemini-3.5-flash",
+  "scores": {
+    "hook_mute_readability": 8.5,
+    "public_escalations": 8.5,
+    "engine_capability_contract": 8.5,
+    "twist_payoff": 8.5,
+    "kid_safe_english": 9.5,
+    "cta": 9.0
+  },
+  "mean_score": 8.75,
+  "pass": true,
+  "reason": "Passes V6.4 story-craft cleanly: all four prior issues are resolved (Sam finishes at STEPS: 1 on the bus_stop bench and stays unfrozen, Max actually walks down STEPS: 2 -> 1 -> 0 before turning to stone, teleporting paper props and invisible bag/sweat-on-proud-Sam mismatches are gone), Beats 1-3 show the stone curse on mute across 3 sets, 3 public escalations build cleanly to the karma reversal, and the 4th-grade lines end on a crisp spoken dilemma CTA."
+}

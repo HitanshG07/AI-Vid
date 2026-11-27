@@ -29,3 +29,6 @@ CORE.md (incl. "V5.4 Story & Format Rules") is the source of truth. Author only 
 - Model Parity Gate: before any story, follow "Model Parity Gate" in `CORE.md` (3 pitches then STOP for the owner pick, self-kill tests, hard numbers, verified prop and SFX lists; enforced by `preflight_lint.py`).
 
 - Story craft: apply skill `story-craft` (FAIL vs PASS rules and the 4-question kill-switch) when pitching and before writing story.yaml.
+
+## V6.4 override (2026-11-27, wins over everything above)
+Follow `.claude/skills/story-craft` and `.claude/skills/ai-vid-pipeline` Phase C: title "In This World/Town, <rule>", 20-24 beats (aim 22, dur 2.4), lines 2-9 words, narrator <= 30%, the V6 clarity fields (rule, visible_proof, personal_stake, motivated_choice, rule_payoff, cta), beats 1-3 world-rule montage, final beat = spoken dilemma question (no binary_cta), 1-2 overlays, every rule effect staged with an engine field (scale / invisible / counter / face_mid). Copy the shape of the newest `stories/*/story.yaml`; values only from `assets/manifest.json`. The old catchiness/V5.4 title rules above are retired.

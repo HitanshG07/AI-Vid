@@ -1,0 +1,8 @@
+{
+  "episode_id": "009",
+  "stage": "vision",
+  "reasons": [
+    "Vision judge error: all vision models failed -> gemini-3.8-flash: Gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spike | gemini-3.5-flash: Gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spike | gemini-3-flash-preview: Gemini HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spike"
+  ],
+  "source_dir": "C:\\AI-Vid\\stories\\009_in-this-town-every-mean-word-makes-y"
+}

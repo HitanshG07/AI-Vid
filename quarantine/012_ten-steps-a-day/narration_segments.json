@@ -1,0 +1,156 @@
+[
+  {
+    "beat": 1,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "In this town, ten *steps* a day.",
+    "text": "In this town, ten steps a day."
+  },
+  {
+    "beat": 2,
+    "speaker": "girl",
+    "pause_before": 0.0,
+    "raw_line": "Zero steps turns you to *stone*!",
+    "text": "Zero steps turns you to stone!"
+  },
+  {
+    "beat": 3,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "One step left until *tomorrow*!",
+    "text": "One step left until tomorrow!"
+  },
+  {
+    "beat": 4,
+    "speaker": "girl",
+    "pause_before": 0.0,
+    "raw_line": "*Four* steps left, Sam. Hurry!",
+    "text": "Four steps left, Sam. Hurry!"
+  },
+  {
+    "beat": 5,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Three steps gets me *home*.",
+    "text": "Three steps gets me home."
+  },
+  {
+    "beat": 6,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Fetch your *bag*, slowpoke!",
+    "text": "Fetch your bag, slowpoke!"
+  },
+  {
+    "beat": 7,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Two steps left. *Watch* it.",
+    "text": "Two steps left. Watch it."
+  },
+  {
+    "beat": 8,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Two steps left! Come *get* it!",
+    "text": "Two steps left! Come get it!"
+  },
+  {
+    "beat": 9,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "*One* step left. I am still.",
+    "text": "One step left. I am still."
+  },
+  {
+    "beat": 10,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Look! Stuck like a *statue*!",
+    "text": "Look! Stuck like a statue!"
+  },
+  {
+    "beat": 11,
+    "speaker": "girl",
+    "pause_before": 0.0,
+    "raw_line": "Sam, the *bus* is leaving!",
+    "text": "Sam, the bus is leaving!"
+  },
+  {
+    "beat": 12,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Too bad! *My* bus now!",
+    "text": "Too bad! My bus now!"
+  },
+  {
+    "beat": 13,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Check your *own* counter, Max.",
+    "text": "Check your own counter, Max."
+  },
+  {
+    "beat": 14,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Nice try! Watch *me*\u2014",
+    "text": "Nice try! Watch me\u2014"
+  },
+  {
+    "beat": 15,
+    "speaker": "villain",
+    "pause_before": 0.0,
+    "raw_line": "Wait\u2014no, I *had*\u2014",
+    "text": "Wait\u2014no, I had\u2014"
+  },
+  {
+    "beat": 16,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Whoa! Max turned to *stone*!",
+    "text": "Whoa! Max turned to stone!"
+  },
+  {
+    "beat": 17,
+    "speaker": "girl",
+    "pause_before": 0.0,
+    "raw_line": "He burned his *last* step!",
+    "text": "He burned his last step!"
+  },
+  {
+    "beat": 18,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Saved my *last* step for this.",
+    "text": "Saved my last step for this."
+  },
+  {
+    "beat": 19,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "*One* step. Right on time.",
+    "text": "One step. Right on time."
+  },
+  {
+    "beat": 20,
+    "speaker": "girl",
+    "pause_before": 0.0,
+    "raw_line": "You *actually* made it!",
+    "text": "You actually made it!"
+  },
+  {
+    "beat": 21,
+    "speaker": "narrator",
+    "pause_before": 0.0,
+    "raw_line": "Frozen in *stone* until tomorrow.",
+    "text": "Frozen in stone until tomorrow."
+  },
+  {
+    "beat": 22,
+    "speaker": "boy",
+    "pause_before": 0.0,
+    "raw_line": "Would you *rush* or save your step?",
+    "text": "Would you rush or save your step?"
+  }
+]

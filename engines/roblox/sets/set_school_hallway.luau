@@ -72,6 +72,16 @@ _G.AIVidSets.school_hallway = function()
   for _, z in ipairs({ 1, 5 }) do
     part(f, "BenchLeg", Vector3.new(1.6, 1.4, 0.2), Vector3.new(-7.4, 0.8, z), navy, Enum.Material.Metal)
   end
+  -- Bulletin board, EXIT sign, and baseboard trim for richer indoor detail
+  part(f, "BulletinFrame", Vector3.new(0.2, 3.4, 5.2), Vector3.new(-8.4, 5.4, -22), wood, Enum.Material.WoodPlanks)
+  part(f, "BulletinCork", Vector3.new(0.22, 2.9, 4.7), Vector3.new(-8.36, 5.4, -22), Color3.fromRGB(194, 152, 102), Enum.Material.Fabric)
+  for _, bz in ipairs({ -23.4, -22.0, -20.6 }) do
+    part(f, "Flyer", Vector3.new(0.24, 1.1, 0.85), Vector3.new(-8.33, 5.6, bz), Color3.fromRGB(246, 244, 234), Enum.Material.SmoothPlastic)
+  end
+  local exitSign = part(f, "ExitSign", Vector3.new(2.2, 0.9, 0.2), Vector3.new(0, 10.6, -42.2), Color3.fromRGB(20, 24, 28), Enum.Material.Metal)
+  local eg = Instance.new("SurfaceGui", exitSign); eg.Face = Enum.NormalId.Back; eg.CanvasSize = Vector2.new(200, 80)
+  local el = Instance.new("TextLabel", eg); el.Size = UDim2.fromScale(1, 1); el.BackgroundTransparency = 1
+  el.Text = "EXIT"; el.Font = Enum.Font.GothamBlack; el.TextSize = 54; el.TextColor3 = Color3.fromRGB(60, 240, 110)
   print("[AI-Vid V6] Loaded set: school_hallway")
 end
 return _G.AIVidSets.school_hallway

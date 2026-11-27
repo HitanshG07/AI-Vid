@@ -452,16 +452,37 @@ Engine._crowds = {}
 function Engine.prepareCrowd(spec)
   local name = "Crowd_" .. spec.id
   local folder = Instance.new("Folder"); folder.Name = name
-  local set = Workspace:FindFirstChild("Set_SchoolYard")
-  local walk = set and set:FindFirstChild("EntryWalk")
-  local anchor = walk and Vector3.new(walk.Position.X, 0, walk.Position.Z - 3) or Vector3.new(-14, 0, -18)
+  -- V6.3.2: the crowd stands in the set of its crowd_cheer beat (was always the yard's EntryWalk, so in the
+  -- auditorium it fell back to a point inside the raised stage and sank into it)
+  local bset = spec.set
+  for _, b in ipairs(spec.beats or {}) do if b.fx == "crowd_cheer" then bset = b.set or spec.set; break end end
+  local off = Vector3.zero
+  for _, st in ipairs(spec.sets or {}) do if st.name == bset then off = st.offset or off end end
+  local anchor, yaw, dz = Vector3.new(-14, 0, -18) + off, 180, -0.8
+  if bset == "auditorium" then
+    anchor, yaw, dz = Vector3.new(0, 0, -9) + off, 0, 0.8   -- audience floor between stage front and seat rows, facing the stage
+  else
+    local set = Workspace:FindFirstChild("Set_SchoolYard")
+    local walk = set and set:FindFirstChild("EntryWalk")
+    if walk then anchor = Vector3.new(walk.Position.X, 0, walk.Position.Z - 3) end
+  end
+  local params = RaycastParams.new()
+  params.FilterType = Enum.RaycastFilterType.Exclude
+  local skip = {}
+  for _, m in ipairs(Workspace:GetChildren()) do
+    if m.Name:match("^Cast_") or m.Name:match("^Crowd_") then table.insert(skip, m) end
+  end
+  params.FilterDescendantsInstances = skip
+  local function floorAt(x, z)
+    local hit = Workspace:Raycast(Vector3.new(x, anchor.Y + 6, z), Vector3.new(0, -30, 0), params)  -- below ceilings/lights
+    return (hit and hit.Position.Y or 0.2) - 0.2   -- spot convention: y = floor - 0.2
+  end
   local specs, used = {}, {}
   for _, c in ipairs(spec.cast or {}) do table.insert(used, { shirt = c.shirt, gender = c.gender }) end
   local genders = { "boy", "girl", "boy", "girl", "boy" }
   for i, g in ipairs(genders) do
-    local x = anchor.X + (i - 3) * 2.9
-    table.insert(specs, { name = "Cheer" .. i, gender = g, face = "grin", yaw = 180,
-      pos = Vector3.new(x, 0, anchor.Z - math.abs(i - 3) * 0.8) })
+    local x, z = anchor.X + (i - 3) * 2.9, anchor.Z + math.abs(i - 3) * dz
+    table.insert(specs, { name = "Cheer" .. i, gender = g, face = "grin", yaw = yaw, pos = Vector3.new(x, floorAt(x, z), z) })
   end
   local all = {}; for _, u in ipairs(used) do table.insert(all, u) end
   for _, c in ipairs(specs) do table.insert(all, c) end
@@ -1322,6 +1343,71 @@ function Engine.setInvisible(r, on)
   end
 end
 
+-- `stone: true/false`: turns the whole character into a frozen stone statue (Slate gray, clothing/textures stripped), and back.
+function Engine.setStone(r, on)
+  local flag = on and true or false
+  if flag == (r.stone == true) then return end
+  r.stone = flag
+  local stoneColor = Color3.fromRGB(132, 134, 138)
+  local faceStone = Color3.fromRGB(110, 112, 116)
+  if flag then
+    r._stoneSaved = {}
+    for _, d in ipairs(r.m:GetDescendants()) do
+      if d:IsA("BasePart") then
+        local entry = { obj = d, color = d.Color, material = d.Material }
+        if d:IsA("MeshPart") then entry.tex = d.TextureID; d.TextureID = "" end
+        table.insert(r._stoneSaved, entry)
+        d.Color = stoneColor
+        d.Material = Enum.Material.Slate
+      elseif d:IsA("SpecialMesh") then
+        table.insert(r._stoneSaved, { obj = d, tex = d.TextureId })
+        d.TextureId = ""
+      elseif d:IsA("Shirt") then
+        table.insert(r._stoneSaved, { obj = d, tpl = d.ShirtTemplate })
+        d.ShirtTemplate = ""
+      elseif d:IsA("Pants") then
+        table.insert(r._stoneSaved, { obj = d, tpl = d.PantsTemplate })
+        d.PantsTemplate = ""
+      elseif d:IsA("ShirtGraphic") then
+        table.insert(r._stoneSaved, { obj = d, tpl = d.Graphic })
+        d.Graphic = ""
+      elseif d:IsA("BodyColors") then
+        table.insert(r._stoneSaved, {
+          obj = d, head = d.HeadColor3, torso = d.TorsoColor3,
+          la = d.LeftArmColor3, ra = d.RightArmColor3,
+          ll = d.LeftLegColor3, rl = d.RightLegColor3,
+        })
+        d.HeadColor3 = stoneColor; d.TorsoColor3 = stoneColor
+        d.LeftArmColor3 = stoneColor; d.RightArmColor3 = stoneColor
+        d.LeftLegColor3 = stoneColor; d.RightLegColor3 = stoneColor
+      elseif d:IsA("Decal") then
+        table.insert(r._stoneSaved, { obj = d, color3 = d.Color3 })
+        d.Color3 = faceStone
+      end
+    end
+  elseif r._stoneSaved then
+    for _, s in ipairs(r._stoneSaved) do
+      local d = s.obj
+      if d and d.Parent then
+        if d:IsA("BasePart") then
+          d.Color = s.color; d.Material = s.material
+          if d:IsA("MeshPart") and s.tex ~= nil then d.TextureID = s.tex end
+        elseif d:IsA("SpecialMesh") then d.TextureId = s.tex
+        elseif d:IsA("Shirt") then d.ShirtTemplate = s.tpl
+        elseif d:IsA("Pants") then d.PantsTemplate = s.tpl
+        elseif d:IsA("ShirtGraphic") then d.Graphic = s.tpl
+        elseif d:IsA("BodyColors") then
+          d.HeadColor3 = s.head; d.TorsoColor3 = s.torso
+          d.LeftArmColor3 = s.la; d.RightArmColor3 = s.ra
+          d.LeftLegColor3 = s.ll; d.RightLegColor3 = s.rl
+        elseif d:IsA("Decal") then d.Color3 = s.color3
+        end
+      end
+    end
+    r._stoneSaved = nil
+  end
+end
+
 -- `action: sit`: nearest seat part (name contains "Seat", not "Back"/"Base") within 10 studs of the actor.
 function Engine.findSeat(pos)
   local best, bd
@@ -1505,6 +1591,7 @@ function Engine.compile(spec)
       r.hip = m:GetPivot().Position.Y - (c.pos and c.pos.Y or 0)   -- pivot height above the spot (spot y = floor - 0.2)
       for _, q in ipairs(m:GetDescendants()) do if q:IsA("BasePart") then q.CanCollide = false end end  -- not a wall to pathfinding
       if c.invisible then Engine.setInvisible(r, true) end
+      if c.stone then Engine.setStone(r, true) end
       if c.counter then Engine.setCounter(r, c.counter) end
       if c.scale then Engine.setScale(r, c.scale) end
     end
@@ -1627,9 +1714,11 @@ function Engine.compile(spec)
         end
         faceMidDone = false
         if targetRig and active.invisible ~= nil then Engine.setInvisible(targetRig, active.invisible) end
+        if targetRig and active.stone ~= nil then Engine.setStone(targetRig, active.stone) end
         for _, cue in ipairs(active.partners or {}) do
           local pr = rigs[cue.name]
           if pr and cue.invisible ~= nil then Engine.setInvisible(pr, cue.invisible) end
+          if pr and cue.stone ~= nil then Engine.setStone(pr, cue.stone) end
         end
         for name, r in pairs(rigs) do
           local act = actionOf(name)
@@ -1805,7 +1894,9 @@ function Engine.compile(spec)
         local firstPartner = active.partners and active.partners[1] and rigs[active.partners[1].name]
         for _, r in pairs(rigs) do
           if r.hidden then continue end
-          if r == targetRig then
+          if r.stone then
+            r.lookAt = nil
+          elseif r == targetRig then
             r.lookAt = firstPartner and (firstPartner.m:GetPivot().Position + Vector3.new(0, 1.5, 0)) or nil
           else
             r.lookAt = focus
@@ -1814,7 +1905,7 @@ function Engine.compile(spec)
             Engine.separate(r, rigs)
             if not r.walkPath then Engine.pushOut(r, { castFolder }) end  -- a planned route already avoids furniture
           end
-          Engine.applyPose(r, r.loco or "idle", t, alpha)
+          if not r.stone then Engine.applyPose(r, r.loco or "idle", t, alpha) end
         end
       end
 

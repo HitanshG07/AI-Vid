@@ -133,10 +133,10 @@ The story's rule MUST visibly happen on screen, staged ONLY with: sets, spots, a
 `counter:` (bold rule number above a head), `face_mid:` (face swap halfway through a beat) and
 `overlay:` (sweat | hearts | bubble + overlay_text 2-16 chars | flash_red_blue |
   phone_card + overlay_text "TITLE | short message" (4-64 chars, e.g. "NEW TEXT: SAM | Look behind you!") |
-  binary_cta + overlay_text "QUESTION | LIKE = A / COMMENT = B" (4-64 chars); 0-5 per story).
+  speedlines (no text; shock / reveal beats) | crimson_vignette (no text; danger / tension beats); 0-5 per story).
 Anything else (magic objects we cannot build, transformations, flying, size changes without scale:, vanishing
 without invisible:) cannot be shown and FAILS. Favor tight expressive close-ups with 4-6 face_mid swaps and
-2-4 overlays over walks across the room."""
+2-3 overlays over walks across the room."""
 
 # rule words that need a matching engine field somewhere in the beats/cast (cheap, before any judge tokens)
 STAGE_NEEDS = (("scale", re.compile(r"\b(shrink\w*|shrank|grow\w*|grew|smaller|bigger|tiny|taller|shorter|giant)\b", re.I)),
@@ -156,17 +156,77 @@ def stage_errors(spec: dict) -> list[str]:
     return errs
 
 
-def kid_simple_errors(spec: dict) -> list[str]:
-    """The 8-Year-Old First-Try Test, mechanical part (the judge scores the rest)."""
+# === V6.5 genre rotation + anti-repeat mechanic lock ================================================================
+GENRES = ("comedy", "horror", "romance", "slice_of_life", "karma_rules")
+COMIC_CAST = ("Sam", "Toby")
+SHRINK_WORDS = STAGE_NEEDS[0][1]
+
+
+def story_mechanics(spec: dict) -> set[str]:
+    """Signature engine mechanics a story uses (scale / invisible / counter / face_mid + overlay kinds)."""
+    beats = spec.get("beats") or []
+    holders = list(spec.get("cast") or []) + beats + [w for b in beats for w in (b.get("with") or []) if isinstance(w, dict)]
+    used = set()
+    if any(isinstance(h.get("scale"), (int, float)) and not isinstance(h.get("scale"), bool) and h.get("scale") != 1 for h in holders):
+        used.add("scale")
+    for k in ("invisible", "counter", "face_mid"):
+        if any(h.get(k) for h in holders):
+            used.add(k)
+    used |= {f"overlay:{b['overlay']}" for b in beats if b.get("overlay")}
+    return used
+
+
+def recent_stories(root: Path, n: int = 3) -> list[dict]:
+    """The newest n stories (by 3-digit folder id), newest first."""
+    out = []
+    for d in sorted((root / "stories").glob("[0-9][0-9][0-9]_*"), reverse=True):
+        f = d / "story.yaml"
+        if f.exists():
+            try:
+                out.append(yaml.safe_load(f.read_text(encoding="utf-8")) or {})
+            except Exception:
+                continue
+        if len(out) >= n:
+            break
+    return out
+
+
+def banned_mechanics(recent: list[dict]) -> set[str]:
+    """Hard anti-repeat lock: shrinking/growing (`scale:`) used in either of the last 2 episodes is forbidden."""
+    return {"scale"} if any("scale" in story_mechanics(s) for s in recent[:2]) else set()
+
+
+def pick_genre(recent: list[dict], requested: str = "auto") -> str:
+    """auto -> the first genre not used by the last 3 episodes (else the least recently used)."""
+    if requested != "auto":
+        return requested
+    used = [s.get("genre") for s in recent[:3]]
+    for g in GENRES:
+        if g not in used:
+            return g
+    return max(GENRES, key=lambda g: used.index(g) if g in used else 99)
+
+
+def kid_simple_errors(spec: dict, banned: set[str] | frozenset = frozenset()) -> list[str]:
+    """The 8-Year-Old First-Try Test, mechanical part (the judge scores the rest).
+    V6.5: comic_issue = 46-54 beats, narrator <= 40%, recurring Sam + Toby; `banned` mechanics fail."""
     errs = []
+    comic = spec.get("theme") == "comic_issue"
     title = str(spec.get("title", ""))
     if not HOOK_TITLE.match(title):
         errs.append(f"Title must start with 'In This World, ' or 'In This Town, ' (got '{title}').")
     if len(title) > 60:
         errs.append("Title longer than 60 characters.")
     beats = spec.get("beats") or []
-    if not 20 <= len(beats) <= 24:
-        errs.append(f"Needs about 22 beats (got {len(beats)}).")
+    lo, hi, target = (46, 54, 50) if comic else (20, 24, 22)
+    if not lo <= len(beats) <= hi:
+        errs.append(f"Needs about {target} beats ({lo}-{hi}; got {len(beats)}).")
+    if comic and not all(any(c.get("name") == n for c in spec.get("cast") or []) for n in COMIC_CAST):
+        errs.append("comic_issue needs the recurring cast Sam (big brother) and Toby (little brother).")
+    if "scale" in banned:
+        rule_txt = " ".join([str(spec.get("rule", ""))] + [_plain(b.get("line", "")) for b in beats])
+        if "scale" in story_mechanics(spec) or SHRINK_WORDS.search(rule_txt):
+            errs.append("Shrinking/growing (`scale:`) was used in the last 2 episodes - pick a different mechanic.")
     text = " ".join([title, str(spec.get("rule", ""))] + [_plain(b.get("line", "")) for b in beats]).lower()
     bad = sorted({w for w in KID_BANNED if re.search(rf"\b{w}\b", text)})
     if bad:
@@ -177,8 +237,9 @@ def kid_simple_errors(spec: dict) -> list[str]:
             errs.append(f"Beat {i}: {n} words (keep spoken lines 2-9 words, mostly 5-9).")
     if beats:
         narr = sum(1 for b in beats if b.get("speaker", "narrator") == "narrator") / len(beats)
-        if narr > 0.30:
-            errs.append(f"Narrator speaks {narr:.0%} of beats; at least 70% must be dialogue/reactions.")
+        cap = 0.40 if comic else 0.30
+        if narr > cap:
+            errs.append(f"Narrator speaks {narr:.0%} of beats; at least {1 - cap:.0%} must be dialogue/reactions.")
     if len(str(spec.get("rule", "")).split()) > 14:
         errs.append("Rule must be one short line (max 14 words).")
     return errs + stage_errors(spec)
@@ -197,18 +258,54 @@ def gemini_generate(model: str, prompt: str, key: str, json_mode: bool = False) 
     return resp["candidates"][0]["content"]["parts"][0]["text"], resp.get("usageMetadata", {})
 
 
+RETRY_BACKOFF_SEC = 10
+
+
 def _first_ok(models: list[str], prompt: str, generate, json_mode: bool) -> tuple[str, str, dict]:
+    import time
     errors = []
     for m in models:
-        try:
-            text, usage = generate(m, prompt, json_mode)
-            return m, text, usage
-        except Exception as e:  # overloaded / unavailable -> next model
-            errors.append(f"{m}: {str(e)[:100]}")
+        for attempt in (0, 1):
+            try:
+                text, usage = generate(m, prompt, json_mode)
+                return m, text, usage
+            except Exception as e:  # overloaded / unavailable -> one backoff retry (real network only), then next model
+                transient = getattr(e, "code", None) in (429, 503) or any(c in str(e) for c in ("429", "503"))
+                if attempt == 0 and transient and getattr(generate, "real", False):
+                    time.sleep(RETRY_BACKOFF_SEC)
+                    continue
+                errors.append(f"{m}: {str(e)[:100]}")
+                break
     raise RuntimeError("all models failed: " + " | ".join(errors))
 
 
-def writer_prompt(root: Path, recent_titles: list[str], prev_set: str | None, feedback: str = "") -> str:
+GENRE_PLAYBOOKS = {
+    "comedy": "COMEDY: awkward misunderstandings, prank backfires, absurd school/family rules; rapid face_mid deadpan->panic "
+              "swaps (neutral->shocked); punchlines land with bubble + sweat + speedlines.",
+    "horror": "HORROR (kid-safe creepy, never gory): a creepy town curfew/rule mystery; lighting: dark_mystery; sets auditorium / "
+              "street / school_hallway; crimson_vignette on tension beats; invisible: for a disappearing cast member or stalker; "
+              "phone_card warning texts (e.g. 'UNKNOWN | Do not turn around').",
+    "romance": "ROMANCE (kid-safe crush, no kissing): secret admirer / school-hallway misunderstanding; hearts overlays; face_mid "
+               "shy->grin->shocked swaps; phone_card secret messages; warm payoff.",
+    "slice_of_life": "SLICE OF LIFE: relatable kid/sibling/friend loyalty, test-day panic, a lost item or a family sacrifice in "
+                     "living_room / classroom / school_hallway; no supernatural curse needed; warm emotional ending.",
+    "karma_rules": "KARMA RULES: a weird town rule shown with counter: numbers over heads (lies, kindness points, timers, volume "
+                   "meters); payback lands on whoever abuses it.",
+}
+
+COMIC_ARC = """=== THEME: COMIC ISSUE (a longer standalone Short, 120-165 s) ===
+- Recurring cast in every issue: Sam (big brother, protective, striped shirt, gender boy) and Toby (little brother,
+  expressive, bright floral shirt, gender boy), plus 1-2 town characters that fit the genre.
+- 46-54 beats (target 50), dur: 2.6, narrator <= 40% of beats, up to 7 overlays (bubble, sweat, hearts, speedlines,
+  crimson_vignette, phone_card; NEVER binary_cta).
+- One complete standalone 6-part arc (NO Part 1/Part 2, no cliffhanger):
+  1. Normal Day (beats 1-7)  2. Secret Sacrifice / Mistake (8-16)  3. Close Calls (17-28)
+  4. The Discovery (29-36)  5. The Verdict / Payoff (37-44)  6. Resolution + spoken question CTA (45-50)
+- Set top-level `theme: comic_issue`."""
+
+
+def writer_prompt(root: Path, recent_titles: list[str], prev_set: str | None, feedback: str = "",
+                  genre: str = "comedy", theme: str = "default", banned: set[str] | frozenset = frozenset()) -> str:
     m = json.loads((root / "assets" / "manifest.json").read_text(encoding="utf-8"))
     cfg = load_config()
     moods = [k for k, f in cfg["audio"]["bgm_moods"].items() if f and (root / "assets" / "sfx" / f).exists()] or ["mystery"]
@@ -238,20 +335,28 @@ overhead `counter:` on cast entries / beats / `with:` partners: bold rule number
 
 {CAPABILITY_CONTRACT}
 
+=== GENRE: {genre} (set top-level `genre: {genre}`) ===
+{GENRE_PLAYBOOKS.get(genre, "")}
+{"- FORBIDDEN this time: shrinking/growing and any `scale:` field (used in the last 2 episodes). Pick another mechanic." if "scale" in banned else ""}
+{COMIC_ARC if theme == "comic_issue" else ""}
+
 === WHAT IS WORKING ON THE CHANNEL ===
 {brief}
 
 === HARD RULES ===
 - Title: "In This World, ..." or "In This Town, ..." + the rule, max 60 chars. Not one of: {recent_titles[:30]}
 - Top-level set must NOT be "{prev_set or ''}" (never repeat the previous episode's set).
-- Exactly 22 beats, dur 2.4. Lines 5-9 words (max 9), 4th-grade spoken English, max 6 narrator beats.
+- {"46-54 beats (target 50), dur 2.6, max 40% narrator beats" if theme == "comic_issue" else "Exactly 22 beats, dur 2.4, max 6 narrator beats"}. Lines 5-9 words (max 9), 4th-grade spoken English.
 - Required top-level fields: title, description, set, bgm_mood, lighting, engine, rule_type, opening_variant,
   ending_type, rule, visible_proof, personal_stake, motivated_choice, rule_payoff, cta, cast, beats.
 - No emojis anywhere. Every narrated object must be visible (set prop, prop kit or fx).
 - Beats 1-3 = WORLD-RULE MONTAGE: rapid, different on-screen proofs of the town's rule (other people, other
   places) BEFORE the protagonist's personal stake starts at beat 4.
-- Final beat (beat 22) carries a diegetic `overlay: binary_cta` whose overlay_text asks the story's own dilemma,
-  e.g. "WOULD YOU TELL? | LIKE = TELL / COMMENT = HIDE". Overlay text: letters, digits, spaces, | = / : , . ! ? - ' only.
+- Final beat (beat 22) ends on the spoken dilemma question itself (no overlay card covering the character),
+  e.g. "Would you tell, or hide it?". Put `speedlines` on the big shock/reveal beat and
+  `crimson_vignette` on a danger/tension beat (neither takes overlay_text).
+- Overlays: aim for 1-2 per story (ONE impact overlay at the climax, optionally one more). Never use binary_cta.
+  Never stack overlays - viewers must read the faces, not the stickers. Overlay text: letters, digits, spaces, | = / : , . ! ? - ' only.
 {('- FIX THESE PROBLEMS FROM YOUR LAST DRAFT: ' + feedback) if feedback else ''}
 Return ONLY the YAML document (no code fences, no commentary).
 """
@@ -281,7 +386,8 @@ def _strip_fences(t: str) -> str:
     return m.group(1) if m else t
 
 
-def auto_generate(count: int, root: Path = ROOT, db_path: Path | None = None, generate=None, key: str | None = None) -> list:
+def auto_generate(count: int, root: Path = ROOT, db_path: Path | None = None, generate=None, key: str | None = None,
+                  theme: str = "default", genre: str = "auto") -> list:
     """Write + judge `count` stories into the inbox, then ingest them. `generate(model, prompt, json_mode)` is
     injectable (tests). Returns ingest() results."""
     import qa_gate
@@ -295,6 +401,7 @@ def auto_generate(count: int, root: Path = ROOT, db_path: Path | None = None, ge
     if generate is None:
         key = key or qa_gate.gemini_api_key(root)
         generate = lambda m, prompt, js: gemini_generate(m, prompt, key, js)
+        generate.real = True  # enables the 503/429 backoff retry in _first_ok (mocked generators skip it)
     db = PipelineDB(db_path or (root / "ledger" / "pipeline.db"))
     try:
         rows = db.conn.execute("SELECT episode_id, title, story_dir FROM episodes ORDER BY episode_id DESC").fetchall()
@@ -307,10 +414,13 @@ def auto_generate(count: int, root: Path = ROOT, db_path: Path | None = None, ge
         if f.exists():
             prev_set = (yaml.safe_load(f.read_text(encoding="utf-8")) or {}).get("set"); break
     made = 0
+    recent_specs = recent_stories(root, 3)
     for n in range(count):
+        g = pick_genre(recent_specs, genre)
+        banned = banned_mechanics(recent_specs)
         feedback, spec, wmodel, wusage = "", None, None, {}
         for _attempt in range(2):  # one rewrite with the exact problems fed back
-            wmodel, text, wusage = _first_ok(writers, writer_prompt(root, recent, prev_set, feedback), generate, False)
+            wmodel, text, wusage = _first_ok(writers, writer_prompt(root, recent, prev_set, feedback, g, theme, banned), generate, False)
             try:
                 spec = yaml.safe_load(_strip_fences(text))
             except Exception as e:
@@ -319,7 +429,10 @@ def auto_generate(count: int, root: Path = ROOT, db_path: Path | None = None, ge
             if not isinstance(spec, dict):
                 spec, feedback = None, "Return one YAML mapping."; continue
             spec.setdefault("id", "NEW")
-            errs = kid_simple_errors(spec) + qa_gate.check_manifest_and_sameness(spec, manifest, [], qa) \
+            spec["genre"] = g
+            if theme == "comic_issue":
+                spec["theme"] = "comic_issue"
+            errs = kid_simple_errors(spec, banned) + qa_gate.check_manifest_and_sameness(spec, manifest, [], qa) \
                 + qa_gate.check_action_sanity(spec, prev_set)
             errs = [e for e in errs if "Premise too close" not in e]
             if not errs:
@@ -344,6 +457,7 @@ def auto_generate(count: int, root: Path = ROOT, db_path: Path | None = None, ge
         (inbox / f"{name}.yaml").write_text(yaml.safe_dump(spec, sort_keys=False, allow_unicode=True), encoding="utf-8")
         (inbox / f"{name}.judge.json").write_text(json.dumps(judge, indent=2), encoding="utf-8")
         recent.insert(0, spec.get("title", ""))
+        recent_specs.insert(0, spec)  # the next story in this batch rotates away from this one too
         made += 1
         print(f"[AUTO] {name}: writer={wmodel} judge={jmodel} mean={mean:.2f} pass={ok}")
     return ingest(inbox, root=root, db_path=db_path) if made else []
@@ -355,9 +469,11 @@ if __name__ == "__main__":
     g.add_argument("--ingest", action="store_true")
     g.add_argument("--auto", type=int, metavar="N", help="write + judge N new stories with Gemini, then ingest")
     p.add_argument("--inbox", default=None)
+    p.add_argument("--theme", default="default", choices=["default", "comic_issue"])
+    p.add_argument("--genre", default="auto", choices=["auto", *GENRES])
     a = p.parse_args()
     if a.auto:
-        print("Auto-generated:", auto_generate(a.auto))
+        print("Auto-generated:", auto_generate(a.auto, theme=a.theme, genre=a.genre))
     else:
         inbox = Path(a.inbox) if a.inbox else ROOT / load_config()["automation"].get("inbox_dir", "stories/_inbox")
         inbox.mkdir(parents=True, exist_ok=True)

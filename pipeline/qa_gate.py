@@ -168,8 +168,36 @@ def log_vision_failures(root: Path, ep_id: str, spec: dict, verdict: dict, outco
     return len(rows)
 
 
+THEMES = ("default", "comic_issue")
+GENRES = ("comedy", "horror", "romance", "slice_of_life", "karma_rules")
+COMIC_MAX_OVERLAYS = 7
+
+
+def is_comic(spec: dict | None) -> bool:
+    return bool(spec) and spec.get("theme") == "comic_issue"
+
+
+def duration_bounds(spec: dict | None, qa: dict) -> tuple[float, float]:
+    """V6.5: comic_issue Shorts run 120-165 s; standard stories 35-58.5 s (nothing in the 61-120 s dead zone)."""
+    if is_comic(spec):
+        return float(qa.get("comic_min_sec", 120.0)), float(qa.get("comic_max_sec", 165.0))
+    return float(qa["min_sec"]), float(qa["max_sec"])
+
+
+def _story_spec(d: Path) -> dict | None:
+    f = d / "story.yaml"
+    try:
+        return yaml.safe_load(f.read_text(encoding="utf-8")) if f.exists() else None
+    except Exception:
+        return None
+
+
 def check_manifest_and_sameness(spec: dict, manifest: dict, recent_eps: list[dict], qa_cfg: dict) -> list[str]:
     errs = []
+    if spec.get("theme", "default") not in THEMES:
+        errs.append(f"Unknown theme '{spec.get('theme')}' (use {list(THEMES)}).")
+    if spec.get("genre") and spec["genre"] not in GENRES:
+        errs.append(f"Unknown genre '{spec.get('genre')}' (use {list(GENRES)}).")
     if spec.get("set") not in manifest["sets"]:
         errs.append(f"Unknown set '{spec.get('set')}' (not in assets/manifest.json).")
     for c in spec.get("cast", []):
@@ -246,8 +274,11 @@ def check_manifest_and_sameness(spec: dict, manifest: dict, recent_eps: list[dic
     # V6.2 2D reaction overlays (finish_video.py composites them)
     ov_cfg = manifest.get("overlays", {})
     ov_beats = [(i, b) for i, b in enumerate(spec.get("beats", []), 1) if b.get("overlay")]
-    if len(ov_beats) > int(ov_cfg.get("max_per_story", 5)):
-        errs.append(f"{len(ov_beats)} overlays; at most {ov_cfg.get('max_per_story', 5)} per story.")
+    ov_max = COMIC_MAX_OVERLAYS if is_comic(spec) else int(ov_cfg.get("max_per_story", 5))
+    if len(ov_beats) > ov_max:
+        errs.append(f"{len(ov_beats)} overlays; at most {ov_max} per story.")
+    if is_comic(spec) and any(b.get("overlay") == "binary_cta" for _, b in ov_beats):
+        errs.append("comic_issue: no binary_cta card (it covers the characters); end on the spoken question.")
     for i, b in enumerate(spec.get("beats", []), 1):
         ov, txt = b.get("overlay"), b.get("overlay_text")
         if ov and ov not in ov_cfg.get("values", []):
@@ -346,8 +377,9 @@ def run_audio_gate(sdir: Path, cfg: dict) -> tuple[bool, list[str], dict]:
     info = ffprobe_json(voice)
     dur = float(info["format"].get("duration", 0))
     metrics["duration"] = round(dur, 2)
-    if not (float(qa["min_sec"]) <= dur <= float(qa["max_sec"])):
-        errs.append(f"Audio duration {dur:.2f}s outside [{qa['min_sec']}, {qa['max_sec']}]s.")
+    lo, hi = duration_bounds(_story_spec(sdir), qa)
+    if not (lo <= dur <= hi):
+        errs.append(f"Audio duration {dur:.2f}s outside [{lo}, {hi}]s.")
 
     # Unplanned silence check
     s_log = subprocess.run(
@@ -395,8 +427,9 @@ def run_render_gate(video_path: Path, cfg: dict) -> tuple[bool, list[str], dict]
         errs.append(f"Resolution {w}x{h} != {cfg['video']['width']}x{cfg['video']['height']}.")
     if abs(fps - float(cfg["video"]["fps"])) > 0.5:
         errs.append(f"FPS {fps} != {cfg['video']['fps']}.")
-    if not (float(qa["min_sec"]) <= dur <= float(qa["max_sec"])):
-        errs.append(f"Rendered duration {dur:.2f}s outside [{qa['min_sec']}, {qa['max_sec']}]s.")
+    lo, hi = duration_bounds(_story_spec(video_path.parent), qa)
+    if not (lo <= dur <= hi):
+        errs.append(f"Rendered duration {dur:.2f}s outside [{lo}, {hi}]s.")
 
     # Black frames & frozen frames
     vf_log = subprocess.run(

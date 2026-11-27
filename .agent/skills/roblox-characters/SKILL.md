@@ -17,7 +17,7 @@ local m = game:GetService("Players"):CreateHumanoidModelFromDescription(d, Enum.
 - R15 default rigs ignore decal faces (dynamic head), so never R15.
 - Find clothing/hair/accessories with `AvatarEditorService:SearchCatalog` (Relevance sort). They render unowned in Studio (0 Robux). Choose detailed classic Shirts/Pants, layered hair and themed accessories that read like the reference shorts (varsity jackets, hoodies, printed tees, swimwear). Never bare default bodies; vary extras so crowds aren't clones.
 - Catalog Face items are NOT searchable via `SearchCatalog`; faces come from section 2.
-- **Cast flow (V5.3):** story.yaml `cast:` lists name/gender/default_face/pos. `core_engine.luau` builds rigs from it via `Engine.buildRig()` and swaps faces via `Engine.setFace()`. `cast_001.luau` / `cast_002.luau` are reference only for catalog ids and outfit style. `buildRig` adds FLOOR_Y=0.2 automatically (set floors sit at y=0.2; the engine hides the baseplate).
+- **Cast flow (V6):** story.yaml `cast:` lists name/gender/default_face/pos (optional `scale`, `counter`, `invisible`). `core_engine.luau` builds rigs from it via `Engine.buildRig()` and swaps faces via `Engine.setFace()`. `cast_001.luau` / `cast_002.luau` are reference only for catalog ids and outfit style. `buildRig` adds FLOOR_Y=0.2 automatically (set floors sit at y=0.2; the engine hides the baseplate).
 - Build gotchas: anchor ONLY `HumanoidRootPart` (anchoring accessory handles detaches hair); floor-snap by the lowest body part, not the bounding box (accessories skew it).
 
 ## 2. Faces: our own flat 2D decals
@@ -38,11 +38,16 @@ Cast lives in story.yaml; log any new catalog ids/outfits in `assets/INDEX.md`. 
 - Animation Editor (Creator Hub, Animation Editor page): runs at 30 fps; easing per keyframe is Linear, Constant, CubicV2, Elastic or Bounce with In/Out/InOut. Use **CubicV2**, not the deprecated Cubic. A loop does not blend the last keyframe into the first, so copy the opening keys to the end of looping idles.
 Sources consulted: Roblox Creator docs (Animator, HumanoidDescription). Animation notes were cross-checked against github.com/sentinelcore/roblox-skills (unlicensed, so not copied).
 
-## v2 rules (2026-11-19, owner-approved)
-- Follow the **catchiness gates** in `CORE.md`: active rule (not a badge), rule visible in frame 1, 3 planted clues, taboo broken by 25s, rule-of-3 attempts, rule-hack climax, action-echo ending, no moral/lecture lines. Avg >= 8.5, none below 8, every gate passes.
-- Voice and pacing come from `config.yaml` (Kokoro, 185-195 WPM).
+## Standing rules (owner-approved, current for V6)
+- Story quality follows `.claude/skills/story-craft` (V6.4): world-rule montage in beats 1-3, 3 public escalations, a visible callback/karma-flip ending closed by the spoken question; Gate 1 enforces the shape.
+- Voice and pacing come from `config.yaml` `voice:` (Kokoro 0.98 speed, ~195-205 WPM).
 - Every cast entry declares `gender` (boy/girl/man/woman); all clothing, hair and accessories must match it.
-- Cutscenes run on `engines/roblox/core_engine.luau` (never edit it); it resets `loco` every frame; no frozen rigs; no wall-clipping or tilted giant-face filler shots.
+- Cutscenes run on `engines/roblox/core_engine.luau` (owner-only edits); it resets `loco` every frame; no frozen rigs; no wall-clipping or tilted giant-face filler shots.
+
+## V6 (2026-11-27)
+- Wardrobes are seeded by `wardrobe_seed` (defaults to the story id) so a renumbered story keeps its outfits.
+- `Engine.setScale(r, s)` resizes a rig mid-story (feet stay planted, position kept); background crowds (`crowd_cheer`) are built in setup and placed on the real floor of the cheer beat's set.
+- Verify in the viewport that no rig is sunk into a stage/floor or floating before any take.
 
 ## Learned on story 002 (2026-11-19)
 - In a quick lineup test, anchor ONLY HumanoidRootPart. Anchoring every part before parenting stops accessories (hair) from attaching.

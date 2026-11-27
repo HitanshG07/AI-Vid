@@ -1,8 +1,0 @@
-{
-  "episode_id": "009",
-  "stage": "vision",
-  "reasons": [
-    "Beat 15: [camera] Camera clips inside the character geometry."
-  ],
-  "source_dir": "C:\\AI-Vid\\stories\\009_the-empty-hallway"
-}

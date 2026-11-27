@@ -67,9 +67,9 @@ def sfx_cues(beats: list, words_json: Path | None):
 
 
 # ---- V6.2 editing energy: 2D reaction overlays + beat punch-zooms ------------------------------------------------
-OVERLAY_SECS = {"sweat": 1.1, "hearts": 1.4, "bubble": 1.1, "flash_red_blue": 1.2, "phone_card": 1.6, "binary_cta": 2.0}
+OVERLAY_SECS = {"sweat": 1.1, "hearts": 1.4, "bubble": 1.1, "flash_red_blue": 1.2, "phone_card": 1.6, "binary_cta": 2.0, "speedlines": 1.0, "crimson_vignette": 1.3}
 FONT_BOLD = "C:/Windows/Fonts/arialbd.ttf"
-CARDS = {"phone_card": ((90, 180, 990, 390), (255, 77, 94)), "binary_cta": ((90, 940, 990, 1130), (56, 189, 248))}
+CARDS = {"phone_card": ((90, 180, 990, 390), (255, 77, 94)), "binary_cta": ((90, 120, 990, 230), (56, 189, 248))}  # V6.4: compact top pill (manual use only)
 FONT_BLACK = "C:/Windows/Fonts/ariblk.ttf"
 
 
@@ -120,6 +120,24 @@ def make_overlay_png(kind: str, text: str, out: Path, w: int, h: int) -> Path:
     if kind in CARDS:
         _card(kind, text).resize((w, h)).save(out)
         return out
+    if kind == "speedlines":  # radial anime lines; centre (r < 350) stays clear
+        import math, random
+        rnd = random.Random(42)
+        im = Image.new("RGBA", (1080, 1920), (0, 0, 0, 0)); dr = ImageDraw.Draw(im)
+        for _ in range(95):
+            a, r0 = rnd.uniform(0, 2 * math.pi), rnd.uniform(350, 520)
+            c, s = math.cos(a), math.sin(a)
+            dr.line([(540 + c * r0, 960 + s * r0), (540 + c * 1220, 960 + s * 1220)],
+                    fill=(255, 255, 255, rnd.randint(95, 195)), width=rnd.randint(3, 8))
+        im.resize((w, h)).save(out)
+        return out
+    if kind == "crimson_vignette":
+        mask = Image.new("L", (1080, 1920), 0)
+        ImageDraw.Draw(mask).rectangle([0, 0, 1079, 1919], outline=255, width=150)
+        mask = mask.filter(ImageFilter.GaussianBlur(70)).point(lambda v: int(v * 0.35))
+        im = Image.new("RGBA", (1080, 1920), (255, 35, 55, 0)); im.putalpha(mask)
+        im.resize((w, h)).save(out)
+        return out
     if kind == "sweat":
         im = Image.new("RGBA", (140, 190), (0, 0, 0, 0)); dr = ImageDraw.Draw(im)
         dr.polygon([(70, 8), (122, 112), (18, 112)], fill=(80, 170, 255, 255))
@@ -162,8 +180,19 @@ def punch_zoom_vf(beats: list, lead: float) -> str:
     return f",scale=w='trunc(iw*({z})/2)*2':h='trunc(ih*({z})/2)*2':eval=frame,crop=iw0:ih0"
 
 
-def video_graph(base_vf: str, ass_vf: str, beats: list, lead: float, w: int, h: int, first_idx: int, outdir: Path):
-    """[0:v] -> zoom -> overlays -> subtitles -> [v]. Returns (extra ffmpeg inputs, filtergraph)."""
+def progress_bar(cur: str, w: int, h: int, dur: float) -> list[str]:
+    """Thin top bar (y=12, h=8, 24px side padding): dark track + gold fill growing 0->100% over dur.
+    Built from in-graph color sources, so it adds no '-i' inputs and never shifts overlay_base_idx."""
+    k = w / 1080
+    bw, bh, x, y = w - 2 * round(24 * k), max(2, round(8 * k)), round(24 * k), round(12 * k)
+    return [f"color=c=black@0.45:s={bw}x{bh},format=rgba[pbt]", f"color=c=0xFFD43B@0.95:s={bw}x{bh},format=rgba[pbf]",
+            f"[pbt][pbf]overlay=x='-W+W*min(1,t/{dur:.3f})':y=0[pbb]",
+            f"[{cur}][pbb]overlay={x}:{y}:shortest=1[pb]"]
+
+
+def video_graph(base_vf: str, ass_vf: str, beats: list, lead: float, w: int, h: int, first_idx: int, outdir: Path,
+                bar_dur: float = 0.0):
+    """[0:v] -> zoom -> overlays -> progress bar -> subtitles -> [v]. Returns (extra ffmpeg inputs, filtergraph)."""
     zoom = punch_zoom_vf(beats, lead).replace("crop=iw0:ih0", f"crop={w}:{h}")
     ins, g, cur, idx = [], [f"[0:v]{base_vf}{zoom}[z0]"], "z0", first_idx
     k = w / 1080
@@ -183,8 +212,11 @@ def video_graph(base_vf: str, ass_vf: str, beats: list, lead: float, w: int, h: 
         p = f"(t-{t0:.3f})/{t1 - t0:.3f}"
         xy = {"sweat": (f"{760 * k:.0f}", f"{380 * k:.0f}+{60 * k:.0f}*{p}"),
               "hearts": ("0", f"{700 * k:.0f}-{220 * k:.0f}*{p}"),
-              "bubble": ("(W-w)/2", f"{300 * k:.0f}"), "phone_card": ("0", "0"), "binary_cta": ("0", "0")}[kind]
+              "bubble": ("(W-w)/2", f"{300 * k:.0f}"), "phone_card": ("0", "0"), "binary_cta": ("0", "0"),
+              "speedlines": ("0", "0"), "crimson_vignette": ("0", "0")}[kind]
         g.append(f"[{cur}][{idx}:v]overlay=x='{xy[0]}':y='{xy[1]}':enable='{en}':shortest=1[o{idx}]"); cur, idx = f"o{idx}", idx + 1
+    if bar_dur > 0:
+        g += progress_bar(cur, w, h, bar_dur); cur = "pb"
     g.append(f"[{cur}]{ass_vf.lstrip(',') or 'null'}[v]")
     return ins, ";".join(g)
 
@@ -260,11 +292,18 @@ def main():
         print(f"!!! WARNING: SFX named in beats but missing in {SFX_DIR}: {missing_sfx}")
     bgm_vol = f"'{build_bgm_volume_expr(beats, a.lead, a.bgm_gain, float(cfg['audio']['duck_bgm_gain']), float(cfg['audio']['climax_bgm_gain']))}':eval=frame"
 
-    def vgraph(first_idx):
-        return video_graph(base_vf, vf, beats, a.lead, w, h, first_idx, d)
+    bar_dur = 0.0
+    if cfg["video"].get("progress_bar", True):
+        # ponytail: bar spans --end or the raw take length; the voice path's -shortest can end a little earlier
+        bar_dur = float(a.end) if a.end else float(subprocess.run(
+            ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", a.raw],
+            capture_output=True, text=True, check=True).stdout.strip())
 
-    preset = "ultrafast" if a.draft else "slow"
-    crf = "26" if a.draft else "18"
+    def vgraph(first_idx):
+        return video_graph(base_vf, vf, beats, a.lead, w, h, first_idx, d, bar_dur)
+
+    preset = "ultrafast" if a.draft else "medium"   # V6.4: medium + 4 threads = far less CPU/heat, same 1080p look
+    crf = "26" if a.draft else "19"
 
     if a.music_only:
         ins = [x for _, f, _ in cues for x in ("-i", str(f))]
@@ -304,7 +343,7 @@ def main():
 
     if a.end:
         cmd += ["-t", str(a.end)]
-    cmd += ["-c:v", "libx264", "-preset", preset, "-crf", crf, "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", a.out]
+    cmd += ["-threads", "4", "-c:v", "libx264", "-preset", preset, "-crf", crf, "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", a.out]
     subprocess.run(cmd, check=True)
     print(f"{'DRAFT' if a.draft else 'FINAL'}: {a.out}")
 

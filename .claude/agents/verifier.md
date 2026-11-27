@@ -22,3 +22,6 @@ Judge `story.yaml` against CORE.md ("V5.4 Story & Format Rules" + the 6-question
 
 ## V5.4.5 Creativity Gate (adds to the above)
 Check `engine:` is one of ironic_reframe|social_karma|clever_loophole|moral_dilemma and executed cleanly; the final 5s flips an opening detail; 2+ concrete Roblox details and no abstract emotion lines; `cta:` is a 1-line in-world prompt that is not a second ending; no banned trope (floating timers, glowing marks, haunted buses, 3AM hallways, "In This Town/World"); earned meaning shown, not stated; kid-safe.
+
+## V6.4 override (2026-11-27, wins over everything above)
+Judge `story.yaml` against `.claude/skills/story-craft` (V6.4) and run Gate 1: `python pipeline/qa_gate.py --story-dir <dir> --stage pre --no-db` (manifest values, shape, overlays, counters, scale, script/title Jaccard). `preflight_lint.py` is optional extra lint. Originality still follows `.claude/skills/verify-originality`. The old catchiness/V5.4 rules above are retired.
